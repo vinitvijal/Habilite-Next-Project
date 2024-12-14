@@ -1,4 +1,5 @@
 import React from 'react'
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 
 function Header() {
   return (
@@ -10,9 +11,10 @@ function Header() {
         <nav>
           <ul className=' flex justify-center items-center gap-20 font-medium text-lg  '>
             <li>Home</li>
-            <li>Services</li>
             <li>About</li>
-            <li>Contact</li>
+            <li>Surgery</li>
+            <li>Blog</li>
+            <li>Contact Us</li>
           </ul>
         </nav>
       </div>
