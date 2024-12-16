@@ -1,71 +1,81 @@
 import React from 'react'
+import * as Separator from "@radix-ui/react-separator";
+import Link from 'next/link';
 
 function Services() {
   return (
-    <div className="min-h-screen w-screen bg-third py-10 flex flex-col items-center"> 
+    <section className="min-h-screen w-screen bg-white py-10 flex flex-col items-center"> 
       <div className="container mx-auto px-6"> 
-        <h1 className="text-5xl font-bold text-center mb-4 text-second">SERVICES & SPECIALIZATION</h1> 
-        <h2 className="text-3xl text-center mb-8 text-first">Rapid Recovery Realized.</h2> 
+        <h1 className="text-4xl font-bold text-center mb-4 text-second">SERVICES & SPECIALIZATION</h1> 
+        <h2 className="text-2xl text-center mb-8 text-first">Rapid Recovery Realized.</h2> 
       </div> 
-      <div className='h-full w-5/6 flex justify-center items-center'>
-        <div className='w-1/3 h-[80vh] bg-fourth flex flex-col justify-center items-center mx-10 border'>
-          <div className='w-full h-[12vh] bg-second flex justify-center items-center text-3xl text-white'>
+      <div className=' max-w-5/6 grid place-content-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12 h-full  justify-center gap-10'>
+        
+          <div className=' w-72 bg-white shadow-lg flex-col rounded-2xl hover:-translate-y-1 hover:duration-300 hover:shadow-xl '>
+          <Link href='#' className='w-full h-20 px-4 bg-second rounded-t-2xl font-semibold flex justify-center items-center text-2xl text-white'>
             Bariatrics / Weight loss
+          </Link>
+          <div className='img w-full h-[16vh]  justify-center items-center '>
+            <img src="/weightloss.jpg" alt="Surgery Image" className="h-full object-cover w-full " />
           </div>
-          <div className='img w-full h-[28vh] flex justify-center items-center mt-3 mb-1'>
-            <img src="/weightloss.jpg" alt="Surgery Image" className="h-full w-full px-3" />
-          </div>
-          <div className='w-full h-[40vh] flex justify-center items-center'>
-            <ul className='w-full list-none flex flex-col items-center justify-center text-2xl text-second'>
-              <li className='w-2/3 border-b border- text-center py-2'>Bariatric surgery</li>
-              <li className='w-2/3 border-b border- text-center py-2'>Non-surgical weight loss program</li>
-              <li className='w-2/3 border-b border- text-center py-2'>Surgery for diabetes</li>
-              <li className='w-2/3 text-center py-2'>Intragastric Balloon</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className='w-1/3 h-[80vh] bg-fourth flex flex-col justify-center items-center mx-10 border'>
-          <div className='w-full h-[12vh] bg-second flex justify-center items-center text-3xl text-white'>
-            Laparoscopic Surgery
-          </div>
-          <div className='img w-full h-[28vh] flex justify-center items-center my-3 '>
-            <img src="/surgery.jpeg" alt="Surgery Image" className="h-full w-full px-3" />
-          </div>
-          <div className='w-full h-[40vh] flex justify-center items-center'>
-            <ul className='w-full list-none flex flex-col items-center justify-center text-2xl text-second'>
-              <li className='w-2/3 border-b border- text-center py-2'>Gall stones</li>
-              <li className='w-2/3 border-b border- text-center py-2'>Hernia</li>
-              <li className='w-2/3 border-b border- text-center py-2'>Rectal prolapse</li>
-              <li className='w-2/3 border-b border- text-center py-2'>Appendix</li>
-              <li className='w-2/3 text-center py-2'>Gerd</li>
-            </ul>
+          <div className=' flex w-full flex-col flex-1 justify-center items-center my-6 gap-2'>
+            <Link className='text-xl font-medium text-second/70 hover:text-second hover:scale-105 duration-300' href="#">Bariatric surgery</Link>
+            <Separator.Root orientation="horizontal" className="w-3/4 h-[1px] bg-third" />
+            <Link className='text-xl font-medium text-second/70 hover:text-second hover:scale-105 duration-300 text-center' href="#">Non-surgical weight loss program</Link>
+            <Separator.Root orientation="horizontal" className="w-3/4 h-[1px] bg-third" />
+            <Link className='text-xl font-medium text-second/70 hover:text-second hover:scale-105 duration-300' href="#">Surgery for diabetes</Link>
+            <Separator.Root orientation="horizontal" className="w-3/4 h-[1px] bg-third" />
+            <Link className='text-xl font-medium text-second/70 hover:text-second hover:scale-105 duration-300' href="#">Intragastric Balloon</Link>
+            {/* <Separator.Root orientation="horizontal" className="w-3/4 h-[1px] bg-third" /> */}
           </div>
         </div>
 
-
-
-        <div className='w-1/3 h-[80vh] bg-fourth flex flex-col justify-center items-center mx-10 border'>
-          <div className='w-full h-[12vh] bg-second flex justify-center items-center text-3xl text-white'>
-            Laser Surgery
+        <div className=' w-72 h-auto bg-white shadow-lg  flex-col justify-center items-center rounded-2xl hover:-translate-y-1 hover:duration-300 hover:shadow-xl '>
+        <Link href='#' className='w-full h-20 px-4 bg-second rounded-t-2xl font-semibold flex justify-center items-center text-2xl text-white'>
+          Laparoscopic Surgery
+          </Link>
+          <div className='img w-full h-[16vh]  justify-center items-center '>
+            <img src="/surgery.jpeg" alt="Surgery Image" className="h-full object-cover w-full " />
           </div>
-          <div className='img w-full h-[28vh] flex justify-center items-center mt-3 mb-1'>
-            <img src="/laserSurgery.jpg" alt="Surgery Image" className="h-full w-full px-3" />
-          </div>
-          <div className='w-full h-[40vh] flex justify-center items-center'>
-            <ul className='w-full list-none flex flex-col items-center justify-center text-2xl text-second'>
-              <li className='w-2/3 border-b border- text-center py-2'>Hemorrhoids/Piles</li>
-              <li className='w-2/3 border-b border- text-center py-2'>Anal fissure</li>
-              <li className='w-2/3 border-b border- text-center py-2'>Pilonidal sinus</li>
-              <li className='w-2/3 border-b border- text-center py-2'>Anal fistula</li>
-              <li className='w-2/3 border-b border- text-center py-2'>Lipoma</li>
-              <li className='w-2/3 text-center py-2'>Circumcision</li>
-            </ul>
+          <div className=' flex flex-col items-center my-6 gap-2'>
+            <Link className='text-xl font-medium text-second/70 hover:text-second hover:scale-105 duration-300' href="#">Gall stones</Link>
+            <Separator.Root orientation="horizontal" className="w-3/4 h-[1px] bg-third" />
+            <Link className='text-xl font-medium text-second/70 hover:text-second hover:scale-105 duration-300' href="#">Hernia</Link>
+            <Separator.Root orientation="horizontal" className="w-3/4 h-[1px] bg-third" />
+            <Link className='text-xl font-medium text-second/70 hover:text-second hover:scale-105 duration-300' href="#">Rectal prolapse</Link>
+            <Separator.Root orientation="horizontal" className="w-3/4 h-[1px] bg-third" />
+            <Link className='text-xl font-medium text-second/70 hover:text-second hover:scale-105 duration-300' href="#">Appendix</Link>
+            <Separator.Root orientation="horizontal" className="w-3/4 h-[1px] bg-third" />
+            <Link className='text-xl font-medium text-second/70 hover:text-second hover:scale-105 duration-300' href="#">Gerd</Link>
+            
           </div>
         </div>
 
+        <div className=' w-72 h-auto bg-white shadow-lg  flex-col justify-center items-center rounded-2xl hover:-translate-y-1 hover:duration-300 hover:shadow-xl '>
+        <Link href='#' className='w-full h-20 px-4 bg-second rounded-t-2xl font-semibold flex justify-center items-center text-2xl text-white'>
+        Laser Surgery
+          </Link>
+          <div className='img w-full h-[16vh]  justify-center items-center '>
+            <img src="/laserSurgery.jpg" alt="Surgery Image" className="h-full object-cover w-full " />
+          </div>
+          <div className=' flex flex-col items-center my-6 gap-2'>
+            <Link className='text-xl font-medium text-second/70 hover:text-second hover:scale-105 duration-300' href="#">Hemorrhoids/Piles</Link>
+            <Separator.Root orientation="horizontal" className="w-3/4 h-[1px] bg-third" />
+            <Link className='text-xl font-medium text-second/70 hover:text-second hover:scale-105 duration-300' href="#">Anal fissure</Link>
+            <Separator.Root orientation="horizontal" className="w-3/4 h-[1px] bg-third" />
+            <Link className='text-xl font-medium text-second/70 hover:text-second hover:scale-105 duration-300' href="#">Pilonidal sinus</Link>
+            <Separator.Root orientation="horizontal" className="w-3/4 h-[1px] bg-third" />
+            <Link className='text-xl font-medium text-second/70 hover:text-second hover:scale-105 duration-300' href="#">Anal fistula</Link>
+            <Separator.Root orientation="horizontal" className="w-3/4 h-[1px] bg-third" />
+            <Link className='text-xl font-medium text-second/70 hover:text-second hover:scale-105 duration-300' href="#">Lipoma</Link>
+            <Separator.Root orientation="horizontal" className="w-3/4 h-[1px] bg-third" />
+            <Link className='text-xl font-medium text-second/70 hover:text-second hover:scale-105 duration-300' href="#">Circumcision</Link>
+            {/* <Separator.Root orientation="horizontal" className="w-3/4 h-[1px] bg-third" /> */}
+          </div>
+        </div>
+        
       </div>
-    </div>
+    </section>
   );
 }
 
