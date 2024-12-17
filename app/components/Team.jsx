@@ -4,10 +4,10 @@ function Team() {
   return (
      
     <div className="w-screen bg-gray-100 py-6 "> 
-      <div className='flex item-center justify-center text-4xl text-bold text-first'>ABOUT THE TEAM...</div> <br />
+      <div className='flex item-center justify-center text-4xl font-bold text-first'>ABOUT THE TEAM...</div> <br />
       <p className=' text-center mx-auto mb-6 '> <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br /> Nulla facilisi. Nam viverra bibendum eros, nec consectetur nulla feugiat eu. <br /> Duis sollicitudin metus vitae ipsum dignissim, a consequat sapien.</b>
       </p>
-      <div className="comtainer grid grid-cols-1 md:grid-cols-3 gap-5 max-w-6xl max-h-xl mx-auto pb-20 ">
+      <div className="comtainer grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl max-h-xl mx-auto pb-20 ">
       {/* {card1} */}
       <Card
         image="/doc1.jpg"
