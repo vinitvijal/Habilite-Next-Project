@@ -4,7 +4,6 @@ function Choose() {
   return (
     <div className="bg-gray-100 w-screen h-screen">
       <div className="text-gray-800 mb-5 pt-20">
-        {/* Header Section */}
         <div className="container mx-auto px-20 mb-5 text-center">
           <h5 className="text-first font-bold uppercase tracking-wide text-3xl">
             Why Choose Us? Dr Apara Arachi.
@@ -31,7 +30,7 @@ function Choose() {
               Our clinic is home to a team of highly qualified doctors,
               specialists, and healthcare staff with decades of combined
               experience. We ensure every patient receives expert guidance and
-              treatment tailored to their unique needs .
+              treatment tailored to their unique needs. 
             </p>
           </div>
 
