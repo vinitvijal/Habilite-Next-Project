@@ -9,7 +9,7 @@ function BookAppointment() {
   }
 
   return (
-    <div className='container flex items-center justify-center my-8'>
+    <div className='container mx-auto flex items-center justify-center my-8'>
       <form className=' mx-auto h-fit items-center justify-center ' action={handleSubmit}>
         <div className="px-5 pt-3 pb-1 font-semibol text-xl md:text-3xl text-center border-b border-third rounded-tl-md rounded-tr-md ">Book An Appointment</div>
         <div className="px-5 py-3 pb-2 flex flex-col rounded-bl-md rounded-br-md ">
