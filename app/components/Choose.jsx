@@ -1,8 +1,9 @@
 import React from "react";
-import Image from "next/image";
+
+
 function Choose() {
   return (
-    <div className="bg-gray-100 w-screen h-screen">
+    <div className=" w-screen h-screen">
       <div className="text-gray-800 mb-5 pt-20">
         <div className="container mx-auto px-20 mb-5 text-center">
           <h5 className="text-first font-bold uppercase tracking-wide text-3xl">
@@ -18,9 +19,9 @@ function Choose() {
           </p>
         </div>
 
-        <div className="container grid grid-cols-1 md:grid-cols-3 gap-10 max-w-3xl mx-auto pb-20 mx-auto">
-          <div className="text-center p-6 rounded-lg transform hover:-translate-y-10 transition-transform duration-300 bg-white shadow-xl cursor-pointer rounded-xl">
-            <div className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-4 font-bold shadow-lg shadow-second">
+        <div className="container grid grid-cols-1 md:grid-cols-3 gap-10 max-w-3xl mx-auto pb-20">
+          <div className="text-center p-6 transform hover:-translate-y-10 transition-transform hover:scale-105 duration-300 bg-white shadow-xl cursor-pointer rounded-xl">
+            <div className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-4 font-bold bg-second text-white ">
               1
             </div>
             <h3 className="text-lg font-semibold mb-2">
@@ -34,8 +35,8 @@ function Choose() {
             </p>
           </div>
 
-          <div className="text-center p-6 bg-white rounded-lg transform hover:-translate-y-10 transition-transform duration-300 shadow-xl cursor-pointer rounded-xl">
-            <div className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-4 font-bold shadow-lg shadow-second">
+          <div className="text-center p-6 bg-white transform hover:-translate-y-10 hover:scale-105 hover:duration-300 transition-transform duration-500 shadow-xl cursor-pointer rounded-xl">
+            <div className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-4 font-bold shadow-lg bg-second text-white ">
               2
             </div>
             <h3 className="text-lg font-semibold mb-2">
@@ -48,8 +49,8 @@ function Choose() {
               deliver top-notch care.
             </p>
           </div>
-          <div className="text-center p-6 bg-white transform hover:-translate-y-10 transition-transform duration-300 shadow-xl cursor-pointer rounded-xl ">
-            <div className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-4 font-bold shadow-lg shadow-second">
+          <div className="text-center p-6 bg-white transform hover:-translate-y-10 hover:scale-105 transition-transform duration-300 shadow-xl cursor-pointer rounded-xl ">
+            <div className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-4 font-bold shadow-lg bg-second text-white">
               3
             </div>
             <h3 className="text-lg font-semibold mb-2">
