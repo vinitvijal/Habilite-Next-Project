@@ -9,7 +9,7 @@ import Image from 'next/image'
 
 function Hospitals() {
   return (
-    <div className='w-screen px-28 justify-center items-center text-center flex-col'>
+    <section id='affiliations' className='w-screen px-28 justify-center items-center text-center flex-col'>
       <div className='justify-center items-center flex p-2 mb-6'>
         <h1 className='text-[#1463f3] font-bold text-4xl p-2'>AFFILIATIONS</h1>
       </div>
@@ -63,7 +63,7 @@ function Hospitals() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
