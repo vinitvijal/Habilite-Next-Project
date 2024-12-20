@@ -64,22 +64,22 @@ function Team() {
 const Card = ({ image, greeting,description,goal, name, date }) => {
   return (
     
-    <div className="bg-white cursor-pointer rounded-lg border-3 border-fourth grid grid-cols-2 p-3 border border-third hover:border-first hover:border-3 transform hover:scale-105 transition-transform duration-300 gap-1">
+    <div className="bg-white cursor-pointer rounded-lg border-3 border-fourth grid grid-cols-2 p-2 border border-third hover:border-first hover:border-3 transform hover:scale-105 transition-transform duration-300">
 
-      <div className="ml-8 transform hover:scale-105 transition-transform duration-300 ">
+      <div className="flex justify-center item-center transform hover:scale-105 transition-transform duration-300 ">
         <img
           src = {image}
-          className="w-80 h-80 rounded-full object-cover flex item-center shadow-third shadow-lg"
+          className="w-80 h-80 rounded-full object-cover shadow-third shadow-lg"
         />
       </div>
-      <div className="bg-gray-100 p-6 h-full gap-2 text-lg flex flex-col items-center justify-center mt-2">
+      <div className="bg-gray-100 p-4 h-full gap-2 text-lg flex flex-col items-center justify-center mt-2">
       <p className="text-black font-bold">{greeting}</p>
         <p className="text-black font-bold">{description}</p>
         <p className="text-black font-bold">{goal}</p>
       </div>
      
    <div className='m-3'> 
-<div className="p-1 gap-4 text-first text-md font-bold flex justify-between items-center border-t-2 border-first transform hover:scale-105 transition-transform duration-300">
+<div className="p-1 gap-3 text-first text-md font-bold flex justify-between items-center border-t-2 border-first transform hover:scale-105 transition-transform duration-300">
         <div>{name}</div>
         <div>{date}</div>
       </div>
