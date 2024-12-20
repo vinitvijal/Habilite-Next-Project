@@ -9,7 +9,7 @@ function BookAppointment() {
   }
 
   return (
-    <div className='container mx-auto flex items-center justify-center my-8'>
+    <section id='appointment' className='container mx-auto flex items-center justify-center my-8'>
       <form className=' mx-auto h-fit items-center justify-center ' action={handleSubmit}>
         <div className="px-5 pt-3 pb-1 font-semibol text-xl md:text-3xl text-center border-b border-third rounded-tl-md rounded-tr-md ">Book An Appointment</div>
         <div className="px-5 py-3 pb-2 flex flex-col rounded-bl-md rounded-br-md ">
@@ -33,7 +33,7 @@ function BookAppointment() {
           <button type="submit" className=' bg-first w-full py-1 mt-5 mb-3 hover:bg-second focus:scale-90 text-white font-semibold  rounded-md'>Submit</button>
         </div>
       </form>
-    </div>
+    </section>
   )
 }
 
