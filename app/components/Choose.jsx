@@ -3,7 +3,7 @@ import React from "react";
 
 function Choose() {
   return (
-    <div className=" w-screen h-screen">
+    <div className=" w-screen py-10">
       <div className="text-gray-800 mb-5 pt-20">
         <div className="container mx-auto px-20 mb-5 text-center">
           <h5 className="text-first font-bold uppercase tracking-wide text-3xl">
