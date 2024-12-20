@@ -11,7 +11,7 @@ function Blog(){
      id: 1,
      title: "XYZ BSB DFNH",
      content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga illum deleniti sed amet itaque distinctio possimus animi, vitae nihil cupiditate at quas voluptates cum, consequuntur odio repellendus soluta quasi dolor. Ullam laudantium totam quam animi nisi ipsam, tempore ad reprehenderit tenetur sint!",
-     imageUrl: "/public/main.webp",
+     imageUrl: "https://www.habiliteclinics.com/assets/images/home/blog-4.webp", 
      author: "Dr. XYZ",
     
     },
@@ -24,6 +24,7 @@ function Blog(){
       excerpt: "Many state-of-the-art hospitals in Delhi provide advanced treatments...",
       date: "September 30, 2024",
       author: "Dr. XYZ",
+      imageUrl: "https://www.habiliteclinics.com/assets/images/home/blog-4.webp", 
 
     },
 
@@ -33,7 +34,7 @@ function Blog(){
       excerpt: "Choosing the right hospital is crucial for effective treatment...",
       date: "October 5, 2024",
       author: "Dr. XYZ",
-      imageUrl: "/images/clinic.jpg", 
+      imageUrl: "https://www.habiliteclinics.com/assets/images/home/blog-4.webp", 
     },
 
     {
@@ -42,7 +43,7 @@ function Blog(){
       excerpt: "Choosing the right hospital is crucial for effective treatment...",
       date: "October 8, 2024",
       author: "Dr. XYZ",
-      imageUrl: "/images/clinic.jpg", 
+      imageUrl: "https://www.habiliteclinics.com/assets/images/home/blog-4.webp", 
     },
 
     {
@@ -51,7 +52,7 @@ function Blog(){
       excerpt: "Many state-of-the-art hospitals in Delhi provide advanced treatments...",
       date: "September 30, 2024",
       author: "Dr. XYZ",
-      imageUrl: "/images/hospital.jpg",
+      imageUrl: "https://www.habiliteclinics.com/assets/images/home/blog-4.webp", 
     },
 
     {
@@ -60,7 +61,7 @@ function Blog(){
       excerpt: "Choosing the right hospital is crucial for effective treatment...",
       date: "October 5, 2024",
       author: "Dr. XYZ",
-      imageUrl: main, 
+      imageUrl: "https://www.habiliteclinics.com/assets/images/home/blog-4.webp", 
     },
 
     {
@@ -69,7 +70,7 @@ function Blog(){
       excerpt: "Choosing the right hospital is crucial for effective treatment...",
       date: "October 8, 2024",
       author: "Dr. XYZ",
-      imageUrl: "/images/clinic.jpg", 
+      imageUrl: "https://www.habiliteclinics.com/assets/images/home/blog-4.webp", 
     },
   ];
 
@@ -95,7 +96,7 @@ function Blog(){
             <div key={blog.id} className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg hover:-translate-y-5 transition-transform duration-500 mt-4 p-4 pb-1 border-1">
               <div className="p-4">
                 <div className="relative">
-                  <Image
+                  <img
                     src={main}
                     alt="Blog Image"
                     width={800}
@@ -115,7 +116,7 @@ function Blog(){
                 </button>
                 <div className="flex items-center">
                   <div className="w-8 h-8 p-4 m-4 rounded-full bg-gray-300 overflow-hidden">
-                    <Image
+                    <img
                       src={blog.imageUrl}
                       alt="Author"
                       width={40}
