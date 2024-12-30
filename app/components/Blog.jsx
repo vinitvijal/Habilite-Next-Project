@@ -41,7 +41,7 @@ function Blog(){
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14">
       {blogs.map((blog) => (
         <div key={blog.id} className="relative shadow-lg rounded-lg hover:shadow-lg hover:scale-105 transition-transform duration-300 hover:bg-gray-200 px-6 m-6 cursor-pointer">
-        <img src={blog.imageUrl} alt={blog.title} className="absolute rounded-full w-28 h-28 -top-12 -left-12 border-4 border-first" />
+        <img src={blog.imageUrl} alt={blog.title} className="absolute rounded-full w-20 h-20 -top-8 -left-8 border-4 border-first object-cover object-center" />
           <div className="p-4 max-w-full mt-8">
            <div className="mt-8 text-black text-sm">{blog.date}</div>
             <h2 className="mt-2 text-xl font-bold text-black">
@@ -55,7 +55,7 @@ function Blog(){
           </div>
           <div className="flex items-center justify-between text-sm text-black font-semibold p-6">
             <div className="flex items-center">
-              <div className="w-8 h-8 p-4 m-2 rounded-full bg-gray-300 overflow-hidden">
+              <div className="w-8 h-8 p-4 ml-0 m-2 rounded-full bg-gray-300 overflow-hidden">
                 <Image
                   src="/public/main.webp" 
                   alt="Author"
