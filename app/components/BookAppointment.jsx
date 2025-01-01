@@ -1,6 +1,4 @@
 import React from 'react'
-import img from '@/public/appointment.jpeg'
-import Image from 'next/image'
 
 function BookAppointment() {
 
