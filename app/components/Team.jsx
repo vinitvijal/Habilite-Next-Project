@@ -1,6 +1,4 @@
-'use client'
-import React, { useCallback, useEffect, useState } from 'react'
-
+import React from 'react'
 
 function Team() {
   return (
@@ -14,7 +12,7 @@ function Team() {
         <div class="relative flex flex-col items-center mt-5 md:mt-10">
        
           <h1 class="text-2xl md:text-4xl lg:text-7xl font-semibold text-gray-600">Meet The Team</h1>
-          <div class="md:w-28 w-14 md:h-[4px] h-[2px] bg-first mt-2"></div>
+          <div class="md:w-32 w-16 md:h-[4px] h-[2px] bg-first mt-2"></div>
         </div>
     </div> <br />
       <p className=' text-gray-500 flex items-center justify-center text-center mx-auto mb-10 text-2xl px-10'> <b>We are a team of qualified psychiatrists and psychologists from premier institutions of the country. <br />We are highly motivated to provide cutting egde evidence based management for mental health issues tailored to individual needs.</b>
