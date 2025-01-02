@@ -41,22 +41,22 @@ function Blog(){
 
 
   return(
-    <div className="max-w-8xl mx-auto p-20">
+    <div className=" mx-auto sm:p-20">
       <h1 className="text-4xl font-bold text-black mb-10 pt-10 text-center">RECENT BLOGS</h1>
       <h1 className="text-2xl font-semibold text-third mb-20 pb-4 text-center">Insights from our Medical Experts</h1>
     
 
         {/* Cards header*/}
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+    <div className=" w-full flex justify-center border">
+      <div className="grid grid-cols-1  max-w-7xl lg:grid-cols-2 xl:grid-cols-3 gap-8 ">
         
         {blogs.map((blog) => (
-          <div key={blog.id} className="relative flex flex-col items-center shadow-lg rounded-lg hover:shadow-lg hover:scale-105 transition-transform duration-300 hover:bg-gray-200 m-6 cursor-pointer">
+          <div key={blog.id} className="relative flex sm:w-full flex-col items-center shadow-lg rounded-lg hover:shadow-lg hover:scale-105 transition-transform duration-300 hover:bg-gray-200 m-6 cursor-pointer">
 
           {/* card content */}
 
-            <img src={blog.imageUrl} alt={blog.title} className="w-full" />
-            <div className="p-2 max-w-6xl">
+            <img src={blog.imageUrl} alt={blog.title} className="w-full rounded-t-lg" />
+            <div className="p-2 px-4 max-w-6xl">
 
               <div className="flex justify-start gap-2">
                 <Image src={calendar} className="z-0 h-6 w-6 mb-2 mt-2" alt="none"></Image>
@@ -98,7 +98,7 @@ function Blog(){
         ))}
       
       </div>
-
+      </div>
             <div className="w-full flex justify-center mt-20">
               <Link href="/blogs" className="px-6 py-4 bg-first rounded-lg hover:scale-105 duration-300 hover:duration-500 text-white hover:bg-second">
               More Blogs
