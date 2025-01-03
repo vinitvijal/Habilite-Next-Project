@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin');
+
 export default {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -17,5 +19,12 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addVariant }) {
+      addVariant('accordion-open', '&[data-state="open"]');
+    }),
+    plugin(function ({ addVariant }) {
+      addVariant('data-open', '&[data-state="open"]');
+    }),
+  ],
 };
