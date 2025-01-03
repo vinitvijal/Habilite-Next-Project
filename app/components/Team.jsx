@@ -23,7 +23,7 @@ function Team() {
 
         
       {/* {card1} */}
-      <div className="bg-white mt-24 cursor-pointer rounded-lg p-3 border-2 border-gray-50 hover:border-first hover:border-3 transform hover:scale-105 transition-transform duration-300">
+      <div className="bg-white mt-24 cursor-pointer rounded-lg p-3 border-2 border-gray-100">
          <div className="mx-auto w-60 h-60 relative -mt-28 shadow-third shadow-lg border-4 border-gray rounded-full overflow-hidden transform hover:scale-105 transition-transform duration-300  ">
         <img
           src = {"/doc1.jpg"}
@@ -46,7 +46,7 @@ function Team() {
 
         <div className='border-t-2 border-gray-200 mt-3'>
         <div className='text-gray-400 gap-4 flex justify-center items-center text-center mt-4'>
-        <div className="inline-flex text-2xl">
+        <div className="inline-flex text-2xl transform hover:scale-105 transition-transform duration-300">
                             <svg className="h-6 w-6 text-gray-400 dark:text-gray-600 mr-1" fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                                 <path className=""
@@ -60,7 +60,7 @@ function Team() {
 
 
          {/* {card2} */}
-         <div className="bg-white mt-24 cursor-pointer rounded-lg p-3 border-2 border-gray-50 hover:border-first hover:border-3 transform hover:scale-105 transition-transform duration-300">
+         <div className="bg-white mt-24 cursor-pointer rounded-lg p-3 border-2 border-gray-100">
          <div className="mx-auto w-60 h-60 relative -mt-28 shadow-third shadow-lg border-4 border-gray rounded-full overflow-hidden transform hover:scale-105 transition-transform duration-300  ">
         <img
           src = {"/doc2.jpg"}
@@ -83,7 +83,7 @@ function Team() {
 
         <div className='border-t-2 border-gray-200 mt-3'>
         <div className='text-gray-400 gap-4 flex justify-center items-center text-center mt-4'>
-        <div className="inline-flex text-2xl">
+        <div className="inline-flex text-2xl transform hover:scale-105 transition-transform duration-300">
                             <svg className="h-6 w-6 text-gray-400 dark:text-gray-600 mr-1" fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                                 <path className=""
@@ -97,7 +97,7 @@ function Team() {
 
         
         {/* {card3} */}
-        <div className="bg-white mt-24 cursor-pointer rounded-lg p-3 border-2 border-gray-50 hover:border-first hover:border-3 transform hover:scale-105 transition-transform duration-300">
+        <div className="bg-white mt-24 cursor-pointer rounded-lg p-3 border-2 border-gray-100">
          <div className="mx-auto w-60 h-60 relative -mt-28 shadow-third shadow-lg border-4 border-gray rounded-full overflow-hidden transform hover:scale-105 transition-transform duration-300  ">
         <img
           src = {"/doc3.jpg"}
@@ -120,7 +120,7 @@ function Team() {
 
         <div className='border-t-2 border-gray-200 mt-3'>
         <div className='text-gray-400 gap-4 flex justify-center items-center text-center mt-4'>
-        <div className="inline-flex text-2xl">
+        <div className="inline-flex text-2xl transform hover:scale-105 transition-transform duration-300">
                             <svg className="h-6 w-6 text-gray-400 dark:text-gray-600 mr-1" fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                                 <path className=""
