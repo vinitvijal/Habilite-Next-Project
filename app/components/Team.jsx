@@ -7,12 +7,12 @@ function Team() {
     <div>
        {/* {heading} */}
        
-      <div class="flex flex-col items-center relative pt-20">
+      <div className="flex flex-col items-center relative pt-20">
        
-        <div class="relative flex flex-col items-center mt-5 md:mt-10">
+        <div className="relative flex flex-col items-center mt-5 md:mt-10">
        
-          <h1 class="text-2xl md:text-4xl lg:text-7xl font-semibold text-first">Meet The Team</h1>
-          <div class="md:w-32 w-16 md:h-[4px] h-[2px] bg-gray-700 mt-2"></div>
+          <h1 className="text-2xl md:text-4xl lg:text-7xl font-semibold text-first">Meet The Team</h1>
+          <div className="md:w-32 w-16 md:h-[4px] h-[2px] bg-gray-700 mt-2"></div>
         </div>
     </div> <br />
       <p className=' text-gray-500 flex items-center justify-center text-center mx-auto mb-10 text-2xl px-10'> <b>We are a team of qualified psychiatrists and psychologists from premier institutions of the country. <br />We are highly motivated to provide cutting egde evidence based management for mental health issues tailored to individual needs.</b>
@@ -23,7 +23,7 @@ function Team() {
 
         
       {/* {card1} */}
-      <div className="bg-white mt-24 cursor-pointer rounded-lg p-3 border-2 border-gray-100">
+      <div className="bg-white mt-24 cursor-pointer rounded-lg p-3 border-2 border-gray-100 transform hover:scale-105 transition-transform duration-300">
          <div className="mx-auto w-60 h-60 relative -mt-28 shadow-third shadow-lg border-4 border-gray rounded-full overflow-hidden transform hover:scale-105 transition-transform duration-300  ">
         <img
           src = {"/doc1.jpg"}
@@ -60,7 +60,7 @@ function Team() {
 
 
          {/* {card2} */}
-         <div className="bg-white mt-24 cursor-pointer rounded-lg p-3 border-2 border-gray-100">
+         <div className="bg-white mt-24 cursor-pointer rounded-lg p-3 border-2 border-gray-100 transform hover:scale-105 transition-transform duration-300">
          <div className="mx-auto w-60 h-60 relative -mt-28 shadow-third shadow-lg border-4 border-gray rounded-full overflow-hidden transform hover:scale-105 transition-transform duration-300  ">
         <img
           src = {"/doc2.jpg"}
@@ -97,7 +97,7 @@ function Team() {
 
         
         {/* {card3} */}
-        <div className="bg-white mt-24 cursor-pointer rounded-lg p-3 border-2 border-gray-100">
+        <div className="bg-white mt-24 cursor-pointer rounded-lg p-3 border-2 border-gray-100 transform hover:scale-105 transition-transform duration-300">
          <div className="mx-auto w-60 h-60 relative -mt-28 shadow-third shadow-lg border-4 border-gray rounded-full overflow-hidden transform hover:scale-105 transition-transform duration-300  ">
         <img
           src = {"/doc3.jpg"}
