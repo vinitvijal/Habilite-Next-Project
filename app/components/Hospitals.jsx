@@ -1,96 +1,80 @@
-import React from 'react'
-import hp1 from '@/public/image1.png'
-import hp2 from '@/public/image2.png'
-import hp3 from '@/public/image3.png'
-import hp4 from '@/public/image4.png'
-import hp5 from '@/public/image5.png'
-import hp6 from '@/public/image6.png'
-import Image from 'next/image'
+import React from "react";
+import Image from "next/image";
+import { HosHeading } from "./AnimationClient";
 
 function Hospitals() {
+  const hospitals = [
+    {
+      id: 1,
+      name: "Hospital 1",
+      image:"/image1.png",
+      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique natus expedita fugiat qui autem consequatur consequuntur aspernatur ipsam animi eaque."
+    },
+    {
+      id: 2,
+      name: "Hospital 1",
+      image: "/image2.png",
+      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique natus expedita fugiat qui autem consequatur consequuntur aspernatur ipsam animi eaque."
+    },
+    {
+      id: 3,
+      name: "Hospital 1",
+      image: "/image3.png",
+      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique natus expedita fugiat qui autem consequatur consequuntur aspernatur ipsam animi eaque."
+    },
+    {
+      id: 4,
+      name: "Hospital 1",
+      image: "/image4.png",
+      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique natus expedita fugiat qui autem consequatur consequuntur aspernatur ipsam animi eaque."
+    },
+    {
+      id: 5,
+      name: "Hospital 1",
+      image:"/image5.png",
+      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique natus expedita fugiat qui autem consequatur consequuntur aspernatur ipsam animi eaque."
+    },
+    {
+      id: 6,
+      name: "Hospital 1",
+      image: "/image6.png",
+      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique natus expedita fugiat qui autem consequatur consequuntur aspernatur ipsam animi eaque."
+    }
+  ]
   return (
-    <section id='affiliations' className='w-screen justify-center items-center flex-col px-40'>
-      <div className='w-2/3 h-2 py-4'>
-        <div className='w-24 h-1 rounded-lg bg-blue-600 animate-fade-right'></div>
-      </div>
-      <div>
-          <h1 className='font-semibold text-blue-600 text-5xl'>Hospital Affiliations</h1>
-      </div>
-      <div className='flex items-center justify-center py-10'>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-          <div className='rounded-xl group relative items-center justify-center overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow'>
-            <div className='h-96 w-96 '>
-              <Image src={hp1} alt='hp' className='h-full w-full object-cover group-hover:roate-3 group-hover:scale-125 transition-transform duration-500'/>
+    <section
+      id="affiliations"
+      className="w-screen justify-center items-center flex-col px-40"
+    >
+      <div className="flex flex-col items-center justify-center py-10">
+        <HosHeading/>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {hospitals.map((hospital) => (
+          <div key={hospital.id} className="rounded-xl group relative items-center justify-center overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow">
+            <div className="h-96 w-96 ">
+              <img
+                src={hospital.image}
+                alt= {hospital.name}
+                className="h-full w-full object-cover group-hover:roate-3 group-hover:scale-125 transition-transform duration-500"
+              />
             </div>
-            <div className='absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70'>
-              <div className='absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all'>
-                <h1 className='text-3xl font-bold text-white pb-4'>Hospital Name</h1>
-                <p className='text-lg italic text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi praesentium perspiciatis corporis voluptatum dolorum voluptates animi, distinctio numquam eum placeat.</p>
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70">
+              <div className="absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all">
+                <h1 className="text-3xl font-bold text-white pb-4">
+                  {hospital.name}
+                </h1>
+                <p className="text-lg italic text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {hospital.description}
+                </p>
               </div>
             </div>
           </div>
-          <div className='rounded-xl group relative items-center justify-center overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow'>
-            <div className='h-96 w-96 '>
-              <Image src={hp2} alt='hp' className='h-full w-full object-cover group-hover:roate-3 group-hover:scale-125 transition-transform duration-500'/>
-            </div>
-            <div className='absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70'>
-              <div className='absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all'>
-                <h1 className='text-3xl font-bold text-white pb-4'>Hospital Name</h1>
-                <p className='text-lg italic text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi praesentium perspiciatis corporis voluptatum dolorum voluptates animi, distinctio numquam eum placeat.</p>
-              </div>
-            </div>
-          </div>
-          <div className='rounded-xl group relative items-center justify-center overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow'>
-            <div className='h-96 w-96 '>
-              <Image src={hp3} alt='hp' className='h-full w-full object-cover group-hover:roate-3 group-hover:scale-125 transition-transform duration-500'/>
-            </div>
-            <div className='absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70'>
-              <div className='absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all'>
-                <h1 className='text-3xl font-bold text-white pb-4'>Hospital Name</h1>
-                <p className='text-lg italic text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi praesentium perspiciatis corporis voluptatum dolorum voluptates animi, distinctio numquam eum placeat.</p>
-              </div>
-            </div>
-          </div>
-          <div className='rounded-xl group relative items-center justify-center overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow'>
-            <div className='h-96 w-96 '>
-              <Image src={hp4} alt='hp' className='h-full w-full object-cover group-hover:roate-3 group-hover:scale-125 transition-transform duration-500'/>
-            </div>
-            <div className='absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70'>
-              <div className='absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all'>
-                <h1 className='text-3xl font-bold text-white pb-4'>Hospital Name</h1>
-                <p className='text-lg italic text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi praesentium perspiciatis corporis voluptatum dolorum voluptates animi, distinctio numquam eum placeat.</p>
-              </div>
-            </div>
-          </div>
-          <div className='rounded-xl group relative items-center justify-center overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow'>
-            <div className='h-96 w-96 '>
-              <Image src={hp5} alt='hp' className='h-full w-full object-cover group-hover:roate-3 group-hover:scale-125 transition-transform duration-500'/>
-            </div>
-            <div className='absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70'>
-              <div className='absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all'>
-                <h1 className='text-3xl font-bold text-white pb-4'>Hospital Name</h1>
-                <p className='text-lg italic text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi praesentium perspiciatis corporis voluptatum dolorum voluptates animi, distinctio numquam eum placeat.</p>
-              </div>
-            </div>
-          </div>
-          <div className='rounded-xl group relative items-center justify-center overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow'>
-            <div className='h-96 w-96 '>
-              <Image src={hp6} alt='hp' className='h-full w-full object-cover group-hover:roate-3 group-hover:scale-125 transition-transform duration-500'/>
-            </div>
-            <div className='absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70'>
-              <div className='absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[60%] group-hover:translate-y-0 transition-all'>
-                <h1 className='text-3xl font-bold text-white pb-4'>Hospital Name</h1>
-                <p className='text-lg italic text-white mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi praesentium perspiciatis corporis voluptatum dolorum voluptates animi, distinctio numquam eum placeat.</p>
-              </div>
-            </div>
-          </div>
+        ))}
         </div>
-      </div>
-
+        </div>
     </section>
-
-
-    // <section id='affiliations' className='w-screen px-28 justify-center items-center text-center flex-col'>
+  );
+    {/* // <section id='affiliations' className='w-screen px-28 justify-center items-center text-center flex-col'>
     //   <div className='justify-center items-center flex p-2 mb-6'>
     //     <h1 className='text-[#1463f3] font-bold text-4xl p-2'>AFFILIATIONS</h1>
     //   </div>
@@ -144,8 +128,9 @@ function Hospitals() {
     //       </div>
     //     </div>
     //   </div>
-    // </section>
-  )
+    // </section> */}
+  
 }
 
-export default Hospitals
+
+export default Hospitals;
