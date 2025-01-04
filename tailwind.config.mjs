@@ -15,6 +15,30 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      keyframes:{
+        "slide-in-down": {
+              "0%": {
+                  visibility: "visible",
+                  transform: "translate3d(0, -100%, 0)",
+              },
+              "100%": {
+                  transform: "translate3d(0, 0, 0)",
+              },
+          },
+        "slide-out-up": {
+              "0%": {
+                  transform: "translate3d(0, 0, 0)",
+              },
+              "100%": {
+                  visibility: "hidden",
+                  transform: "translate3d(0, -100%, 0)",
+              },
+          },
+      },
+      animation:{
+        slideindown: 'slide-in-down 1s ease-in-out 0.25s 1',
+        slideoutup: 'slide-out-up 1s ease-in-out 0.25s 1',
+      },
     },
   },
   plugins: [],
