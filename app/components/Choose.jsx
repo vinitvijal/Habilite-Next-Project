@@ -1,19 +1,38 @@
+'use client'
+
 import React from "react";
-import Image from "next/image";
+import { motion } from "motion/react"
+import WordRotate from "@/components/ui/word-rotate";
+import { TextAnimate } from "@/components/ui/text-animate";
+
 function Choose() {
   return (
     <section id="Choose" className="py-20 w-screen">
       <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
-        <h2 className="text-first text-center font-bold uppercase tracking-wide text-3xl m-8 p-8">
+        {/* <h2 className="text-first text-center font-bold uppercase tracking-wide text-3xl m-8 p-8">
           Why Choose Us?
-        </h2>
+        </h2> */}
+        <TextAnimate animation="blurIn" as="h2" duration={1} delay={1.2} className="text-first text-center font-bold uppercase tracking-wide text-3xl m-8 p-8">
+          Why Choose Us?
+        </TextAnimate>
+
       </div>
 
       {/* {#card-1} */}
 
       <div className=" flex items-center justify-center mx-auto m-10 mt-10 ">
         <div className="grid grid-cols-4 md:grid-cols-4 gap-4 ">
-          <div className="shadow-sm p-6 text-center group w-64 h-96 bg-white border:gray-700 border-4 hover:border-white relative m-4 hover:ring hover:ring-first   transform duration-500 hover:scale-105 hover:shadow-xl">
+        <motion.div
+        initial={{ 
+          scale: 0.8,
+          opacity: 0,
+        }}
+        whileInView={{
+          transition: { duration: 0.5, opacity: { ease: "linear" } },
+          scale: 1,
+          opacity: 1,
+        }}
+        className="shadow-sm p-6 text-center group w-64 h-96 bg-white border:gray-700 border-4 hover:border-white relative m-4 hover:ring hover:ring-first   transform duration-500 hover:scale-105 hover:shadow-xl">
             <div className="bg-first flex justify-center items-center w-20 h-20 rounded-full absolute mx-auto right-0 left-0 -inset-y-14 border-4 group-hover:bg-white group-hover:shadow-md transform duration-300">
               <span className="text-3xl md:text-5xl text-white  group-hover:text-first form duration-300 p-4">
                 <img
@@ -35,11 +54,25 @@ function Choose() {
                 treatment tailored to their unique needs.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Card 2 */}
 
-          <div className=" shadow-sm p-6 text-center group w-64 h-96 bg-white border:gray-700 border-4 hover:border-white relative m-4 hover:ring hover:ring-first   transform duration-500 hover:scale-105 hover:shadow-xl">
+          <motion.div
+          initial={{ 
+            scale: 0.8,
+            opacity: 0,
+          }}
+          whileInView={{
+            transition: { duration: 0.5,  delay: 0.5 },
+            scale: 1,
+            opacity: 1,
+            animation: {
+              y: [0, -10, 0],
+              transition: { duration: 0.5 },
+            }
+          }}
+          className=" shadow-sm p-6 text-center group w-64 h-96 bg-white border:gray-700 border-4 hover:border-white relative m-4 hover:ring hover:ring-first   transform duration-500 hover:scale-105 hover:shadow-xl">
             <div className="bg-first  flex justify-center items-center w-20 h-20 rounded-full absolute mx-auto right-0 left-0 -inset-y-14 border-4 group-hover:bg-white group-hover:shadow-md transform duration-300">
               <span className="text-3xl md:text-5xl text-white  group-hover:text-first  transform duration-300 p-4">
                 <img
@@ -62,11 +95,23 @@ function Choose() {
                 treatment tailored to their unique needs.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* {#card-3} */}
 
-          <div className=" shadow-sm p-6 text-center group w-64 h-96 bg-white border:gray-700 border-4 hover:border-white  relative m-4 hover:ring hover:ring-first   transform duration-500 hover:scale-105 hover:shadow-xl">
+          <motion.div
+      
+          initial={{ 
+            scale: 0.8,
+            opacity: 0,
+          }}
+          whileInView={{
+            transition: { duration: 0.5,  delay: 1.0 },
+            scale: 1,
+            opacity: 1,
+          }}
+          
+          className=" shadow-sm p-6 text-center group w-64 h-96 bg-white border:gray-700 border-4 hover:border-white  relative m-4 hover:ring hover:ring-first   transform duration-500 hover:scale-105 hover:shadow-xl">
             <div className="bg-first  flex justify-center items-center w-20 h-20 rounded-full absolute mx-auto right-0 left-0 -inset-y-14 border-4 group-hover:bg-white group-hover:shadow-md transform duration-300">
               <span className="text-3xl md:text-5xl text-white  group-hover:text-first form duration-300 p-4">
                 <img
@@ -88,11 +133,21 @@ function Choose() {
                 procedures, we deliver top-notch care.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* {#card-4} */}
 
-          <div className=" shadow-sm p-6 text-center group w-64 h-96 bg-white border:gray-700 border-4 hover:border-white  relative m-4 hover:ring hover:ring-first   transform duration-500 hover:scale-105 hover:shadow-xl">
+          <motion.div
+          initial={{ 
+            scale: 0.8,
+            opacity: 0,
+          }}
+          whileInView={{
+            transition: { duration: 0.5, delay: 1.5 },
+            scale: 1,
+            opacity: 1,
+          }}
+          className=" shadow-sm p-6 text-center group w-64 h-96 bg-white border:gray-700 border-4 hover:border-white  relative m-4 hover:ring hover:ring-first   transform duration-500 hover:scale-105 hover:shadow-xl">
             <div className="bg-first  flex justify-center items-center w-20 h-20 rounded-full absolute mx-auto right-0 left-0 -inset-y-14 border-4 group-hover:bg-white group-hover:shadow-md transform duration-300">
             <span className="text-3xl md:text-5xl text-white  group-hover:text-first form duration-300 p-4">
             <img width="66" height="66" src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/66/external-Doctor-And-Patient-medical-concepts-smashingstocks-flat-smashing-stocks-4.png" alt="external-Doctor-And-Patient-medical-concepts-smashingstocks-flat-smashing-stocks-4"/>
@@ -110,7 +165,7 @@ function Choose() {
                 procedures, we deliver top-notch care.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
