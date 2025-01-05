@@ -3,7 +3,7 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <div className=" md:h-[75vh] h-screen mt-10 bg-black relative md:mb-80 mb-[80vh] md:px-0 px-10">
+    <div className=" md:h-[75vh] h-screen  bg-black relative md:mb-80 mb-[80vh] md:px-0 px-10">
       
 <ul className="slideshow">
 	<li><span></span></li>
@@ -50,22 +50,22 @@ const Hero = () => {
 
 
 .slideshow li:nth-child(1) span { 
-    background-image: url("/images/i1.jpg"); 
+    background-image: url("/images/banner-1.webp"); 
 }
 .slideshow li:nth-child(2) span { 
-    background-image: url("/images/i2.jpg");
+    background-image: url("/images/banner-2.webp");
     animation-delay: 6s; 
 }
 .slideshow li:nth-child(3) span { 
-    background-image: url("/images/i3.jpg");
+    background-image: url("/images/banner-3.webp");
     animation-delay: 12s; 
 }
 .slideshow li:nth-child(4) span { 
-    background-image: url("/images/i4.jpg");   
+    background-image: url("/images/banner-4.webp");   
     animation-delay: 18s; 
 }
 .slideshow li:nth-child(5) span { 
-    background-image: url("/images/i5.jpg");
+    background-image: url("/images/banner-5.webp");
     animation-delay: 24s; 
 }
 
