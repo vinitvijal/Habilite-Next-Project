@@ -1,56 +1,99 @@
+// Hero.jsx
 import React from 'react';
 
 const Hero = () => {
-  const styles = {
-    slider: {
-      position: 'relative',
-      width: '80%',
-      height: '60vh', // Set your desired height
-      overflow: 'hidden',
-    },
-    slide: {
-      position: 'absolute',
-      width: '100%',
-      height: '100%',
-      opacity: 0,
-      animation: 'fade 12s infinite',
-      background: 'black',
-    },
-    img: {
-      width: '100%',
-      height: '100%',
-      objectFit: 'cover',
-    },
-  };
-
   return (
-    <div className='flex justify-center flex-col items-center'>
-      <div style={styles.slider} className='mt-10 rounded-lg shadow'>
-        <div style={{ ...styles.slide, animationDelay: '0s', opacity: 1 }}>
-          <img src="/images/i1.jpg" alt="Image 1" style={styles.img} />
-        </div>
-        <div style={{ ...styles.slide, animationDelay: '5s' }}>
-          <img src="/images/i2.jpg" alt="Image 2" style={styles.img} />
-        </div>
-        <div style={{ ...styles.slide, animationDelay: '10s' }}>
-          <img src="/images/i3.jpg" alt="Image 3" style={styles.img} />
-        </div>
-
-        {/* Inline CSS for keyframes */}
-        <style>
-          {`
-            @keyframes fade {
-              0% { opacity: 0; }
-              10% { opacity: 1; }
-              30% { opacity: 1; }
-              40% { opacity: 0; }
-            }
-          `}
-        </style>
-      </div>
+    <div className=" md:h-[75vh] h-screen mt-10 bg-black relative md:mb-80 mb-[80vh] md:px-0 px-10">
       
-      {/* Calculator Component */}
-      <Calculator />
+<ul className="slideshow">
+	<li><span></span></li>
+  <li><span></span></li>
+	<li><span></span></li>
+	<li><span></span></li>
+	<li><span></span></li>
+</ul>
+<div>
+  <Calculator />
+</div>
+
+
+      <style>
+        {`
+          .slideshow {
+  list-style-type: none;
+}
+
+/** SLIDESHOW **/
+.slideshow,
+.slideshow:after { 
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    z-index: 0; 
+}
+
+.slideshow li span { 
+		position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 30s linear infinite 0s; 
+}
+
+
+
+.slideshow li:nth-child(1) span { 
+    background-image: url("/images/i1.jpg"); 
+}
+.slideshow li:nth-child(2) span { 
+    background-image: url("/images/i2.jpg");
+    animation-delay: 6s; 
+}
+.slideshow li:nth-child(3) span { 
+    background-image: url("/images/i3.jpg");
+    animation-delay: 12s; 
+}
+.slideshow li:nth-child(4) span { 
+    background-image: url("/images/i4.jpg");   
+    animation-delay: 18s; 
+}
+.slideshow li:nth-child(5) span { 
+    background-image: url("/images/i5.jpg");
+    animation-delay: 24s; 
+}
+
+
+
+@keyframes imageAnimation { 
+    0% { opacity: 0; animation-timing-function: ease-in; }
+    8% { opacity: 1; animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+
+@keyframes titleAnimation { 
+    0% { opacity: 0 }
+    8% { opacity: 1 }
+    17% { opacity: 1 }
+    19% { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+
+.no-cssanimations .cb-slideshow li span {
+	opacity: 1;
+}
+        `}
+      </style>
     </div>
   );
 };
