@@ -42,7 +42,7 @@ function Footer() {
             </div>
             </div>
         </div>
-        <div className='flex items-start justify-center gap-10 grid-cols-3 py-10'>
+        <div className='flex items-start justify-center gap-10 py-10'>
         <div className='flex-col items-center text-left'>
           <h1 className='text-xl text-white/90 text-semibold pb-8'>Laparoscopic Surgery</h1>
           <a><p className='text-md text-white/70 text-light py-2 cursor-pointer hover:text-white'>Gall Stones Treatment</p></a>
