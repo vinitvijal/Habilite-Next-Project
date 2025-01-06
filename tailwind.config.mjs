@@ -37,10 +37,28 @@ export default {
                   transform: "translate3d(0, -100%, 0)",
               },
           },
+        "fade-in": {
+              "0%": {
+                  opacity: 0
+              },
+              "100%": {
+                  opacity: 1
+              },
+          },
+          "fade-out": {
+              "0%": {
+                  opacity: 1
+              },
+              "100%": {
+                  opacity: 0
+              },
+          },
       },
       animation:{
         slideindown: 'slide-in-down 0.6s ease-in-out 1',
         slideoutup: 'slide-out-up 0.6s ease-in-out 1',
+        fadein: 'fade-in 0.5s ease-in-out 1',
+        fadeout: 'fade-out 0.4s ease-in-out 1',
       },
     },
   },

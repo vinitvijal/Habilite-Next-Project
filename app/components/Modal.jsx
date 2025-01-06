@@ -25,14 +25,14 @@ function Modal({isVisible, onClose}) {
     setTimeout(() => {
       onClose();
       setShowAnimation(true);
-    },590);
+    },350);
   };
     
   if (!isVisible ) return null;
 
   return (
-    <div id='appointment' className='fixed z-50 inset-0 bg-opacity-70 bg-black backdrop-blur-sm  w-full flex items-center justify-center ' >
-      <div className={`mx-12 px-6 pt-5 max-sm:min-w-[60vw] w-full max-w-md bg-white shadow-black shadow-sm  rounded-md ${isVisible ? 'animate-slideindown' : ''} ${!showAnimation?'animate-slideoutup':''} `}>
+    <div id='appointment' className='fixed z-50 inset-0 bg-opacity-40 bg-black backdrop-blur-md  w-full flex items-center justify-center ' >
+      <div className={`mx-12 px-6 pt-5 max-sm:min-w-[60vw] w-full max-w-md bg-white shadow-black shadow-sm  rounded-md ${isVisible ? 'animate-fadein' : ''} ${!showAnimation?'animate-fadeout':''} `}>
         <h1 className=" mb-4 font-bold text-xl sm:text-2xl text-center">Book An Appointment</h1>
         <form className=' rounded-md' >
           <div className="flex flex-col space-y-3">
