@@ -10,6 +10,8 @@ import Services from "./components/Services";
 import Team from "./components/Team";
 import Testimonials from "./components/Testimonials";
 
+
+
 export default function Home() {
   return (
     <>
@@ -20,7 +22,7 @@ export default function Home() {
       <BookAppointment/>
       <Hospitals/>
       <Team/>
-      <Testimonials/>
+      <Testimonials />
       <Choose/>
       <Blog/>
       <Footer/>
