@@ -12,26 +12,27 @@ function Modal({isVisible, onClose}) {
     console.log(e.get('fullName'),e.get('email'),e.get('phoneNum'))
   }
 
-  const [showAnimation, setShowAnimation]= useState(false);
+  const [showAnimation, setShowAnimation]= useState(true);
 
-  useEffect(() => {
-    if(isVisible){
-      setShowAnimation(true);
-    }
-  },[isVisible]);
+  // useEffect(() => {
+  //   if(isVisible){
+  //     setShowAnimation(true);
+  //   }
+  // },[isVisible]);
     
   const handleClose = () => {
     setShowAnimation(false);
     setTimeout(() => {
       onClose();
-    }, 800);
+      setShowAnimation(true);
+    },590);
   };
     
-  if (!isVisible) return null;
+  if (!isVisible ) return null;
 
   return (
-    <div id='appointment' className='fixed z-50 inset-0 bg-opacity-70 bg-black backdrop-blur-sm  w-full flex items-center justify-center' >
-      <div className={`mx-12 px-6 pt-5 max-sm:min-w-[60vw] w-full max-w-md bg-white shadow-black shadow-sm  rounded-md ${showAnimation ? 'animate-slideindown' : 'animate-slideoutup'} `}>
+    <div id='appointment' className='fixed z-50 inset-0 bg-opacity-70 bg-black backdrop-blur-sm  w-full flex items-center justify-center ' >
+      <div className={`mx-12 px-6 pt-5 max-sm:min-w-[60vw] w-full max-w-md bg-white shadow-black shadow-sm  rounded-md ${isVisible ? 'animate-slideindown' : ''} ${!showAnimation?'animate-slideoutup':''} `}>
         <h1 className=" mb-4 font-bold text-xl sm:text-2xl text-center">Book An Appointment</h1>
         <form className=' rounded-md' >
           <div className="flex flex-col space-y-3">

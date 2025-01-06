@@ -18,8 +18,11 @@ export default {
       keyframes:{
         "slide-in-down": {
               "0%": {
-                  visibility: "visible",
+                  visibility: "hidden",
                   transform: "translate3d(0, -100%, 0)",
+              },
+              "1%":{
+                visibility: "visible",
               },
               "100%": {
                   transform: "translate3d(0, 0, 0)",
@@ -36,8 +39,8 @@ export default {
           },
       },
       animation:{
-        slideindown: 'slide-in-down 1s ease-in-out 0.25s 1',
-        slideoutup: 'slide-out-up 1s ease-in-out 0.25s 1',
+        slideindown: 'slide-in-down 0.6s ease-in-out 1',
+        slideoutup: 'slide-out-up 0.6s ease-in-out 1',
       },
     },
   },
