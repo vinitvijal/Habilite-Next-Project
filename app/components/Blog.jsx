@@ -42,32 +42,34 @@ function Blog(){
 
   return(
     <div className=" mx-auto sm:p-20">
-      <h1 className="text-4xl font-bold text-black mb-10 pt-10 text-center">RECENT BLOGS</h1>
-      <h1 className="text-2xl font-semibold text-third mb-20 pb-4 text-center">Insights from our Medical Experts</h1>
+      <hr></hr>
+      <h1 className="text-4xl font-bold text-black mb-10 pt-8 text-center hover:text-first">RECENT BLOGS</h1>
+      <h1 className="text-2xl font-semibold text-third mb-20 pb-4 text-center ">Insights from our Medical Experts</h1>
     
 
         {/* Cards header*/}
-    <div className=" w-full flex justify-center border">
-      <div className="grid grid-cols-1  max-w-7xl lg:grid-cols-2 xl:grid-cols-3 gap-8 ">
+    <div className="w-auto flex justify-center">
+      <div className="grid grid-cols-1 max-w-6xl md:grid-cols-3 xl:grid-cols-3 gap-12">
         
         {blogs.map((blog) => (
-          <div key={blog.id} className="relative flex sm:w-full flex-col items-center shadow-lg rounded-lg hover:shadow-lg hover:scale-105 transition-transform duration-300 hover:bg-gray-200 m-6 cursor-pointer">
+          <div key={blog.id} className="relative flex sm:w-full flex-col items-center shadow-lg rounded-lg hover:shadow-lg hover:scale-105 transition-transform duration-300 hover:bg-gray-200 m-6 mb-0 cursor-pointer">
 
           {/* card content */}
 
             <img src={blog.imageUrl} alt={blog.title} className="w-full rounded-t-lg" />
             <div className="p-2 px-4 max-w-6xl">
-
+              <hr className="p-2"></hr>
               <div className="flex justify-start gap-2">
+                
                 <Image src={calendar} className="z-0 h-6 w-6 mb-2 mt-2" alt="none"></Image>
                 <div className="mt-3 text-black text-sm">{blog.date}</div>
               </div>
 
-              <h2 className="mt-2 text-xl font-bold text-black">{blog.title}</h2>  
-              <p className="text-md text-second mt-4">{blog.excerpt}</p>
+              <h2 className="mt-2 text-lg font-bold text-black">{blog.title}</h2>  
+              <p className="text-sm text-second mt-4">{blog.excerpt}</p>
 
               <div className="flex justify-center items-center">
-                <button className="mt-8 px-4 py-2 rounded-full shadow-lg bg-first text-white font-medium hover:bg-second hover-scale-105 ">
+                <button className="mt-6 px-4 py-2 rounded-full shadow-lg bg-first text-white font-medium hover:bg-second hover-scale-105 ">
                    Read More
                 </button>
               </div>
@@ -76,7 +78,7 @@ function Blog(){
           
           {/* card footer */}
 
-            <div className="w-full flex items-center justify-start text-sm text-black font-semibold p-6     gap-2">
+            <div className="w-full flex items-center justify-start text-sm text-black font-semibold px-6 py-3 gap-2">
               <div className="w-8 h-8 ml-0 m-2 rounded-full bg-gray-300 overflow-hidden">
                 <Image
                   src="/public/main.webp" 
