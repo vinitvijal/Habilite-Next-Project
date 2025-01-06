@@ -77,11 +77,52 @@ export default {
   				to: {
   					transform: 'translateY(calc(-100% - var(--gap)))'
   				}
-  			}
+  			},
+         "slide-in-down": {
+              "0%": {
+                  visibility: "hidden",
+                  transform: "translate3d(0, -100%, 0)",
+              },
+              "1%":{
+                visibility: "visible",
+              },
+              "100%": {
+                  transform: "translate3d(0, 0, 0)",
+              },
+          },
+        "slide-out-up": {
+              "0%": {
+                  transform: "translate3d(0, 0, 0)",
+              },
+              "100%": {
+                  visibility: "hidden",
+                  transform: "translate3d(0, -100%, 0)",
+              },
+          },
+        "fade-in": {
+              "0%": {
+                  opacity: 0
+              },
+              "100%": {
+                  opacity: 1
+              },
+          },
+          "fade-out": {
+              "0%": {
+                  opacity: 1
+              },
+              "100%": {
+                  opacity: 0
+              },
+          },
   		},
   		animation: {
   			marquee: 'marquee var(--duration) infinite linear',
-  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite'
+  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
+           slideindown: 'slide-in-down 0.6s ease-in-out 1',
+        slideoutup: 'slide-out-up 0.6s ease-in-out 1',
+        fadein: 'fade-in 0.4s ease-in-out 1',
+        fadeout: 'fade-out 0.4s ease-in-out 1',
   		}
   	}
   },
