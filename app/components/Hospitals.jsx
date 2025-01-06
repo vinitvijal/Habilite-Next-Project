@@ -72,6 +72,7 @@ function Hospitals() {
         ))}
         </div>
         </div>
+
     </section>
   );
     {/* // <section id='affiliations' className='w-screen px-28 justify-center items-center text-center flex-col'>
