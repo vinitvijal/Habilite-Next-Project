@@ -24,7 +24,7 @@ function Modal({isVisible, onClose}) {
     setShowAnimation(false);
     setTimeout(() => {
       onClose();
-    }, 1000);
+    }, 800);
   };
     
   if (!isVisible) return null;
