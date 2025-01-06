@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin');
+
 export default {
     darkMode: ["class"],
     content: [
@@ -83,5 +85,14 @@ export default {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+
+  plugins: [
+    require("tailwindcss-animate"),
+    plugin(function ({ addVariant }) {
+      addVariant('accordion-open', '&[data-state="open"]');
+    }),
+    plugin(function ({ addVariant }) {
+      addVariant('data-open', '&[data-state="open"]');
+    }),
+  ],
 };
