@@ -15,8 +15,8 @@ export default {
   			second: '#1D2A73',
   			third: '#CCD0D8',
   			fourth: '#84A4FC',
-  			background: 'hsl(var(--background))',
-  			foreground: 'hsl(var(--foreground))',
+  			background: 'var(--background)',
+  			foreground: 'var(--foreground)'
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
@@ -128,6 +128,7 @@ export default {
   },
 
   plugins: [
+        require('tailwindcss-animated'),
     require("tailwindcss-animate"),
     plugin(function ({ addVariant }) {
       addVariant('accordion-open', '&[data-state="open"]');
