@@ -58,8 +58,11 @@ function ServiceBox({ title, imageSrc, links }) {
                 visible: { x: 0, opacity: 1 }
               }}
               transition={{ duration: 1, delay: index * 0.3 }}  //links flying in from alternate direction
+              className="flex justify-center w-full"  // Ensure the links are centered
             >
-              <Link className='text-xl font-medium text-second/70 hover:text-second hover:scale-105 duration-300' href={link.href}>{link.text}</Link>
+              <Link className='text-xl font-medium text-second/70 hover:text-second hover:scale-105 duration-300 text-center' href={link.href}>
+                {link.text}
+              </Link>
             </motion.div>
             {index < links.length - 1 && <Separator.Root orientation="horizontal" className="w-3/4 h-[1px] bg-third" />}
           </React.Fragment>
@@ -134,7 +137,7 @@ function Services() {
           imageSrc="/weightloss.jpg"
           links={[
             { href: "#", text: "Bariatric surgery" },
-            { href: "#", text: "Non-surgical weight loss program" },
+            { href: "#", text: <>Non-surgical weight loss <br /> program</> },
             { href: "#", text: "Surgery for diabetes" },
             { href: "#", text: "Intragastric Balloon" },
           ]}
@@ -168,6 +171,7 @@ function Services() {
 }
 
 export default Services;
+
 
 
 
