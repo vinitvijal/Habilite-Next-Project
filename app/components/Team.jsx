@@ -1,75 +1,74 @@
 "use client";
 import React, { useState } from "react";
 import ContactInfoButton from "./reveal";
-import Slidelines from "./reveal"; // Import the ContactInfoButton component
+import Slidelines from "./reveal"; 
 
-const teamMembers = [
-  {
-    name: "Monika Desai",
-    experience: "10+ years Experience",
-    description:
-      "DNB Founder & Head, Habilite Clinic Consultant Psychiatrist and Deaddiction Specialist",
-    location: "Delhi, India",
-    contactDetails: "Email: monika@example.com",
-    imgSrc: "/doc1.jpg",
-  },
-  {
-    name: "Rahul Sharma",
-    experience: "8+ years Experience",
-    description:
-      "Consultant Psychiatrist, Specializing in Cognitive Behavioral Therapy",
-    location: "Delhi, India",
-    contactDetails: "Email: rahul@example.com",
-    imgSrc: "/doc2.jpg",
-  },
-  {
-    name: "Monika Desai",
-    experience: "10+ years Experience",
-    description:
-      "DNB Founder & Head, Habilite Clinic Consultant Psychiatrist and Deaddiction Specialist",
-    location: "Delhi, India",
-    contactDetails: "Email: monika@example.com",
-    imgSrc: "/doc3.jpg",
-  },
-  {
-    name: "Monika Desai",
-    experience: "10+ years Experience",
-    description:
-      "DNB Founder & Head, Habilite Clinic Consultant Psychiatrist and Deaddiction Specialist",
-    location: "Delhi, India",
-    contactDetails: "Email: monika@example.com",
-    imgSrc: "/doc4.jpg",
-  },
-  // Add more team members as needed
-];
-
-const Team = () => {
-  const [expanded, setExpanded] = useState(null);
-
+function Team() {
+  const teamMembers = [
+    {
+      name: "Monika Desai",
+      experience: "10+ years Experience",
+      description:
+        "DNB Founder & Head, Habilite Clinic Consultant Psychiatrist and Deaddiction Specialist",
+      location: "Delhi, India",
+      contactDetails: "Email: monika@example.com",
+      img: "/doc1.jpg",
+    },
+    {
+      name: "Rahul Sharma",
+      experience: "8+ years Experience",
+      description:
+        "Consultant Psychiatrist, Specializing in Cognitive Behavioral Therapy",
+      location: "Delhi, India",
+      contactDetails: "Email: rahul@example.com",
+      img: "/doc2.jpg",
+    },
+    {
+      name: "Rahul Sharma",
+      experience: "8+ years Experience",
+      description:
+        "Consultant Psychiatrist, Specializing in Cognitive Behavioral Therapy",
+      location: "Delhi, India",
+      contactDetails: "Email: rahul@example.com",
+      img: "/doc2.jpg",
+    },
+    {
+      name: "Rahul Sharma",
+      experience: "8+ years Experience",
+      description:
+        "Consultant Psychiatrist, Specializing in Cognitive Behavioral Therapy",
+      location: "Delhi, India",
+      contactDetails: "Email: rahul@example.com",
+      img: "/doc2.jpg",
+    },
+    // Additional unique entries...
+  ];
+  
   return (
     <div className="w-screen p-16">
-      <div className="relative pt-20">
-        <div className="relative flex flex-col items-center mt-5 md:mt-10">
-       <Slidelines/>
-        </div>
-        <br />
-        <p className="text-gray-500 flex items-center justify-center text-center mx-auto text-md">
-          <b>
-            We are a team of qualified psychiatrists and psychologists from
-            premier institutions of the country. <br />
-            We are highly motivated to provide cutting-edge evidence-based
-            management for mental health issues tailored to individual needs.
-          </b>
-        </p>
+    <div className="relative pt-20">
+      <div className="relative flex flex-col items-center mt-5 md:mt-10">
+      <h1 className="md:text-2xl lg:text-4xl font-semibold text-first">
+            MEET THE TEAM
+          </h1>
       </div>
+      <br />
+      <p className="text-gray-500 flex items-center justify-center text-center mx-auto text-md">
+        <b>
+          We are a team of qualified psychiatrists and psychologists from
+          premier institutions of the country. <br />
+          We are highly motivated to provide cutting-edge evidence-based
+          management for mental health issues tailored to individual needs.
+        </b>
+      </p>
+    </div>
 
       <div className="container flex items-center justify-center mx-auto border-gray-200 border-t-2 mt-10 mb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-16 max-w-7xl mx-auto p-10 m-10">
           {teamMembers.map((member, index) => (
             <div key={index} className="flex items-center gap-6 p-6">
               <img
-                src={member.imgSrc}
-                loading="lazy" // Lazy load images for performance
+                src={member.img}
                 className="w-36 h-36 rounded-full border-4 border-blue-700 transform hover:scale-105 transition-transform duration-500"
                 alt={member.name}
               />
@@ -94,12 +93,12 @@ const Team = () => {
                     {member.location}
                   </div>
                 </div>
-                <ContactInfoButton
+                {/* <ContactInfoButton
                   i={index}
                   expanded={expanded}
                   setExpanded={setExpanded}
                   contactDetails={member.contactDetails}
-                />
+                /> */}
               </div>
             </div>
           ))}

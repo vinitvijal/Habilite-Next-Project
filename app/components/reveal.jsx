@@ -1,47 +1,47 @@
 "use client";
 import React from "react";
-import { motion, AnimatePresence, useScroll } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 
-const ContactInfoButton = ({ i, expanded, setExpanded, contactDetails }) => {
-  const isOpen = i === expanded;
+// const ContactInfoButton = ({ i, expanded, setExpanded, contactDetails }) => {
+//   const isOpen = i === expanded;
 
-  return (
-    <div>
-      <motion.button
-        onClick={() => setExpanded(isOpen ? null : i)} // Toggle expanded state
-        aria-expanded={isOpen}
-        aria-controls={`contact-info-${i}`} // Unique id for each accordion content
-        initial={false}
-        animate={{ backgroundColor: isOpen ? "#FF0088" : "#0055FF" }}
-        className="text-sm font-semibold text-white py-2 px-4 rounded-md mt-2 hover:scale-105 transition-transform"
-      >
-        {isOpen ? "Hide Contact Info" : "Show Contact Info"}
-      </motion.button>
+//   return (
+//     <div>
+//       <motion.button
+//         onClick={() => setExpanded(isOpen ? null : i)} // Toggle expanded state
+//         aria-expanded={isOpen}
+//         aria-controls={`contact-info-${i}`} // Unique id for each accordion content
+//         initial={false}
+//         animate={{ backgroundColor: isOpen ? "#FF0088" : "#0055FF" }}
+//         className="text-sm font-semibold text-white py-2 px-4 rounded-md mt-2 hover:scale-105 transition-transform"
+//       >
+//         {isOpen ? "Hide Contact Info" : "Show Contact Info"}
+//       </motion.button>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            id={`contact-info-${i}`} // Unique ID for each section
-            key={`content-${i}`}
-            initial="collapsed"
-            animate="open"
-            exit="collapsed"
-            variants={{
-              open: { opacity: 1, height: "auto" },
-              collapsed: { opacity: 0, height: 0 },
-            }}
-            transition={{ duration: 0.3 }}
-            className="text-gray-600 mt-4 p-2 border rounded-md bg-gray-100"
-          >
-            {contactDetails}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
+//       <AnimatePresence>
+//         {isOpen && (
+//           <motion.div
+//             id={`contact-info-${i}`} // Unique ID for each section
+//             key={`content-${i}`}
+//             initial="collapsed"
+//             animate="open"
+//             exit="collapsed"
+//             variants={{
+//               open: { opacity: 1, height: "auto" },
+//               collapsed: { opacity: 0, height: 0 },
+//             }}
+//             transition={{ duration: 0.3 }}
+//             className="text-gray-600 mt-4 p-2 border rounded-md bg-gray-100"
+//           >
+//             {contactDetails}
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+//     </div>
+//   );
+// };
 
-export default ContactInfoButton;
+// export default ContactInfoButton;
 
 export function Slidelines() {
     const { scrollYProgress } = useScroll();
