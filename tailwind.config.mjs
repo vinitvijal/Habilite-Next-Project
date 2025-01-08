@@ -115,6 +115,7 @@ const config = {
                   opacity: 0
               },
           },
+		  
   		},
   		animation: {
   			marquee: 'marquee var(--duration) infinite linear',
