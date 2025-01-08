@@ -37,29 +37,33 @@ const ReviewCard = ({
   review,
 }) => {
   return (
-    <figure
+    <div
       className={cn(
-        "relative w-[200px] sm:w-80 cursor-pointer overflow-hidden p-3 sm:p-4 border-first border-2 rounded-lg",
+        "relative w-[200px] sm:w-80 cursor-pointer overflow-hidden p-3 sm:p-4 border-first border-2 rounded-lg text-black dark:text-white/80 hover:bg-first transition-all duration-300"
       )}
-    > 
-      <blockquote className="text-xs sm:text-sm pb-1">{review}</blockquote>
-      <div className="mt-3 flex flex-row items-center">
-        <div className="flex flex-col">
-          <figcaption className="text-lg sm:text-xl font-semibold dark:text-white">
-            {name}
-          </figcaption>
-          <span className="text-sm sm:text-base font-medium dark:text-white/40">{occupation}</span>
+    >
+      <div className="hover:text-white transition-all duration-300">
+        <blockquote className="text-xs sm:text-sm pb-1">{review}</blockquote>
+        <div className="mt-3 flex flex-row items-center">
+          <div className="flex flex-col">
+            <figcaption className="text-lg sm:text-xl font-semibold dark:text-white">
+              {name}
+            </figcaption>
+            <span className="text-sm sm:text-base font-medium dark:text-white/40">{occupation}</span>
+          </div>
         </div>
       </div>
-    </figure>
+
+    </div>
+
   );
 };
 
 function Testimonials() {
   return (
     <>
-      <div className="relative flex flex-col items-center justify-center h-[450px] sm:h-[500px] overflow-hidden bg-background">
-        <h1 className="text-2xl sm:text-3xl font-bold text-first flex justify-center items-center mb-6">Our Testimonials</h1>
+      <div className="relative flex flex-col items-center justify-center h-[400px] sm:h-[395px] overflow-hidden bg-background">
+        <h1 className="text-3xl sm:text-4xl font-semibold text-first flex justify-center items-center mb-6">OUR TESTIMONIALS</h1>
         <Marquee pauseOnHover className="w-full [--duration:20s] mb-4">
           {firstRow.map((review) => (
             <ReviewCard key={review.name} {...review} />
