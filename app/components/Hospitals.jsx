@@ -1,6 +1,7 @@
+'use client'
 import React from "react";
-import Image from "next/image";
 import { HosHeading } from "./AnimationClient";
+import { motion } from "motion/react";
 
 function Hospitals() {
   const hospitals = [
@@ -42,15 +43,18 @@ function Hospitals() {
     }
   ]
   return (
-    <section
-      id="affiliations"
-      className="w-screen justify-center items-center flex-col px-40"
-    >
+      <section
+        id="affiliations"
+        className="w-screen justify-center items-center flex-col px-40"
+      >
       <div className="flex flex-col items-center justify-center py-10">
         <HosHeading/>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {hospitals.map((hospital) => (
-          <div key={hospital.id} className="rounded-xl group relative items-center justify-center overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-right">
+        {hospitals.map((hospital, index) => (
+          <motion.div initial={{ opacity: 0, x: -100 }} 
+          whileInView={{ opacity: 1, x: 0 }} 
+          viewport={{ once: true, amount: 0.3 }} 
+          transition={{ delay: index * 0.2, duration: 0.6 }} key={hospital.id} className="rounded-xl group relative items-center justify-center overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow">
             <div className="h-96 w-96 ">
               <img
                 src={hospital.image}
@@ -68,7 +72,7 @@ function Hospitals() {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
         </div>
         </div>
