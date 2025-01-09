@@ -5,11 +5,10 @@ import { FaPinterestSquare, FaLinkedin } from "react-icons/fa";
 
 function Footer() {
   return (
-      <section id='footer' className='bg-blue-700 flex h-full flex-col '> 
-        {/* <div className='flex justify-center items-center bg-white rounded-b-full h-[5vh] w-full'></div> */}
-        <img src='/foot-design.png' className='w-full'/>
-        <div className='flex justify-center items-start px-28 py-12 gap-12'>
-        <div className='flex-col justify-center items-center w-1/4'>
+      <section id='footer' className='bg-blue-700 flex h-full flex-col w-full' > 
+        <div className='flex justify-center items-center bg-white h-[12vh] w-full' style={{clipPath: "ellipse(100vh 90% at top)"}} ></div>
+        <div className='flex justify-center items-start px-10 md:px-28 py-12 gap-12'>
+        <div className='flex-col justify-center items-center lg:w-1/4'>
             <h1 className='font-bold text-3xl text-white'>Habilite Clinic.</h1>
             <h1 className='font-semibold text-md text-white/50'>Weight Loss | Laprosy | Laser</h1>
             <div className='flex items-center gap-4 py-5'>
@@ -43,7 +42,7 @@ function Footer() {
             </div>
         </div>
         <div className='flex items-start justify-center gap-10 py-10'>
-        <div className='flex-col items-center text-left'>
+        <div className='flex-col items-center text-left hidden lg:block'>
           <h1 className='text-xl text-white/90 text-semibold pb-8'>Laparoscopic Surgery</h1>
           <a><p className='text-md text-white/70 text-light py-2 cursor-pointer hover:text-white'>Gall Stones Treatment</p></a>
           <a><p className='text-md text-white/70 text-light py-2 cursor-pointer hover:text-white'>Laparoscopic Hernia Treatment</p></a>
@@ -51,14 +50,14 @@ function Footer() {
           <a><p className='text-md text-white/70 text-light py-2 cursor-pointer hover:text-white'>Appendix</p></a>
           <a><p className='text-md text-white/70 text-light py-2 cursor-pointer hover:text-white'>Gerd</p></a>
         </div>
-        <div className='flex-col items-center text-left'>
+        <div className='flex-col items-center text-left hidden lg:block'>
         <h1 className='text-xl text-white/90 text-semibold pb-8'>Bariatric Surgery</h1>
         <a><p className='text-md text-white/70 text-light py-2 cursor-pointer hover:text-white'>Best Bariatric surgeon in Delhi</p></a>
           <a><p className='text-md text-white/70 text-light py-2 cursor-pointer hover:text-white'>Non-surgical weight loss program</p></a>
           <a><p className='text-md text-white/70 text-light py-2 cursor-pointer hover:text-white'>Surgery for diabetes</p></a>
           <a><p className='text-md text-white/70 text-light py-2 cursor-pointer hover:text-white'>Intragastric Balloon For Weight Loss</p></a>
         </div>
-        <div className='flex-col items-center text-left'>
+        <div className='flex-col items-center text-left hidden lg:block'>
         <h1 className='text-xl text-white/90 text-semibold pb-8'>Laser Surgeryy</h1>
         <a><p className='text-md text-white/70 text-light py-2 hover:text-white'>Hemorrhoids / Piles Treatment</p></a>
           <a><p className='text-md text-white/70 text-light py-2 cursor-pointer hover:text-white'>Anal fistula Treatment</p></a>
@@ -70,7 +69,7 @@ function Footer() {
         </div>
         </div>
         <div className='bg-blue-800 justify-center items-center flex'>
-        <h1 className='text-sm text-end py-3 text-semibold text-white'>Copyright©2024 HABILITE Clinics. All Rights Reserved ! Privacy Policy</h1>
+        <h1 className='md:text-sm px-4 md:px-0 text-xs py-3 text-semibold text-white'>Copyright©2024 HABILITE Clinics. All Rights Reserved ! Privacy Policy</h1>
         </div>
       </section>
   )
