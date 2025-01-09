@@ -58,7 +58,7 @@ function Footer() {
           <a><p className='text-md text-white/70 text-light py-2 cursor-pointer hover:text-white'>Intragastric Balloon For Weight Loss</p></a>
         </div>
         <div className='flex-col items-center text-left hidden lg:block'>
-        <h1 className='text-xl text-white/90 text-semibold pb-8'>Laser Surgeryy</h1>
+        <h1 className='text-xl text-white/90 text-semibold pb-8'>Laser Surgery</h1>
         <a><p className='text-md text-white/70 text-light py-2 hover:text-white'>Hemorrhoids / Piles Treatment</p></a>
           <a><p className='text-md text-white/70 text-light py-2 cursor-pointer hover:text-white'>Anal fistula Treatment</p></a>
           <a><p className='text-md text-white/70 text-light py-2 cursor-pointer hover:text-white'>Pilonidal Sinus</p></a>
