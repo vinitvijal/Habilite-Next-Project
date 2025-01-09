@@ -55,7 +55,7 @@ function Hospitals() {
           whileInView={{ opacity: 1, x: 0 }} 
           viewport={{ once: true, amount: 0.3 }} 
           transition={{ delay: index * 0.2, duration: 0.6 }} key={hospital.id} className="rounded-xl group relative items-center justify-center overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow">
-            <div className="h-96 w-96 ">
+            <div className="h-96 w-full ">
               <img
                 src={hospital.image}
                 alt= {hospital.name}
