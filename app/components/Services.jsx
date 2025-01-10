@@ -88,7 +88,7 @@ function Services() {
   }, [titleControls, subtitleControls]);
 
   return (
-    <section className="min-h-screen w-screen bg-white py-10 flex flex-col items-center">
+    <section className="min-h-screen w-full bg-white py-10 flex flex-col items-center">
       <motion.div
         ref={titleRef}
         initial="hidden"

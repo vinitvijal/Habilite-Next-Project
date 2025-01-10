@@ -2,12 +2,11 @@
 
 import React from "react";
 import { motion } from "motion/react"
-import WordRotate from "@/components/ui/word-rotate";
 import { TextAnimate } from "@/components/ui/text-animate";
 
 function Choose() {
   return (
-    <section id="Choose" className="py-20 w-screen">
+    <section id="Choose" className="py-20 w-full">
       <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
         {/* <h2 className="text-first text-center font-bold uppercase tracking-wide text-3xl m-8 p-8">
           Why Choose Us?

@@ -3,7 +3,7 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <div className=" md:h-[75vh] h-screen  bg-black relative md:mb-80 mb-[80vh] md:px-0 px-10">
+    <div className=" md:h-[75vh] h-screen  bg-black relative md:mb-80 mb-[80vh] md:px-0 px-10 pb-12 sm:pb-0">
       
 <ul className="slideshow">
 	<li><span></span></li>
@@ -100,7 +100,7 @@ const Hero = () => {
 
 const Calculator = () => {
   return (
-    <div className='md:mt-10 mt-12 md:px-40 px-2 flex justify-center pb-20'>
+    <div className=' pt-8 md:mt-13 mt-12 md:px-40 px-2 flex justify-center pb-20 '>
       <div className='grid md:grid-cols-3 grid-cols-1 md:gap-20 gap-10'>
         {/* BMI Calculator */}
         <div>

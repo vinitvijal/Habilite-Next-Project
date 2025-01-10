@@ -45,7 +45,7 @@ function Hospitals() {
   return (
       <section
         id="affiliations"
-        className="w-screen justify-center items-center flex-col md:px-40 px-10"
+        className="w-full justify-center items-center flex-col mt-5 md:px-40 px-10"
       >
       <div className="flex flex-col items-center justify-center py-10">
         <HosHeading/>

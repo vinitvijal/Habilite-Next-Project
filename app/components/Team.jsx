@@ -91,7 +91,7 @@ function Team() {
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
-              className="flex items-center gap-6 p-6"
+              className="md:flex items-center md:gap-6 p-6"
               custom={index}
               variants={cardVariants}
               initial="hidden"

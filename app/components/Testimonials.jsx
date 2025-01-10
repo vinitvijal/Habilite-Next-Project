@@ -39,13 +39,13 @@ const ReviewCard = ({
       )}
     >
       <div>
-        <blockquote className="text-xs sm:text-sm pb-1">{review}</blockquote>
+        <blockquote className="text-xs sm:text-sm ">{review}</blockquote>
         <div className="mt-3 flex flex-row items-center">
           <div className="flex flex-col">
             <figcaption className="text-lg sm:text-xl font-semibold dark:text-white">
               {name}
             </figcaption>
-            <span className="text-sm sm:text-base font-medium dark:text-white/40">{occupation}</span>
+            <span className="text-sm sm:text-base font-medium text-zinc-600/60">{occupation}</span>
           </div>
         </div>
       </div>
@@ -57,7 +57,7 @@ function Testimonials() {
   return (
     <>
       <div
-        className="relative flex flex-col items-center justify-center h-[400px] sm:h-[395px] overflow-hidden bg-background"
+        className="relative flex flex-col items-center justify-center overflow-hidden bg-background"
       >
       <h1 className="text-3xl sm:text-4xl font-semibold text-first flex justify-center items-center mb-6">
         OUR TESTIMONIALS
