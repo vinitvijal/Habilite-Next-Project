@@ -124,3 +124,9 @@
   height: 100%; 
   clip-path: ellipse(100% 100% at 30% 0%); 
 }
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}

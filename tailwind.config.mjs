@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require('tailwindcss/plugin');
 
+
 const config = {
     darkMode: ["class"],
     content: [
@@ -137,7 +138,8 @@ const config = {
     plugin(function ({ addVariant }) {
       addVariant('data-open', '&[data-state="open"]');
     }),
-  ],
+      require("tailwindcss-animate")
+],
 };
 
 export default config;
