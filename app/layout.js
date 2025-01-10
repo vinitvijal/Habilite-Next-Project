@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${hankenGrotesk.variable} antialiased`}
+        classnamename={`${hankenGrotesk.variable} antialiased`}
       >
         {children}
       </body>
