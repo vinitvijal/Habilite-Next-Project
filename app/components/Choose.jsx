@@ -21,17 +21,18 @@ function Choose() {
       {/* {#card-1} */}
 
       <div className=" flex items-center justify-center mx-auto m-10 mt-10 ">
-        <div className="grid grid-cols-4 md:grid-cols-4 gap-4 ">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 ">
         <motion.div
         initial={{ 
           scale: 0.8,
           opacity: 0,
         }}
         whileInView={{
-          transition: { duration: 0.5, opacity: { ease: "linear" } },
+          transition: { duration: 0.5, opacity: 1, ease: "easeIn" },
           scale: 1,
           opacity: 1,
         }}
+        viewport={{ once: true }}
         className="shadow-sm p-6 text-center group w-64 h-96 bg-white border:gray-700 border-4 hover:border-white relative m-4 hover:ring hover:ring-first   transform duration-500 hover:scale-105 hover:shadow-xl">
             <div className="bg-first flex justify-center items-center w-20 h-20 rounded-full absolute mx-auto right-0 left-0 -inset-y-14 border-4 group-hover:bg-white group-hover:shadow-md transform duration-300">
               <span className="text-3xl md:text-5xl text-white  group-hover:text-first form duration-300 p-4">
@@ -72,6 +73,7 @@ function Choose() {
               transition: { duration: 0.5 },
             }
           }}
+          viewport={{ once: true }}
           className=" shadow-sm p-6 text-center group w-64 h-96 bg-white border:gray-700 border-4 hover:border-white relative m-4 hover:ring hover:ring-first   transform duration-500 hover:scale-105 hover:shadow-xl">
             <div className="bg-first  flex justify-center items-center w-20 h-20 rounded-full absolute mx-auto right-0 left-0 -inset-y-14 border-4 group-hover:bg-white group-hover:shadow-md transform duration-300">
               <span className="text-3xl md:text-5xl text-white  group-hover:text-first  transform duration-300 p-4">
@@ -110,6 +112,7 @@ function Choose() {
             scale: 1,
             opacity: 1,
           }}
+          viewport={{ once: true }}
           
           className=" shadow-sm p-6 text-center group w-64 h-96 bg-white border:gray-700 border-4 hover:border-white  relative m-4 hover:ring hover:ring-first   transform duration-500 hover:scale-105 hover:shadow-xl">
             <div className="bg-first  flex justify-center items-center w-20 h-20 rounded-full absolute mx-auto right-0 left-0 -inset-y-14 border-4 group-hover:bg-white group-hover:shadow-md transform duration-300">
@@ -147,6 +150,7 @@ function Choose() {
             scale: 1,
             opacity: 1,
           }}
+          viewport={{ once: true }}
           className=" shadow-sm p-6 text-center group w-64 h-96 bg-white border:gray-700 border-4 hover:border-white  relative m-4 hover:ring hover:ring-first   transform duration-500 hover:scale-105 hover:shadow-xl">
             <div className="bg-first  flex justify-center items-center w-20 h-20 rounded-full absolute mx-auto right-0 left-0 -inset-y-14 border-4 group-hover:bg-white group-hover:shadow-md transform duration-300">
             <span className="text-3xl md:text-5xl text-white  group-hover:text-first form duration-300 p-4">
