@@ -57,13 +57,13 @@ function Testimonials() {
   return (
     <>
       <div
-        className="relative flex flex-col items-center justify-center overflow-hidden bg-background"
+        className="relative flex flex-col items-center justify-center overflow-hidden bg-background mx-6 sm:mx-14"
       >
-      <h1 className="text-3xl sm:text-4xl font-semibold text-first flex justify-center items-center mb-6">
+      <h1 className="text-3xl sm:text-4xl font-semibold text-first flex justify-center items-center mb-12">
         OUR TESTIMONIALS
       </h1>
       <div>
-        <Marquee pauseOnHover className="w-full [--duration:20s] mb-4">
+        <Marquee pauseOnHover className="w-full [--duration:20s]">
           {firstRow.map((review) => (
             <ReviewCard key={review.name} {...review} />
           ))}
