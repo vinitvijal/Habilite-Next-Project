@@ -1,0 +1,52 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin{
+  userId String @id
+  userName String @unique
+  password String 
+  token String
+  lastLogin DateTime @default(now())
+}
+
+model Blogs{
+  blogID String @id @default(cuid())
+  blogTitle String 
+  blogDescription String
+  blogDate DateTime? @default(now())
+  blogAuthor String
+  blogContent String
+  blogTags String[]
+}
+
+model Testimonials{
+  TesID String @id @default(cuid())
+  TesAuthor String
+  TesOccupation String?
+  TesContent String
+  TesUpdate DateTime? @default(now())
+}
+
+model bookAppointment{
+  appointId String @id @default(cuid())
+  appointFName String
+  appointLName String?
+  appointPhone String
+  appointEmail String
+  appointQuery String 
+  appointDate DateTime @default(now())
+  appointRemark String?
+  appointStatus String?
+}
