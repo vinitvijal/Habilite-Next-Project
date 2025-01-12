@@ -5,9 +5,9 @@ import { FaPinterestSquare, FaLinkedin } from "react-icons/fa";
 
 function Footer() {
   return (
-      <section id='footer' className='bg-blue-700 flex h-full flex-col w-full' > 
+      <section id='footer' className='bg-second flex h-full flex-col w-full' > 
         <div className='flex justify-center items-center bg-white h-[12vh] w-full' style={{clipPath: "ellipse(100vh 90% at top)"}} ></div>
-        <div className='flex justify-center items-start px-10 md:px-28 py-12 gap-12'>
+        <div className='flex justify-center items-start px-10 md:px-12 py-12 gap-8'>
         <div className='flex-col justify-center items-center lg:w-1/4'>
             <h1 className='font-bold text-3xl text-white'>Habilite Clinic.</h1>
             <h1 className='font-semibold text-md text-white/50'>Weight Loss | Laprosy | Laser</h1>
@@ -65,6 +65,12 @@ function Footer() {
           <a><p className='text-md text-white/70 text-light py-2 cursor-pointer hover:text-white'>Anal fissure Treatment</p></a>
           <a><p className='text-md text-white/70 text-light py-2 cursor-pointer hover:text-white'>Lipoma</p></a>
           <a><p className='text-md text-white/70 text-light py-2 cursor-pointer hover:text-white'>Circumcision</p></a>
+        </div>
+        <div className='flex-col items-center text-left hidden lg:block'>
+        <h1 className='text-xl text-white/90 text-semibold pb-8'>Calculate</h1>
+        <a><p className='text-md text-white/70 text-light py-2 hover:text-white'>BMI Calculator</p></a>
+          <a><p className='text-md text-white/70 text-light py-2 cursor-pointer hover:text-white'>Calorie Calculator</p></a>
+          <a><p className='text-md text-white/70 text-light py-2 cursor-pointer hover:text-white'>Exercise Calculator</p></a>
         </div>
         </div>
         </div>
