@@ -1,4 +1,5 @@
 'use client'
+import { Avatar,AvatarImage,AvatarFallback } from '@/components/ui/avatar';
 // Hero.jsx
 import React from 'react';
 import { Fade } from 'react-slideshow-image';
@@ -54,55 +55,67 @@ const Hero = () => {
 const Calculator = () => {
   return (
     <div className=' pt-8 md:mt-13 mt-12 md:px-40 px-10 flex justify-center pb-20 '>
-      <div className='grid md:grid-cols-3 grid-cols-1 md:gap-20 gap-10'>
+      <div className='grid md:grid-cols-3 grid-cols-1 md:gap-28 gap-10'>
         {/* BMI Calculator */}
         <div>
           <div className='max-w-xl space-y-2'>
-            <div className='-translate-x-2'>
-              <img src='/images/c1.png' className='w-12' alt="BMI Calculator Icon" />
+            <div className='flex justify-between items-end'>
+            <div><Avatar>
+              <AvatarImage src="/doc1.jpg" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar></div>
+            <div className='text-2xl font-semibold text-first/70'>150+</div>
             </div>
-            <div className='text-xl'>BMI Calculator</div>
-            <div className='text-black/50 text-md'>A standard tool to gauge obesity levels based on ratio of height and weight.</div>
-            <div className='text-black/40 flex gap-1 items-center text-md'>
-              Calculate 
+            <div className='text-xl'>Dr. Monika Desai</div>
+            <div className='text-black/50 text-md'>Dr. Monika Desai has successfully performed 150 surgeries, specializing in orthopedic procedures.</div>
+            <a href='/' className='text-black/40 flex gap-1 items-center text-md'>
+              Read more 
               <button>
                 <CalculateIcon className='ml-2 text-black/30' />
               </button>
-            </div>
+            </a>
           </div>
         </div>
 
         {/* Calorie Calculator */}
         <div>
           <div className='max-w-xl space-y-2'>
-            <div className='-translate-x-2'>
-              <img src='/images/c3.png' className='w-12' alt="Calorie Calculator Icon" />
+          <div className='flex justify-between items-end'>
+            <div><Avatar>
+              <AvatarImage src="/doc2.jpg" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar></div>
+            <div className='text-2xl font-semibold text-first/70'>200+</div>
             </div>
-            <div className='text-xl'>Calorie Calculator</div>
-            <div className='text-black/50 text-md'>A tool to assess your daily calorie requirements for ideal body weight.</div>
-            <div className='text-black/40 flex gap-1 items-center text-md'>
-              Calculate 
+            <div className='text-xl'>Dr. Ashu Mundotia</div>
+            <div className='text-black/50 text-md'>With a total of 200 surgeries, Dr. Ashu Mundotia is renowned for her expertise in cardiovascular surgeries.</div>
+            <a href='/' className='text-black/40 flex gap-1 items-center text-md'>
+              Read more 
               <button>
                 <CalculateIcon className='ml-2 text-black/30' />
               </button>
-            </div>
+            </a>
           </div>
         </div>
 
         {/* Exercise Calculator */}
         <div>
           <div className='max-w-xl space-y-2'>
-            <div className='-translate-x-2'>
-              <img src='/images/c2.png' className='w-12' alt="Exercise Calculator Icon" />
+          <div className='flex justify-between items-end'>
+            <div><Avatar>
+              <AvatarImage src="/doc3.jpg" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar></div>
+            <div className='text-2xl font-semibold text-first/70'>120+</div>
             </div>
-            <div className='text-xl'>Exercise Calculator</div>
-            <div className='text-black/50 text-md'>A tool to determine calorie consumption during a particular task.</div>
-            <div className='text-black/40 flex gap-1 items-center text-md'>
-              Calculate 
+            <div className='text-xl'>Dr. Sudhir Kataria</div>
+            <div className='text-black/50 text-md'>Dr. Sudhir Kataria has completed 120 surgeries, focusing primarily on general surgery and laparoscopic techniques.</div>
+            <a href='/' className='text-black/40 flex gap-1 items-center text-md'>
+              Read more 
               <button>
                 <CalculateIcon className='ml-2 text-black/30' />
               </button>
-            </div>
+            </a>
           </div>
         </div>
       </div>
