@@ -57,8 +57,10 @@ function Testimonials() {
   return (
     <>
       <div
-        className="relative flex flex-col items-center justify-center overflow-hidden bg-background mx-6 sm:mx-14"
+        className="relative flex flex-col items-center justify-center overflow-hidden bg-background md:mx-6 "
       >
+        <div className="  h-auto md:w-3/4 w-full">
+
       <h1 className="text-3xl sm:text-4xl font-semibold text-first flex justify-center items-center mb-12">
         OUR TESTIMONIALS
       </h1>
@@ -69,6 +71,7 @@ function Testimonials() {
           ))}
         </Marquee>
       </div>
+          </div>
     </div >
     </>
   );
