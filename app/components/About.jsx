@@ -19,7 +19,7 @@ function About() {
         </div>
 
         <div className="mt-8 lg:mt-10 flex justify-center lg:justify-start lg:w-full lg:h-1/2">
-          <Image src="/doctor.webp" className='opacity-0 animate-appear_r [animation-timeline:view();] [animation-range:200px_550px;]' width={500} height={500} alt="Doctor's Image" />
+          <img src="/doctor.webp" className='opacity-0 animate-appear_r [animation-timeline:view();] [animation-range:200px_550px;]' width={500} height={500} alt="Doctor's Image" />
         </div>
       </div>
 
