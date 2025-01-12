@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npx prisma generate && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "npx prisma generate"
   },
   "dependencies": {
+    "@prisma/client": "^6.2.1",
     "@radix-ui/react-accordion": "^1.2.2",
     "@radix-ui/react-dropdown-menu": "^2.1.4",
     "@radix-ui/react-separator": "^1.1.1",
@@ -32,6 +34,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.1.0",
     "postcss": "^8",
+    "prisma": "^6.2.1",
     "tailwindcss": "^3.4.1"
   }
 }
