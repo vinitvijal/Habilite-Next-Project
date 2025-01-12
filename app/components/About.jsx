@@ -1,13 +1,14 @@
 import React from 'react'
+import * as Separator from "@radix-ui/react-separator";
 
 function About() {
   return (
-    <section className='h-fit px-5 lg:px-32 py-10 w-full'>
+    <section className='h-fit px-5 lg:px-32 py-5 w-full'>
       <p className='text-first text-3xl lg:text-5xl mb-4 text-left'>About Us</p>
       <Separator.Root orientation="horizontal" className="mx-0 w-1/4 lg:w-1/12 h-[1px] bg-third" />
 
       <div className="upper-content flex flex-col lg:flex-row mt-8 lg:mt-3">
-        <div className="content mt-8 lg:mr-5 opacity-0 animate-appears [animation-timeline:view();] [animation-range:200px_550px;]">
+        <div className="content mt-8 lg:mr-5">
 
           	<p className='text-xl lg:text-3xl text-second'>Best Laparoscopic, Laser and Weight Loss Surgery in Delhi</p>
 
@@ -19,7 +20,7 @@ function About() {
         </div>
 
         <div className="mt-8 lg:mt-10 flex justify-center lg:justify-start lg:w-full lg:h-1/2">
-          <img src="/doctor.webp" className='opacity-0 animate-appear_r [animation-timeline:view();] [animation-range:200px_550px;]' width={500} height={500} alt="Doctor's Image" />
+          <img src="/doctor.webp" className='' width={500} height={500} alt="Doctor's Image" />
         </div>
       </div>
 
@@ -27,7 +28,7 @@ function About() {
         <button className='mt-8 w-28 p-[6px] duration-300 border-first border-[1px] rounded-md hover:bg-first hover:text-white text-first'>Know More</button>
       </div>
 
-      <div className="lower-content opacity-0 animate-appears [animation-timeline:view();] [animation-range:200px_550px;] mt-14">
+      <div className="lower-content  mt-14">
         <p className='text-xl lg:text-3xl text-second text-left'>Best Laparoscopic, Laser and Weight Loss Hospital in Delhi</p>
 
         <div className="mt-8 lg:w-3/4">
