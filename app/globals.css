@@ -130,3 +130,9 @@
     --radius: 0.5rem;
   }
 }
+
+.curved-image-2 {
+  width: 100%; 
+  height: 100%; 
+  clip-path: ellipse(100% 95% at left)
+}
