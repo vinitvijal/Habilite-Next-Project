@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import FAQsingle from '../components/FAQsingle'
 
 function page() {
   return (
@@ -78,7 +79,20 @@ function page() {
 
       </div>
 
-      
+      <div className="">
+        <FAQsingle 
+          answer="Recovery time varies depending on the procedure, but most patients can return to normal activities within 2-4 weeks."
+          question="How long is the recovery time after surgery?"
+        />
+        <FAQsingle 
+          answer="Recovery time varies depending on the procedure, but most patients can return to normal activities within 2-4 weeks."
+          question="How long is the recovery time after surgery?"
+        />
+        <FAQsingle 
+          answer="Recovery time varies depending on the procedure, but most patients can return to normal activities within 2-4 weeks."
+          question="How long is the recovery time after surgery?"
+        />
+      </div>
 
     </div>
     <Footer />
