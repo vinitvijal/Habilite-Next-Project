@@ -22,7 +22,7 @@ export async function UpdateTes(id, author, occupation, content){
             TesAuthor: author,
             TesOccupation: occupation,
             TesContent: content,
-            TesUpdate: new Date(), 
+            TesUpdate: new Date() 
         },
     });
 }
