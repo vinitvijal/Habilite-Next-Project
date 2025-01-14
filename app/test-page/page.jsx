@@ -4,6 +4,7 @@ import { IoPersonSharp } from "react-icons/io5";
 import { MdCall } from "react-icons/md";
 import { FaPen } from "react-icons/fa";
 import { Testimonial, UpdateTes } from '@/actions/testimonials';
+import { Blog, UpdateBlog } from '@/actions/blogs';
 
 function Page({ onClose }) {
     const [showAnimation, setShowAnimation] = useState(true);
@@ -11,11 +12,13 @@ function Page({ onClose }) {
     const handleSubmit = async (e) => {
         e.preventDefault(); 
         const formData = new FormData(e.target); 
-        await UpdateTes(
-            formData.get('tesid'),
+        await UpdateBlog(
+            formData.get('blogid'),
             formData.get('author'),
-            formData.get('occupation'),
-            formData.get('content')
+            formData.get('description'),
+            formData.get('content'),
+            formData.get('author'),
+            formData.get(['kwhdw','fdwifw'])
         );
     };
 
@@ -38,19 +41,19 @@ function Page({ onClose }) {
                 }`}
             >
                 <h1 className="mb-4 font-bold text-xl sm:text-2xl text-center">
-                    Add Testimonial
+                    Add Blog
                 </h1>
                 <form className="rounded-md" onSubmit={handleSubmit}>
                     <div className="flex flex-col space-y-3">
                         <div>
-                            <label htmlFor="tesid" className="block font-medium mb-2">
+                            <label htmlFor="blogid" className="block font-medium mb-2">
                                 <IoPersonSharp className="text-xl inline-block mr-2" />
                                 Id
                             </label>
                             <input
                                 type="text"
-                                name="tesid"
-                                id="tesid"
+                                name="blogid"
+                                id="blogid"
                                 className="rounded-md p-2 border border-third w-full placeholder:text-sm"
                                 placeholder="Enter id"
                                 required
@@ -72,14 +75,14 @@ function Page({ onClose }) {
                         </div>
 
                         <div>
-                            <label htmlFor="occupation" className="block font-medium mb-2">
+                            <label htmlFor="description" className="block font-medium mb-2">
                                 <MdCall className="text-xl inline-block mr-2" />
-                                Occupation
+                                Description
                             </label>
                             <input
                                 type="text"
-                                name="occupation"
-                                id="occupation"
+                                name="description"
+                                id="description"
                                 className="rounded-md p-2 border border-third w-full placeholder:text-sm"
                                 placeholder="Enter Occupation"
                                 required
@@ -95,6 +98,20 @@ function Page({ onClose }) {
                                 name="content"
                                 id="content"
                                 placeholder="Write Content"
+                                rows={4}
+                                className="rounded-md w-full p-2 border border-third placeholder:text-sm"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="tags" className="block font-medium mb-2">
+                                <FaPen className="text-xl inline-block mr-2" />
+                                Tags
+                            </label>
+                            <textarea
+                                name="tags"
+                                id="tags"
+                                placeholder="Write Tags"
                                 rows={4}
                                 className="rounded-md w-full p-2 border border-third placeholder:text-sm"
                                 required
