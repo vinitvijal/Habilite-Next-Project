@@ -125,6 +125,14 @@
   clip-path: ellipse(100% 100% at 30% 0%); 
 }
 
+.surgeryCurve{
+  clip-path: ellipse(60% 100% at 60% 25%);
+}
+
+.surgeryCurveRev{
+  clip-path: ellipse(60% 100% at 40% 25%);
+}
+
 @layer base {
   :root {
     --radius: 0.5rem;
