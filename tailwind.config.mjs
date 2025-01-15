@@ -11,6 +11,13 @@ const config = {
   ],
   theme: {
   	extend: {
+		typography: (theme) => ({
+			DEFAULT: {
+			  css: {
+				maxWidth: '100%', // Make prose take the full width
+			  },
+			},
+		  }),
   		colors: {
   			first: '#1463F3',
   			second: '#1D2A73',
@@ -138,7 +145,8 @@ const config = {
     plugin(function ({ addVariant }) {
       addVariant('data-open', '&[data-state="open"]');
     }),
-      require("tailwindcss-animate")
+      require("tailwindcss-animate"),
+	  require('@tailwindcss/typography'),
 ],
 };
 
