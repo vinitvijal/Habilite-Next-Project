@@ -14,7 +14,7 @@ function FAQsingle({question,answer}) {
       </button>
       <div className={`transition-all ${!isOpen?'h-0':'h-fit'} duration-300 ease-in-out overflow-hidden`}>
         <div className="px-6 py-4 bg-gray-100">
-          <p className="text-base">{answer}</p>
+          <p className="text-sm">{answer}</p>
         </div>
       </div>
     </div>

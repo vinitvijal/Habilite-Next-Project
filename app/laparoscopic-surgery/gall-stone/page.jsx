@@ -53,8 +53,7 @@ function page() {
             className="w-full object-cover "
           />
 
-          {/* Text Overlay */}
-          <div className="relative -mt-16 px-10 pt-5 pb-16 bg-white m-10 shadow-md shadow-black text-center items-center rounded-lg">
+          <div className="relative -mt-16 px-10 pt-5 pb-16 bg-white m-10 shadow-sm shadow-black text-center items-center rounded-md">
             <h1 className="text-3xl font-bold mb-6 text-second">Best Gallbladder Surgeon in Delhi</h1>
             <div className='sm:flex gap-10 mx-auto px-40 text-center text-first'>
               <ul className="space-y-4">
@@ -88,9 +87,9 @@ function page() {
             </div>
           </div>
         </div>
-        {/* content */}
+
         <div className="flex flex-col mx-auto px-16 md:px-24 gap-10">
-          <div className='py-8 px-32 mt-16 mb-8 text-center border-t-2 border-b-2 border-gay-200'>
+          <div className='py-8 px-32 mt-16 mb-8 text-center border-t-2 border-b-2 border-third'>
             <h1 className="text-4xl font-bold my-6 text-second">
               Best Laparoscopic Gallbladder Stone Surgeon in Delhi
             </h1>
@@ -100,19 +99,19 @@ function page() {
           </div>
           <div className='flex-col mb-8 px-24'>
             <h2 className="text-3xl font-semibold mb-2 text-first">What is Gallbladder?</h2>
-            <p className="text-lg mb-4 ">
+            <p className=" mb-4 ">
               The gallbladder is a tiny pear-shaped organ located just below the liver, situated on the right upper side of the abdomen. The liver produces a yellow-coloured fluid known as bile, which flows into the intestine to aid in digesting food, especially fatty meals.
             </p>
             <br />
         
             <h2 className="text-3xl font-semibold mb-2 text-first">Function of the Gallbladder</h2>
-            <div className="text-lg mb-4 ">
+            <div className=" mb-4 ">
               <p className=''><span className="font-medium mt-4 mr-1">Storage of Bile:</span> The liver produces 1.5 litres of bile daily. Most of the bile flows directly into the intestine, but 50 ml is stored in the gallbladder as a reserve. </p>
               <p className='pt-2'><span className="font-medium mt-4 mr-1">Bile Release:</span> When fatty foods enter the small intestine, the gallbladder releases bile for proper digestion.</p>
             </div>
             <br />
             <h2 className="text-3xl font-semibold mb-2 text-first">Why Do Gallbladder Stones Form?</h2>
-            <div className="text-lg mb-4">
+            <div className=" mb-4">
               <p>Gallbladder stones are solid pieces of cholesterol, calcium salts, or bilirubin. The main risk factors include: </p>
               <p className='pt-2'><span className="font-medium mr-1">Metabolic Disturbances:</span> Changes in cholesterol metabolism (e.g., hyperlipidemia due to obesity or rapid weight changes). </p>
               <p className='pt-2'><span className="font-medium mr-1">Gallbladder Infection:</span> Loss of gallbladder function due to infection can lead to stone formation. </p>
@@ -120,8 +119,8 @@ function page() {
             </div>
             <br />
             <h2 className="text-3xl font-semibold mb-2 text-first">Signs of Gallbladder Stones</h2>
-            <div className="text-lg mb-4">
-              <p className='pt-4'>Most patients present with asymptomatic gallstones. Though gallstones are asymptomatic, when natural drainage of bile is frequently blocked, they cause infection in the bladder and often get slipped into major ducts.</p>
+            <div className="mb-4">
+              <p className=''>Most patients present with asymptomatic gallstones. Though gallstones are asymptomatic, when natural drainage of bile is frequently blocked, they cause infection in the bladder and often get slipped into major ducts.</p>
               <p className='pt-4'>According to Dr. Kapil Agrawal, one of the best gallbladder surgeon in delhi, gallstones generally do not produce any symptoms. However, small stones in the gallbladder can stuck in the neck of the gallbladder. That causes a blockage of the flow of bile into your small intestine. This is an episode of pain that you probably know as biliary colic.</p>
               <p className='pt-4'>Many patients have asymptomatic gallstones. However, when bile drainage is blocked, it can lead to symptoms such as: </p>
               <p className='pt-2'><span className="font-medium mr-1">Abdominal Pain:</span> Pain in the right upper abdomen, back, or all over the abdomen. </p>
@@ -135,18 +134,18 @@ function page() {
       </div>
 
 
-      <div className="flex flex-col mx-auto px-16 md:px-24 gap-6">
-        <div className='py-8 px-32 my-8 text-center border-t-2 border-b-2 border-gay-200'>
+      <div className="flex flex-col mx-auto px-16 md:px-24 gap-10">
+        <div className='py-8 px-32 my-8 text-center border-t-2 border-b-2 border-third'>
           <h1 className="text-4xl font-bold my-6 text-second">
             Best Gallbladder Stone Treatment in Delhi
           </h1>
-          <p className="text-2xl mb-4 text-first">
+          <p className="text-xl mb-4 text-first">
             The field of gallbladder stone surgery has gone under a major transformation due to the introduction of newer technologies aimed at quick and painless recovery. Dr Kapil Agrawal, the best gallbladder surgeon in Delhi, has been delivering excellent outcomes due to his expertise in all the latest treatment modalities for gallstone surgery.
           </p>
         </div>
         <div className='flex-col mb-16 px-24'>
           <h2 className="text-3xl font-semibold mb-2 text-first">Laparoscopic Gallbladder Stone Surgery:</h2>
-          <div className="text-lg mb-4 ">
+          <div className=" mb-4 ">
             <p className='pt-4'>In the modern era, laparoscopic surgery has been considered and is now recognized as a gold standard procedure for gallstone management. Dr. Kapil Agrawal one of the best laparoscopic surgeon in delhi, has transformed the management of gallstones.</p>
             <p className='pt-4'>The surgery is carried out under general anaesthesia — which means the patient is completely put to sleep before the start of surgery.</p>
             <p className='pt-4'>Three small holes of 0.5 cm each are made at different abdomen sites.</p>
@@ -157,7 +156,7 @@ function page() {
           <br />
       
           <h2 className="text-3xl font-semibold mb-2 text-first">Single Port Gallbladder Stone Surgery:</h2>
-          <div className="text-lg mb-4 ">
+          <div className=" mb-4 ">
             <p className='pt-4'>Single port surgery for gallstones is an advanced version of conventional laparoscopic surgery.</p>
             <p className='pt-4'>Instead of 3-4 tiny incisions, a single incision is created within the umbilicus or belly button to complete the procedure.</p>
             <p className='pt-4'>Though technically challenging, it is associated with the best cosmesis due to a completely invisible scar.</p>
@@ -165,7 +164,7 @@ function page() {
           </div>
           <br />
           <h2 className="text-3xl font-semibold mb-2 text-first">Robot-assisted laparoscopic cholecystectomy:</h2>
-          <div className="text-lg mb-4">
+          <div className=" mb-4">
             <p className='pt-4'>Robotics can significantly improve overall ergonomics and technical capabilities by providing enhanced dexterity, precision as well as visualization to the surgeon during laparoscopic surgery facilitating comfortable execution of more complex procedures.</p>
             <p className='pt-4'>It can be beneficial in patients with variant anatomy or complex gallbladder pathologies. The results cosmetically are nearly as good as with laparoscopy for gallbladder surgery.</p>
           </div>
@@ -173,19 +172,17 @@ function page() {
       </div>
 
 
-      {/* cards */}
       <div className='flex-col items-center justify-center mx-auto gap-20 my-8'>
         <div className='flex-col px-20 m-10'>
           <h1 className='font-bold text-4xl mx-auto text-center border-third border-t-2  pt-16 p-4 m-4 text-second'>KEY BENEFITS OF <br/> SINGLE PORT LAPAROSCOPIC CHOLECYSTECTOMY</h1>
-          <div className='px-12 text-lg'>
+          <div className='px-12'>
             <p className='pt-4'>In comparison to conventional four-port laparoscopic surgery, the major advantage of single-port surgery is a single small hole or incision, which remarkably decreases pain and accelerates recovery.</p>
             <p className='pt-4'>Those who undergo single-port gallstone surgery are happier because of excellent cosmesis, rapid recovery, and significantly less painful perception.</p>
           </div>
         </div>
         <div className="card-container flex items-center justify-center gap-6 mb-10 px-20">
           <div className="grid md:grid-cols-2 gap-20 md:gap-5">
-            {/* card1 */}
-            <div className="rounded-xl bg-white p-6 shadow-xl border-third border-2">
+            <div className="rounded-xl bg-white p-6 shadow-md border-third border-2">
               <div
                 className="mx-auto flex h-20 w-20 -translate-y-16 transform items-center justify-center rounded-full shadow-lg bg-first">
                 <svg viewBox="0 0 55 44" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white">
@@ -205,8 +202,7 @@ function page() {
                 <p className="mb-2">Virtually Scarless Surgery</p>
               </div>
             </div>
-            {/* card2 */}
-            <div className="rounded-xl bg-white p-6 text-center shadow-xl border-third border-2">
+            <div className="rounded-xl bg-white p-6 text-center shadow-md border-third border-2">
               <div
                 className="mx-auto flex h-20 w-20 -translate-y-16 transform items-center justify-center rounded-full shadow-lg bg-first">
                 <svg viewBox="0 0 55 44" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white">
@@ -234,7 +230,7 @@ function page() {
       <div className="flex flex-col mx-auto px-16 md:px-24 mt-16 gap-6">
         <div className='flex-col mb-16 px-24 '>
           <h2 className="text-4xl font-semibold mb-2 text-first">Course of Recovery Following Gallstone Surgery:</h2>
-          <div className="text-lg mb-4 ">
+          <div className="mb-4 ">
             <p className='pt-4'>At Habilite Clinics, our team ensures you recover quickly and painlessly after receiving sophisticated, minimally invasive treatment. A general guideline of what one might anticipate in recovery follows:</p>
             <p className='pt-4'><span className="font-medium mr-1">Hospital Stay:</span>You can go home within 24 hours after the surgery. Most patients are able to stay no more than 24 hours at the hospital.</p>
             <p className='pt-4'><span className="font-medium mr-1">Pain Management:</span>You will have mild pain or discomfort at your incision sites for 24-36 hours.</p>
@@ -252,9 +248,9 @@ function page() {
 
 
       <div className="flex flex-col mx-auto px-16 md:px-24 gap-6">
-        <div className='flex-col mb-16 px-24 '>
+        <div className='flex-col mx-6 mb-16 pt-4 px-24 border-third border-t-2'>
         <div className="flex justify-center items-end m-4"><BsPinFill className='text-4xl text-second' /><h1 className='font-bold text-4xl text-center border-fourth border-b-2 mt-6  text-second'>FAQ</h1></div>
-          <div className="text-lg mb-4 lg:px-8">
+          <div className="mb-4 lg:px-8">
           {faqList.map((faq, index) => (
             <FAQsingle key={index} question={faq.question} answer={faq.answer} />
           ))}
