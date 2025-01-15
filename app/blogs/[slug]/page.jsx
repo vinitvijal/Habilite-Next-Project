@@ -37,7 +37,7 @@ export default async function Page({ params }) {
 
 
   return (
-    <div className="max-w-3xl mx-auto flex flex-col mt-20 items-center">
+    <div className="lg:max-w-3xl px-5 mx-auto flex flex-col mt-20 items-center">
 
       <h1 className="text-4xl font-light text-center">{data.title}</h1>
       <p className="text-[#869AB8] mt-8 text-center text-lg">{data.description}</p>

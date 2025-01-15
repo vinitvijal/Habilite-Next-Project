@@ -8,7 +8,7 @@ date: "October 8, 2024"
 author: "Dr. Aditi Mehta"
 authorImage: /doc3.jpg
 blogImage: /laserSurgery.jpg
-Featured: False
+featured: True
 ---
 
 ## Introduction

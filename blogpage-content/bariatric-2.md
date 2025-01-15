@@ -8,7 +8,7 @@ date: "October 12, 2024"
 author: "Dr. Priya Sharma"
 authorImage: /doc2.jpg
 blogImage: /surgery.jpeg
-Featured: False
+featured: True
 ---
 
 ## Introduction

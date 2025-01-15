@@ -7,8 +7,8 @@ description: "In this article, we explore how emerging technologies like robotic
 date: "October 10, 2024"
 author: "Dr. Arun Kumar"
 authorImage: /doc4.jpg
-blogImage: /weight-loss.webp
-Featured: False
+blogImage: /weightloss.jpg
+featured: False
 ---
 
 ## Introduction

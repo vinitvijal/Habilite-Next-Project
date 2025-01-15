@@ -6,9 +6,9 @@
     excerpt: Weight Loss Surgery is a life-changing procedure that can help someone
     date: March 14, 2024
     author: Dr. KAPIL AGARWAL
-    authorImage: /drkapil.png
+    authorImage: /doctor.webp
     blogImage: /Bariatric-Image.jpg
-    Featured: True
+    featured: True
 ---
 
 
