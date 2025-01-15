@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from "motion/react";
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import FAQsingle from '@/app/components/FAQsingle';
@@ -53,37 +54,33 @@ function page() {
             className="w-full object-cover "
           />
 
-          <div className="relative -mt-16 px-10 pt-5 pb-16 bg-white m-10 shadow-sm shadow-black text-center items-center rounded-md">
-            <h1 className="text-3xl font-bold mb-6 text-second">Best Gallbladder Surgeon in Delhi</h1>
-            <div className='sm:flex gap-10 mx-auto px-40 text-center text-first'>
-              <ul className="space-y-4">
-                <li className="flex items-start ">
-                  <span className="text-lg font-bold mr-2 ">➔</span>
-                  30 Minute Painless Procedure
-                </li>
-                <li className="flex items-start">
-                  <span className="text-lg font-bold mr-2">➔</span>
-                  Single Port Scarless Surgery
-                </li>
-                <li className="flex items-start">
-                  <span className="text-lg font-bold mr-2">➔</span>
-                  Highly Experienced, Internationally Trained Team
-                </li>
-              </ul>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <span className="text-lg font-bold mr-2">➔</span>
-                  Affiliated to Best Hospitals in Delhi, NCR
-                </li>
-                <li className="flex items-start">
-                  <span className="text-lg font-bold mr-2">➔</span>
-                  Cashless Insurance Facility Available
-                </li>
-                <li className="flex items-start">
-                  <span className="text-lg font-bold mr-2">➔</span>
-                  Honest Pricing and No Hidden Charges
-                </li>
-              </ul>
+          <div className="w-3/5 mx-auto relative -mt-16 px-10 py-6 bg-white m-10 shadow-sm shadow-black items-center rounded-md">
+            <h1 className="text-3xl font-semibold mb-6 text-second text-center">Best Gallbladder Surgeon in Delhi</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2  text-first text-lg text-left mx-auto">
+              <div className="flex items-start space-x-2 py-3 md:mr-4 border-third border-b">
+                <span className="">➔</span>
+                <p className='text-left'>30 Minute Painless Procedure</p>
+              </div>
+              <div className="flex items-start space-x-2 py-3 md:ml-4 border-third border-b">
+                <span className="">➔</span>
+                <p className='text-left' >Single Port Scarless Surgery</p>
+              </div>
+              <div className="flex items-start space-x-2 py-3 md:mr-4 border-third border-b">
+                <span className="">➔</span>
+                <p className='text-left'>Highly Experienced, Internationally Trained Team</p>
+              </div>
+              <div className="flex items-start space-x-2 py-3 md:ml-4 border-third border-b">
+                <span className="">➔</span>
+                <p className='text-left'>Affiliated to Best Hospitals in Delhi, NCR</p>
+              </div>
+              <div className="flex items-start space-x-2 py-3 md:mr-4 ">
+                <span className="">➔</span>
+                <p className='text-left'>Cashless Insurance Facility Available</p>
+              </div>
+              <div className="flex items-start space-x-2 py-3 md:ml-4 ">
+                <span className="">➔</span>
+                <p className='text-left'>Honest Pricing and No Hidden Charges</p>
+              </div>
             </div>
           </div>
         </div>
