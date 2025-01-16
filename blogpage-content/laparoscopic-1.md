@@ -9,6 +9,7 @@ author: "Dr. Aditi Mehta"
 authorImage: /doc3.jpg
 blogImage: /laserSurgery.jpg
 featured: True
+tag: Laparoscopic Surgery
 ---
 
 ## Introduction

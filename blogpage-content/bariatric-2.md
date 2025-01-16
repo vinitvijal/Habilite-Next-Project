@@ -9,6 +9,7 @@ author: "Dr. Priya Sharma"
 authorImage: /doc2.jpg
 blogImage: /surgery.jpeg
 featured: True
+tag: Bariatric Surgery
 ---
 
 ## Introduction

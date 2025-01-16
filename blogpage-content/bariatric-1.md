@@ -5,10 +5,11 @@
     slug: bariatric-1
     excerpt: Weight Loss Surgery is a life-changing procedure that can help someone
     date: March 14, 2024
-    author: Dr. KAPIL AGARWAL
+    author: Dr. Kapil Agarwal
     authorImage: /doctor.webp
     blogImage: /Bariatric-Image.jpg
     featured: True
+    tag: Bariatric Surgery
 ---
 
 

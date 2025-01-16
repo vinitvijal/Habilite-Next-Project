@@ -9,6 +9,7 @@ author: "Dr. Arun Kumar"
 authorImage: /doc4.jpg
 blogImage: /weightloss.jpg
 featured: False
+tag: Bariatric Surgery
 ---
 
 ## Introduction
