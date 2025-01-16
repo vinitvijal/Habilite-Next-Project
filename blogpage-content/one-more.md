@@ -7,9 +7,10 @@ description: "In this article, we explore how emerging technologies like robotic
 date: "October 10, 2024"
 author: "Dr. Arun Kumar"
 authorImage: /doc4.jpg
-blogImage: /weightloss.jpg
-featured: False
+blogImage: /Bariatric-Image.jpg
 tag: Bariatric Surgery
+featured: False
+trending: True
 ---
 
 ## Introduction

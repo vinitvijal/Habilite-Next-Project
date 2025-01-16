@@ -7,9 +7,10 @@
     date: March 14, 2024
     author: Dr. Kapil Agarwal
     authorImage: /doctor.webp
-    blogImage: /Bariatric-Image.jpg
-    featured: True
+    blogImage: /weightloss.jpg
     tag: Bariatric Surgery
+    featured: True
+    trending: True
 ---
 
 

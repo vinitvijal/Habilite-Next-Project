@@ -8,8 +8,9 @@ date: "October 12, 2024"
 author: "Dr. Priya Sharma"
 authorImage: /doc2.jpg
 blogImage: /surgery.jpeg
-featured: True
 tag: Bariatric Surgery
+featured: True
+trending: True
 ---
 
 ## Introduction

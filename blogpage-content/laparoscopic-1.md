@@ -8,8 +8,9 @@ date: "October 8, 2024"
 author: "Dr. Aditi Mehta"
 authorImage: /doc3.jpg
 blogImage: /laserSurgery.jpg
-featured: True
 tag: Laparoscopic Surgery
+featured: True
+trending: True
 ---
 
 ## Introduction
