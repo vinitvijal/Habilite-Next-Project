@@ -2,6 +2,7 @@
 import { Avatar,AvatarImage,AvatarFallback } from '@/components/ui/avatar';
 // Hero.jsx
 import React from 'react';
+import CountUp from 'react-countup';
 import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 
@@ -184,13 +185,12 @@ const Calculator = () => {
   );
 };
 
-import CountUp from "react-countup";
 
 const Counter = ({ number, title }) => {
   return (
-    <div className="number bg-neutral-100 p-10 rounded-lg flex flex-col gap-2 items-center">
-      <span><CountUp duration={3} className="counter font-semibold text-5xl text-first/70" end={number} /><span className='text-5xl font-bold text-first/70'>+</span></span>
-      <span className='text-lg text-neutral-800 font-medium'>{title}</span>
+    <div className="number bg-neutral-500 p-10 rounded-lg flex flex-col gap-2 items-center shadow-lg">
+      <span><CountUp duration={3} className="counter font-semibold text-5xl text-first" end={number} /><span className='text-5xl font-bold text-first'>+</span></span>
+      <span className='text-lg text-third font-medium'>{title}</span>
     </div>
   )
 }
