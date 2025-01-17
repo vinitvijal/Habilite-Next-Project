@@ -47,33 +47,12 @@ export default function CreateBlog() {
             className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-first -400"
           />
           {/* <!-- Image Upload --> */}
-          <div>
-            <label
-              for="image-upload"
-              className=" w-full h-48 border-2 border-dashed border-gray-300 rounded-md cursor-pointer flex flex-col items-center justify-center bg-[#f6f6f6] hover:bg-gray-50"
-            >
-              <div class="text-center">
-                <div class="mb-2">
-                  <button
-                    id="image-upload"
-                    type="button"
-                    className="bg-first hover:bg-second text-white rounded-full py-2 px-4"
-                  >
-                    Select from the computer
-                  </button>
-                </div>
-                <p class="text-gray-500">or drag photo here</p>
-                <p class="text-gray-500 text-sm mt-1">PNG, JPG, SVG</p>
-              </div>
-            </label>
-            <input
-              id="image-upload"
-              name="image"
-              type="file"
-              accept="image/*"
-              className="sr-only"
-            />
-          </div>
+          <input
+            type="file"
+            name="blogImage"
+            accept="image/*"
+            className="p-3 border border-third rounded focus:outline-none focus:border-first"
+          />
 
           <button
             type="submit"
