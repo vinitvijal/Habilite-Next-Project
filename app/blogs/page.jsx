@@ -21,19 +21,25 @@ function truncateText(text, wordLimit) {
 }
 export { truncateText };
 
+const dirContent = fs.readdirSync("blogpage-content", "utf-8")
+const blogs = dirContent.map(file => {
+  const fileContent = fs.readFileSync(`blogpage-content/${file}`, "utf-8")
+  const { data } = matter(fileContent)
+  return data
+})
+export { blogs }
+
+
+const featured = blogs.filter(blog => {
+  return blog.featured
+})
+const featured1 = featured[0]
+export {featured}
+
 function Blog() {
   
-  const dirContent = fs.readdirSync("blogpage-content", "utf-8")
-  const blogs = dirContent.map(file => {
-    const fileContent = fs.readFileSync(`blogpage-content/${file}`, "utf-8")
-    const { data } = matter(fileContent)
-    return data
-  })
 
-  const featured = blogs.filter(blog => {
-    return blog.featured
-  })
-  const featured1 = featured[0]
+
 
   const trending = blogs.filter(blog => {
     return blog.trending

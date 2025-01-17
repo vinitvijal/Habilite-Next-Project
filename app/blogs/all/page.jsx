@@ -74,7 +74,7 @@ function allBlogs() {
 							className="w-full rounded-t-lg h-2/4 object-cover"
 						/>
 
-						<p className="bg-first text-white w-fit px-2 py-1 rounded-br-lg text-sm mb-1 absolute">{blog.tag}</p>
+						<p className="bg-first text-white w-fit px-2 py-1 rounded-br-lg rounded-tl-lg text-sm mb-1 absolute">{blog.tag}</p>
 
 						<div className="lower-content px-5 flex flex-col h-auto flex-1 justify-between">
 							<div className="content">
