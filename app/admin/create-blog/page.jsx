@@ -2,17 +2,19 @@ import React from "react";
 
 export default function CreateBlog() {
   return (
-    <div className="container mx-auto p-4 flex items-center justify-center min-h-screen shadow-sm ">
-      <div className="bg-opacity-80 p-8 rounded-3xl shadow-2xl transform hover:scale-105 transition-all duration-500 max-w-md w-full">
+    <div className="container mx-auto p-2 flex items-center justify-center min-h-screen border-3 border-solid border-slate-200">
+      <div className="p-8 rounded-3xl w-3/5 shadow-sm border border-solid border-gray-300">
         <form
-          method="POST"
-          action="/api/saveMarkdown"
+
           encType="multipart/form-data"
-          className="grid grid-cols-1 gap-6"
+          className="grid grid-cols-1 gap-6 "
         >
-          <h1 className="text-first text-center font-bold uppercase tracking-wide text-5xl ">
-            Create Blog
-          </h1>
+          <div className="flex items-center justify-center">
+            <div className="flex-grow border-t border-gray-400"></div>
+            <span className="mx-4 text-first text-center font-semibold tracking-wide text-4xl pb-2">CREATE BLOG</span>
+            <div className="flex-grow border-t border-gray-400"></div>
+          </div>
+
           <input
             type="text"
             name="blogTitle"
@@ -47,40 +49,22 @@ export default function CreateBlog() {
             className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-first -400"
           />
           {/* <!-- Image Upload --> */}
-          <div>
-            <label
-              for="image-upload"
-              className=" w-full h-48 border-2 border-dashed border-gray-300 rounded-md cursor-pointer flex flex-col items-center justify-center bg-[#f6f6f6] hover:bg-gray-50"
+          <input
+            type="file"
+            name="blogImage"
+            placeholder="Select Image"
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100           text-gray-700 shadow-sm hover:bg-gray-200 transition duration-150 ease-in-out"
+          />
+
+          <div className="flex justify-center item-center mt-3">
+            <button
+              type="submit"
+              className="w-2/3 bg-gradient-to-r from-first to-second text-white py-2 rounded-3xl font-semibold hover:bg-second -600 focus:outline-none focus:ring-2 focus:ring-first -400 focus:ring-opacity-50"
             >
-              <div class="text-center">
-                <div class="mb-2">
-                  <button
-                    id="image-upload"
-                    type="button"
-                    className="bg-first hover:bg-second text-white rounded-full py-2 px-4"
-                  >
-                    Select from the computer
-                  </button>
-                </div>
-                <p class="text-gray-500">or drag photo here</p>
-                <p class="text-gray-500 text-sm mt-1">PNG, JPG, SVG</p>
-              </div>
-            </label>
-            <input
-              id="image-upload"
-              name="image"
-              type="file"
-              accept="image/*"
-              className="sr-only"
-            />
+              Create
+            </button>
           </div>
 
-          <button
-            type="submit"
-            className="w-full bg-first -500 text-white py-2 rounded-lg font-semibold hover:bg-second -600 focus:outline-none focus:ring-2 focus:ring-first -400 focus:ring-opacity-50"
-          >
-            Create Blog
-          </button>
         </form>
       </div>
     </div>
