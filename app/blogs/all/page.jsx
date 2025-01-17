@@ -1,18 +1,10 @@
-import matter from 'gray-matter'
 import Link from "next/link";
-import fs from "fs";
 import Image from 'next/image';
 import calendar from "@/public/calendar.svg";
+import { blogs } from '../page';
 
 
 function allBlogs() {
-	const dirContent = fs.readdirSync("blogpage-content", "utf-8")
-
-	const blogs = dirContent.map(file => {
-		const fileContent = fs.readFileSync(`blogpage-content/${file}`, "utf-8")
-		const { data } = matter(fileContent)
-		return data
-	})
 
 	if (blogs.length === 0) {
     return (

@@ -91,19 +91,19 @@ export default async function Page({ params }) {
 
 
         </div>
-        <div className="sticky top-10 side-bar w-5/12 h-screen mt-20 pl-10">
-          <div className="box-1">
+        <div className="side-bar sticky top-10 w-5/12 h-screen mt-24 pl-10">
+          <div className="sec-1">
             <div className="title">
               <p className='text-sm text-gray-500 font-light'>Discover by Topic</p>
               <p className='text-2xl'>Categories</p>
             </div>
 
-            <div className="content pr-28 mt-5">
-              <div className="pills text-base grid grid-cols-2 gap-1">
+            <div className="content pr-44 mt-5">
+              <div className="pills text-[14px] grid grid-cols-2 gap-1">
                 {categories.map((cat) => {
                   return (
                     <Link key={cat} href={`/blogs/category/${categories.indexOf(cat)}`}>
-                      <div className="select-none h-12 flex font- items-center justify-center text-center text-first px-3 py-1 rounded-xl bg-[#d6e3fd] hover:bg-[#9eacc8] cursor-pointer active:bg-[#8995ae]">{cat}</div>
+                      <div className="select-none flex font items-center justify-center text-center text-first py-2 rounded-xl bg-[#d6e3fd] hover:bg-[#a0c0ff] cursor-pointer active:bg-[#95b3f1]">{cat}</div>
                     </Link>
                   )
                 })}
@@ -111,28 +111,39 @@ export default async function Page({ params }) {
             </div>
           </div>
 
-          <div className="box-2 mt-14">
+          <div className="sec-2 mt-14">
             <div className="title">
               <p className='text-sm text-gray-500 font-light'>Chosen by the editor</p>
               <p className='text-2xl'>Editor's Pick</p>
             </div>
 
-            <div className="content">
-              {featured.slice(0,2).map(blog => {
+            <div className="content mt-3 flex flex-col cursor-pointer">
+              {featured.slice(0, 2).map(blog => {
                 return (
-                  <div className="box bg-red-500 w-full h-28 mt-2">
+                  <Link key={blog.id} href={`/blogs/${blog.slug}`}>
+                  <div className="box w-4/5 h-28 flex group">
+                    <div className="left-img w-1/5 h-full flex items-center justify-center">
+                      <div className="img w-20 h-20 items-center bg-cover flex rounded-full" style={{ backgroundImage: `url(${blog.blogImage})` }}></div>
+                    </div>
 
+                    <div className="right-content pl-3 ">
+                      <p className='bg-[#d6e3fd] mt-3 text-first w-fit px-2 py-[2px] text-xs rounded-full'>{blog.tag}</p>
+                      <p className='text-lg group-hover:text-first'>{blog.title}</p>
+                      <div className="below-content flex items-center gap-1 mt-1">
+                        <p className='text-xs'>{blog.author}</p>
+                        <div className="circle bg-gray-400 h-1 w-1 rounded-full"></div>
+                        <p className='text-gray-500 text-xs'>{blog.date}</p>
+                      </div>
+                    </div>
                   </div>
-                )}
+                  </Link>
+                )
+              }
               )}
             </div>
           </div>
         </div>
       </section>
-
-      <div className="footer h-screen bg-first">
-
-      </div>
     </>
   )
 }

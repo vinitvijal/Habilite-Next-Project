@@ -3,7 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import calendar from "@/public/calendar.svg";
 import Link from "next/link";
-import fs, { truncate } from "fs";
+import fs from "fs";
 import matter from "gray-matter";
 import * as Separator from "@radix-ui/react-separator";
 
@@ -58,8 +58,8 @@ function Blog() {
 
 
       <section className="featured ml-32 mt-20">
-        <p className="text-gray-500 text-lg font-light mt-1">Spotlighting the best reads for you.</p>
         <p className="text-4xl">Featured <span className="text-first">Blogs</span></p>
+        <p className="text-gray-500 text-lg font-light mt-1">Spotlighting the best reads for you.</p>
         <Separator.Root orientation="horizontal" className="mx-0 my-4 w-1/4 lg:w-1/12 h-[1.5px] bg-third animate-shake" />
 
         <div className="boxes mt-10 mr-24">
@@ -129,8 +129,8 @@ function Blog() {
       <section className="latest-blogs ml-32 mt-20 mr-24">
         <div className="title-content flex justify-between items-center">
           <div className="title">
-            <p className="text-gray-500 text-lg font-light mt-1">Here's what we've been up to lately.</p>
             <p className="text-4xl">Latest <span className="text-first">Blogs</span></p>
+            <p className="text-gray-500 text-lg font-light mt-1">Here's what we've been up to lately.</p>
             <Separator.Root orientation="horizontal" className="mx-0 my-4 w-20 lg:w-1/3 h-[1.8px] bg-third animate-shake" />
           </div>
 
@@ -194,8 +194,8 @@ function Blog() {
 
 
       <section className="trending-blogs ml-32 mt-20 mr-24 mb-20">
-        <p className="text-gray-500 text-lg font-light mt-1">Explore What Everyone's Talking About.</p>
         <p className="text-4xl">Trending <span className="text-first">Blogs</span></p>
+        <p className="text-gray-500 text-lg font-light mt-1">Explore What Everyone's Talking About.</p>
         <Separator.Root orientation="horizontal" className="mx-0 my-4 w-20 lg:w-1/12 h-[1.8px] bg-third animate-shake" />
 
         <div className="boxes mt-10 flex gap-2">
