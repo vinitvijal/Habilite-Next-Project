@@ -1,9 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import drkapil from "@/public/drkapil.png";
 import calendar from "@/public/calendar.svg";
-import alt from "@/public/alt.png"
 import Link from "next/link";
 import fs, { truncate } from "fs";
 import matter from "gray-matter";
@@ -18,6 +16,7 @@ function truncateText(text, wordLimit) {
   }
   return text;
 }
+export { truncateText };
 
 function Blog() {
   const dirContent = fs.readdirSync("blogpage-content", "utf-8")
@@ -73,10 +72,10 @@ function Blog() {
   return (
     <>
 
-      <section className="title mt-24 flex flex-col ml-32 gap-4">
+      {/* <section className="title mt-24 flex flex-col ml-32 gap-4">
         <p className="text-8xl ">Blogs</p>
         <p className="text-first text-2xl font-light">Insights and experiences to inspire better health.</p>
-      </section>
+      </section> */}
 
 
       <section className="featured ml-32 mt-20">
@@ -88,7 +87,7 @@ function Blog() {
           {featured1 && (
             <Link href={`/blogs/${featured1.slug}`}>
               <div className="first-featured will-change-transform h-[70vh] group bg-cover bg-center rounded-lg relative ease-in-out hover:border-2 hover:border-first hover:rounded-lg hover:scale-[101%] cursor-pointer transition-all duration-300 box-border hover:shadow-xl" style={{ backgroundImage: `url(${featured1.blogImage})` }}>
-                <div className="overlay inset-0 z-10 bg-gradient-to-b from-transparent absolute to-[#00000aad] rounded-lg duration-300"></div>
+                <div className="overlay inset-0 z-10 bg-gradient-to-b from-transparent absolute to-[#00000a74] rounded-lg duration-300"></div>
 
                 <div className="content z-20 mt-auto duration-300">
 
@@ -113,9 +112,9 @@ function Blog() {
 
           <div className="below-2-boxes grid grid-cols-2 gap-2 mt-3">
             {featured.slice(1).map((blog) => (
-              <div className="box w-full will-change-transform h-[50vh] group rounded-lg relative bg-cover bg-center hover:border-2 hover:border-first hover:scale-[101%] cursor-pointer transition-all duration-300 box-border hover:shadow-xl ease-in-out" style={{ backgroundImage: `url(${blog.blogImage})` }}>
+              <div key={blog.id} className="box w-full will-change-transform h-[50vh] group rounded-lg relative bg-cover bg-center hover:border-2 hover:border-first hover:scale-[101%] cursor-pointer transition-all duration-300 box-border hover:shadow-xl ease-in-out" style={{ backgroundImage: `url(${blog.blogImage})` }}>
                 <Link key={blog.slug} href={`/blogs/${blog.slug}`} passHref>
-                  <div className="overlay inset-0 z-10 bg-gradient-to-b from-transparent absolute to-[#00000aad] rounded-lg duration-300"></div>
+                  <div className="overlay inset-0 z-10 bg-gradient-to-b from-transparent absolute to-[#00000a74] rounded-lg duration-300"></div>
 
                   <div className="content z-20 mt-auto duration-300">
                     <div className="upper-content z-20 duration-300">
@@ -126,7 +125,7 @@ function Blog() {
                       <p className="date text-sm mb-1">{blog.date}</p>
                       <p className="text-xl mb-2 font-semibold">{truncateText(blog.title, 8)}</p>
                       <p className="text-sm mb-3">{truncateText(blog.description, 20)}</p>
-                      <p className="text-sm text-white">By {blog.author}</p>
+                      <p className="text-xs text-white">By {blog.author}</p>
                     </div>
                   </div>
                 </Link>
@@ -157,10 +156,12 @@ function Blog() {
             <Separator.Root orientation="horizontal" className="mx-0 my-4 w-20 lg:w-1/3 h-[1.8px] bg-third animate-shake" />
           </div>
 
+          <Link href="/blogs/all">
           <div className="view-all flex items-center gap-1 text-lg select-none border-[1px] rounded-lg px-4 text-first py-2 justify-center hover:bg-[#72a4ff5e] duration-150 active:bg-[#5d96ffbd] cursor-pointer">
-            View All
+              View All
             <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.1584 3.13508C6.35985 2.94621 6.67627 2.95642 6.86514 3.15788L10.6151 7.15788C10.7954 7.3502 10.7954 7.64949 10.6151 7.84182L6.86514 11.8418C6.67627 12.0433 6.35985 12.0535 6.1584 11.8646C5.95694 11.6757 5.94673 11.3593 6.1356 11.1579L9.565 7.49985L6.1356 3.84182C5.94673 3.64036 5.95694 3.32394 6.1584 3.13508Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd"></path></svg>
           </div>
+          </Link>
         </div>
 
         <div className="content">
@@ -242,9 +243,9 @@ function Blog() {
           <div className="grid grid-rows-3 mt-1 gap-2 w-1/3">
             {trending.slice(1, 4).map(blog => {
               return (
-                  <Link href={`/blogs/${blog.slug}`}>
-                <div className="sidebox flex bg-white h-40 group rounded-lg hover:scale-[101%] duration-300 shadow-lg relative">
-                <p className="bg-first text-white w-fit px-2 py-1 rounded-br-lg text-xs mb-1 absolute">{blog.tag}</p>
+                <Link href={`/blogs/${blog.slug}`} key={blog.id}>
+                  <div className="sidebox flex bg-white h-40 group rounded-lg hover:scale-[101%] duration-300 shadow-lg relative">
+                    <p className="bg-first text-white w-fit px-2 py-1 rounded-br-lg text-xs mb-1 absolute">{blog.tag}</p>
                     <div className="image w-2/5">
                       <Image
                         src={blog.blogImage}
@@ -256,10 +257,10 @@ function Blog() {
                     <div className="content w-3/5 px-3 py-2 flex flex-col">
                       <p className="text-gray-400 text-xs mt-2">{blog.date}</p>
                       <p className="font-semibold text-sm mt-2 group-hover:text-first">{blog.title}</p>
-                      <p className="text-xs mt-1">{truncateText(blog.excerpt,10)}</p>
+                      <p className="text-xs mt-1">{truncateText(blog.excerpt, 10)}</p>
                     </div>
-                </div>
-                  </Link>
+                  </div>
+                </Link>
               )
             })}
           </div>
@@ -269,8 +270,11 @@ function Blog() {
 
 
 
-        {/* Featured blog Old */}
-        {/* <div className="flex justify-center items-center">
+
+
+
+      {/* Featured blog Old */}
+      {/* <div className="flex justify-center items-center">
           <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-12">
             {featured.map((blog) => (
               <div key={blog.id} className="bg-white border-t-first border-4 shadow-lg rounded-lg overflow-hidden hover:-translate-y-1 transition-transform duration-500 mt-4 ">
@@ -319,8 +323,8 @@ function Blog() {
 
 
 
-        {/* Latest blogs Old */}
-        {/* <h1 className="text-4xl font-bold text-second pt-10 mb-6 mt-10 text-center">LATEST BLOGS</h1>
+      {/* Latest blogs Old */}
+      {/* <h1 className="text-4xl font-bold text-second pt-10 mb-6 mt-10 text-center">LATEST BLOGS</h1>
         <h1 className="text-xl font-semibold text-first mb-6 pb-8 text-center">Here's what we've been up to lately.</h1>
         <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-12 m-3">
           {blogs.map((blog) => (

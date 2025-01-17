@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 function Header() {
   return (
@@ -57,7 +58,9 @@ function Header() {
             
             <label htmlFor="blog" className='hover:cursor-pointer'>
               <input type="radio" className='sr-only peer' id='blog' name='navigator'/>
+              <Link href="/blogs">
               <p className="select-none  relative before:content-[''] before:bg-first before:w-0 before:h-[2px] before:absolute before:left-0 before:bottom-[-10px] before:rounded-md hover:before:w-full before:transition-all before:duration-300 rounded-3xl px-5 py-2 text-gray-500 hover:text-black peer-checked:bg-opacity-45 transition-all duration-300 ease-in-out peer-checked:text-first peer-checked:font-semibold peer-checked:before:w-full">Blogs</p> 
+              </Link>
             </label>
 
             <label htmlFor="contact" className='hover:cursor-pointer'>
