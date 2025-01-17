@@ -7,8 +7,6 @@ import fs from "fs";
 import matter from "gray-matter";
 import * as Separator from "@radix-ui/react-separator";
 
-const branch = "78-blogs-pages-with-a-template"
-
 const categories = ["Bariatric Surgery", "Gall Bladder Stone", "Hernia", "Laparoscopic Surgery", "Lipoma", "Non-Surgical Weight Loss", "Piles"]
 export { categories }
 
@@ -51,13 +49,13 @@ function Blog() {
   return (
     <>
 
-      {/* <section className="title mt-24 flex flex-col ml-32 gap-4">
+      <section className="title mt-24 flex flex-col ml-32 gap-4">
         <p className="text-8xl ">Blogs</p>
-        <p className="text-first text-2xl font-light">Insights and experiences to inspire better health.</p>
-      </section> */}
+        <p className="text-first text-2xl">Insights and experiences to inspire better health.</p>
+      </section>
 
 
-      <section className="featured ml-32 mt-20">
+      <section className="featured ml-32 mt-28">
         <p className="text-4xl">Featured <span className="text-first">Blogs</span></p>
         <p className="text-gray-500 text-lg font-light mt-1">Spotlighting the best reads for you.</p>
         <Separator.Root orientation="horizontal" className="mx-0 my-4 w-1/4 lg:w-1/12 h-[1.5px] bg-third animate-shake" />
@@ -119,8 +117,8 @@ function Blog() {
         <div className="pills text-sm gap-2 flex items-center">
           {categories.map((cat) => {
             return (
-            <Link href={`/blogs/category/${categories.indexOf(cat)}`}>
-            <p key={cat} className="select-none text-second px-3 py-1 rounded-lg bg-[#a1bef534] hover:bg-[#a1bef593] cursor-pointer active:bg-[#7a9ee0fe] border-[1px] border-first">{cat}</p>
+            <Link key={cat} href={`/blogs/category/${categories.indexOf(cat)}`}>
+            <p className="select-none text-second px-3 py-1 rounded-lg bg-[#a1bef534] hover:bg-[#a1bef593] cursor-pointer active:bg-[#7a9ee0fe] border-[1px] border-first">{cat}</p>
             </Link>
           )})}
         </div>
