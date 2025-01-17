@@ -15,7 +15,7 @@ import { unified } from 'unified'
 
 export default async function Page({ params }) {
 
-  const filepath = `blogpage-content/${(await params).slug}.md`
+  const filepath = `blogpage-content/${(await params).blog}.md`
 
   if (!fs.existsSync(filepath)) {
     notFound()

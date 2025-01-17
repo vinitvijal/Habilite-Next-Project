@@ -3,22 +3,31 @@ import Link from "next/link";
 import fs from "fs";
 import Image from 'next/image';
 import calendar from "@/public/calendar.svg";
+import { categories } from '@/app/blogs/page'
+import { notFound } from 'next/navigation';
+import React from 'react';
 
 
-function allBlogs() {
-	const dirContent = fs.readdirSync("blogpage-content", "utf-8")
+export default async function Page({ params }) {
+  const index = (await params).catIndex
 
-	const blogs = dirContent.map(file => {
-		const fileContent = fs.readFileSync(`blogpage-content/${file}`, "utf-8")
-		const { data } = matter(fileContent)
-		return data
-	})
+  const category = categories[index]
 
-	if (blogs.length === 0) {
+  const dirContent = fs.readdirSync("blogpage-content", "utf-8")
+
+  const blogs = dirContent.map(file => {
+    const fileContent = fs.readFileSync(`blogpage-content/${file}`, "utf-8")
+    const { data } = matter(fileContent)
+    return data
+  })
+
+  if (!(index in categories)) { notFound() }
+
+  if (blogs.filter(blog => blog.tag === category).length === 0) {
     return (
       <>
         <div className="heading h-80 flex bg-first text-white md:text-5xl px-8 md:px-28 text-4xl">
-          <h1 className='self-end mb-10'>All Blogs</h1>
+          <h1 className='self-end mb-10'>{category} Blogs</h1>
         </div>
 
         <div className="svg flex flex-col items-center justify-center mt-20">
@@ -49,71 +58,63 @@ function allBlogs() {
             </g>
           </svg>
           <p className='text-5xl mt-6 font-light'>Not Found</p>
-          <p className='mt-2 ml-3 text-gray-500'>No blogs found. You might want to check out other sections.</p>
+          <p className='mt-2 ml-3 text-gray-500'>No results found for the category {category}. You might want to check out other categories.</p>
         </div>
       </>
     )
   }
 
-	return (
+  return (
+    <section className='mb-10'>
+      <div className="heading h-80 flex bg-first text-white md:text-5xl px-8 md:px-32 text-4xl">
+        <h1 className='self-end mb-10'>{category} Blogs</h1>
+      </div>
 
-		<section className='mb-10'>
-			<div className="heading h-80 flex bg-first text-white md:text-5xl px-8 md:px-28 text-4xl">
-				<h1 className='self-end mb-10'>All Blogs</h1>
-			</div>
+      <div id="arrangement-grid" className="grid md:grid-cols-3 gap-3 mt-10 md:px-32 grid-cols-1 px-8">
+        {blogs.filter(blog => blog.tag === category).map((blog) => (
+          <div key={blog.id} className="w-full relative h-[65vh] bg-white rounded-lg flex flex-col shadow-lg hover:scale-[102%] transition-all duration-300">
+            <Image
+              src={blog.blogImage}
+              width={2000}
+              height={2000}
+              alt={blog.title}
+              className="w-full rounded-t-lg h-2/4 object-cover"
+            />
 
+            <p className="bg-first text-white w-fit px-2 py-1 rounded-br-lg rounded-tl-lg text-sm mb-1 absolute">{blog.tag}</p>
 
-			<div id="arrangement-grid" className="grid md:grid-cols-3 gap-3 mt-10 md:px-28 grid-cols-1 px-8">
-				{blogs.map((blog) => (
-					<div key={blog.id} className="w-full relative h-[65vh] bg-white rounded-lg flex flex-col shadow-lg hover:scale-[102%] transition-all duration-300">
-						<Image
-							src={blog.blogImage}
-							width={2000}
-							height={2000}
-							alt={blog.title}
-							className="w-full rounded-t-lg h-2/4 object-cover"
-						/>
+            <div className="lower-content px-5 flex flex-col h-auto flex-1 justify-between">
+              <div className="content">
+                <p className="text-sm flex mt-3 items-center gap-1">
+                  <Image src={calendar} className="z-0 h-4 w-4" alt="none" />
+                  {blog.date}
+                </p>
+                <p className="text-lg mt-2">{blog.title}</p>
+                <p className="text-sm mt-1">{blog.excerpt}</p>
+              </div>
 
-						<p className="bg-first text-white w-fit px-2 py-1 rounded-br-lg text-sm mb-1 absolute">{blog.tag}</p>
-
-						<div className="lower-content px-5 flex flex-col h-auto flex-1 justify-between">
-							<div className="content">
-								<p className="text-sm flex mt-3 items-center gap-1">
-									<Image src={calendar} className="z-0 h-4 w-4" alt="none" />
-									{blog.date}
-								</p>
-								<p className="text-lg mt-2">{blog.title}</p>
-								<p className="text-sm mt-1">{blog.excerpt}</p>
-							</div>
-
-							<div className="button mt-4 mb-6 flex justify-between">
-								<Link
-									href={`/blogs/${blog.slug}`}
-									className=" self-end px-3 py-2 rounded-md border-first border-[1px] text-first text-sm hover:bg-[#72a4ff5e] duration-150 active:bg-[#5d96ffbd]"
-								>
-									Read More
-								</Link>
-								<p className="flex items-center gap-2 mt-4 text-sm">
-									<Image
-										src={blog.authorImage}
-										alt="Author"
-										width={45}
-										height={45}
-										className="object-cover rounded-full w-9 h-9 overflow-hidden"
-									/>
-									{blog.author}
-								</p>
-							</div>
-						</div>
-					</div>
-				))}
-			</div>
-
-			<div className="arrangement-row hidden">
-
-			</div>
-		</section>
-	)
+              <div className="button mt-4 mb-6 flex justify-between">
+                <Link
+                  href={`/blogs/${blog.slug}`}
+                  className=" self-end px-3 py-2 rounded-md border-first border-[1px] text-first text-sm hover:bg-[#72a4ff5e] duration-150 active:bg-[#5d96ffbd]"
+                >
+                  Read More
+                </Link>
+                <p className="flex items-center gap-2 mt-4 text-sm">
+                  <Image
+                    src={blog.authorImage}
+                    alt="Author"
+                    width={45}
+                    height={45}
+                    className="object-cover rounded-full w-9 h-9 overflow-hidden"
+                  />
+                  {blog.author}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
 }
-
-export default allBlogs
