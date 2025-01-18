@@ -22,7 +22,7 @@ const FeatureList = ({ features }) => (
     {features.map((feature, index) => (
       <div
         key={index}
-        className={`flex items-start py-3 m-2 bg-white rounded-lg text-first transition-all duration-300 hover:scale-110 hover:font-bold hover:text-blue-700 ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"} $
+        className={`flex items-start py-3 bg-white rounded-lg text-first max-md:text-base transition-all duration-300 hover:scale-110 hover:font-semibold hover:text-blue-700 ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"} $
         }`} >
         <span> ✔️ </span>
         <p>{feature}</p>
@@ -67,14 +67,6 @@ function page() {
     },
   ];
 
-  const features = [
-    "30 Minute Painless Procedure",
-    "Single Port Scarless Surgery",
-    "Highly Experienced, Internationally Trained Team",
-    "Affiliated to Best Hospitals in Delhi, NCR",
-    "Cashless Insurance Facility Available",
-    "Honest Pricing and No Hidden Charges",
-  ];
 
   const featureData = [
     {
@@ -147,7 +139,7 @@ function page() {
     alt="Background"
     className="w-full object-cover opacity-200"/>
      <div className="absolute inset-0 flex items-center justify-center">
-    <h1 className="text-7xl font-bold text-white px-4 py-2 rounded-md flex-col items-center justify-center text-center text-fourth bg-transparent hover:bg-black hover:bg-opacity-20">
+    <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white px-4 py-2 rounded-md flex-col items-center justify-center text-center bg-transparent hover:bg-black hover:bg-opacity-20">
       Best Gallbladder Surgeon <br /> in Delhi
     </h1>
       </div>
@@ -162,15 +154,15 @@ function page() {
               transition={{  duration: 1 }}
               whileInView="visible"
               viewport={{ amount: 0.2 }}
-              className="w-3/5 mx-auto relative -mt-40 px-8 py-10 mb-10 bg-white shadow-sm shadow-black items-center rounded-lg"
+              className="w-3/5 mx-auto relative sm:-mt-20 lg:-mt-40 px-8 py-10 mb-10 bg-white shadow-sm shadow-black items-center rounded-lg"
             >
             
               <FeatureList features={features} />
             </motion.div>
           </div>
 
-        <div className="flex flex-col mx-auto px-16 md:px-24 gap-10">
-        <div className="py-8 px-24 mt-16 mb-14 text-center border-t-2 border-b-2 border-first">
+        <div className="flex flex-col mx-auto px-8 md:px-16 lg:px-24 gap-10">
+        <div className="py-8 mt-16 mb-14 text-center border-t-2 border-b-2 border-first">
   {surgeonInfo.map((info, index) => (
     <div key={index} className="mb-8">
       <motion.h1
@@ -178,7 +170,7 @@ function page() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
         viewport={{ amount: 0.2 }}
-        className="text-4xl font-bold my-6 text-second"
+        className="text-3xl md:text-4xl  font-bold my-6 text-second"
       >
         {info.title}
       </motion.h1>
@@ -188,7 +180,7 @@ function page() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 2 }}
         viewport={{ amount: 0.2 }}
-        className="text-2xl mb-8 text-first max-w-3xl mx-auto"
+        className="text-lg sm:text-xl md:text-2xl mb-8 text-first max-w-3xl mx-auto"
       >
         {info.description}
       
@@ -196,19 +188,19 @@ function page() {
     </div>
   ))}
          </div>
-          <div className='flex-col mb-8 px-24'>
+          <div className='flex-col mb-8 px-8 md:px-16 lg:px-24'>
             <motion.div
             initial={{ opacity: 0, x: 100 }} 
             whileInView={{ opacity: 1, x: 0 }} 
             viewport={{ amount: 0.3 }} 
             transition={{ duration: 0.8 }}>
-            <h2 className="text-3xl font-semibold mb-2 text-first">What is Gallbladder ?</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">What is Gallbladder ?</h2>
             <p className=" mb-2">
               The gallbladder is a tiny pear-shaped organ located just below the liver, situated on the right upper side of the abdomen.  <br />The liver produces a yellow-coloured fluid known as bile, which flows into the intestine to aid in digesting food, especially fatty meals.
             </p>
             <br />
         
-            <h2 className="text-3xl font-semibold mb-2 text-first">Function of the Gallbladder</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">Function of the Gallbladder</h2>
             <div className=" mb-4 ">
               <p className=''><span className="font-medium mt-4 mr-1">→ Storage of Bile:</span> The liver produces 1.5 litres of bile daily. Most of the bile flows directly into the intestine, but 50 ml is stored</p>
               <p className='ml-5'>in the gallbladder as a reserve. </p>
@@ -232,7 +224,7 @@ function page() {
               whileInView={{ opacity: 1, x: 0 }} 
               viewport={{ amount: 0.3 }} 
               transition={{ duration: 0.8 }}>
-             <h2 className="text-3xl font-semibold mb-2 text-first">Signs of Gallbladder Stones</h2>
+             <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">Signs of Gallbladder Stones</h2>
              <div className="mb-4">
               <p className=''>Most patients present with asymptomatic gallstones. Though gallstones are asymptomatic, when natural drainage of bile is frequently blocked, they cause infection in the bladder and often get slipped into major ducts.</p>
               <p className=''>According to Dr. Kapil Agrawal, one of the best gallbladder surgeon in delhi, gallstones generally do not produce any symptoms. However, small stones in the gallbladder can stuck in the neck of the gallbladder. That causes a blockage of the flow of bile into your small intestine. This is an episode of pain that you probably know as biliary colic.</p>
@@ -247,15 +239,15 @@ function page() {
           </div>
       </div>
 
-      <div className="flex flex-col mx-auto px-16 md:px-24 gap-10 m-16">
+      <div className="flex flex-col mx-auto px-8 md:px-16 lg:px-24 gap-10 m-16">
         <motion.div initial={{ opacity: 0 }} 
         whileInView={{ opacity: 0.8 }} 
         transition={{ duration: 2 }}
-        viewport={{ once: false }}  className='py-8 px-24 my-8 text-center border-t-2 border-b-2 border-first'>
-          <h1 className="text-4xl font-bold my-6 text-second">
+        viewport={{ once: false }}  className='py-8 px-8 md:px-16 lg:px-24 my-8 text-center border-t-2 border-b-2 border-first'>
+          <h1 className=" text-3xl md:text-4xl font-bold my-6 text-second">
             Best Gallbladder Stone Treatment in Delhi
           </h1>
-          <p className="text-2xl mb-4 text-first">
+          <p className="text-lg md:text-xl lg:text-2xl mb-4 text-first">
             The field of gallbladder stone surgery has gone under a major transformation due to the introduction of newer technologies aimed at quick and painless recovery. Dr Kapil Agrawal, the best gallbladder surgeon in Delhi, has been delivering excellent outcomes due to his expertise in all the latest treatment modalities for gallstone surgery.
           </p>
         </motion.div>
@@ -263,8 +255,8 @@ function page() {
         initial={{ opacity: 0, x: -100 }} 
         whileInView={{ opacity: 1, x: 0 }} 
         viewport={{ amount: 0.3 }} 
-        transition={{ duration: 0.8 }}  className='flex-col mb-16 px-24'>
-          <h2 className="text-4xl font-semibold mb-2 text-first">Laparoscopic Gallbladder Stone Surgery</h2>
+        transition={{ duration: 0.8 }}  className='flex-col mb-16 px-8 md:px-16 lg:px-24'>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-2 text-first">Laparoscopic Gallbladder Stone Surgery</h2>
           <div className=" mb-4 ">
             <p className='pt-2'>In the modern era, laparoscopic surgery has been considered and is now recognized as a gold standard procedure for gallstone management. </p>
             <p className='pt-2'>Dr. Kapil Agrawal one of the best laparoscopic surgeon in delhi, has transformed the management of gallstones.</p>
@@ -276,7 +268,7 @@ function page() {
           </div>
           <br />
       
-          <h2 className="text-4xl font-semibold mb-2 text-first">Single Port Gallbladder Stone Surgery:</h2>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-2 text-first">Single Port Gallbladder Stone Surgery:</h2>
           <div className=" mb-4 ">
             <p className='pt-2'>Single port surgery for gallstones is an advanced version of conventional laparoscopic surgery.</p>
             <p className='pt-2'>Instead of 3-4 tiny incisions, a single incision is created within the umbilicus or belly button to complete the procedure.</p>
@@ -284,7 +276,7 @@ function page() {
             <p className='pt-2'>The single incision laparoscopic surgery has its indications, and proper patient selection is essential to deliver the best results.</p>
           </div>
           <br />
-          <h2 className="text-4xl font-semibold mb-2 text-first">Robot-assisted laparoscopic cholecystectomy:</h2>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-2 text-first">Robot-assisted laparoscopic cholecystectomy:</h2>
           <div className=" mb-4">
             <p className='pt-2'>Robotics can significantly improve overall ergonomics and technical capabilities by providing enhanced dexterity,</p>
             <p className='pt-2'> precision as well as visualization to the surgeon during laparoscopic surgery facilitating comfortable execution of more complex procedures.</p>
@@ -294,16 +286,15 @@ function page() {
         </motion.div>
       </div>
 
-{/* card1 */}
       <div className='flex-col items-center justify-center mx-auto gap-20 my-8'>
-        <div className="w-full px-4 sm:px-8 lg:px-16">
+        <div className="w-full px-8 md:px-16 lg:px-24">
       <div className="text-center mb-10">
         <motion.h1
           variants={cardVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ amount: 0.2 }}
-          className="text-3xl sm:text-4xl font-semibold text-first m-4">
+          className="text-3xl md:text-4xl font-semibold text-first m-4">
          KEY BENEFITS OF <br/> SINGLE PORT LAPAROSCOPIC CHOLECYSTECTOMY
         </motion.h1>
         <motion.div
@@ -315,8 +306,7 @@ function page() {
           <p className='pt-4 text-center'>Those who undergo single-port gallstone surgery are happier because of excellent cosmesis, rapid recovery, and significantly less painful perception.</p>
       </div>
 
-   {/* card2 */}
-      <div className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto p-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto p-6">
         {featureData.map((feature, index) => (
           <motion.div
             key={index}
@@ -353,8 +343,8 @@ function page() {
        whileInView={{ opacity: 1, x: 0 }} 
        viewport={{ amount: 0.3 }} 
        transition={{ duration: 0.8 }}
-        className="flex flex-col mx-auto px-16 md:px-24 mt-16 gap-6">
-        <div className='flex-col mb-16 px-24 '>
+        className="flex flex-col mx-auto px-8 md:px-16 lg:px-24 mt-16 gap-6">
+        <div className='flex-col mb-16 lg:px-24 '>
           <h2 className="text-4xl font-semibold mb-1 text-first">Course of Recovery Following Gallstone Surgery</h2>
           <div className="mb-4 ">
             <p className='pt-2'>At Habilite Clinics, our team ensures you recover quickly and painlessly after receiving sophisticated, minimally invasive treatment. A general guideline of what one might anticipate in recovery follows:</p>
@@ -372,14 +362,14 @@ function page() {
         </div>  
       </motion.div>
 
-      <div className="flex flex-col mx-auto px-16 md:px-24 gap-6">
+      <div className="flex flex-col mx-auto px-8 md:px-16 lg:px-24 gap-6">
         <motion.div initial={{ opacity: -2 }} 
       whileInView={{ opacity: 1.5 }} 
       transition={{ duration: 2 }} 
       viewport={{ amount: 0.2 }} 
-       className='flex-col mx-6 mb-16 pt-4 px-24 border-third border-t-2'>
-        <div className="flex justify-center items-end m-4"><BsPinFill className='text-4xl text-second' /><h1 className='font-bold text-4xl text-center border-fourth border-b-2 mt-6  text-second'>FAQ</h1></div>
-          <div className="mb-4 lg:px-8">
+       className='flex-col mx-6 mb-16 pt-4 md:px-24 border-third border-t-2'>
+        <div className="flex justify-center items-end m-4"><BsPinFill className='text-3xl md:text-4xl text-second' /><h1 className='font-bold text-3xl md:text-4xl text-center border-fourth border-b-2 mt-6  text-second'>FAQ</h1></div>
+          <div className="mb-4 ">
           {faqList.map((faq, index) => (
             <FAQsingle key={index} question={faq.question} answer={faq.answer} />
           ))}
@@ -394,6 +384,5 @@ function page() {
   </>
   )
   }
-
 
 export default page;
