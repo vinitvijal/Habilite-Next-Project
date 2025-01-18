@@ -2,7 +2,7 @@
 import React from 'react';
 import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
-
+import { motion } from "motion/react"
 
 const fadeImages = [
   {
@@ -186,10 +186,13 @@ import CountUp from "react-countup";
 
 const Counter = ({ number, title }) => {
   return (
-    <div className="number bg-first p-10 rounded-lg flex flex-col gap-2 items-center">
+    <motion.div
+    initial={{ scale: 1}}
+    whileHover={{ scale: 1.1 }}
+    className="number bg-first p-10 rounded-lg flex flex-col gap-2 items-center">
       <span><CountUp duration={3} className="counter font-semibold text-5xl text-white" end={number} /><span className='text-5xl font-bold text-white'>+</span></span>
-      <span className='text-lg text-third font-medium'>{title}</span>
-    </div>
+      <span className='text-lg text-white font-medium'>{title}</span>
+    </motion.div>
   )
 }
 
