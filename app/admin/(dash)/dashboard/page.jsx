@@ -1,4 +1,5 @@
 import { Newspaper, PhoneCall, Scroll, User, UserRoundSearch } from "lucide-react";
+import Link from "next/link";
 
 function page() {
   return (
@@ -53,12 +54,12 @@ function page() {
             </div>
             <div className="bg-third rounded-md h-full lg:col-span-2 p-6 aspect-square lg:aspect-auto flex justify-between flex-col">
               <Newspaper className="w-8 h-8 stroke-1" />
-              <a href='/' className="flex flex-col">
+              <Link href='/admin/create-blog' className="flex flex-col">
               <h3 className="text-xl tracking-tight">Read Blogs</h3>
                 <p className="max-w-xs text-base text-zinc-600">
                 Discover insights and tips to enhance your business journey with our latest articles.
                 </p>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

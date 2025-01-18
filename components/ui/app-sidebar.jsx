@@ -5,11 +5,12 @@ import {
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
+  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
+import Link from "next/link"
 
 // Menu items.
 const items = [
@@ -24,17 +25,17 @@ const items = [
     icon: Inbox,
   },
   {
-    title: "View appointment",
+    title: "Testimonials",
     url: "#",
     icon: Calendar,
   },
   {
     title: "Blogs",
-    url: "#",
+    url: "/admin/create-blog",
     icon: Search,
   },
   {
-    title: "Contact",
+    title: "Settings",
     url: "#",
     icon: Settings,
   },
@@ -44,17 +45,17 @@ export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarContent>
+          <SidebarHeader>DASHBOARD</SidebarHeader>
         <SidebarGroup>
-          <SidebarGroupLabel>DASHBOARD</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
+                    <Link href={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}

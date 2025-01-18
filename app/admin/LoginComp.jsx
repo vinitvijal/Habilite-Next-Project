@@ -1,20 +1,32 @@
+
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import AuthService from '@/utils/AuthService';
+import { Login } from '@/actions/auth';
+// import AuthService from '@/utils/AuthService';
 
 const LoginComp = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const router = useRouter();
 
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
-        if (AuthService.login(username, password)) {
-            router.push('/admin/dashboard'); // Redirect to protected route on success
-        } else {
-            alert('Invalid credentials');
+        console.log(username, password)
+        if (username.length < 1 || password.length < 1) {
+            alert('Username and password are required');
+            return;
+        }
+        const response = await Login(username, password);
+        if (response.status === 404){
+            setPassword('')
+            setUsername('')
+            alert(response.data);
+            return;
+        }else if(response.status === 200){
+            localStorage.setItem('token', response.data)
+            router.replace('/admin/dashboard')
         }
     };
 

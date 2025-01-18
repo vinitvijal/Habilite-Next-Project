@@ -6,8 +6,8 @@ export default function RootLayout({ children }) {
     return (
     <SidebarProvider>
         <AppSidebar />
-            <main
-            ><div className="sidebar-trigger">
+            <main>
+                <div className="sidebar-trigger">
                 <SidebarTrigger />
             </div>
             {children}
