@@ -22,7 +22,7 @@ function page() {
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-third/30 rounded-md h-full lg:col-span-2 p-6 aspect-square lg:aspect-auto flex justify-between flex-col">
+            <div className="bg-third rounded-md h-full lg:col-span-2 p-6 aspect-square lg:aspect-auto flex justify-between flex-col">
               <PhoneCall className="w-8 h-8 stroke-1" />
               <a href="/" className="flex flex-col">
                 <h3 className="text-xl tracking-tight">Book your appoinments</h3>
@@ -31,7 +31,7 @@ function page() {
                 </p>
               </a>
             </div>
-            <div className="bg-third/30 rounded-md  aspect-square p-6 flex justify-between flex-col">
+            <div className="bg-third rounded-md  aspect-square p-6 flex justify-between flex-col">
               <Scroll className="w-8 h-8 stroke-1" />
               <a href='/' className="flex flex-col">
                 <h3 className="text-xl tracking-tight">View appointments</h3>
@@ -41,7 +41,7 @@ function page() {
               </a>
             </div>
 
-            <div className="bg-third/30 rounded-md aspect-square p-6 flex justify-between flex-col">
+            <div className="bg-third rounded-md aspect-square p-6 flex justify-between flex-col">
               <UserRoundSearch className="w-8 h-8 stroke-1" />
               <a href='/' className="flex flex-col">
                 <h3 className="text-xl tracking-tight">Contact us</h3>
@@ -51,7 +51,7 @@ function page() {
               </a>
                 
             </div>
-            <div className="bg-third/30 rounded-md h-full lg:col-span-2 p-6 aspect-square lg:aspect-auto flex justify-between flex-col">
+            <div className="bg-third rounded-md h-full lg:col-span-2 p-6 aspect-square lg:aspect-auto flex justify-between flex-col">
               <Newspaper className="w-8 h-8 stroke-1" />
               <a href='/' className="flex flex-col">
               <h3 className="text-xl tracking-tight">Read Blogs</h3>
