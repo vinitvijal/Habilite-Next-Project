@@ -6,7 +6,7 @@ const prisma = new PrismaClient()
 
 export async function Login(username, password){
     if (!username || !password){
-        return 404
+        return {data: "Email and Password are required", status: 404}
     }
     const res = await prisma.admin.findFirst({
         where:{
@@ -15,10 +15,10 @@ export async function Login(username, password){
         }
     })
     if(!res){
-        return 'User not found'
+        return {data: 'User not found', status: 404}
     }
     const token = crypto.randomBytes(20).toString('hex')
-    console.log(token)
+
     await prisma.admin.update({
         data: {
             token, 
@@ -27,7 +27,7 @@ export async function Login(username, password){
             userId: res.userId
         }
     })
-    return token
+    return {data: token, status: 200}
 }
 
 export async function Validate(token){
