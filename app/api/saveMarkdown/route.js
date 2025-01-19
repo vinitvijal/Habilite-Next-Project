@@ -22,26 +22,31 @@ export async function POST(req) {
   }
 
   try {
+    // Save Markdown content
     const subdirectoryPath = path.join(process.cwd(), 'markdownFiles', blogTitle.replace(/\s+/g, '-'));
     if (!fs.existsSync(subdirectoryPath)) {
       fs.mkdirSync(subdirectoryPath, { recursive: true });
     }
 
-    let markdownContent = `
-# ${blogTitle}
-`;
+    let markdownContent = `# ${blogTitle}\n`;
 
+    // Handle image
     if (blogImage && blogImage.size > 0) {
       const imageBuffer = Buffer.from(await blogImage.arrayBuffer());
       const imageExtension = blogImage.name.split('.').pop();
-      const imageFilePath = path.join(subdirectoryPath, `${blogTitle.replace(/\s+/g, '-')}.${imageExtension}`);
+
+      // Save image to the public folder
+      const publicImagePath = path.join(process.cwd(), 'public', 'blogImages');
+      if (!fs.existsSync(publicImagePath)) {
+        fs.mkdirSync(publicImagePath, { recursive: true });
+      }
+
+      const imageFileName = `${blogTitle.replace(/\s+/g, '-')}.${imageExtension}`;
+      const imageFilePath = path.join(publicImagePath, imageFileName);
       fs.writeFileSync(imageFilePath, imageBuffer);
 
-      // Add image preview to the markdown content just after the title
-      const imageFileName = `${blogTitle.replace(/\s+/g, '-')}.${imageExtension}`;
-      markdownContent += `
-![${blogTitle} Image](./${imageFileName})
-`;
+      // Add image to markdown content with a public URL
+      markdownContent += `\n<div align="center"><img src="/blogImages/${imageFileName}" alt="${blogTitle}" width="300"></div>\n`;
     }
 
     markdownContent += `
@@ -52,7 +57,7 @@ ${blogDescription}
 ${blogAuthor}
 
 ## Tags
-${blogTags.split(',').map(tag => tag.trim()).join(', ')}
+${blogTags.split(',').map((tag) => tag.trim()).join(', ')}
 
 ## Content
 ${blogContent}
@@ -61,19 +66,71 @@ ${blogContent}
     const markdownFilePath = path.join(subdirectoryPath, `${blogTitle.replace(/\s+/g, '-')}.md`);
     fs.writeFileSync(markdownFilePath, markdownContent);
 
-    return (
-      <div className="container mx-auto p-4 text-center">
-        <h1 className="text-3xl font-bold text-green-600">Blog Created Successfully!</h1>
-        <p className="mt-4">Your blog has been created. You can preview it below:</p>
-        <a
-          href="/admin/create-blog/preview"
-          className="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-        >
-          Preview Blog
-        </a>
-      </div>
-    )
+    // Return HTML response
+    const htmlContent = `
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blog Created</title>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+          }
+          .container {
+            max-width: 70%;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #d1d5db;
+            border-radius: 1rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            text-align: center;
+          }
+          h1 {
+            color: #1463F3;
+          }
+          a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+          }
+          a:hover {
+            background: #0056b3;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <h1>Blog Created Successfully!</h1>
+          <p>Your blog has been created. You can preview it below:</p>
+          <a href="/markdownFiles/${blogTitle}/${encodeURIComponent(blogTitle.replace(/\s+/g, '-'))}.md">Preview Blog</a>
+        </div>
+      </body>
+      </html>
+    `;
+
+    return new NextResponse(htmlContent, {
+      headers: {
+        'Content-Type': 'text/html',
+      },
+    });
   } catch (err) {
     console.error('Failed to save markdown or image file: ', err);
+    return NextResponse.json(
+      { message: 'Internal server error while saving the blog.' },
+      { status: 500 }
+    );
   }
 }
