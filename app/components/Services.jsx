@@ -35,9 +35,9 @@ function ServiceBox({ title, imageSrc, links, index }) {
         hidden: { opacity: 0, x: 100 }, // Slide in from right
         visible: { opacity: 1, x: 0, transition: { duration: 0.8, delay: index * 0.3 } }  // Duration and delay for the animation
       }}
-      className='w-80 h-auto bg-white shadow-md flex-col justify-center items-center rounded-2xl border-1'
+      className='w-4/5 lg:w-full md:w-full xl:w-full 2xl:w-full  min-h-[560px] bg-white shadow-md flex-col justify-center items-center rounded-2xl border-1 m-auto'
     >
-      <div className='w-full h-16 px-4 bg-second rounded-t-2xl font-semibold flex justify-center items-center text-2xl'>
+      <div className='w-full h-16 px-4 bg-second rounded-t-2xl font-semibold flex justify-center items-center text-xl sm:text-lg'>
         <div className="text-white">
           <Link href='#'>{title}</Link>
         </div>
@@ -49,7 +49,7 @@ function ServiceBox({ title, imageSrc, links, index }) {
         {links.map((link, linkIndex) => (
           <React.Fragment key={linkIndex}>
             <div className="flex justify-center w-full">
-              <Link className='text-xl font-medium text-second/70 hover:text-second hover:scale-105 duration-300 text-center' href={link.href}>
+              <Link className='text-lg sm:text-md font-medium text-second/70 hover:text-second hover:scale-105 duration-300 text-center' href={link.href}>
                 {link.text}
               </Link>
             </div>
@@ -94,14 +94,14 @@ function Services() {
         initial="hidden"
         animate={titleControls}
         variants={{
-          hidden: { opacity: 0, scale: 0.5 }, // Zoom out heading animation
-          visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } } // Zoom in with duration
+          hidden: { opacity: 0, scale: 0.6 }, // Zoom out heading animation
+          visible: { opacity: 1, scale: 1, transition: { duration: 0.2 } } // Zoom in with duration
         }}
         className="container mx-auto px-6"
       >
         <motion.div className="relative flex items-center justify-center mb-4">
           <div className="hidden sm:block flex-grow border-t-2 border-third lg:mx-6 md:mx-4"></div>
-          <motion.h1 className="text-3xl md:text-3xl lg:text-4xl font-bold text-second text-center">
+          <motion.h1 className="text-4xl lg:text-4xl font-bold text-second text-center">
             SERVICES & SPECIALIZATION
           </motion.h1>
           <div className="hidden sm:block flex-grow border-t-2 border-third lg:mx-6 md:mx-4"></div>
@@ -118,43 +118,51 @@ function Services() {
         }}
         className="container mx-auto px-6"
       >
-        <motion.h2 className="lg:text-2xl text-xl text-center mb-8 text-first ">
+        <motion.h2 className="text-lg sm:text-xl lg:text-2xl text-center mb-8 text-first ">
           Rapid Recovery Realized.
         </motion.h2>
       </motion.div>
 
-      <div className='max-w-5/6 grid place-content-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-4 h-full justify-center gap-20'>
-        {[
-          { title: "Bariatrics / Weight loss", imageSrc: "/weightloss.jpg", links: [
-            { href: "#", text: "Bariatric surgery" },
-            { href: "#", text: <>Non-surgical weight loss <br /> program</> },
-            { href: "#", text: "Surgery for diabetes" },
-            { href: "#", text: "Intragastric Balloon" },
-          ]},
-          { title: "Laparoscopic Surgery", imageSrc: "/surgery.jpeg", links: [
-            { href: "#", text: "Gall stones" },
-            { href: "#", text: "Hernia" },
-            { href: "#", text: "Rectal prolapse" },
-            { href: "#", text: "Appendix" },
-            { href: "#", text: "Gerd" },
-          ]},
-          { title: "Laser Surgery", imageSrc: "/laserSurgery.jpg", links: [
-            { href: "#", text: "Hemorrhoids/Piles" },
-            { href: "#", text: "Anal fissure" },
-            { href: "#", text: "Pilonidal sinus" },
-            { href: "#", text: "Anal fistula" },
-            { href: "#", text: "Lipoma" },
-            { href: "#", text: "Circumcision" },
-          ]},
-        ].map((service, index) => (
-          <ServiceBox key={index} title={service.title} imageSrc={service.imageSrc} links={service.links} index={index} />
-        ))}
+      <div className='flex flex-wrap justify-center'>
+        <div className='max-w-5/6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-4 gap-20'>
+          {[
+            { title: "Bariatrics / Weight loss", imageSrc: "/weightloss.jpg", links: [
+              { href: "#", text: "Bariatric surgery" },
+              { href: "#", text: <>Non-surgical weight loss <br /> program</> },
+              { href: "#", text: "Surgery for diabetes" },
+              { href: "#", text: "Intragastric Balloon" },
+            ]},
+            { title: "Laparoscopic Surgery", imageSrc: "/surgery.jpeg", links: [
+              { href: "#", text: "Gall stones" },
+              { href: "#", text: "Hernia" },
+              { href: "#", text: "Rectal prolapse" },
+              { href: "#", text: "Appendix" },
+              { href: "#", text: "Gerd" },
+            ]},
+            { title: "Laser Surgery", imageSrc: "/laserSurgery.jpg", links: [
+              { href: "#", text: "Hemorrhoids/Piles" },
+              { href: "#", text: "Anal fissure" },
+              { href: "#", text: "Pilonidal sinus" },
+              { href: "#", text: "Anal fistula" },
+              { href: "#", text: "Lipoma" },
+              { href: "#", text: "Circumcision" },
+            ]},
+          ].map((service, index) => (
+            <ServiceBox key={index} title={service.title} imageSrc={service.imageSrc} links={service.links} index={index} />
+          ))}
+        </div>
       </div>
     </section>
   );
 }
 
 export default Services;
+
+
+
+
+
+
 
 
 
