@@ -42,11 +42,12 @@ export async function POST(req) {
       }
 
       const imageFileName = `${blogTitle.replace(/\s+/g, '-')}.${imageExtension}`;
-      const imageFilePath = path.join(publicImagePath, imageFileName);
+      const imageFilePath = path.join(process.cwd(), 'public', 'blogImages', `${blogTitle.replace(/\s+/g, '-')}.${imageExtension}`);
       fs.writeFileSync(imageFilePath, imageBuffer);
 
-      // Add image to markdown content with a public URL
-      markdownContent += `\n<div align="center"><img src="/blogImages/${imageFileName}" alt="${blogTitle}" width="300"></div>\n`;
+      // In markdown content
+      markdownContent += `\n<div align="center"><img src="/blogImages/${blogTitle.replace(/\s+/g, '-')}.${imageExtension}" alt="${blogTitle}" width="300"></div>\n`;
+
     }
 
     markdownContent += `
@@ -115,7 +116,7 @@ ${blogContent}
         <div class="container">
           <h1>Blog Created Successfully!</h1>
           <p>Your blog has been created. You can preview it below:</p>
-          <a href="/markdownFiles/${blogTitle}/${encodeURIComponent(blogTitle.replace(/\s+/g, '-'))}.md">Preview Blog</a>
+          <a href="/markdownFiles/${blogTitle}/${encodeURIComponent(blogTitle.replace(/\s+/g, '-'))}">Preview Blog</a>
         </div>
       </body>
       </html>

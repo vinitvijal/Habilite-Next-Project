@@ -3,7 +3,7 @@ export default function CreateBlog() {
     <div className="container mx-auto p-4 flex items-center justify-center min-h-screen border-3 border-solid border-slate-200">
       <div className="p-8 rounded-3xl w-3/5 shadow-sm border border-solid border-gray-300">
         <form
-          action="/api/saveMarkdown"
+          action="/api/create-blog"
           method="POST"
           encType="multipart/form-data"
           className="grid grid-cols-1 gap-6"
