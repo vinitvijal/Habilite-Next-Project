@@ -10,7 +10,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 
 export function NewAppointmentDialog({ open, onOpenChange, onAddAppointment }) {
   const [formData, setFormData] = useState({
-    patientName: "",
+    name: "",
+    email: "",
     date: "",
     time: "",
     type: "",
@@ -21,7 +22,8 @@ export function NewAppointmentDialog({ open, onOpenChange, onAddAppointment }) {
     e.preventDefault()
     onAddAppointment(formData)
     setFormData({
-      patientName: "",
+      name: "",
+      email: "",
       date: "",
       time: "",
       type: "",
@@ -41,8 +43,17 @@ export function NewAppointmentDialog({ open, onOpenChange, onAddAppointment }) {
               <Label htmlFor="patientName">Patient Name</Label>
               <Input
                 id="patientName"
-                value={formData.patientName}
-                onChange={(e) => setFormData({ ...formData, patientName: e.target.value })}
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                required
+              />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
               />
             </div>

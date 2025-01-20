@@ -12,6 +12,7 @@ export function AppointmentModal({ isOpen, onClose, appointment, onUpdate }) {
 
   useEffect(() => {
     if (appointment) {
+        console.log(appointment)
       setFormData(appointment)
     }
   }, [appointment])
@@ -43,18 +44,19 @@ export function AppointmentModal({ isOpen, onClose, appointment, onUpdate }) {
               <Label htmlFor="patientName">Patient Name</Label>
               <Input
                 id="patientName"
-                value={formData.patientName}
-                onChange={(e) => handleChange("patientName", e.target.value)}
+                value={formData.appointName}
+                onChange={(e) => handleChange("appointName", e.target.value)}
                 required
               />
             </div>
+            <div className=" grid grid-cols-2 gap-2">
             <div className="grid gap-2">
               <Label htmlFor="date">Date</Label>
               <Input
                 id="date"
                 type="date"
-                value={formData.date}
-                onChange={(e) => handleChange("date", e.target.value)}
+                value={formData.allotedDate}
+                onChange={(e) => handleChange("allotedDate", e.target.value)}
                 required
               />
             </div>
@@ -63,14 +65,15 @@ export function AppointmentModal({ isOpen, onClose, appointment, onUpdate }) {
               <Input
                 id="time"
                 type="time"
-                value={formData.time}
-                onChange={(e) => handleChange("time", e.target.value)}
+                value={formData.allotedTime}
+                onChange={(e) => handleChange("allotedTime", e.target.value)}
                 required
               />
             </div>
+            </div>
             <div className="grid gap-2">
               <Label htmlFor="type">Appointment Type</Label>
-              <Select value={formData.type} onValueChange={(value) => handleChange("type", value)}>
+              <Select value={formData.allotedType} onValueChange={(value) => handleChange("allotedType", value)}>
                 <SelectTrigger id="type">
                   <SelectValue placeholder="Select type" />
                 </SelectTrigger>
@@ -84,25 +87,34 @@ export function AppointmentModal({ isOpen, onClose, appointment, onUpdate }) {
             <div className="grid gap-2">
               <Label htmlFor="status">Status</Label>
               <Select
-                value={formData.status}
-                onValueChange={(value) => handleChange("status", value)}
+                value={formData.appointStatus}
+                onValueChange={(value) => handleChange("appointStatus", value)}
               >
                 <SelectTrigger id="status">
                   <SelectValue placeholder="Select status" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="scheduled">Scheduled</SelectItem>
-                  <SelectItem value="completed">Completed</SelectItem>
+                <SelectItem value="scheduled">Scheduled</SelectItem>
+                <SelectItem value="Not Marked">Not Marked</SelectItem>
+                <SelectItem value="completed">Completed</SelectItem>
                   <SelectItem value="cancelled">Cancelled</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             <div className="grid gap-2">
+              <Label htmlFor="query">Query</Label>
+              <Input
+                id="query"
+                value={formData.appointQuery}
+                disabled
+              />
+            </div>
+            <div className="grid gap-2">
               <Label htmlFor="remarks">Remarks</Label>
               <Textarea
                 id="remarks"
-                value={formData.remarks || ""}
-                onChange={(e) => handleChange("remarks", e.target.value)}
+                value={formData.allotedRemark || ""}
+                onChange={(e) => handleChange("allotedRemark", e.target.value)}
                 placeholder="Add your remarks here..."
               />
             </div>
