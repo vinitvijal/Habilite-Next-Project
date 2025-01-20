@@ -19,6 +19,7 @@ const LoginComp = () => {
             return;
         }
         const response = await Login(username, password);
+        console.log(response)
         if (response.status === 404){
             setPassword('')
             setUsername('')
