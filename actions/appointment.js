@@ -4,7 +4,7 @@ import { Validate } from "./auth"
 
 const prisma = new PrismaClient()
 
-export async function createAppointment(name= "", email, phone="", query= "" , date= "", time= "", type= "", status= "", remarks= ""){
+export async function createAppointment(name= "", email="", phone="", query= "" , date= "", time= "", type= "", status= "", remarks= ""){
     
     const res = await prisma.bookAppointment.create({
         data: {
@@ -22,6 +22,21 @@ export async function createAppointment(name= "", email, phone="", query= "" , d
     return res
 }
 
+
+export async function createAdminAppointment(name= "", email="", date= "", time= "", type= ""){
+    const res = await prisma.bookAppointment.create({
+        data: {
+            appointName: name,
+            allotedDate: date,
+            allotedTime: time,
+            allotedType: type,
+            appointEmail: email,
+            appointQuery: "Created by Admin"
+        }
+    })
+    return res
+}
+
 export async function getAppointments(token, page=0){
     const validation = await Validate(token);
     if(!validation){
@@ -31,4 +46,5 @@ export async function getAppointments(token, page=0){
         take: 10,
         skip: page*10
     })
+    return response
 }

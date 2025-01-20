@@ -1,12 +1,13 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
 import { AppointmentModal } from "./appointment-modal"
 import { NewAppointmentDialog } from "./new-appointment"
+import { createAdminAppointment, createAppointment, getAppointments } from "@/actions/appointment"
 
 
 export default function AppointmentsPage() {
@@ -15,33 +16,8 @@ export default function AppointmentsPage() {
   const [selectedAppointment, setSelectedAppointment] = useState(null)
 
   // Sample data - in a real app, this would come from an API
-  const [appointments, setAppointments] = useState([
-    {
-      id: "1",
-      patientName: "John Doe",
-      date: "2025-01-21",
-      time: "09:00",
-      type: "General Checkup",
-      status: "scheduled",
-    },
-    {
-      id: "2",
-      patientName: "Jane Smith",
-      date: "2025-01-21",
-      time: "10:30",
-      type: "Dental Cleaning",
-      status: "completed",
-      remarks: "Follow-up needed in 6 months",
-    },
-    {
-      id: "3",
-      patientName: "Mike Johnson",
-      date: "2025-01-21",
-      time: "14:00",
-      type: "Consultation",
-      status: "cancelled",
-    },
-  ])
+  const [currentPage, setCurrentPage] = useState(0);
+  const [appointments, setAppointments] = useState([])
 
   const handleOpenModal = (appointment) => {
     setSelectedAppointment(appointment)
@@ -53,11 +29,25 @@ export default function AppointmentsPage() {
     setIsOpen(false)
   }
 
-  const handleAddNewAppointment = (newAppointment) => {
-    const id = (appointments.length + 1).toString()
-    setAppointments([...appointments, { ...newAppointment, id }])
+  const handleAddNewAppointment = async (newAppointment) => {
+    console.log(newAppointment)
+    const response = await createAdminAppointment(newAppointment.name, newAppointment.email, newAppointment.date, newAppointment.time, newAppointment.type )
+    console.log(response)
     setIsNewAppointmentOpen(false)
   }
+
+  async function getData(){
+    const token = localStorage.getItem('token');
+    if(!token) return
+    const data = await getAppointments(token, currentPage);
+    setAppointments(data)
+    console.log(data)
+    setCurrentPage((currentPage) => currentPage+1)
+  }
+
+  useEffect(()=>{
+    getData()
+  }, [])
 
   const getStatusColor = (status) => {
     switch (status) {
@@ -85,6 +75,7 @@ export default function AppointmentsPage() {
           <TableHeader>
             <TableRow>
               <TableHead>Patient Name</TableHead>
+              <TableHead>Created On</TableHead>
               <TableHead>Date</TableHead>
               <TableHead>Time</TableHead>
               <TableHead>Type</TableHead>
@@ -94,15 +85,16 @@ export default function AppointmentsPage() {
           </TableHeader>
           <TableBody>
             {appointments.map((appointment) => (
-              <TableRow key={appointment.id}>
-                <TableCell className="font-medium">{appointment.patientName}</TableCell>
-                <TableCell>{appointment.date}</TableCell>
-                <TableCell>{appointment.time}</TableCell>
-                <TableCell>{appointment.type}</TableCell>
+              <TableRow key={appointment.appointId}>
+                <TableCell className="font-medium">{appointment.appointName}</TableCell>
+                <TableCell>{appointment.appointDate.toString() || "Not Alloted"}</TableCell>
+                <TableCell>{appointment.allotedDate || "Not Alloted"}</TableCell>
+                <TableCell>{appointment.allotedTime || "Not Alloted"}</TableCell>
+                <TableCell>{appointment.allotedType || "Not Alloted"}</TableCell>
                 <TableCell>
-                  <Badge variant="secondary" className={getStatusColor(appointment.status)}>
-                    {appointment.status.charAt(0).toUpperCase() + appointment.status.slice(1)}
-                  </Badge>
+                  {appointment && appointment.appointStatus && <Badge variant="secondary" className={getStatusColor(appointment.appointStatus)}>
+                    {appointment.appointStatus.charAt(0).toUpperCase() + appointment.appointStatus.slice(1)}
+                  </Badge>}
                 </TableCell>
                 <TableCell>
                   <Button variant="ghost" size="sm" onClick={() => handleOpenModal(appointment)}>
