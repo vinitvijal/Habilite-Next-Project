@@ -41,12 +41,14 @@ model Testimonials{
 
 model bookAppointment{
   appointId String @id @default(cuid())
-  appointFName String
-  appointLName String?
-  appointPhone String
-  appointEmail String
+  appointName String?
+  appointPhone String?
+  appointEmail String?
   appointQuery String 
+  allotedType String?
   appointDate DateTime @default(now())
-  appointRemark String?
-  appointStatus String?
+  allotedDate String?
+  allotedTime String?
+  allotedRemark String?
+  appointStatus String @default("Not Marked")
 }
