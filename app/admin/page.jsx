@@ -47,6 +47,7 @@
 
 // export default page
 
+
 'use client'
 import LoginComp from './LoginComp';
 
