@@ -206,3 +206,10 @@
       display: block; 
   }
 }
+
+.mainpage {
+  width: 100vw; 
+  overflow-x: hidden; 
+    overflow-y: auto;   
+    white-space: nowrap;  
+}
