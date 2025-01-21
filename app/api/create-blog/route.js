@@ -10,8 +10,12 @@ export const config = {
 
 export async function POST(req) {
   const data = await req.formData();
-  const blogTitle = data.get('blogTitle');
-  const blogDescription = data.get('blogDescription');
+  const blogTitle = data.get('blogTitle'); 
+  const blogDescription = data.get('blogDescription'); 
+  const blogAuthor = data.get('blogAuthor'); 
+  const blogContent = data.get('blogContent'); 
+  const blogTags = data.get('blogTags'); 
+  const blogImage = data.get('blogImage');
 
   if (!blogTitle || !blogDescription || !blogAuthor || !blogContent) {
     return NextResponse.json({ message: 'All fields are required.' }, { status: 400 });
