@@ -16,6 +16,15 @@ const features = [
   "Honest Pricing and No Hidden Charges",
 ];
 
+const boxVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 1 },
+  },
+};
+
+
 
 const FeatureList = ({ features }) => (
   <div className="grid grid-cols-1 md:grid-cols-2 md:text-lg text-left mx-auto">
@@ -98,22 +107,30 @@ function page() {
 
 ];
 
-  const cardVariants = {
-    hidden: { x: "-100%", opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: { duration: 1 },
+const cardVariants = {
+  hidden: { opacity: 0, x: -50 },
+  visible: (index) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: index * 0.3,
+      duration: 0.8,
+      type: "spring",
     },
-  };
-  const cardVariants1 = {
-    hidden: { x: "100%", opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: { duration: 1},
+  }),
+};
+const cardVariants1 = {
+  hidden: { opacity: 0, x: 50 },
+  visible: (index) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: index * 0.3,
+      duration: 0.8,
+      type: "spring",
     },
-  };
+  }),
+};
   const boxVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -180,7 +197,7 @@ function page() {
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 2 }}
                   viewport={{ amount: 0.2 }}
-                  className="text-lg sm:text-xl md:text-2xl text-left mb-8 text-first px-4 md:px-8 lg:px-16 mx-auto"
+                  className="text-lg sm:text-xl md:text-2xl text-left mb-8 text-first px-4 md:px-8 lg:px-16 mx-auto text"
                 >
                   {info.description}
                 </motion.p>
@@ -249,7 +266,7 @@ function page() {
             <h1 className=" text-3xl md:text-4xl font-bold my-6 text-second">
               Best Gallbladder Stone Treatment in Delhi
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-left mb-8 text-first px-4 md:px-8 lg:px-16 mx-auto">
+            <p className="text-lg sm:text-xl md:text-2xl text-left mb-8 text-blue-500 px-4 md:px-8 lg:px-16 mx-auto">
               The field of gallbladder stone surgery has gone under a major transformation due to the introduction of newer technologies aimed at quick and painless recovery. Dr Kapil Agrawal, the best gallbladder surgeon in Delhi, has been delivering excellent outcomes due to his expertise in all the latest treatment modalities for gallstone surgery.
             </p>
           </motion.div>
@@ -298,8 +315,7 @@ function page() {
               initial="hidden"
               whileInView="visible"
               viewport={{ amount: 0.2 }}
-              className="text-3xl md:text-4xl font-semibold text-first m-4"
-              >
+              className="text-3xl md:text-4xl font-semibold text-first m-4">
                 KEY BENEFITS OF <br/> SINGLE PORT LAPAROSCOPIC CHOLECYSTECTOMY
               </motion.h1>
               <motion.div
