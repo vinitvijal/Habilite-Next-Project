@@ -266,7 +266,7 @@ const cardVariants1 = {
             <h1 className=" text-3xl md:text-4xl font-bold my-6 text-second">
               Best Gallbladder Stone Treatment in Delhi
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-left mb-8 text-blue-500 px-4 md:px-8 lg:px-16 mx-auto">
+            <p className="text-lg sm:text-xl md:text-2xl text-left mb-8 text-first px-4 md:px-8 lg:px-16 mx-auto">
               The field of gallbladder stone surgery has gone under a major transformation due to the introduction of newer technologies aimed at quick and painless recovery. Dr Kapil Agrawal, the best gallbladder surgeon in Delhi, has been delivering excellent outcomes due to his expertise in all the latest treatment modalities for gallstone surgery.
             </p>
           </motion.div>
@@ -366,7 +366,7 @@ const cardVariants1 = {
         transition={{ duration: 0.8 }}
         className="flex flex-col mx-auto px-8 md:px-16 lg:px-24 mt-16 gap-6"
         >
-          <div className='flex-col mb-16 lg:px-24 '>
+          <div className='flex-col mb-16'>
             <h2 className="text-4xl font-semibold mb-1 text-first">Course of Recovery Following Gallstone Surgery</h2>
             <div className="mb-4 ">
               <p className='pt-2'>At Habilite Clinics, our team ensures you recover quickly and painlessly after receiving sophisticated, minimally invasive treatment. A general guideline of what one might anticipate in recovery follows:</p>
