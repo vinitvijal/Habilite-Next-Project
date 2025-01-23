@@ -27,3 +27,16 @@ export async function getAdminTest(token){
 
     return await prisma.testimonials.findMany();
 }
+
+export async function deleteAdminTest(token, id){
+    const res = await Validate(token);
+    if(!res){
+        return 401
+    }
+
+    return await prisma.testimonials.delete({
+        where: {
+            TesID: id
+        }
+    })
+}
