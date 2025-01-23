@@ -173,224 +173,209 @@ const benefits = [
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-10 md:px-16 ">
           <div>
             <div className="relative w-full">
-                <img
-               src="/lipoma.jpg"
-               alt="Background"
-               className="w-full object-cover opacity-200"/>
-                  
-           <div className="absolute inset-0 flex items-center justify-center">
-           <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white px-4 py-2 rounded-md flex-col items-center justify-center text-center bg-transparent hover:bg-black hover:bg-opacity-20">
-           Best Circumcision Surgery<br /> in Delhi</h1>
-           </div>
-           </div>
+              <img
+              src="/lipoma.jpg"
+              alt="Background"
+              className="w-full object-cover opacity-200"
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white px-4 py-2 rounded-md flex-col items-center justify-center text-center bg-transparent hover:bg-black hover:bg-opacity-20">
+                  Best Circumcision Surgery<br /> in Delhi
+                </h1>
+              </div>
+            </div>
           </div>
-       <div>
-           <motion.div
-              initial={{opacity: 0, scale: 0.12 }}
-              animate={{ opacity: 1, scale: 1 }}
-              whileHover={{ scale: 1.05 }}
-              variants={boxVariants}
-              transition={{  duration: 1 }}
-              whileInView="visible"
-              viewport={{ amount: 0.2 }}
-              className="w-3/5 m-4 mx-auto relative sm:-mt-24 lg:-mt-40 px-8 py-10 bg-white shadow-sm shadow-black items-center rounded-lg">
+          <div>
+            <motion.div
+            initial={{opacity: 0, scale: 0.12 }}
+            animate={{ opacity: 1, scale: 1 }}
+            whileHover={{ scale: 1.05 }}
+            variants={boxVariants}
+            transition={{  duration: 1 }}
+            whileInView="visible"
+            viewport={{ amount: 0.2 }}
+            className="w-3/5 m-4 mx-auto relative sm:-mt-24 lg:-mt-40 px-8 py-10 bg-white shadow-sm shadow-black items-center rounded-lg">
               <FeatureList features={features} />
-           </motion.div>
-       </div>
-       <br />
-
-      <div className="py-8 mt-16 mb-8 text-center border-t-2 border-b-2 border-first">
-        {surgeonInfo.map((info, index) => (
-          <div key={index} className="mb-8">
-            <motion.h1
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-              viewport={{ amount: 0.2 }}
-              className="text-3xl md:text-4xl  font-bold my-6 text-second"
-            >
-              {info.title}
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 2 }}
-              viewport={{ amount: 0.2 }}
-              className="text-lg sm:text-xl md:text-2xl text-left mb-8 text-first px-4 md:px-8 lg:px-16 mx-auto text">
-              {info.description}
-           </motion.p>
+            </motion.div>
           </div>
-        ))}
-      </div>
 
-       <br />  
-        <motion.div 
+          <div className="flex flex-col mx-auto px-8 md:px-16 lg:px-24 gap-10">
+            <div className="py-8 mt-16 mb-8 text-center border-t-2 border-b-2 border-first">
+              {surgeonInfo.map((info, index) => (
+                <div key={index} className="mb-8">
+                  <motion.h1
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    viewport={{ amount: 0.2 }}
+                    className="text-3xl md:text-4xl  font-bold my-6 text-second"
+                  >
+                    {info.title}
+                  </motion.h1>
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 2 }}
+                    viewport={{ amount: 0.2 }}
+                    className="text-lg sm:text-xl md:text-2xl text-left mb-8 text-first px-4 md:px-8 lg:px-16 mx-auto text">
+                    {info.description}
+                  </motion.p>
+                </div>
+              ))}
+            </div>
+    
+            <motion.div 
             initial={{ opacity: 0, x: 100 }} 
             whileInView={{ opacity: 1, x: 0 }} 
             viewport={{ amount: 0.3 }} 
             transition={{ duration: 0.8 }}>
-           <div>
-           
-           <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">Indications of Circumcision :-</h2>
-           <div className="mb-4">
-             <p className='pt-2'>→ Severe pain while passing stools.</p>
-             <p className='pt-2'>→ Balanitis: It is a type of infection involving head or glans of penis. It usually occurs due to poor hygiene, improper fitting clothes and bacterial and fungus infections.</p>
-             <p className='pt-2'>→ Phimosis: Phimosis is a condition in which the patient is unable to retract the foreskin covering the glans or head of penis. </p>
-             <p className='pt-2'>→ Paraphimosis</p>
-             <p className='pt-2'>→ Tight Foreskin</p>
-             <p className='pt-2'>→ Balanoposthitis</p>
-             <p className='pt-2'>→ Bleeding during Intercourse</p>
-             <p className='pt-2'>→ Pain during Sexual Intercourse</p>
-             <p className='pt-2'>→ Balanitis Xerotica Obliterans (BXO): An autoimmune condition which is characterized by extensive scarring of prepuce skin resulting in phimosis.</p>
-             <p className='pt-2'>→ Chronic or Recurrent Urinary Tract Infection</p>
-           </div>
-           </div>
-        </motion.div>
+              <div>
+                <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">Indications of Circumcision :-</h2>
+                <div className="mb-4">
+                  <p className='pt-2'>→ Severe pain while passing stools.</p>
+                  <p className='pt-2'>→ Balanitis: It is a type of infection involving head or glans of penis. It usually occurs due to poor hygiene, improper fitting clothes and bacterial and fungus infections.</p>
+                  <p className='pt-2'>→ Phimosis: Phimosis is a condition in which the patient is unable to retract the foreskin covering the glans or head of penis. </p>
+                  <p className='pt-2'>→ Paraphimosis</p>
+                  <p className='pt-2'>→ Tight Foreskin</p>
+                  <p className='pt-2'>→ Balanoposthitis</p>
+                  <p className='pt-2'>→ Bleeding during Intercourse</p>
+                  <p className='pt-2'>→ Pain during Sexual Intercourse</p>
+                  <p className='pt-2'>→ Balanitis Xerotica Obliterans (BXO): An autoimmune condition which is characterized by extensive scarring of prepuce skin resulting in phimosis.</p>
+                  <p className='pt-2'>→ Chronic or Recurrent Urinary Tract Infection</p>
+                </div>
+              </div>
+            </motion.div>
 
-        <br />
+            <motion.div 
+            initial={{ opacity: 0, x: -100 }} 
+            whileInView={{ opacity: 1, x: 0 }} 
+            viewport={{ amount: 0.3 }} 
+            transition={{ duration: 0.8 }}
+            className='mb-8'>
+              <div>
+                <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first"> Types of Circumcision :</h2>
+                <div className="mb-4">
+                  <p className='pt-2'>→ Conventional or Open Circumcision</p>
+                  <p className='pt-2'>→ Laser circumcision</p>
+                  <p className='pt-2'>→ Stapler or ZSR circumcision</p>
+                </div>
+              </div>
 
-       <motion.div 
-          initial={{ opacity: 0, x: -100 }} 
-          whileInView={{ opacity: 1, x: 0 }} 
-          viewport={{ amount: 0.3 }} 
-          transition={{ duration: 0.8 }}
-          className='mb-8'>
-           
-         <div>
-         <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first"> Types of Circumcision :</h2>
-         <div className="mb-4">
-           <p className='pt-2'>→ Conventional or Open Circumcision</p>
-           <p className='pt-2'>→ Laser circumcision</p>
-           <p className='pt-2'>→ Stapler or ZSR circumcision</p>
-         </div>
-         </div>
+              <div>
+                <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">
+                  Conventional Circumcision
+                </h2>
+                <div className="mb-4">
+                  <p className='pt-2'>Conventional or traditional circumcision is the primitive method in which surgeon uses surgical knife and electrical cautery to remove the foreskin present over the glans.</p>
+                  <p className='pt-2'>The procedure can be carried out in general anaesthesia or local anaesthesia depending upon the patient condition, age and preferences.</p>
+                  <p className='pt-2'>The procedure is associated with higher amount of bleeding, formation of hematomas and delayed recovery.</p>
+                </div>
+              </div>
 
-        <br />
-        
-        <div>
-         <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">
-         Conventional Circumcision</h2>
-          <div className="mb-4">
-          <p className='pt-2'>Conventional or traditional circumcision is the primitive method in which surgeon uses surgical knife and electrical cautery to remove the foreskin present over the glans.</p>
-          <p className='pt-2'>The procedure can be carried out in general anaesthesia or local anaesthesia depending upon the patient condition, age and preferences.</p>
-          <p className='pt-2'>The procedure is associated with higher amount of bleeding, formation of hematomas and delayed recovery.</p>
-         </div>
-         </div>
+              <div>
+                <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">
+                  Laser Circumcision
+                </h2>
+                <div className="mb-4">
+                  <p className='pt-2'>Precision: Laser technology is extremely precise and doesn’t affect normal surrounding skin and tissues.</p>
+                  <p className='pt-2'>Reduced bleeding: Laser procedure seals the blood vessels more efficiently and minimizes formation of blood clots or hematoma.</p>
+                  <p className='pt-2'>Faster Healing: Due to better precision and reduced bleeding, it promotes faster healing of wound.</p>
+                  <p className='pt-2'>Reduced Infection: Laser procedures are found to have significantly reduced chances of infection.</p>
+                  <p className='pt-2'>Minimized Pain: Laser circumcision is associated with less pain due to reduced nerve stimulation.</p>
+                </div>
+              </div>
 
-         <br />
-        
-        <div>
-         <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">
-         Laser Circumcision</h2>
-          <div className="mb-4">
-          <p className='pt-2'>Precision: Laser technology is extremely precise and doesn’t affect normal surrounding skin and tissues.</p>
-          <p className='pt-2'>Reduced bleeding: Laser procedure seals the blood vessels more efficiently and minimizes formation of blood clots or hematoma.</p>
-          <p className='pt-2'>Faster Healing: Due to better precision and reduced bleeding, it promotes faster healing of wound.</p>
-          <p className='pt-2'>Reduced Infection: Laser procedures are found to have significantly reduced chances of infection.</p>
-          <p className='pt-2'>Minimized Pain: Laser circumcision is associated with less pain due to reduced nerve stimulation.</p>
-         </div>
-         </div>
+              <div>
+                <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">
+                  ZSR or Stapler Circumcision
+                </h2>
+                <div className="mb-4">
+                  <p className='pt-2'>It is the best and most advanced technique which has revolutionized the circumcision procedure. The procedure can be carried out under general anaesthesia or local anaesthesia.</p>
+                  <p className='pt-2'>During the procedure, the surgeon employs a cylindrical device which automatically cuts the foreskin and seals the bleeding vessels with the help of silicon ring and micro stapler pins. </p>
+                  <p className='pt-2'> The procedure typically takes 10- 15 minutes and the patient can go back home 2 hours after the procedure.</p>
+                  <p className='pt-2'> The procedure is extremely safe both for children and adults and has minimal chance of infection and has faster healing rates.</p>
+                </div>
+              </div>
+            </motion.div>
 
-         <br />
-        
-        <div>
-         <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">
-         ZSR or Stapler Circumcision</h2>
-          <div className="mb-4">
-          <p className='pt-2'>
-          It is the best and most advanced technique which has revolutionized the circumcision procedure. The procedure can be carried out under general anaesthesia or local anaesthesia.</p>
-          <p className='pt-2'>During the procedure, the surgeon employs a cylindrical device which automatically cuts the foreskin and seals the bleeding vessels with the help of silicon ring and micro stapler pins. </p>
-          <p className='pt-2'> The procedure typically takes 10- 15 minutes and the patient can go back home 2 hours after the procedure.</p>
-          <p className='pt-2'> The procedure is extremely safe both for children and adults and has minimal chance of infection and has faster healing rates.</p>
-         </div>
-         </div>
-        </motion.div>
+            <motion.div 
+            initial={{ opacity: 0, x: 100 }} 
+            whileInView={{ opacity: 1, x: 0 }} 
+            viewport={{ amount: 0.3 }} 
+            transition={{ duration: 0.8 }}>
+              <div>
+                <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">The advantages of stapler (ZSR) circumcision are :–</h2>
+                <div className="mb-4">
+                  <p className='pt-2'>→ Surgery time is around 10 minutes</p>
+                  <p className='pt-2'>→ Reduced bleeding: Laser procedure seals the blood vessels more efficiently and minimizes formation of blood clots or hematoma.</p>
+                  <p className='pt-2'>→ Minimal blood loss</p>
+                  <p className='pt-2'>→ Minimal pain</p>
+                  <p className='pt-2'>→ Faster recovery</p>
+                  <p className='pt-2'>→ The chances of complications are almost nil</p>
+                  <p className='pt-2'>→ Lower chances of infection</p>
+                </div>
+              </div>
+            </motion.div>
 
-        <br />
+            <motion.div 
+            variants={imageVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.2 }}>
+              <div className='mt-4'>
+                <div className="p-10 flex flex-col items-center">
+                  <h1 className="text-2xl md:text-3xl font-semibold mb-8 text-first"> BENEFITS OF ZSR CIRCUMCISION SURGERY</h1>
+                  <div className="flex flex-wrap justify-center gap-6 px-12">
+                    {benefits.map((benefit, index) => (
+                      <div
+                        key={index}
+                        className="hover:bg-blue-300 p-12 border border-third hover:border-blue-500 text-center font-semibold py-3 px-5 rounded w-80 shadow-md" >
+                          {benefit}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
 
-        <motion.div 
-         initial={{ opacity: 0, x: 100 }} 
-         whileInView={{ opacity: 1, x: 0 }} 
-         viewport={{ amount: 0.3 }} 
-         transition={{ duration: 0.8 }}>
-        <div>
-         <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">The advantages of stapler (ZSR) circumcision are :–</h2>
-         <div className="mb-4">
-           <p className='pt-2'>→ Surgery time is around 10 minutes</p>
-           <p className='pt-2'>→ Reduced bleeding: Laser procedure seals the blood vessels more efficiently and minimizes formation of blood clots or hematoma.</p>
-           <p className='pt-2'>→ Minimal blood loss</p>
-           <p className='pt-2'>→ Minimal pain</p>
-           <p className='pt-2'>→ Faster recovery</p>
-           <p className='pt-2'>→ The chances of complications are almost nil</p>
-           <p className='pt-2'>→ Lower chances of infection</p>
-         </div>
-        </div>
-        </motion.div>
-
-          <br />
-        <motion.div 
-           variants={imageVariants}
-           initial="hidden"
-           whileInView="visible"
-           viewport={{ amount: 0.2 }}>
-           <div className='mt-4'>
-           <div className="p-10 flex flex-col items-center">
-           <h1 className="text-2xl md:text-3xl font-semibold mb-8 text-first"> BENEFITS OF ZSR CIRCUMCISION SURGERY</h1>
-           <div className="flex flex-wrap justify-center gap-6 px-12">
-           {benefits.map((benefit, index) => (
-           <div
-            key={index}
-            className="hover:bg-blue-300 p-12 border border-gray-300 border-2 hover:border-blue-500 text-center font-semibold py-3 px-5 rounded w-80 shadow-md" >
-            {benefit}
+            <motion.div 
+            initial={{ opacity: 0, x: 100 }} 
+            whileInView={{ opacity: 1, x: 0 }} 
+            viewport={{ amount: 0.3 }} 
+            transition={{ duration: 0.8 }}>
+              <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">
+                Why Choose Us -
+              </h2>
+              <div className="mb-4 text-left">
+                <p className='pt-2'><span className="font-medium mr-1">→ Experienced Surgeons:</span> Our clinic has a team of highly skilled, experienced and well-trained surgeons dedicated to providing the best care and a professional experience.</p>
+                <p className='pt-2'><span className="font-medium mr-1">→ Complete Range of Procedures: </span>We offer a complete range of circumcision procedures including the latest and most advanced options.</p>
+                <p className='pt-2'> Our entire range allow clients to choose the approach that aligns best with their requirements.</p>
+                <p className='pt-2'><span className="font-medium mr-1">→ Excellent Results: </span>We are committed to deliver exceptional results. Our strict No Quality Compromise Policy ensures that our clients are satisfied with the </p>
+                <p className='pt-2'> outcomes of their circumcision procedures.</p>
+                <p className='pt-2'><span className="font-medium mr-1">→ Cashless Insurance Options: </span>We understand the importance of financial convenience. Our services include hassle-free, cashless insurance options, </p>
+                <p className='pt-2'> providing our clients with a seamless and stress-free experience.</p>
+                <p className='pt-2'><span className="font-medium mr-1">→ Best Post-Operative Care:</span> We are dedicated to provide our patients excellent post operative care. We provide top-notch post-operative care to ensure a </p>
+                <p className='pt-2'>smooth surgical journey with exceptional satisfactory results.</p>
+              </div>
+            </motion.div>
           </div>
-           ))}
-         </div>
-          </div>
-           </div>
-        </motion.div>
 
-          <div className="flex flex-col mx-auto px-10 md:px-16 lg:px-24 gap-6">
-          <motion.div initial={{ opacity: -2 }} 
+          <div className="flex flex-col mx-auto pt-16 px-10 md:px-16 lg:px-24 gap-6">
+            <motion.div initial={{ opacity: -2 }} 
             whileInView={{ opacity: 1.5 }} 
             transition={{ duration: 2 }} 
             viewport={{ amount: 0.2 }} 
-            className='flex-col mx-6 mb-16 pt-4 md:px-24'>
-           <div className="flex justify-center items-end m-4"><BsPinFill className='text-3xl md:text-4xl text-second' />
-           <h1 className='font-bold text-3xl md:text-4xl text-center border-fourth border-b-2 mt-6 text-second'>FAQ</h1>
-           </div>
-           <div className="mb-4">
+            className='flex-col mx-6 mb-16 pt-4 md:px-24 border-first border-t-2'>
+              <div className="flex justify-center items-end m-4"><BsPinFill className='text-3xl md:text-4xl text-second' />
+                <h1 className='font-bold text-3xl md:text-4xl text-center border-fourth border-b-2 mt-6 text-second'>FAQ</h1>
+              </div>
+              <div className="mb-4">
                 {faqList.map((faq, index) => (
                   <FAQsingle key={index} question={faq.question} answer={faq.answer} />
-                   ))}
-           </div>
-          </motion.div>  
-           </div>
-
-           <motion.div 
-              initial={{ opacity: 0, x: 100 }} 
-              whileInView={{ opacity: 1, x: 0 }} 
-              viewport={{ amount: 0.3 }} 
-              transition={{ duration: 0.8 }}>
-              <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">
-              Why Choose Us -</h2>
-              <div className="mb-4">
-               <p className='pt-2'><span className="font-medium mr-1">→ Experienced Surgeons:</span> Our clinic has a team of highly skilled, experienced and well-trained surgeons dedicated to providing the best care and a professional experience.</p>
-               <p className='pt-2'><span className="font-medium mr-1">→ Complete Range of Procedures: </span>We offer a complete range of circumcision procedures including the latest and most advanced options.</p>
-               <p className='pt-2 ml-4'> Our entire range allow clients to choose the approach that aligns best with their requirements.</p>
-               <p className='pt-2'><span className="font-medium mr-1">→ Excellent Results: </span>We are committed to deliver exceptional results. Our strict No Quality Compromise Policy ensures that our clients are satisfied with the </p>
-               <p className='pt-2 ml-4'> outcomes of their circumcision procedures.</p>
-               <p className='pt-2'><span className="font-medium mr-1">→ Cashless Insurance Options: </span>We understand the importance of financial convenience. Our services include hassle-free, cashless insurance options, </p>
-               <p className='pt-2 ml-4'> providing our clients with a seamless and stress-free experience.</p>
-               <p className='pt-2'><span className="font-medium mr-1">→ Best Post-Operative Care:</span> We are dedicated to provide our patients excellent post operative care. We provide top-notch post-operative care to ensure a </p>
-               <p className='pt-2 ml-4'>smooth surgical journey with exceptional satisfactory results.</p>
+                ))}
               </div>
-            </motion.div>
-        
-       
-
-
-
-
+            </motion.div>  
+          </div>
         </div>
       </div>
     </div>

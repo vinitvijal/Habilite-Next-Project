@@ -187,7 +187,8 @@ const cardVariants1 = {
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 1 }}
                   viewport={{ amount: 0.2 }}
-                  className="text-3xl md:text-4xl  font-bold my-6 text-second">
+                  className="text-3xl md:text-4xl  font-bold my-6 text-second"
+                >
                   {info.title}
                 </motion.h1>
 
@@ -196,7 +197,8 @@ const cardVariants1 = {
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 2 }}
                   viewport={{ amount: 0.2 }}
-                  className="text-lg sm:text-xl md:text-2xl text-left mb-8 text-first px-4 md:px-8 lg:px-16 mx-auto text">
+                  className="text-lg sm:text-xl md:text-2xl text-left mb-8 text-first px-4 md:px-8 lg:px-16 mx-auto text"
+                >
                   {info.description}
                 </motion.p>
               </div>
