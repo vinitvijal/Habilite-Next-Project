@@ -1,10 +1,11 @@
 import React from 'react'
 
-export default function page() {
+function page() {
   return (
     <div>
-      Harshit
-      MARKDOWN
+      Blogs
     </div>
   )
 }
+
+export default page

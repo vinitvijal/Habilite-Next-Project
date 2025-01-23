@@ -7,7 +7,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Badge } from "@/components/ui/badge"
 import { AppointmentModal } from "./appointment-modal"
 import { NewAppointmentDialog } from "./new-appointment"
-import { createAdminAppointment, createAppointment, getAppointments } from "@/actions/appointment"
+import { createAdminAppointment, createAppointment, getAppointments, updateAppointment } from "@/actions/appointment"
 
 
 export default function AppointmentsPage() {
@@ -25,7 +25,12 @@ export default function AppointmentsPage() {
   }
 
   const handleUpdateAppointment = (updatedAppointment) => {
-    setAppointments(appointments.map((apt) => (apt.id === updatedAppointment.id ? updatedAppointment : apt)))
+    console.log(updatedAppointment)
+    const token = localStorage.getItem('token');
+    if(!token) return
+    const response = updateAppointment(token, updatedAppointment.appointName, updatedAppointment.appointEmail, updatedAppointment.appointPhone, updatedAppointment.appointQuery, updatedAppointment.allotedDate, updatedAppointment.allotedTime, updatedAppointment.allotedType, updatedAppointment.appointStatus, updatedAppointment.allotedRemark, updatedAppointment.appointId)
+    setAppointments(appointments.map((apt) => apt.appointId === updatedAppointment.appointId ? updatedAppointment : apt))
+    console.log(response)
     setIsOpen(false)
   }
 
