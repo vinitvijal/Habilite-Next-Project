@@ -392,7 +392,7 @@ An anal fistula is an abnormal tunnel that forms as a result of an infected anal
                           <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">
                           Why Choose Us -</h2>
                           <div className="mb-4">
-                            <p className='pt-2'> Availability of a complete range of procedures conducted by a team of highly experienced and internationally trained surgeons.</p>
+                            <p className='pt-2'>Availability of a complete range of procedures conducted by a team of highly experienced and internationally trained surgeons.</p>
                             <p className='pt-2'>Empanelment with some of the best hospitals for fistula surgery, with state-of-the-art facilities, ensures excellent outcomes.</p>
                             <p className='pt-2'>Zero per cent Interest EMI options.</p>
                             <p className='pt-2'>Complete cashless facilities with all insurance companies.</p>
