@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 function About() {
   return (
-    <section className='h-full px-5 lg:px-32 py-5'>
+    <section className='h-full px-5 lg:px-32 py-5 mt-10'>
       <motion.div initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ amount: 0.3 }}
@@ -13,15 +13,15 @@ function About() {
         <p className='text-first text-3xl lg:text-5xl mb-4 text-left'>About Us</p>
         <Separator.Root orientation="horizontal" className="mx-0 w-1/4 lg:w-1/12 h-[1px] bg-third" />
 
-        <div className="upper-content flex flex-col lg:flex-row mt-8 lg:mt-3">
-          <div className="content mt-8 lg:mr-5 w-[105rem]">
+        <div className="upper-content flex flex-col lg:flex-row mt-5 lg:mt-3">
+          <div className="content mt-2 lg:mr-5 lg:w-[105rem] w-full">
 
-            <p className='text-xl lg:text-3xl text-second'>Best Laparoscopic, Laser and Weight Loss Surgery in Delhi</p>
+            <p className='text-2xl lg:text-3xl text-second whitespace-normal'>Best Laparoscopic, Laser and Weight Loss Surgery in Delhi</p>
 
-            <p className='mt-8 text-sm lg:text-base whitespace-normal'>Dr Kapil Agrawal is a senior & experienced surgeon having more than 20 yrs of dedicated service in the field of surgery, especially Advanced Laparoscopic Surgery / Bariatric and Laser Surgery. Throughout his career, he has distinguished himself through innovative practice methods, groundbreaking research and an unwavering pledge to patient welfare.</p>
+            <p className='mt-6 text-sm lg:text-base whitespace-normal'>Dr Kapil Agrawal is a senior & experienced surgeon having more than 20 yrs of dedicated service in the field of surgery, especially Advanced Laparoscopic Surgery / Bariatric and Laser Surgery. Throughout his career, he has distinguished himself through innovative practice methods, groundbreaking research and an unwavering pledge to patient welfare.</p>
             <p className='mt-6 text-sm lg:text-base whitespace-normal'>Dr. Kapil Agrawal's expertise spans a wide spectrum of surgical procedures, from intricate and advanced laser surgeries for piles and fistula to transformative Bariatric or weight loss surgeries. As a pioneer in the field of obesity management, he always advocates for holistic approaches, emphasizing the pivotal role of dietary changes and medical interventions in combating this global health epidemic. Having performed more than 7000+ advanced laparoscopic and bariatric surgeries, he is well known for his unparalleled expertise and compassionate patient care. He is fully committed to surgical excellence and patient well-being.</p>
             <p className='font-semibold text-first text-lg mt-10 lg:mt-10'>Dr. KAPIL AGRAWAL</p>
-            <p className='text-sm lg:text-base'>MBBS, MS (SURGERY), MRCS (LONDON, U.K), MMED (SINGAPORE), FMAS</p>
+            <p className='text-sm lg:text-base whitespace-normal'>MBBS, MS (SURGERY), MRCS (LONDON, U.K), MMED (SINGAPORE), FMAS</p>
             <p className='font-semibold text-first text-sm lg:text-base'>Senior Consultant, Laparoscopic & Laser Surgeon</p>
           </div>
 
