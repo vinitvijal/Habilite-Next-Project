@@ -1,6 +1,7 @@
 'use client'
 import React from "react";
 import { motion } from "framer-motion";
+import TextAnimate from "@/components/ui/anim-text";
 
 function Team() {
   const teamMembers = [
@@ -48,8 +49,8 @@ function Team() {
       opacity: 1,
       x: 0,
       transition: {
-        delay: index * 0.3,
-        duration: 0.8,
+        delay: index * 0.2,
+        duration: 0.5,
         type: "spring",
       },
     }),
@@ -58,14 +59,14 @@ function Team() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { duration: 1 },
+      transition: { duration: 0.8 },
     },
   };
 
   return (
-    <div className="w-full px-4 sm:px-8 lg:px-16">
-      <div className="relative pt-16">
-        <div className="text-center mb-10">
+    <div className="w-screen px-4 sm:px-8 lg:px-16 md:pb-10">
+      <div className="relative pt-4">
+        {/* <div className="text-center mb-10">
           <motion.h1 
           variants={imageVariants}
           initial="hidden"
@@ -85,9 +86,21 @@ function Team() {
             whileInView={{ width: "80%", duration: 2000 }}
             className="mx-auto border-blue-200 border-b-4 mt-6"
           ></motion.div>
-        </div>
+        </div> */}
+        <motion.div className='flex flex-col gap-2 items-center justify-center pt-20 pb-14'>
+          <TextAnimate text="MEET THE TEAM" type="calmInUp" className="text-2xl md:text-4xl text-center font-bold whitespace-normal w-xl" />
+          <motion.h1
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ ease: "easeInOut", duration: 0.5 }}
+        className="mb-6 md:text-lg text-normal text-first text-wrap md:px-[20vw] px-6 text-center font-medium"
+      >
+        We are a team of qualified psychiatrists and psychologists from premier institutions of the country.
+        We are highly motivated to provide cutting-edge evidence-based management for mental health issues tailored to individual needs.
+      </motion.h1>
+        </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-16 max-w-7xl mx-auto p-10 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 md:gap-16 gap-6 max-w-7xl mx-auto md:px-10 px-2 mb-8">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
@@ -115,8 +128,8 @@ function Team() {
                 <p className="text-gray-400 mb-2 text-xs sm:text-sm">
                   {member.experience}
                 </p>
-                <div className="border-blue-300 border-b-2"></div>
-                <p className="text-black mt-2 text-sm">{member.description}</p>
+                <div className="border-blue-300 border-b-2 md:w-[22vw]"></div>
+                <p className="text-black mt-2 text-sm text-wrap md:w-[18vw]">{member.description}</p>
                 <div className="flex gap-2 mt-4 text-blue-400 font-bold">
                   <div className="inline-flex text-xs sm:text-sm transform hover:scale-105 transition-transform duration-300">
                     <svg

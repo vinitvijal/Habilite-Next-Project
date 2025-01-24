@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as Separator from "@radix-ui/react-separator";
 import Link from 'next/link';
 import { motion, useAnimation } from "framer-motion";
+import TextAnimate from '@/components/ui/anim-text';
 
 // ServiceBox component
 function ServiceBox({ title, imageSrc, links, index }) {
@@ -33,11 +34,11 @@ function ServiceBox({ title, imageSrc, links, index }) {
       animate={controls}
       variants={{
         hidden: { opacity: 0, x: 100 }, // Slide in from right
-        visible: { opacity: 1, x: 0, transition: { duration: 0.8, delay: index * 0.3 } }  // Duration and delay for the animation
+        visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: index * 0.2 } }  // Duration and delay for the animation
       }}
-      className='w-4/5 lg:w-full md:w-full xl:w-full 2xl:w-full  min-h-[560px] bg-white shadow-md flex-col justify-center items-center rounded-2xl border-1 m-auto'
+      className='w-4/5 lg:w-full md:w-full xl:w-full 2xl:w-full  min-h-[560px] bg-white shadow-md flex-col justify-center items-center rounded-lg border-1 m-auto'
     >
-      <div className='w-full h-16 px-4 bg-second rounded-t-2xl font-semibold flex justify-center items-center text-xl sm:text-lg'>
+      <div className='w-full h-16 px-4 bg-second rounded-t-lg font-semibold flex justify-center items-center text-xl sm:text-lg'>
         <div className="text-white">
           <Link href='#'>{title}</Link>
         </div>
@@ -88,8 +89,8 @@ function Services() {
   }, [titleControls, subtitleControls]);
 
   return (
-    <section className="min-h-screen w-full bg-white py-10 flex flex-col items-center">
-      <motion.div
+    <section className="md:pb-[115vh] pb-[235vh] h-screen w-full bg-white py-10 flex flex-col items-center">
+      {/* <motion.div
         ref={titleRef}
         initial="hidden"
         animate={titleControls}
@@ -121,10 +122,17 @@ function Services() {
         <motion.h2 className="text-lg sm:text-xl lg:text-2xl text-center mb-8 text-first ">
           Rapid Recovery Realized.
         </motion.h2>
+      </motion.div> */}
+
+
+      <motion.div className='flex flex-col gap-2 items-center pt-20 pb-14'>
+        <TextAnimate text="SERVICES & SPECIALIZATION" type="calmInUp" className="text-2xl md:text-4xl text-center font-bold whitespace-normal" />
+        <TextAnimate text="Rapid Recovery Realized." type="calmInUp" className='md:text-2xl text-lg font-medium text-first' />
       </motion.div>
 
+
       <div className='flex flex-wrap justify-center'>
-        <div className='max-w-5/6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-4 gap-20'>
+        <div className='max-w-5/6 h-[40vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-baseline mt-4 gap-20'>
           {[
             { title: "Bariatrics / Weight loss", imageSrc: "/weightloss.jpg", links: [
               { href: "#", text: "Bariatric surgery" },

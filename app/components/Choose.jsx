@@ -2,175 +2,116 @@
 
 import React from "react";
 import { motion } from "motion/react"
-import { TextAnimate } from "@/components/ui/text-animate";
+import TextAnimate from "@/components/ui/anim-text";
 
 function Choose() {
   return (
     <section id="Choose" className="py-20 w-full">
-      <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
-        {/* <h2 className="text-first text-center font-bold uppercase tracking-wide text-3xl m-8 p-8">
-          Why Choose Us?
-        </h2> */}
-        <TextAnimate animation="blurIn" as="h2" duration={1} delay={1.2} className="text-first text-center font-bold uppercase tracking-wide text-3xl m-8 p-8">
-          Why Choose Us?
-        </TextAnimate>
+      <motion.div className='flex flex-col gap-2 items-center pt-20 pb-14'>
+        <TextAnimate text="Why Choose Us?" type="calmInUp" className="uppercase text-2xl md:text-4xl text-center font-bold whitespace-normal" />
+      </motion.div>
 
-      </div>
-
-      {/* {#card-1} */}
-
-      <div className=" flex items-center justify-center mx-auto m-10 mt-10 ">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 ">
-        <motion.div
-        initial={{ 
-          scale: 0.8,
-          opacity: 0,
-        }}
-        whileInView={{
-          transition: { duration: 0.5, opacity: 1, ease: "easeIn" },
-          scale: 1,
-          opacity: 1,
-        }}
-        viewport={{ once: true }}
-        className="shadow-sm p-6 text-center group w-64 h-96 bg-white border:gray-700 border-4 hover:border-white relative m-4 hover:ring hover:ring-first   transform duration-500 hover:scale-105 hover:shadow-xl">
-            <div className="bg-first flex justify-center items-center w-20 h-20 rounded-full absolute mx-auto right-0 left-0 -inset-y-14 border-4 group-hover:bg-white group-hover:shadow-md transform duration-300">
-              <span className="text-3xl md:text-5xl text-white  group-hover:text-first form duration-300 p-4">
-                <img
-                  width="48"
-                  height="48"
+      <div>
+      <div className="md:px-20 px-10 relative flex md:flex-row flex-col min-h-[60vh] gap-6  justify-center overflow-hidden py-6">
+    <motion.div initial={{  opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="group relative border-2 border-first cursor-pointer overflow-hidden bg-white px-6 pt-8 pb-8 shadow-lg ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 sm:mx-auto sm:max-w-sm rounded-lg sm:px-8">
+        <span className="absolute top-10 z-0 h-20 w-20 rounded-full bg-first transition-all duration-300 group-hover:scale-[10]"></span>
+        <div className="relative z-10 mx-auto max-w-md">
+            <span className="grid h-20 w-20 place-items-center rounded-full bg-first transition-all duration-300 group-hover:bg-first">
+            <img
+                  className="size-10"
                   src="https://img.icons8.com/color/48/heart-with-pulse.png"
                   alt="heart-with-pulse"
                 />
-              </span>
+            </span>
+            <div className="pt-5 text-base font-semibold leading-7">
+                <p className="text-first text-2xl transition-all text-wrap duration-300 group-hover:text-white">Your health is our priority
+                </p>
             </div>
-            <div className="flex flex-col items-center justify-center absolute mx-auto inset-0 p-4">
-              <h3 className="text-xl font-bold mb-2">
-                Your health is our priority.
-              </h3>
-              <p className="text-third-100">
-                Our clinic is home to a team of highly qualified doctors,
-                specialists, and healthcare staff with decades of combined
-                experience. We ensure every patient receives expert guidance and
-                treatment tailored to their unique needs.
-              </p>
+            <div
+                className="text-left text-wrap space-y-6 pt-5 leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
+                <p>Our clinic is home to a team of highly qualified doctors, specialists, and healthcare staff with decades of combined experience. We ensure every patient receives expert guidance and treatment tailored to their unique needs.</p>
             </div>
-          </motion.div>
-
-          {/* Card 2 */}
-
-          <motion.div
-          initial={{ 
-            scale: 0.8,
-            opacity: 0,
-          }}
-          whileInView={{
-            transition: { duration: 0.5,  delay: 0.5 },
-            scale: 1,
-            opacity: 1,
-            animation: {
-              y: [0, -10, 0],
-              transition: { duration: 0.5 },
-            }
-          }}
-          viewport={{ once: true }}
-          className=" shadow-sm p-6 text-center group w-64 h-96 bg-white border:gray-700 border-4 hover:border-white relative m-4 hover:ring hover:ring-first   transform duration-500 hover:scale-105 hover:shadow-xl">
-            <div className="bg-first  flex justify-center items-center w-20 h-20 rounded-full absolute mx-auto right-0 left-0 -inset-y-14 border-4 group-hover:bg-white group-hover:shadow-md transform duration-300">
-              <span className="text-3xl md:text-5xl text-white  group-hover:text-first  transform duration-300 p-4">
-                <img
-                  width="48"
-                  height="48"
-                  src="https://img.icons8.com/fluency/48/nurse-female.png"
-                  alt="nurse-female"
-                />
-              </span>
-            </div>
-
-            <div className="flex flex-col items-center justify-center absolute mx-auto inset-0 p-4">
-              <h3 className="text-xl font-bold mb-2">
-                Experienced Medical Professionals
-              </h3>
-              <p className="text-third-100">
-                Our clinic is home to a team of highly qualified doctors,
-                specialists, and healthcare staff with decades of combined
-                experience. We ensure every patient receives expert guidance and
-                treatment tailored to their unique needs.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* {#card-3} */}
-
-          <motion.div
-      
-          initial={{ 
-            scale: 0.8,
-            opacity: 0,
-          }}
-          whileInView={{
-            transition: { duration: 0.5,  delay: 1.0 },
-            scale: 1,
-            opacity: 1,
-          }}
-          viewport={{ once: true }}
-          
-          className=" shadow-sm p-6 text-center group w-64 h-96 bg-white border:gray-700 border-4 hover:border-white  relative m-4 hover:ring hover:ring-first   transform duration-500 hover:scale-105 hover:shadow-xl">
-            <div className="bg-first  flex justify-center items-center w-20 h-20 rounded-full absolute mx-auto right-0 left-0 -inset-y-14 border-4 group-hover:bg-white group-hover:shadow-md transform duration-300">
-              <span className="text-3xl md:text-5xl text-white  group-hover:text-first form duration-300 p-4">
-                <img
-                  width="64"
-                  height="64"
-                  src="https://img.icons8.com/?size=100&id=H0fT5t4BS8rR&format=png&color=000000"
-                  alt="external-medical-equipment-healthcare-and-medicine-filled-outline-perfect-kalash"
-                />
-              </span>
-            </div>
-            <div className="flex flex-col items-center justify-center absolute mx-auto inset-0 p-4">
-              <h3 className="text-xl font-bold mb-2">
-                Advanced Facilities & Technology
-              </h3>
-              <p className="text-third-100">
-                We pride ourselves on utilizing state-of-the-art medical
-                equipment and modern facilities to provide accurate diagnoses
-                and effective treatments. From routine checkups to specialized
-                procedures, we deliver top-notch care.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* {#card-4} */}
-
-          <motion.div
-          initial={{ 
-            scale: 0.8,
-            opacity: 0,
-          }}
-          whileInView={{
-            transition: { duration: 0.5, delay: 1.5 },
-            scale: 1,
-            opacity: 1,
-          }}
-          viewport={{ once: true }}
-          className=" shadow-sm p-6 text-center group w-64 h-96 bg-white border:gray-700 border-4 hover:border-white  relative m-4 hover:ring hover:ring-first   transform duration-500 hover:scale-105 hover:shadow-xl">
-            <div className="bg-first  flex justify-center items-center w-20 h-20 rounded-full absolute mx-auto right-0 left-0 -inset-y-14 border-4 group-hover:bg-white group-hover:shadow-md transform duration-300">
-            <span className="text-3xl md:text-5xl text-white  group-hover:text-first form duration-300 p-4">
-            <img width="66" height="66" src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/66/external-Doctor-And-Patient-medical-concepts-smashingstocks-flat-smashing-stocks-4.png" alt="external-Doctor-And-Patient-medical-concepts-smashingstocks-flat-smashing-stocks-4"/>
-              </span>
-            </div>
-            <div className="flex flex-col items-center justify-center absolute mx-auto inset-0 p-4">
-              <h3 className="text-xl font-bold mb-2">
-                Patient-Centered Approach.
-              </h3>
-              <p className="text-third-100">
-                {" "}
-                We pride ourselves on utilizing state-of-the-art medical
-                equipment and modern facilities to provide accurate diagnoses
-                and effective treatments. From routine checkups to specialized
-                procedures, we deliver top-notch care.
-              </p>
-            </div>
-          </motion.div>
+            
         </div>
+    </motion.div>
+    <motion.div initial={{  opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.25 }}
+        className="group relative border-2 border-first cursor-pointer overflow-hidden bg-white px-6 pt-8 pb-8 shadow-lg ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 sm:mx-auto sm:max-w-sm rounded-lg sm:px-8">
+        <span className="absolute top-10 z-0 h-20 w-20 rounded-full bg-first transition-all duration-300 group-hover:scale-[10]"></span>
+        <div className="relative z-10 mx-auto max-w-md">
+            <span className="grid h-20 w-20 place-items-center rounded-full bg-first transition-all duration-300 group-hover:bg-first">
+            <img
+                  className="size-10"
+                  src="https://img.icons8.com/fluency/48/nurse-female.png"
+                  alt="heart-with-pulse"
+                />
+            </span>
+            <div className="pt-5 text-base font-semibold leading-7">
+                <p className="text-first text-2xl transition-all text-wrap duration-300 group-hover:text-white">Experienced Medical Professionals
+                </p>
+            </div>
+            <div
+                className="text-left text-wrap space-y-6 pt-5 leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
+                <p>Our clinic is home to a team of highly qualified doctors, specialists, and healthcare staff with decades of combined experience. We ensure every patient receives expert guidance and treatment tailored to their unique needs.</p>
+            </div>
+            
+        </div>
+    </motion.div>
+    <motion.div initial={{  opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        className="group relative border-2 border-first cursor-pointer overflow-hidden bg-white px-6 pt-8 pb-8 shadow-lg ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 sm:mx-auto sm:max-w-sm rounded-lg sm:px-8">
+        <span className="absolute top-10 z-0 h-20 w-20 rounded-full bg-first transition-all duration-300 group-hover:scale-[10]"></span>
+        <div className="relative z-10 mx-auto max-w-md">
+            <span className="grid h-20 w-20 place-items-center rounded-full bg-first transition-all duration-300 group-hover:bg-first">
+            <img
+                  className="size-10"
+                  src="https://img.icons8.com/?size=100&id=H0fT5t4BS8rR&format=png&color=000000"
+                  alt="heart-with-pulse"
+                />
+            </span>
+            <div className="pt-5 text-base font-semibold leading-7">
+                <p className="text-first text-2xl transition-all text-wrap duration-300 group-hover:text-white">Advanced Facilities & Technology
+                </p>
+            </div>
+            <div
+                className="text-left text-wrap space-y-6 pt-5 leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
+                <p>We pride ourselves on utilizing state-of-the-art medical equipment and modern facilities to provide accurate diagnoses and effective treatments. From routine checkups to specialized procedures, we deliver top-notch care.</p>
+            </div>
+            
+        </div>
+    </motion.div>
+    <motion.div initial={{  opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.75 }}
+        className="group relative border-2 border-first cursor-pointer overflow-hidden bg-white px-6 pt-8 pb-8 shadow-lg ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 sm:mx-auto sm:max-w-sm rounded-lg sm:px-8">
+        <span className="absolute top-10 z-0 h-20 w-20 rounded-full bg-first transition-all duration-300 group-hover:scale-[10]"></span>
+        <div className="relative z-10 mx-auto max-w-md">
+            <span className="grid h-20 w-20 place-items-center rounded-full bg-first transition-all duration-300 group-hover:bg-first">
+            <img
+                  className="size-10"
+                  src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/66/external-Doctor-And-Patient-medical-concepts-smashingstocks-flat-smashing-stocks-4.png"
+                  alt="heart-with-pulse"
+                />
+            </span>
+            <div className="pt-5 text-base font-semibold leading-7">
+                <p className="text-first text-2xl transition-all text-wrap duration-300 group-hover:text-white">Patient-Centered Approach
+                </p>
+            </div>
+            <div
+                className="text-left text-wrap space-y-6 pt-5 leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
+                <p>We pride ourselves on utilizing state-of-the-art medical equipment and modern facilities to provide accurate diagnoses and effective treatments. From routine checkups to specialized procedures, we deliver top-notch care.</p>
+            </div>
+            
+        </div>
+    </motion.div>
+</div>
       </div>
+      
     </section>
   );
 }

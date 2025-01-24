@@ -14,10 +14,10 @@ import Testimonials from "./components/Testimonials";
 
 export default function Home() {
   return (
-    <>
+    <div className="mainpage">
       <Header/>
       <Hero/>
-      {/* <About/> */}
+      <About/>
       <Services/>
       <BookAppointment/>
       <Hospitals/>
@@ -26,6 +26,6 @@ export default function Home() {
       <Choose/>
       <Blog/>
       <Footer/>
-    </>
+    </div>
   );
 }

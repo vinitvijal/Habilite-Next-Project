@@ -1,10 +1,7 @@
 'use client';
 import React from "react";
 import { motion } from "framer-motion";
-import calendar from "@/public/calendar.svg";
-import drkapil from "@/public/drkapil.png";
-import Image from "next/image";
-import Link from "next/link";
+import TextAnimate from "@/components/ui/anim-text";
 
 function Blog() {
   const blogs = [
@@ -19,7 +16,7 @@ function Blog() {
     {
       id: 2,
       title: "Bariatric Surgery Cost in Delhi, India",
-      excerpt: "Bariatric surgery is a transformative and life altering procedure meant for people suffering from obesity and obesity related health problems",
+      excerpt: "Bariatric surgery is a transformative and life-altering procedure meant for people suffering from obesity and obesity-related health problems",
       date: "October 5, 2024",
       author: "Dr. Kapil Agrawal",
       imageUrl: "https://www.habiliteclinics.com/assets/images/home/blog-2.webp",
@@ -34,110 +31,92 @@ function Blog() {
     },
   ];
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2, // Staggering effect for children
+      },
+    },
+  };
 
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 }, // Initial state
+    visible: { opacity: 1, y: 0 }, // State when in view
+  };
 
   return (
-    <div className="mx-auto sm:p-20">
-      <div className="flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
-        <motion.h2
-          className="text-4xl font-bold text-first pt-6 text-center hover:text-first uppercase tracking-wide p-6"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          RECENT BLOGS
-        </motion.h2>
-      </div>
-
-      <motion.h1
-        className="text-xl text-second mb-20 pb-2 text-center"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.5 }}
-      >
-        Insights From Our Medical Experts
-      </motion.h1>
-
-      {/* Cards container */}
-      <div className="w-auto flex justify-center">
-        <motion.div
-          className="grid grid-cols-1 max-w-7xl md:grid-cols-2 lg:grid-cols-3 gap-12"
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
-        >
-          {blogs.map((blog, index) => (
-            <motion.div
-              key={blog.id}
-              className="relative flex sm:w-full flex-col max-w-[350px] items-center shadow-lg rounded-lg hover:shadow-lg hover:scale-105 transition-transform duration-300 hover:bg-gray-200 m-6 mb-0 cursor-pointer"
-              initial={{ opacity: 0, scale:0.9, y:50}}
-              whileInView={{scale:1, opacity:1, y:0, transition:{ duration:0.8,ease:"easeInOut"}}}
-              whileHover={{scale:1.05, transition:{delay:0,duration:0.25,ease:"linear",restSpeed:2}}}
-            >
-              {/* Card content */}
-              <img
-                src={blog.imageUrl}
-                alt={blog.title}
-                className="w-full rounded-t-lg"
-              />
-              <div className="p-2 px-4 max-w-6xl">
-                <div className="flex justify-start gap-2 px-1 py-2">
-                  <Image
-                    src={calendar}
-                    className="z-0 h-4 w-4"
-                    alt="none"
-                  ></Image>
-                  <div className="text-black text-sm">{blog.date}</div>
-                </div>
-
-                <h2 className="mt-2 p-1 text-lg font-bold text-black">
-                  {blog.title}
-                </h2>
-
-                <p className="text-sm text-second p-1">{blog.excerpt}</p>
-
-                <div className="flex justify-center items-center">
-                  <button className="mt-6 px-3 py-2 rounded-md bg-first text-white font-xs font-semibold hover:bg-second hover-scale-105 ">
-                    Read More
-                  </button>
-                </div>
-              </div>
-
-              {/* Card footer */}
-              <div className="w-full flex items-center justify-start text-sm text-black font-semibold px-5 py-3 mt-2 mb-1 gap-2 relative bottom-0">
-                <div className="w-8 h-8 ml-0 rounded-full bg-gray-300 overflow-hidden">
-                  <Image
-                    src={drkapil}
-                    alt="Author"
-                    width={60}
-                    height={60}
-                    className="object-cover"
-                  />
-                </div>
-                <span className="ml-0 font-semibold text-md">
-                  {blog.author}
-                </span>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-
-      <motion.div
-        className="w-full flex justify-center mt-20"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.5 }}
-      >
-        <Link
-          href="#"
-          className="px-6 py-4 bg-first rounded-lg hover:scale-105 duration-300 hover:duration-500 text-white hover:bg-second"
-        >
-          More Blogs
-        </Link>
+    <div className="pb-20">
+       <motion.div className='flex flex-col gap-2 items-center pt-20'>
+        <TextAnimate text="RECENT BLOGS" type="calmInUp" className="text-2xl md:text-4xl text-center font-bold whitespace-normal" />
+        <TextAnimate text="Insights From Our Medical Experts" type="calmInUp" className='md:text-xl text-lg font-medium text-first' />
       </motion.div>
+
+      <div className="relative px-10 pt-6 pb-12 lg:px-8">
+        <div className="absolute inset-0">
+          <div className="h-1/3 bg-white sm:h-2/3"></div>
+        </div>
+        <div className="relative mx-auto max-w-6xl">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            className="mx-auto mt-12 grid max-w-lg gap-8 lg:max-w-none lg:grid-cols-3"
+          >
+            {blogs.map((blog) => (
+              <motion.div 
+                key={blog.id}
+                variants={cardVariants}
+                className="flex flex-col overflow-hidden rounded-lg shadow-lg"
+              >
+                <div className="flex-shrink-0">
+                  <img className="h-48 w-full object-cover" src={blog.imageUrl} alt={blog.title} />
+                </div>
+                <div className="flex flex-1 flex-col justify-between bg-white p-6">
+                  <div className="flex-1">
+                    <a href="#" className="mt-2 block">
+                      <p className="text-xl font-semibold text-gray-900 text-wrap">{blog.title}</p>
+                      <p className="mt-3 text-base text-gray-500 text-wrap">{blog.excerpt}</p>
+                    </a>
+                  </div>
+                  <div className="mt-6 flex items-center">
+                    <div className="flex-shrink-0">
+                      <a href="#">
+                        <img className="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt={blog.author} />
+                      </a>
+                    </div>
+                    <div className="w-full flex justify-between items-center">
+                      <div className="ml-3">
+                        <p className="text-sm font-medium text-gray-900">
+                          <a href="#" className="hover:underline">{blog.author}</a>
+                        </p>
+                        <div className="flex space-x-1 text-sm text-gray-500">
+                          <time dateTime={blog.date}>{blog.date}</time>
+                        </div>
+                      </div>
+                      <button className="text-sm font-medium text-indigo-600 hover:underline">Read more</button>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+
+      <div className="flex justify-center pt-10">
+        <a href="" class=" text-first border border-first py-2 px-6 gap-2 rounded inline-flex items-center">
+          <span>
+              More Blogs
+          </span>
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              viewBox="0 0 24 24" className="w-6 h-6 text-first">
+              <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
     </div>
   );
 }
 
 export default Blog;
-

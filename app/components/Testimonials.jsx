@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import Marquee from "/components/ui/marquee";
-
+import TextAnimate from "@/components/ui/anim-text";
 
 const reviews = [
   {
@@ -35,17 +35,17 @@ const ReviewCard = ({
   return (
     <div
       className={cn(
-        "relative w-[200px] sm:w-80 cursor-pointer overflow-hidden p-3 sm:p-4 border-first border-2 rounded-lg text-black dark:text-white/80 hover:text-white hover:bg-first transition-all duration-300"
+        "relative w-[285px] md:h-[40vh] h-[42vh] sm:w-96 cursor-pointer overflow-hidden px-3 sm:p-4 border-first border-2 rounded-lg text-black dark:text-white/80 hover:text-white hover:bg-first transition-all duration-300"
       )}
     >
       <div>
-        <blockquote className="text-xs sm:text-sm ">{review}</blockquote>
+        <blockquote className="text-wrap">{review}</blockquote>
         <div className="mt-3 flex flex-row items-center">
           <div className="flex flex-col">
             <figcaption className="text-lg sm:text-xl font-semibold dark:text-white">
               {name}
             </figcaption>
-            <span className="text-sm sm:text-base font-medium text-zinc-600/60">{occupation}</span>
+            <span className="text-sm sm:text-base font-medium text-third">{occupation}</span>
           </div>
         </div>
       </div>
@@ -60,10 +60,12 @@ function Testimonials() {
         className="relative flex flex-col items-center justify-center overflow-hidden bg-background md:mx-6 "
       >
         <div className="  h-auto md:w-3/4 w-full">
-
-      <h1 className="text-3xl sm:text-4xl font-semibold text-first flex justify-center items-center mb-12">
+        <div className='flex flex-col gap-2 items-center pt-20 pb-14'>
+          <TextAnimate text="OUR TESTIMONIALS" type="calmInUp" className="text-2xl md:text-4xl text-center font-bold whitespace-normal" />
+        </div>
+      {/* <h1 className="text-3xl sm:text-4xl font-semibold text-first flex justify-center items-center mb-12">
         OUR TESTIMONIALS
-      </h1>
+      </h1> */}
       <div>
         <Marquee pauseOnHover className="w-full [--duration:20s]">
           {firstRow.map((review) => (

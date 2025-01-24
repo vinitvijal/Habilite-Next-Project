@@ -33,7 +33,7 @@ function Footer() {
             </div>
             <div className='flex items-center gap-2 cursor-pointer group'>
               <img src="/location.png" className='h-5 w-5 transform transition-all duration-500 ease-in-out group-hover:-translate-y-1 group-hover:w-6 group-hover:h-6'/>
-              <h1 className='text-sm text-white/80 text-light '>M 11, Block M, Lajpat Nagar Road,Lajpat Nagar 2, Lajpat Nagar, New Delhi, Delhi 110024</h1>
+              <h1 className='text-sm text-white/80 text-light text-wrap'>M 11, Block M, Lajpat Nagar Road,Lajpat Nagar 2, Lajpat Nagar, New Delhi, Delhi 110024</h1>
             </div>
             <div className='flex items-center gap-2 cursor-pointer group'>
               <img src="/location.png" className='h-5 w-5 transform transition-all duration-500 ease-in-out group-hover:-translate-y-1 group-hover:w-6 group-hover:h-6'/>
@@ -75,7 +75,7 @@ function Footer() {
         </div>
         </div>
         <div className='bg-blue-800 justify-center items-center flex'>
-        <h1 className='md:text-sm px-4 md:px-0 text-xs py-3 text-semibold text-white'>Copyright©2024 HABILITE Clinics. All Rights Reserved ! Privacy Policy</h1>
+        <h1 className='md:text-sm px-4 md:px-0 text-xs py-3 text-semibold text-white'>Copyright©2024 HABILITE Clinics.&nbsp;&nbsp;&nbsp; All Rights Reserved!&nbsp;&nbsp;&nbsp; Privacy Policy</h1>
         </div>
       </section>
   )
