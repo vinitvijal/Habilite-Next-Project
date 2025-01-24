@@ -91,7 +91,7 @@ function Blog() {
                           <a href="#" className="hover:underline">{blog.author}</a>
                         </p>
                         <div className="flex space-x-1 text-sm text-gray-500">
-                          <time datetime={blog.date}>{blog.date}</time>
+                          <time dateTime={blog.date}>{blog.date}</time>
                         </div>
                       </div>
                       <button className="text-sm font-medium text-indigo-600 hover:underline">Read more</button>

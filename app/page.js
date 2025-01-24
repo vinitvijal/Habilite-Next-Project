@@ -17,7 +17,7 @@ export default function Home() {
     <div className="mainpage">
       <Header/>
       <Hero/>
-      {/* <About/> */}
+      <About/>
       <Services/>
       <BookAppointment/>
       <Hospitals/>
