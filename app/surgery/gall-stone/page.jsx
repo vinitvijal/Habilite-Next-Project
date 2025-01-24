@@ -27,13 +27,13 @@ const boxVariants = {
 
 
 const FeatureList = ({ features }) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 md:text-lg text-left mx-auto">
+  <div className="grid grid-cols-1 md:grid-cols-2 text-first md:text-lg text-left mx-auto">
     {features.map((feature, index) => (
       <div
         key={index}
-        className={`flex items-start py-3 bg-white rounded-lg text-first max-md:text-base transition-all duration-300 hover:scale-105 hover:font-semibold hover:text-blue-700 ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"}
+        className={`flex items-start spaxe-x-2 py-3 rounded-lg  max-md:text-base border-third border-t ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"} ${index===0?'border-none':''} ${index===1?'md:border-none':''}
         }`} >
-        <span> ✔️ </span>
+        <span> ➔ </span>
         <p>{feature}</p>
       </div>
     ))}
@@ -167,7 +167,6 @@ const cardVariants1 = {
           <motion.div
             initial={{opacity: 0, scale: 0.12 }}
             animate={{ opacity: 1, scale: 1 }}
-            whileHover={{ scale: 1.05 }}
             variants={boxVariants}
             transition={{  duration: 1 }}
             whileInView="visible"
@@ -328,7 +327,7 @@ const cardVariants1 = {
               <p className='pt-4 text-center'>Those who undergo single-port gallstone surgery are happier because of excellent cosmesis, rapid recovery, and significantly less painful perception.</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto p-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto p-6 pt-0">
               {featureData.map((feature, index) => (
                 <motion.div
                   key={index}
@@ -347,9 +346,9 @@ const cardVariants1 = {
                   </svg>
                   </div>
                   <div className='text-center'>
-                    <div className="text-xl mx-10">
+                    <div className="text-lg mx-8">
                       {feature.points.map((point, index) => (
-                        <p key={index} className="mb-3 border-b-2 border-fourth">{point}</p>
+                        <p key={index} className={`py-3 border-t border-third ${index===0?'border-none':''} `}>{point}</p>
                       ))}
                     </div>
                   </div>

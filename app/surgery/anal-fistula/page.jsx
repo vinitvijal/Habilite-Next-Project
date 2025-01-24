@@ -16,13 +16,13 @@ const features = [
 ];
 
 const FeatureList = ({ features }) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 md:text-lg text-left mx-auto">
+  <div className="grid grid-cols-1 md:grid-cols-2 text-first md:text-lg text-left mx-auto">
     {features.map((feature, index) => (
       <div
         key={index}
-        className={`flex items-start py-3 bg-white rounded-lg text-first max-md:text-base transition-all duration-300 hover:scale-105 hover:font-semibold hover:text-blue-700 ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"}
+        className={`flex items-start spaxe-x-2 py-3 rounded-lg  max-md:text-base border-third border-t ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"} ${index===0?'border-none':''} ${index===1?'md:border-none':''}
         }`} >
-        <span> ✔️ </span>
+        <span> ➔ </span>
         <p>{feature}</p>
       </div>
     ))}
@@ -155,7 +155,6 @@ An anal fistula is an abnormal tunnel that forms as a result of an infected anal
             <motion.div
               initial={{opacity: 0, scale: 0.12 }}
               animate={{ opacity: 1, scale: 1 }}
-              whileHover={{ scale: 1.05 }}
               variants={boxVariants}
               transition={{  duration: 1 }}
               whileInView="visible"
@@ -301,7 +300,7 @@ An anal fistula is an abnormal tunnel that forms as a result of an infected anal
                 whileInView="visible"
                 viewport={{ amount: 0.2 }}
                 className="flex items-center justify-center  max-w-6xl mx-auto">
-                  <div className="hover:bg-blue-200 p-12 border-gray-300 border-2 hover:border-blue-500 rounded-lg shadow-md">
+                  <div className="p-12 border-third border-2  rounded-lg shadow-md">
                     <div className="mb-4">
                       <p className='pt-2 text-center font-medium mr-1'>Some of the common advantages of Laser Treatment for Fistula include :-</p>
                       <p className='pt-2'><span className="font-medium mr-1">→ Minimally Invasive: </span>Laser treatment is less invasive than traditional surgery, resulting in more minor wounds and less tissue damage.</p>

@@ -17,13 +17,13 @@ const features = [
 ];
 
 const FeatureList = ({ features }) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 md:text-lg text-left mx-auto">
+  <div className="grid grid-cols-1 md:grid-cols-2 text-first md:text-lg text-left mx-auto">
     {features.map((feature, index) => (
       <div
         key={index}
-        className={`flex items-center py-3 bg-white rounded-lg text-first max-md:text-base transition-all duration-300 hover:scale-105 hover:font-semibold hover:text-blue-700 ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"}
+        className={`flex items-start spaxe-x-2 py-3 rounded-lg  max-md:text-base border-third border-t ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"} ${index===0?'border-none':''} ${index===1?'md:border-none':''}
         }`} >
-        <span> ✔️ </span>
+        <span> ➔ </span>
         <p>{feature}</p>
       </div>
     ))}
@@ -189,7 +189,6 @@ const benefits = [
             <motion.div
             initial={{opacity: 0, scale: 0.12 }}
             animate={{ opacity: 1, scale: 1 }}
-            whileHover={{ scale: 1.05 }}
             variants={boxVariants}
             transition={{  duration: 1 }}
             whileInView="visible"
