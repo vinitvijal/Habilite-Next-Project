@@ -105,11 +105,11 @@ function Blog() {
       </div>
 
       <div className="flex justify-center pt-10">
-        <a href="" class=" text-first border border-first py-2 px-6 gap-2 rounded inline-flex items-center">
+        <a href="" className=" text-first border border-first py-2 px-6 gap-2 rounded inline-flex items-center">
           <span>
               More Blogs
           </span>
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
               viewBox="0 0 24 24" className="w-6 h-6 text-first">
               <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
