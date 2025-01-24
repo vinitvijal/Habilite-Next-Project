@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 function About() {
   return (
-    <section className='h-full px-5 lg:px-32 py-5 mt-10'>
+    <section className='h-full px-5 lg:px-32 py-5 mt-10 lg:mt-20'>
       <motion.div initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ amount: 0.3 }}
@@ -13,7 +13,7 @@ function About() {
         <p className='text-first text-3xl lg:text-5xl mb-4 text-left'>About Us</p>
         <Separator.Root orientation="horizontal" className="mx-0 w-1/4 lg:w-1/12 h-[1px] bg-third" />
 
-        <div className="upper-content flex flex-col lg:flex-row mt-5 lg:mt-3">
+        <div className="upper-content flex flex-col lg:flex-row mt-5 lg:mt-10">
           <div className="content mt-2 lg:mr-5 lg:w-[105rem] w-full">
 
             <p className='text-2xl lg:text-3xl text-second whitespace-normal'>Best Laparoscopic, Laser and Weight Loss Surgery in Delhi</p>
