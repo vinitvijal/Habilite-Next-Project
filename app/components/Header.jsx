@@ -26,11 +26,11 @@ function Header() {
               <div className="DropdownMenuContent group-hover:display-appear group hidden group-hover:block visible absolute bg-white w-48 z-50 translate-x-2 -translate-y-2 shadow-xl rounded-md">
 
                 <p className="DropdownMenuItem text-md h-10 flex items-center px-4 py-1 hover:text-first hover:cursor-pointer hover:translate-x-1 transition-all duration-150">
-                  About Habilite Clinic
+                  <Link href="/">About Habilite Clinic</Link>
                 </p>
 
                 <p className="DropdownMenuItem text-md h-10 flex items-center px-4 py-1 hover:text-first hover:cursor-pointer hover:translate-x-1 transition-all duration-150">
-                  Dr. Kapil Agarwal
+                  <Link href="/">Dr. Kapil Agarwal</Link>
                 </p>
 
               </div>
@@ -47,23 +47,23 @@ function Header() {
                   <ChevronRight className='h-3' />
                   <div className="subdropdown hidden group2-hover:block animate-custfadein py-1 hover:block absolute top-0 left-full -translate-x-1 bg-white whitespace-nowrap shadow-md rounded-md text-black">
                     <p className="subDropdownMenuItem text-md h-10 flex items-center px-4 py-1 hover:text-first hover:cursor-pointer hover:translate-x-1 transition-all duration-150">
-                      <Link href="/">Gall Stones</Link>
+                      <Link href="/surgery/gall-stone">Gall Stones</Link>
                     </p>
 
                     <p className="subDropdownMenuItem text-md h-10 flex items-center px-4 py-1 hover:text-first hover:cursor-pointer hover:translate-x-1 transition-all duration-150">
-                      <Link href="/">Hernia</Link>
+                      <Link href="/surgery/hernia">Hernia</Link>
                     </p>
 
                     <p className="subDropdownMenuItem text-md h-10 flex items-center px-4 py-1 hover:text-first hover:cursor-pointer hover:translate-x-1 transition-all duration-150">
-                      <Link href="/">Rectal Prolapse</Link>
+                      <Link href="/surgery/rectal-prolapse">Rectal Prolapse</Link>
                     </p>
 
                     <p className="subDropdownMenuItem text-md h-10 flex items-center px-4 py-1 hover:text-first hover:cursor-pointer hover:translate-x-1 transition-all duration-150">
-                      <Link href="/">Appendix</Link>
+                      <Link href="/surgery/appendix">Appendix</Link>
                     </p>
 
                     <p className="subDropdownMenuItem text-md h-10 flex items-center px-4 py-1 hover:text-first hover:cursor-pointer hover:translate-x-1 transition-all duration-150">
-                      <Link href="/">Gerd</Link>
+                      <Link href="/surgery/gerd">Gerd</Link>
                     </p>
                   </div>
                 </div>
@@ -73,32 +73,32 @@ function Header() {
                   <ChevronRight className='h-3' />
                   <div className="subdropdown hidden group3-hover:block animate-custfadein hover:block absolute py-1 top-0 left-full -translate-x-1 bg-white whitespace-nowrap shadow-md rounded-md text-black">
                     <p className="subDropdownMenuItem text-md h-10 flex items-center px-4 py-1 hover:text-first hover:cursor-pointer hover:translate-x-1 transition-all duration-150">
-                      <Link href="/">Hemorrhoids/Piles
+                      <Link href="/surgery/piles">Hemorrhoids/Piles
                       </Link>
                     </p>
 
                     <p className="subDropdownMenuItem text-md h-10 flex items-center px-4 py-1 hover:text-first hover:cursor-pointer hover:translate-x-1 transition-all duration-150">
-                      <Link href="/">Anal Fissure
+                      <Link href="/surgery/anal-fissure">Anal Fissure
                       </Link>
                     </p>
 
                     <p className="subDropdownMenuItem text-md h-10 flex items-center px-4 py-1 hover:text-first hover:cursor-pointer hover:translate-x-1 transition-all duration-150">
-                      <Link href="/">Pilonidal Sinus
+                      <Link href="/surgery/pilonidal-sinus">Pilonidal Sinus
                       </Link>
                     </p>
 
                     <p className="subDropdownMenuItem text-md h-10 flex items-center px-4 py-1 hover:text-first hover:cursor-pointer hover:translate-x-1 transition-all duration-150">
-                      <Link href="/">Anal Fistula
+                      <Link href="/surgery/anal-fistula">Anal Fistula
                       </Link>
                     </p>
 
                     <p className="subDropdownMenuItem text-md h-10 flex items-center px-4 py-1 hover:text-first hover:cursor-pointer hover:translate-x-1 transition-all duration-150">
-                      <Link href="/">Lipoma
+                      <Link href="/surgery/lipoma">Lipoma
                       </Link>
                     </p>
 
                     <p className="subDropdownMenuItem text-md h-10 flex items-center px-4 py-1 hover:text-first hover:cursor-pointer hover:translate-x-1 transition-all duration-150">
-                      <Link href="/">Circumcision
+                      <Link href="/surgery/circumcision">Circumcision
                       </Link>
                     </p>
                   </div>
@@ -109,22 +109,22 @@ function Header() {
                   <ChevronRight className='h-3' />
                   <div className="subdropdown hidden group4-hover:block animate-custfadein py-1 hover:block absolute top-0 left-full -translate-x-1 bg-white shadow-md rounded-md text-black whitespace-nowrap">
                     <p className="subDropdownMenuItem text-md h-10 flex items-center px-4 py-1 hover:text-first hover:cursor-pointer hover:translate-x-1 transition-all duration-150">
-                      <Link href="/">Bariatric Surgery
+                      <Link href="/surgery/bariatric-surgery">Bariatric Surgery
                       </Link>
                     </p>
 
                     <p className="subDropdownMenuItem text-md h-10 flex items-center px-4 py-1 hover:text-first hover:cursor-pointer hover:translate-x-1 transition-all duration-150">
-                      <Link href="/">Non-Surgical Weight Loss Program
+                      <Link href="/surgery/medical-weight-loss-program">Non-Surgical Weight Loss Program
                       </Link>
                     </p>
 
                     <p className="subDropdownMenuItem text-md h-10 flex items-center px-4 py-1 hover:text-first hover:cursor-pointer hover:translate-x-1 transition-all duration-150">
-                      <Link href="/">Surgery for Diabetes
+                      <Link href="/surgery/surgery-for-diabetes">Surgery for Diabetes
                       </Link>
                     </p>
 
                     <p className="subDropdownMenuItem text-md h-10 flex items-center px-4 py-1 hover:text-first hover:cursor-pointer hover:translate-x-1 transition-all duration-150">
-                      <Link href="/">Intragastric Balloon
+                      <Link href="/surgery/intraGastric-balloon">Intragastric Balloon
                       </Link>
                     </p>
                   </div>
