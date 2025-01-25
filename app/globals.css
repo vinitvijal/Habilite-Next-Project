@@ -201,6 +201,18 @@
   display: none;
 }
 
+.group2:hover .group2-hover\:block{
+  display: block;
+}
+
+.group3:hover .group3-hover\:block{
+  display: block;
+}
+
+.group4:hover .group4-hover\:block{
+  display: block;
+}
+
 @media (max-width: 768px) {
   .sidebar-trigger {
       display: block; 
