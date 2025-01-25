@@ -10,7 +10,7 @@ import { motion, useInView } from "framer-motion";
 const features = [
   "30 Minute Painless Procedure",
   "Single Port Scarless Surgery",
-  "Highly Experienced, Internationally Trained Team",
+  "Experienced & Internationally Trained Team",
   "Affiliated to Best Hospitals in Delhi, NCR",
   "Cashless Insurance Facility Available",
   "Honest Pricing and No Hidden Charges",
@@ -27,14 +27,14 @@ const boxVariants = {
 
 
 const FeatureList = ({ features }) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 text-first md:text-lg text-left mx-auto">
+  <div className="grid grid-cols-1 md:grid-cols-2 text-first text-left mx-auto">
     {features.map((feature, index) => (
       <div
         key={index}
-        className={`flex items-start spaxe-x-2 py-3 rounded-lg  max-md:text-base border-third border-t ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"} ${index===0?'border-none':''} ${index===1?'md:border-none':''}
+        className={`flex items-start space-x-2 py-2  max-md:text-base border-third border-t ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"} ${index===0?'border-none':''} ${index===1?'md:border-none':''}
         }`} >
         <span> ➔ </span>
-        <p>{feature}</p>
+        <p className='max-sm:text-sm' >{feature}</p>
       </div>
     ))}
   </div>
@@ -154,10 +154,10 @@ const cardVariants1 = {
             <img
               src="/main.jpg"
               alt="Background"
-              className="w-full object-cover opacity-200"/>
+              className="w-full rounded-lg object-cover opacity-200"/>
         
             <div className="absolute inset-0 flex items-center justify-center">
-              <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white px-4 py-2 rounded-md flex-col items-center justify-center text-center bg-transparent hover:bg-black hover:bg-opacity-20">
+              <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white px-4 py-2 rounded-md flex-col items-center justify-center text-center bg-transparent hover:bg-black hover:bg-opacity-20 transition-all duration-400">
                 Best Gallbladder Surgeon <br /> in Delhi
               </h1>
             </div>
@@ -170,14 +170,14 @@ const cardVariants1 = {
             variants={boxVariants}
             transition={{  duration: 1 }}
             whileInView="visible"
-            viewport={{ amount: 0.2 }}
-            className="w-3/5 mx-auto relative sm:-mt-20 lg:-mt-40 px-8 py-10 bg-white shadow-sm shadow-black items-center rounded-lg"
+            viewport={{ amount: 0.2,once: true }}
+            className="sm:w-2/3 w-full mx-auto relative sm:-mt-12 lg:-mt-24 md:px-6 py-4 bg-white sm:shadow-md items-center md:rounded-lg"
           >
             <FeatureList features={features} />
           </motion.div>
         </div>
 
-        <div className="flex flex-col mx-auto px-8 md:px-16 lg:px-24 gap-10">
+        <div className="flex flex-col mx-auto px-2 sm:px-8 md:px-16 lg:px-24 gap-10">
           <div className="py-8 mt-16 mb-8 text-center border-t-2 border-b-2 border-first">
             {surgeonInfo.map((info, index) => (
               <div key={index} className="mb-8">
@@ -185,7 +185,7 @@ const cardVariants1 = {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 1 }}
-                  viewport={{ amount: 0.2 }}
+                  viewport={{ amount: 0.2,once:true }}
                   className="text-3xl md:text-4xl  font-bold my-6 text-second"
                 >
                   {info.title}
@@ -195,7 +195,7 @@ const cardVariants1 = {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 2 }}
-                  viewport={{ amount: 0.2 }}
+                  viewport={{ amount: 0.2,once: true }}
                   className="text-lg sm:text-xl md:text-2xl text-left mb-8 text-first px-4 md:px-8 lg:px-16 mx-auto text"
                 >
                   {info.description}
@@ -207,8 +207,8 @@ const cardVariants1 = {
             <motion.div
             initial={{ opacity: 0, x: 100 }} 
             whileInView={{ opacity: 1, x: 0 }} 
-            viewport={{ amount: 0.3 }} 
-            transition={{ duration: 0.8 }}>
+            viewport={{ amount: 0.2,once: true }} 
+            transition={{ duration: 0.5 }}>
               <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">What is Gallbladder ?</h2>
               <p className=" mb-2">
                 The gallbladder is a tiny pear-shaped organ located just below the liver, situated on the right upper side of the abdomen.  <br />The liver produces a yellow-coloured fluid known as bile, which flows into the intestine to aid in digesting food, especially fatty meals.
@@ -217,8 +217,7 @@ const cardVariants1 = {
         
               <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">Function of the Gallbladder</h2>
               <div className=" mb-4 ">
-                <p className=''><span className="font-medium mt-4 mr-1">→ Storage of Bile:</span> The liver produces 1.5 litres of bile daily. Most of the bile flows directly into the intestine, but 50 ml is stored</p>
-                <p className='ml-5'>in the gallbladder as a reserve. </p>
+                <p className=''><span className="font-medium mt-4 mr-1">→ Storage of Bile:</span> The liver produces 1.5 litres of bile daily. Most of the bile flows directly into the intestine, but 50 ml is stored in the gallbladder as a reserve.</p>
                 <p className='pt-2'><span className="font-medium mt-4 mr-1">→ Bile Release:</span> When fatty foods enter the small intestine, the gallbladder releases bile for proper digestion.</p>
               </div>
               <div>
@@ -228,8 +227,7 @@ const cardVariants1 = {
                   <p>Gallbladder stones are solid pieces of cholesterol, calcium salts, or bilirubin. The main risk factors include :- </p>
                   <p className='pt-2'><span className="font-medium mr-1">→ Metabolic Disturbances:</span> Changes in cholesterol metabolism (e.g., hyperlipidemia due to obesity or rapid weight changes). </p>
                   <p className='pt-2'><span className="font-medium mr-1">→ Gallbladder Infection:</span> Loss of gallbladder function due to infection can lead to stone formation. </p>
-                  <p className='pt-2'><span className="font-medium mr-1">→ Hormonal Disturbances:</span> Multiple pregnancies or obesity can cause hormonal imbalances, reducing gallbladder function and</p>
-                  <p className='ml-5'>leading to stone formation. </p>
+                  <p className='pt-2'><span className="font-medium mr-1">→ Hormonal Disturbances:</span> Multiple pregnancies or obesity can cause hormonal imbalances, reducing gallbladder function and leading to stone formation.</p>
                 </div>
               </div>
             </motion.div>
@@ -237,8 +235,8 @@ const cardVariants1 = {
             <motion.div 
               initial={{ opacity: 0, x: -100 }} 
               whileInView={{ opacity: 1, x: 0 }} 
-              viewport={{ amount: 0.3 }} 
-              transition={{ duration: 0.8 }}
+              viewport={{ amount: 0.2,once: true }} 
+              transition={{ duration: 0.5 }}
             >
               <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">Signs of Gallbladder Stones</h2>
               <div className="mb-4">
@@ -255,25 +253,25 @@ const cardVariants1 = {
           </div>
         </div>
 
-        <div className="flex flex-col mx-auto px-8 md:px-16 lg:px-24 gap-10 m-16">
+        <div className="flex flex-col mx-auto px-2 sm:px-8 md:px-16 lg:px-24 gap-10 m-16">
           <motion.div initial={{ opacity: 0 }} 
           whileInView={{ opacity: 0.8 }} 
-          transition={{ duration: 2 }}
-          viewport={{ once: false }}  
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}  
           className='py-8 mb-8 text-center border-t-2 border-b-2 border-first'
           >
-            <h1 className=" text-3xl md:text-4xl font-bold my-6 text-second">
+            <h1 className=" text-3xl md:text-4xl md:font-bold font-semibold my-6 text-second">
               Best Gallbladder Stone Treatment in Delhi
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-left mb-8 text-first px-4 md:px-8 lg:px-16 mx-auto">
+            <p className="text-lg sm:text-xl md:text-2xl text-left mb-8 text-first px-2 md:px-8 lg:px-16 mx-auto">
               The field of gallbladder stone surgery has gone under a major transformation due to the introduction of newer technologies aimed at quick and painless recovery. Dr Kapil Agrawal, the best gallbladder surgeon in Delhi, has been delivering excellent outcomes due to his expertise in all the latest treatment modalities for gallstone surgery.
             </p>
           </motion.div>
           <motion.div 
           initial={{ opacity: 0, x: -100 }} 
           whileInView={{ opacity: 1, x: 0 }} 
-          viewport={{ amount: 0.3 }} 
-          transition={{ duration: 0.8 }}
+          viewport={{ amount: 0.1,once:true }} 
+          transition={{ duration: 0.5 }}
           className='flex-col mb-16 '
           >
             <h2 className="text-3xl md:text-4xl font-semibold mb-2 text-first">Laparoscopic Gallbladder Stone Surgery</h2>
@@ -307,13 +305,13 @@ const cardVariants1 = {
         </div>
 
         <div className='flex-col items-center justify-center mx-auto gap-20 my-8'>
-          <div className="w-full px-8 md:px-16 lg:px-24">
+          <div className="w-full px-4 sm:px-8 md:px-16 lg:px-24">
             <div className="text-center mb-20">
               <motion.h1
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ amount: 0.2 }}
+              viewport={{ amount: 0.2,once:true }}
               className="text-3xl md:text-4xl font-semibold text-first m-4">
                 KEY BENEFITS OF <br/> SINGLE PORT LAPAROSCOPIC CHOLECYSTECTOMY
               </motion.h1>
@@ -327,15 +325,15 @@ const cardVariants1 = {
               <p className='pt-4 text-center'>Those who undergo single-port gallstone surgery are happier because of excellent cosmesis, rapid recovery, and significantly less painful perception.</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto p-6 pt-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl max-sm:w-full sm:mx-auto sm:px-6  py-6  pt-0">
               {featureData.map((feature, index) => (
                 <motion.div
                   key={index}
-                  className="rounded-xl bg-white p-8 shadow-md border-third border-2"
+                  className="rounded-xl bg-white py-6 px-3 sm:px-6 shadow-md border-third border-2"
                   variants={cardVariants1}
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ amount: 0.2 }}
+                  viewport={{ amount: 0.2,once:true }}
                 >
                   <div className="mx-auto flex items-center justify-center h-24 w-24 -translate-y-16 transform rounded-full shadow-lg bg-first mb-0">
                   <svg viewBox="0 0 55 44" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-white mb-0">
@@ -346,9 +344,9 @@ const cardVariants1 = {
                   </svg>
                   </div>
                   <div className='text-center'>
-                    <div className="text-lg mx-8">
+                    <div className="md:text-lg mx-2 md:mx-8">
                       {feature.points.map((point, index) => (
-                        <p key={index} className={`py-3 border-t border-third ${index===0?'border-none':''} `}>{point}</p>
+                        <p key={index} className={`py-2 border-t border-third ${index===0?'border-none':''} `}>{point}</p>
                       ))}
                     </div>
                   </div>
@@ -361,9 +359,9 @@ const cardVariants1 = {
         <motion.div
         initial={{ opacity: 0, x: -100 }} 
         whileInView={{ opacity: 1, x: 0 }} 
-        viewport={{ amount: 0.3 }} 
-        transition={{ duration: 0.8 }}
-        className="flex flex-col mx-auto px-8 md:px-16 lg:px-24 mt-16 gap-6"
+        viewport={{ amount: 0.1,once:true }} 
+        transition={{ duration: 0.4 }}
+        className="flex flex-col mx-auto px-2 sm:px-8 md:px-16 lg:px-24 mt-16 gap-6"
         >
           <div className='flex-col mb-16'>
             <h2 className="text-4xl font-semibold mb-1 text-first">Course of Recovery Following Gallstone Surgery</h2>
@@ -383,14 +381,15 @@ const cardVariants1 = {
           </div>  
         </motion.div>
 
-        <div className="flex flex-col mx-auto px-8 md:px-16 lg:px-24 gap-6">
+        <div className="flex flex-col mx-auto px-2 sm:px-6 md:px-12 lg:px-24 gap-6">
           <motion.div initial={{ opacity: -2 }} 
             whileInView={{ opacity: 1.5 }} 
             transition={{ duration: 2 }} 
-            viewport={{ amount: 0.2 }} 
-            className='flex-col mx-6 mb-16 pt-4 md:px-24 border-first border-t-2'
+            viewport={{ amount: 0.2,once:true }} 
+            className='flex-col mx-3 mb-16 pt-4 md:px-24 border-first border-t-2'
           >
-            <div className="flex justify-center items-end m-4"><BsPinFill className='text-3xl md:text-4xl text-second' />
+            <div className="flex justify-center items-end my-4">
+              <BsPinFill className='text-3xl md:text-4xl text-second' />
               <h1 className='font-bold text-3xl md:text-4xl text-center border-fourth border-b-2 mt-6  text-second'>FAQ</h1>
             </div>
             <div className="mb-4 ">
