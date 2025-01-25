@@ -217,8 +217,7 @@ const cardVariants1 = {
         
               <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">Function of the Gallbladder</h2>
               <div className=" mb-4 ">
-                <p className=''><span className="font-medium mt-4 mr-1">→ Storage of Bile:</span> The liver produces 1.5 litres of bile daily. Most of the bile flows directly into the intestine, but 50 ml is stored</p>
-                <p className='ml-5'>in the gallbladder as a reserve. </p>
+                <p className=''><span className="font-medium mt-4 mr-1">→ Storage of Bile:</span> The liver produces 1.5 litres of bile daily. Most of the bile flows directly into the intestine, but 50 ml is stored in the gallbladder as a reserve.</p>
                 <p className='pt-2'><span className="font-medium mt-4 mr-1">→ Bile Release:</span> When fatty foods enter the small intestine, the gallbladder releases bile for proper digestion.</p>
               </div>
               <div>
@@ -228,8 +227,7 @@ const cardVariants1 = {
                   <p>Gallbladder stones are solid pieces of cholesterol, calcium salts, or bilirubin. The main risk factors include :- </p>
                   <p className='pt-2'><span className="font-medium mr-1">→ Metabolic Disturbances:</span> Changes in cholesterol metabolism (e.g., hyperlipidemia due to obesity or rapid weight changes). </p>
                   <p className='pt-2'><span className="font-medium mr-1">→ Gallbladder Infection:</span> Loss of gallbladder function due to infection can lead to stone formation. </p>
-                  <p className='pt-2'><span className="font-medium mr-1">→ Hormonal Disturbances:</span> Multiple pregnancies or obesity can cause hormonal imbalances, reducing gallbladder function and</p>
-                  <p className='ml-5'>leading to stone formation. </p>
+                  <p className='pt-2'><span className="font-medium mr-1">→ Hormonal Disturbances:</span> Multiple pregnancies or obesity can cause hormonal imbalances, reducing gallbladder function and leading to stone formation.</p>
                 </div>
               </div>
             </motion.div>

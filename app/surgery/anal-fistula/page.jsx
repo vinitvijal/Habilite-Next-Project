@@ -301,7 +301,7 @@ An anal fistula is an abnormal tunnel that forms as a result of an infected anal
                 viewport={{ amount: 0.2 }}
                 className="flex items-center justify-center  max-w-6xl mx-auto">
                   <div className="p-12 border-third border-2  rounded-lg shadow-md">
-                    <div className="mb-4">
+                    <div className="mb-4 text-lg">
                       <p className='pt-2 text-center font-medium mr-1'>Some of the common advantages of Laser Treatment for Fistula include :-</p>
                       <p className='pt-2'><span className="font-medium mr-1">→ Minimally Invasive: </span>Laser treatment is less invasive than traditional surgery, resulting in more minor wounds and less tissue damage.</p>
                       <p className='pt-2'><span className="font-medium mr-1">→ Reduced Postoperative Pain: </span>Patients typically experience less pain after laser treatment compared to conventional surgical methods.</p>
@@ -358,7 +358,7 @@ An anal fistula is an abnormal tunnel that forms as a result of an infected anal
                 <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">
                   Why Choose Us
                 </h2>
-                <div className="mb-4">
+                <div className="mb-4 text-lg">
                   <p className='pt-2'> Availability of a complete range of procedures conducted by a team of highly experienced and internationally trained surgeons.</p>
                   <p className='pt-2'>Empanelment with some of the best hospitals for fistula surgery, with state-of-the-art facilities, ensures excellent outcomes.</p>
                   <p className='pt-2'>Zero per cent Interest EMI options.</p>
