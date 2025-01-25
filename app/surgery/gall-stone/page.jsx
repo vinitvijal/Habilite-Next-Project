@@ -312,7 +312,7 @@ const cardVariants1 = {
               initial="hidden"
               whileInView="visible"
               viewport={{ amount: 0.2,once:true }}
-              className="text-3xl md:text-4xl font-semibold text-first m-4">
+              className="text-3xl md:text-4xl font-semibold text-center text-first my-4">
                 KEY BENEFITS OF <br/> SINGLE PORT LAPAROSCOPIC CHOLECYSTECTOMY
               </motion.h1>
               <motion.div
