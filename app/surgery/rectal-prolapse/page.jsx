@@ -89,12 +89,7 @@ function page() {
     },
   ];
 
-  const surgeonInfo = [{
-    title: "Best Laparoscopic Gallbladder Stone Surgeon in Delhi",
-    description: `"Dr.Kapil Agrawal is one of the renowned and best gallbladder surgeons in Delhi, India. He is recognized for his skills in executing Laparoscopic Gall Bladder Surgeries as well as Robot-Assisted Gallbladder Stone Surgeries. His vast experience of over 23 years and having performed more than 7,000 gallbladder surgeries speaks volumes about his dedication to providing the best care for his patients. Associated with top hospitals in Delhi, Dr. Kapil ensures excellent outcomes with an empathetic approach and strong commitment to patient care"`,
-  },
 
-];
 
 const cardVariants = {
   hidden: { opacity: 0, x: -50 },
