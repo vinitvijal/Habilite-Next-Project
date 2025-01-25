@@ -164,7 +164,7 @@ function page() {
                 </h1>
               </div>
             </div>
-          </div>
+           </div>
           <div>
             <motion.div
               initial={{opacity: 0, scale: 0.12 }}
@@ -306,7 +306,7 @@ function page() {
 
               </motion.div>
 
-              <div className='flex-col items-center justify-center mx-auto gap-20 my-8'>
+            <div className='flex-col items-center justify-center mx-auto gap-20 my-8'>
                 <div className="text-center mb-8">
                   <motion.h1
                   variants={cardVariants}
@@ -323,7 +323,7 @@ function page() {
                   >
                   </motion.div>
                 </div>
-                 <motion.div 
+               <motion.div 
                  variants={imageVariants}
                  initial="hidden"
                  whileInView="visible"
@@ -339,10 +339,10 @@ function page() {
                       </div>
                     </div>
                   </div>
-                 </motion.div>
+               </motion.div>
 
-                 <div>
-                 <motion.div 
+              <div>
+               <motion.div 
                  initial={{ opacity: 0, x: -100 }} 
                  whileInView={{ opacity: 1, x: 0 }} 
                  viewport={{ amount: 0.3 }} 
@@ -358,30 +358,30 @@ function page() {
                   <p className='pt-2'>Dr Agrawal’s team includes dedicated nutritionists who provide customized diets to promote healing and prevent constipation, ensuring a holistic approach to treatment.</p>
                 </div>
                </motion.div>
-                 </div>
-
               </div>
+
             </div>
           </div>
         </div>
+      </div>
 
 
-        <div className="flex flex-col mx-auto px-8 md:px-16 lg:px-24 gap-6">
-          <motion.div initial={{ opacity: -2 }} 
-          whileInView={{ opacity: 1.5 }} 
-          transition={{ duration: 2 }} 
-          viewport={{ amount: 0.2 }} 
-          className='flex-col mx-6 md:mx-12 mb-16 pt-4 md:px-24 border-first border-t-2'>
-            <div className="flex justify-center items-end m-4"><BsPinFill className='text-3xl md:text-4xl text-second' />
-              <h1 className='font-bold text-3xl md:text-4xl text-center border-fourth border-b-2 mt-6 text-second'>FAQ</h1>
-            </div>
-            <div className="mb-4 w-full ">
-              {faqList.map((faq, index) => (
-                <FAQsingle key={index} question={faq.question} answer={faq.answer} />
-              ))}
-            </div>
-          </motion.div>  
-        </div>  
+         <div className="flex flex-col mx-auto px-8 md:px-16 lg:px-24 gap-6">
+           <motion.div initial={{ opacity: -2 }} 
+            whileInView={{ opacity: 1.5 }} 
+            transition={{ duration: 2 }} 
+            viewport={{ amount: 0.2 }} 
+            className='flex-col mx-6 md:mx-12 mb-16 pt-4 md:px-24 border-first border-t-2'>
+             <div className="flex justify-center items-end m-4"><BsPinFill className='text-3xl md:text-4xl text-second' />
+               <h1 className='font-bold text-3xl md:text-4xl text-center border-fourth border-b-2 mt-6 text-second'>FAQ</h1>
+             </div>
+             <div className="mb-4 w-full ">
+               {faqList.map((faq, index) => (
+                 <FAQsingle key={index} question={faq.question} answer={faq.answer} />
+               ))}
+             </div>
+           </motion.div>  
+         </div>  
       </div>
     </div>
     <Footer/>
