@@ -15,7 +15,7 @@ function Header() {
           <div className=' hidden md:flex justify-center items-center text-md md:text-sm hover:cursor-pointer font-[0.5px] rounded-3xl lg:text-base'>
             <label htmlFor="home" className='hover:cursor-pointer'>
               <input type="radio" className='sr-only peer' id='home' name='navigator' defaultChecked />
-              <p className="select-none relative before:content-[''] before:bg-first before:w-0 before:h-[2px] before:absolute before:left-0 before:bottom-[-10px] before:rounded-md hover:before:w-full before:transition-all before:duration-300 rounded-3xl px-5 py-2 text-gray-500 hover:text-black transition-all duration-300 ease-in-out peer-checked:text-first peer-checked:font-semibold peer-checked:before:w-full">Home</p>
+              <Link href={'/'} className="select-none relative before:content-[''] before:bg-first before:w-0 before:h-[2px] before:absolute before:left-0 before:bottom-[-10px] before:rounded-md hover:before:w-full before:transition-all before:duration-300 rounded-3xl px-5 py-2 text-gray-500 hover:text-black transition-all duration-300 ease-in-out peer-checked:text-first peer-checked:font-semibold peer-checked:before:w-full">Home</Link>
             </label>
 
             <label htmlFor="about" className='hover:cursor-pointer group'>
@@ -25,11 +25,11 @@ function Header() {
               <div className="DropdownMenuContent group-hover:display-appear group hidden group-hover:block visible absolute bg-white w-48 z-50 translate-x-2 -translate-y-2 shadow-xl rounded-md">
 
                 <p className="DropdownMenuItem text-md h-10 flex items-center px-4 py-1 hover:text-first hover:cursor-pointer hover:translate-x-1 transition-all duration-150">
-                  <Link href="/">About Habilite Clinic</Link>
+                  <Link href="#">About Habilite Clinic</Link>
                 </p>
 
                 <p className="DropdownMenuItem text-md h-10 flex items-center px-4 py-1 hover:text-first hover:cursor-pointer hover:translate-x-1 transition-all duration-150">
-                  <Link href="/">Dr. Kapil Agarwal</Link>
+                  <Link href="/dr-kapil-about">Dr. Kapil Agarwal</Link>
                 </p>
 
               </div>

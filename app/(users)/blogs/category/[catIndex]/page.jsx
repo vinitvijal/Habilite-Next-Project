@@ -3,7 +3,7 @@ import Link from "next/link";
 import fs from "fs";
 import Image from 'next/image';
 import calendar from "@/public/calendar.svg";
-import { categories } from '@/app/blogs/page'
+import { categories } from '@/app/(users)/blogs/page'
 import { notFound } from 'next/navigation';
 import React from 'react';
 

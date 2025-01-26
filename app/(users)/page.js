@@ -2,8 +2,6 @@ import About from "./components/About";
 import Blog from "./components/Blog";
 import BookAppointment from "./components/BookAppointment";
 import Choose from "./components/Choose";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Hospitals from "./components/Hospitals";
 import Services from "./components/Services";
@@ -15,7 +13,6 @@ import Testimonials from "./components/Testimonials";
 export default function Home() {
   return (
     <div className="mainpage">
-      <Header/>
       <Hero/>
       <About/>
       <Services/>
@@ -25,7 +22,6 @@ export default function Home() {
       <Testimonials />
       <Choose/>
       <Blog/>
-      <Footer/>
     </div>
   );
 }

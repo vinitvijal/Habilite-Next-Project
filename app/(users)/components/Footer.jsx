@@ -5,8 +5,8 @@ import { FaPinterestSquare, FaLinkedin } from "react-icons/fa";
 
 function Footer() {
   return (
-      <section id='footer' className='bg-second flex h-full flex-col w-full' > 
-        <div className='flex justify-center items-center bg-white h-[12vh] w-full' style={{clipPath: "ellipse(100vh 90% at top)"}} ></div>
+      <section id='footer' className='bg-second flex h-full flex-col w-screen ' > 
+        <div className='flex justify-center items-center bg-white h-[12vh] w-screen' style={{clipPath: "ellipse(120vh 90% at top)"}} ></div>
         <div className='flex justify-center items-start px-10 md:px-12 py-12 gap-8'>
         <div className='flex-col justify-center items-center lg:w-1/4'>
             <h1 className='font-bold text-3xl text-white'>Habilite Clinic.</h1>
