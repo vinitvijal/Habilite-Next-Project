@@ -1,8 +1,6 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react';
-import Header from '@/app/components/Header';
-import Footer from '@/app/components/Footer';
-import FAQsingle from '@/app/components/FAQsingle';
+import FAQsingle from '@/app/(users)/components/FAQsingle';
 import { BsPinFill } from "react-icons/bs";
 import { motion, useInView } from "framer-motion";
 
@@ -167,7 +165,6 @@ const benefits = [
  
   return (
     <>
-  <Header/>
     <div className='overflow-x-hidden'>
       <div className='w-screen'>
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-10 md:px-16 ">
@@ -378,7 +375,6 @@ const benefits = [
         </div>
       </div>
     </div>
-    <Footer/>
     </>
   )
 }
