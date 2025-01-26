@@ -1,3 +1,5 @@
+import { transform } from 'next/dist/build/swc/generated-native';
+
 /** @type {import('tailwindcss').Config} */
 const plugin = require('tailwindcss/plugin');
 
@@ -125,6 +127,16 @@ const config = {
   					opacity: 1
   				}
   			},
+  			'cust-fade-in': {
+  				'0%': {
+  					opacity: 0,
+					transform: 'translate(-15px, 0)',
+  				},
+  				'100%': {
+  					opacity: 1,
+					transform: 'translate(-5px, 0)',
+  				}
+  			},
   			'fade-out': {
   				'0%': {
   					opacity: 1
@@ -140,7 +152,8 @@ const config = {
   			slideindown: 'slide-in-down 0.6s ease-in-out 1',
   			slideoutup: 'slide-out-up 0.6s ease-in-out 1',
   			fadein: 'fade-in 0.4s ease-in-out 1',
-  			fadeout: 'fade-out 0.4s ease-in-out 1'
+  			fadeout: 'fade-out 0.4s ease-in-out 1',
+			custfadein: 'cust-fade-in 0.3s ease-in-out',
   		}
   	}
   },
@@ -158,6 +171,12 @@ const config = {
       require("tailwindcss-animate"),
 	  require('@tailwindcss/typography'),
 ],
+
+variants: {
+    extend: {
+      display: ['group-hover', 'group2-hover', 'group3-hover', 'group4-hover'],
+    },
+  },
 };
 
 export default config;
