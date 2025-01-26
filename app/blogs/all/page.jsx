@@ -40,8 +40,8 @@ function allBlogs() {
               </g>
             </g>
           </svg>
-          <p className='text-5xl mt-6 font-light'>Not Found</p>
-          <p className='mt-2 ml-3 text-gray-500'>No blogs found. You might want to check out other sections.</p>
+          <p className='md:text-5xl text-4xl mt-6 font-light'>Not Found</p>
+          <p className='mt-2 ml-3 text-gray-500 md:text-base text-sm text-center'>No blogs found. You might want to check out other sections.</p>
         </div>
       </>
     )
@@ -55,7 +55,7 @@ function allBlogs() {
 			</div>
 
 
-			<div id="arrangement-grid" className="grid md:grid-cols-3 gap-3 mt-10 md:px-28 grid-cols-1 px-8">
+			<div id="arrangement-grid" className="grid md:grid-cols-3 gap-3 mt-10 md:px-28 grid-cols-1 px-4">
 				{blogs.map((blog) => (
 					<div key={blog.id} className="w-full relative h-[65vh] bg-white rounded-lg flex flex-col shadow-lg hover:scale-[102%] transition-all duration-300">
 						<Image
@@ -74,8 +74,8 @@ function allBlogs() {
 									<Image src={calendar} className="z-0 h-4 w-4" alt="none" />
 									{blog.date}
 								</p>
-								<p className="text-lg mt-2">{blog.title}</p>
-								<p className="text-sm mt-1">{blog.excerpt}</p>
+								<p className="text-lg mt-2 line-clamp-2">{blog.title}</p>
+								<p className="text-sm mt-1 line-clamp-2">{blog.excerpt}</p>
 							</div>
 
 							<div className="button mt-4 mb-6 flex justify-between">
