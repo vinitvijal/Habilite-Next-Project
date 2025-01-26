@@ -5,8 +5,7 @@ import { ChevronRight } from 'lucide-react'
 
 function Header() {
   return (
-    <header className=' flex justify-between px-4 gap-3 items-center w-full h-20 border-b-[0.5px] border-b-gray-300 md:gap-0 md:h-24 md:px-10 md:border-none lg:px-20'>
-
+    <header className='shadow-md flex justify-between px-4 gap-3 items-center w-full h-20 border-b-[0.5px] border-b-gray-300 md:gap-0 md:h-24 md:px-10 md:border-none lg:px-20'>
       <div className=''>
         <h1 className=' select-none text-2xl font-bold text-first hover:cursor-pointer md:text-lg lg:text-2xl'>Habilite Clinic.</h1>
       </div>

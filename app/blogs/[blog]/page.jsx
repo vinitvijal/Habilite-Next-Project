@@ -41,8 +41,8 @@ export default async function Page({ params }) {
 
   return (
     <>
-      <section className='flex pl-28 gap-5'>
-        <div className="main-content w-7/12">
+      <section className='flex md:pl-28 gap-5'>
+        <div className="main-content md:w-7/12">
           <div className="lg:max-w-3xl px-5 ml-auto flex flex-col mt-20 items-center">
 
             <h1 className="text-4xl font-light text-center">{data.title}</h1>
@@ -91,7 +91,7 @@ export default async function Page({ params }) {
 
 
         </div>
-        <div className="side-bar sticky top-10 w-5/12 h-screen mt-24 pl-10">
+        <div className="md:block hidden side-bar sticky top-10 w-5/12 h-screen mt-24 pl-10">
           <div className="sec-1">
             <div className="title">
               <p className='text-sm text-gray-500 font-light'>Discover by Topic</p>

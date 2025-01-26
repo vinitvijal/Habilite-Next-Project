@@ -71,6 +71,10 @@ function Services() {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (!titleRef.current || !subtitleRef.current) {
+        return;
+      }
+      
       if (titleRef.current.getBoundingClientRect().top < window.innerHeight && titleRef.current.getBoundingClientRect().bottom >= 0) {
         titleControls.start('visible');
       } else {

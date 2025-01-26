@@ -160,6 +160,7 @@ const config = {
 
   plugins: [
         require('tailwindcss-animated'),
+		require('@tailwindcss/line-clamp'),
     require("tailwindcss-animate"),
     plugin(function ({ addVariant }) {
       addVariant('accordion-open', '&[data-state="open"]');
