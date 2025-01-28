@@ -18,7 +18,7 @@ import { unified } from 'unified'
 
 export default async function Page({ params }) {
 
-  const filepath = `public/blogpage-content/${(await params).blog}.md`
+  const filepath = `https://habilite.s3.ap-south-1.amazonaws.com/blogpage-content/${(await params).blog}.md`
 
   if (!fs.existsSync(filepath)) {
     notFound()
