@@ -1,7 +1,6 @@
 import * as Separator from '@radix-ui/react-separator';
 import React from 'react';
 import Image from 'next/image';
-import fs from 'fs';
 import matter from 'gray-matter';
 import { notFound } from 'next/navigation';
 import { categories } from '../page';
@@ -15,18 +14,23 @@ import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import { unified } from 'unified'
 
+export const dynamic = 'force-static'
 
 export default async function Page({ params }) {
 
   const filepath = `https://habilite.s3.ap-south-1.amazonaws.com/blogpage-content/${(await params).blog}.md`
 
-  if (!fs.existsSync(filepath)) {
-    notFound()
-    return
+  // if (!fs.existsSync(filepath)) {
+  //   notFound()
+  //   return
+  // }
+
+  const response = await fetch(filepath, { cache: 'force-cache', next: { revalidate: 86400 }});
+  if (!response.ok) {
+    notFound();
+    return;
   }
-
-
-  const fileContent = fs.readFileSync(filepath, "utf-8")
+  const fileContent = await response.text();
   const { content, data } = matter(fileContent)
 
   const processor = await unified()
