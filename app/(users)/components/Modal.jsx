@@ -4,6 +4,9 @@ import { IoPersonSharp } from "react-icons/io5";
 import { IoMail } from "react-icons/io5";
 import { MdCall } from "react-icons/md";
 import { FaPen } from "react-icons/fa";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { FaRegCheckCircle } from "react-icons/fa";
+import { RxCrossCircled } from "react-icons/rx";
 import { createAppointment } from '@/actions/appointment';
 
 function Modal({isVisible, onClose}) {
@@ -13,9 +16,27 @@ function Modal({isVisible, onClose}) {
   const [query, setQuery] = useState('')
 
 
+  const [loading, setLoading] = useState(false);  
+  const [submissionMessage, setSubmissionMessage] = useState('');
+  const [isSuccess, setIsSuccess] = useState(false);
+
+
+
   async function handleSubmit(){
-    let response = await createAppointment(name, email, phone, query)
-    console.log(response)
+    // let response = await createAppointment(name, email, phone, query)
+    // console.log(response)
+    setLoading(true);  
+    setSubmissionMessage(''); 
+    try {
+      const response = await createAppointment(name, email, phone, query);
+      setSubmissionMessage('Appointment created successfully!'); 
+      setIsSuccess(true)
+    } catch (error) {
+      setSubmissionMessage('Failed to create appointment. Please try again.');
+      setIsSuccess(false)
+    } finally {
+      setLoading(false);
+    }
   }
 
   const [showAnimation, setShowAnimation]= useState(true);
@@ -31,6 +52,7 @@ function Modal({isVisible, onClose}) {
     setTimeout(() => {
       onClose();
       setShowAnimation(true);
+      setSubmissionMessage('');
     },350);
   };
     
@@ -39,7 +61,21 @@ function Modal({isVisible, onClose}) {
   return (
     <div id='appointment' className='fixed z-50 inset-0 bg-opacity-40 bg-black backdrop-blur-md  w-full flex items-center justify-center ' >
       <div className={`mx-12 px-6 pt-5 max-sm:min-w-[60vw] w-full max-w-md bg-white shadow-black shadow-sm  rounded-md ${isVisible ? 'animate-fadein' : ''} ${!showAnimation?'animate-fadeout':''} `}>
-        <h1 className=" mb-4 font-bold text-xl sm:text-2xl text-center">Book An Appointment</h1>
+        <h1 className=" mb-4 font-semibold text-xl sm:text-2xl text-center">Book An Appointment</h1>
+        
+        {loading ? (
+          <div className="flex justify-center items-center flex-1 py-16 w-full h-full "><AiOutlineLoading3Quarters className=' text-first text-6xl animate-spin' /></div>
+        ) : submissionMessage ? (
+          <div className="flex mx-auto flex-col justify-center space-y-8 items-center text-center pt-16 pb-10">
+            {isSuccess ? (
+              <FaRegCheckCircle className='text-green-600 text-6xl mr-2' />
+            ) : (
+              <RxCrossCircled className='text-red-600 text-6xl mr-2 mx-auto' />
+            )}
+            <p className="text-xl mx-auto">{submissionMessage}</p>
+            <button type="button" className='mx-auto w-1/2 py-1  focus:scale-90 border-third border-2 box-border font-semibold  rounded-md hover:bg-third'onClick={handleClose} >Close</button>
+          </div>
+        ) : (
         <div className=' rounded-md'>
           <div className="flex flex-col space-y-3">
             <div className="">
@@ -69,6 +105,8 @@ function Modal({isVisible, onClose}) {
 
           </div>
         </div>
+        )}
+
       </div>
     </div>
   )
