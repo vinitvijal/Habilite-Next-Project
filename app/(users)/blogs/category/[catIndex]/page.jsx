@@ -26,7 +26,8 @@ export default async function Page({ params }) {
   if (blogs.filter(blog => blog.tag === category).length === 0) {
     return (
       <>
-        <div className="heading h-80 flex bg-first text-white md:text-5xl px-8 md:px-28 text-4xl">
+      
+        <div className="heading h-80 flex w-full bg-first text-white md:text-5xl px-8 md:px-20 text-3xl">
           <h1 className='self-end mb-10'>{category} Blogs</h1>
         </div>
 
@@ -66,11 +67,11 @@ export default async function Page({ params }) {
 
   return (
     <section className='mb-10'>
-      <div className="heading h-80 flex bg-first text-white md:text-5xl px-8 md:px-32 text-4xl">
+      <div className="heading h-80 flex bg-first text-white md:text-5xl px-8 md:px-20 text-4xl">
         <h1 className='self-end mb-10'>{category} Blogs</h1>
       </div>
 
-      <div id="arrangement-grid" className="grid md:grid-cols-3 gap-3 mt-10 md:px-32 grid-cols-1 px-4">
+      <div id="arrangement-grid" className="grid md:grid-cols-3 gap-3 mt-10 md:px-20 grid-cols-1 px-4">
         {blogs.filter(blog => blog.tag === category).map((blog) => (
           <div key={blog.id} className="w-full relative h-[65vh] bg-white rounded-lg flex flex-col shadow-lg hover:scale-[102%] transition-all duration-300">
             <Image
