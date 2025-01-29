@@ -15,18 +15,21 @@ function ServiceBox({ title, imageSrc, links, index }) {
       ([entry]) => {
         if (entry.isIntersecting) {
           controls.start('visible');
-        } else {
-          controls.start('hidden');
+          // Stop observing after first trigger
+          observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.1 }  // Threshold for card animation
+      { threshold: 0.1 }
     );
+  
     if (ref.current) {
       observer.observe(ref.current);
     }
+    
     return () => observer.disconnect();
   }, [controls]);
-
+  
+  
   return (
     <motion.div
       ref={ref}
@@ -89,7 +92,7 @@ function Services() {
   }, [titleControls, subtitleControls]);
 
   return (
-    <section className="md:pb-[115vh] pb-[235vh] h-screen w-full bg-white py-10 flex flex-col items-center">
+    <section className="md:pb-[112vh] pb-[230vh] h-screen w-full bg-white py-10 flex flex-col items-center">
       {/* <motion.div
         ref={titleRef}
         initial="hidden"
@@ -132,7 +135,7 @@ function Services() {
 
 
       <div className='flex flex-wrap justify-center'>
-        <div className='max-w-5/6 h-[40vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-baseline mt-4 gap-20'>
+        <div className='max-w-5/6 h-[40vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-baseline mt-4 gap-8'>
           {[
             { title: "Bariatrics / Weight loss", imageSrc: "/weightloss.jpg", links: [
               { href: "#", text: "Bariatric surgery" },

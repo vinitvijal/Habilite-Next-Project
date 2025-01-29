@@ -57,9 +57,9 @@ function Testimonials() {
   return (
     <>
       <div
-        className="relative flex flex-col items-center justify-center overflow-hidden bg-background md:mx-6 "
+        className="w-screen flex justify-center"
       >
-        <div className="  h-auto md:w-3/4 w-full">
+        <div className="  h-auto md:w-[77vw] w-full">
         <div className='flex flex-col gap-2 items-center pt-20 pb-14'>
           <TextAnimate text="OUR TESTIMONIALS" type="calmInUp" className="text-2xl md:text-4xl text-center font-bold whitespace-normal" />
         </div>

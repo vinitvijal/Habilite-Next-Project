@@ -18,14 +18,14 @@ const fadeImages = [
     url: '/images/banner-4.webp',
   },
   {
-    url: '/images/banner-5.webp',
+    url: '/images/banner-5.jpg',
   }
 ];
 
 const Hero = () => {
   return (
     <div className="relative md:px-0 sm:pb-0 ">
-      <div className="slide-container h-full">
+      <div className="h-full">
       <Fade arrows={false}
         duration={2000}
         transitionDuration={1000}
@@ -35,7 +35,7 @@ const Hero = () => {
         >
         {fadeImages.map((fadeImage, index) => (
           <div key={index}>
-            <img src={fadeImage.url} />
+            <img src={fadeImage.url} className='md:h-full h-[40vh] md:w-full w-[160vw]' />
           </div>
         ))}
       </Fade>
@@ -51,7 +51,7 @@ const Hero = () => {
 
 const Calculator = () => {
   return (
-    <div className="App flex justify-center pt-20 pb-">
+    <div className="flex justify-center pt-20 md:pb-32 pb-24">
         <div className="flex md:flex-row flex-col md:gap-16 gap-10">
           <Counter number={150} title="Patients treated" />
           <Counter number={200} title="Surgeries done" />
@@ -67,10 +67,10 @@ const Counter = ({ number, title }) => {
   return (
     <motion.div
     initial={{ scale: 1}}
-    whileHover={{ scale: 1.1 }}
-    className="number bg-first md:p-10 p-6 rounded-lg flex flex-col gap-2 items-center">
-      <span><CountUp duration={3} className="counter font-semibold md:text-5xl text-4xl text-white" end={number} /><span className='md:text-5xl text-4xl font-bold text-white'>+</span></span>
-      <span className='text-lg text-white font-medium'>{title}</span>
+    whileHover={{ scale: 1.05 }}
+    className="number bg-third md:p-10 p-6 rounded-lg flex flex-col gap-2 items-center">
+      <span><CountUp duration={3} className="counter font-semibold md:text-6xl text-4xl text-first" end={number} /><span className='md:text-5xl text-5xl font-bold text-first'>+</span></span>
+      <span className='text-lg text-black font-semibold'>{title}</span>
     </motion.div>
   )
 }

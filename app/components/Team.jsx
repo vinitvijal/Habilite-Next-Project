@@ -1,9 +1,11 @@
-'use client'
-import React from "react";
+'use client';
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import TextAnimate from "@/components/ui/anim-text";
 
 function Team() {
+  const [hasAnimated, setHasAnimated] = useState(false); // State to track if animation has played
+
   const teamMembers = [
     {
       name: "Monika Desai",
@@ -55,6 +57,7 @@ function Team() {
       },
     }),
   };
+  
   const imageVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -63,41 +66,40 @@ function Team() {
     },
   };
 
+  // Effect to handle animation trigger
+  useEffect(() => {
+    const handleScroll = () => {
+      const teamSection = document.getElementById("team-section");
+      const rect = teamSection.getBoundingClientRect();
+      
+      // Check if the section is in view and if animation hasn't been triggered yet
+      if (rect.top < window.innerHeight && rect.bottom >= 0 && !hasAnimated) {
+        setHasAnimated(true); // Set animated state to true
+        window.removeEventListener("scroll", handleScroll); // Remove event listener after triggering
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [hasAnimated]);
+
   return (
     <div className="w-screen px-4 sm:px-8 lg:px-16 md:pb-10">
-      <div className="relative pt-4">
-        {/* <div className="text-center mb-10">
-          <motion.h1 
-          variants={imageVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ amount: 0.2 }}
-          className="text-3xl sm:text-4xl font-semibold text-first m-4">
-            MEET THE TEAM
-          </motion.h1>
-          <p className="text-gray-600 text-sm sm:text-base max-w-3xl mx-auto">
-            We are a team of qualified psychiatrists and psychologists from
-            premier institutions of the country. <br />
-            We are highly motivated to provide cutting-edge evidence-based
-            management for mental health issues tailored to individual needs.
-          </p>
-          <motion.div
-            initial={{ width: 0 }}
-            whileInView={{ width: "80%", duration: 2000 }}
-            className="mx-auto border-blue-200 border-b-4 mt-6"
-          ></motion.div>
-        </div> */}
+      <div id="team-section" className="relative md:pt-4 pt-16">
         <motion.div className='flex flex-col gap-2 items-center justify-center pt-20 pb-14'>
           <TextAnimate text="MEET THE TEAM" type="calmInUp" className="text-2xl md:text-4xl text-center font-bold whitespace-normal w-xl" />
           <motion.h1
-        initial={{ y: 20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ ease: "easeInOut", duration: 0.5 }}
-        className="mb-6 md:text-lg text-normal text-first text-wrap md:px-[20vw] px-6 text-center font-medium"
-      >
-        We are a team of qualified psychiatrists and psychologists from premier institutions of the country.
-        We are highly motivated to provide cutting-edge evidence-based management for mental health issues tailored to individual needs.
-      </motion.h1>
+            initial={{ y: 20, opacity: 0 }}
+            animate={hasAnimated ? { y: 0, opacity: 1 } : {}}
+            transition={{ ease: "easeInOut", duration: 0.5 }}
+            className="mb-6 md:text-lg text-normal text-first text-wrap md:px-[20vw] px-6 text-center font-medium"
+          >
+            We are a team of qualified psychiatrists and psychologists from premier institutions of the country.
+            We are highly motivated to provide cutting-edge evidence-based management for mental health issues tailored to individual needs.
+          </motion.h1>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 md:gap-16 gap-6 max-w-7xl mx-auto md:px-10 px-2 mb-8">
@@ -108,8 +110,7 @@ function Team() {
               custom={index}
               variants={cardVariants}
               initial="hidden"
-              whileInView="visible"
-              viewport={{ amount: 0.2 }}
+              animate={hasAnimated ? 'visible' : 'hidden'} // Control animation based on state
             >
               <motion.img
                 src={member.img}
@@ -118,8 +119,7 @@ function Team() {
                 alt={member.name}
                 variants={imageVariants}
                 initial="hidden"
-                whileInView="visible"
-                viewport={{ amount: 0.2 }}
+                animate={hasAnimated ? 'visible' : 'hidden'} // Control animation based on state
               />
               <div>
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-1">

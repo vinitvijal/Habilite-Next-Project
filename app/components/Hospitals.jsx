@@ -48,7 +48,7 @@ function Hospitals() {
         id="affiliations"
         className="w-full justify-center items-center flex-col md:px-40 px-10"
       >
-      <div className="flex flex-col items-center justify-center py-10">
+      <div className="flex flex-col items-center justify-center md:pb-12">
         {/* <HosHeading/> */}
         <motion.div className='flex flex-col gap-2 items-center pt-20 pb-14'>
         <TextAnimate text="HOSPITAL AFFILIATIONS" type="calmInUp" className="text-2xl md:text-4xl text-center font-bold whitespace-normal" />
