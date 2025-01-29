@@ -64,15 +64,17 @@ function Modal({isVisible, onClose}) {
         <h1 className=" mb-4 font-semibold text-xl sm:text-2xl text-center">Book An Appointment</h1>
         
         {loading ? (
-          <div className="flex justify-center items-center flex-1 py-16 w-full h-full "><AiOutlineLoading3Quarters className=' text-first text-6xl animate-spin' /></div>
+          <div className="flex justify-center items-center flex-1 py-16 w-full h-full "><AiOutlineLoading3Quarters className=' text-first size-12 animate-spin' /></div>
         ) : submissionMessage ? (
-          <div className="flex mx-auto flex-col justify-center space-y-8 items-center text-center pt-16 pb-10">
-            {isSuccess ? (
-              <FaRegCheckCircle className='text-green-600 text-6xl mr-2' />
-            ) : (
-              <RxCrossCircled className='text-red-600 text-6xl mr-2 mx-auto' />
-            )}
-            <p className="text-xl mx-auto">{submissionMessage}</p>
+          <div className="flex mx-auto flex-col justify-center space-y-6 items-center text-center pt-10 pb-4">
+            <div className="flex items-center gap-x-4">
+              {isSuccess ? (
+                <FaRegCheckCircle className='text-green-600 text-4xl ' />
+              ) : (
+                <RxCrossCircled className='text-red-600 text-4xl ' />
+              )}
+              <p className={`text-lg text-medium ${isSuccess ? 'text-green-700' : 'text-red-700'}`}>{submissionMessage}</p>
+            </div>
             <button type="button" className='mx-auto w-1/2 py-1  focus:scale-90 border-third border-2 box-border font-semibold  rounded-md hover:bg-third'onClick={handleClose} >Close</button>
           </div>
         ) : (
