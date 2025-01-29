@@ -41,28 +41,36 @@ const FeatureList = ({ features }) => (
 function page() {
   const faqList=[
     {
-      question:"Is surgery the best option for the management of appendicitis?",
-      answer:"Surgery is the best option for managing appendicitis as it permanently removes the source of infection. This eliminates the chances of recurrent attacks and significantly reduces the risk of complications such as perforation or bursting of the appendix."
+      question:"How long do I stay in the hospital after laparoscopic hernia repair?",
+      answer:"We usually discharge our patients on the day or within 24 hours of their surgery. They can walk normally and do daily activities as usual after getting discharged from the hospital"
     },
     {
-      question:"What is the function of the appendix in our body?",
-      answer:"The appendix is a small, tube-like structure attached to the large intestine. The appendix has no function in the body and is a vestigial organ. Sometimes, the appendix can get inflamed, and it becomes necessary to remove it."
+      question:"Can medicines cure hernia?",
+      answer:"Hernia can never be cured by medicines. They may cause some improvement of the symptoms but there can never be a cure for something rooted beneath. Hernia is a tear or defect of the muscle wall and unless and until, it is not repaired by surgical intervention, it can never be cured. In newborns, only umbilical hernia can close again spontaneously in a few months."
     },
     {
-      question:"Can I lead a normal life without an appendix?",
-      answer:"One can lead a perfectly normal life without an appendix. Removing the appendix does not significantly impact overall health or digestive function, as its role in the body is not essential."
+      question:"What are the chances of recurrence after hernia surgey?",
+      answer:"The complexity of the hernia and surgeon's expertise plays crucial role in the long term outcomes of hernia repair. With a skilled surgeon, the chances of reoccurrence are under 1%. The recurrence rate for laparoscopic repair depends upon the surgeon skills to perform adequate disection, primary closure of the defect and proper placement of adequately sized mesh."
     },
     {
-      question:"What is the duration of stay in the hospital post laparoscopic appendicectomy?",
-      answer:"The duration of hospital stay after a laparoscopic appendicectomy is usually short, often ranging from one to two days. However, this can vary depending on the patient's overall health and recovery from the surgery."
+      question:"What can I do to prevent hernia?",
+      answer:"Common types of strategies to prevent a hernia is to keep your weight under control, avoid smoking and excessive straining due to chronic constipation or cough. Avoid heavy lifts/strains or extreme activities that raise abdominal pressure against the weak area resulting in the formation of hernia. Even genetics play an important role in the formation of hernia."
     },
     {
-      question:"What is an appendicular lump?",
-      answer:"An appendicular lump is a mass that forms in the right lower abdomen due to an inflamed appendix surrounded by adherent loops of bowel and omentum. It is a protective mechanism to localize the infection and prevent its spread. The surgery in such patients becomes riskier due to increased chances of bowel injury."
+      question:"Why is surgery necessary in an asymptomatic hernia?",
+      answer:"Hernia is a slowly progressive medical condition that only enlarges more and more with time. It can get messy and sometimes even deadly if unchecked.Hence, once you develop hernia ,you must definitely consult a best hernia specialist surgeon who specializes in the management of hernias."
     },
     {
-      question:"What is interval appendicectomy?",
-      answer:"Interval appendicectomy refers to the surgical removal of the appendix performed several weeks after an initial episode of appendicitis. This is done in cases that have been managed non-operatively with antibiotics. This approach allows inflammation to subside before surgery, especially when an appendicular lump has already formed."
+      question:"What are the different types of laparoscopic repairs for groin hernia?",
+      answer:"Common Types of Groin hernia are Inguinal and femoral hernias.The different types of laparoscopic hernia repair are TEP Repair, TAPP Repair and eTEP Repair depending on the size of the hernia, patient's obesity levels and complexity of hernia. For getting the best results, you must a hernia specialist surgeon who is familiar with all techniques."
+    },
+    {
+      question:"What are the different types of laparoscopic repairs for ventral hernia?",
+      answer:"Epigastric, umbilical and incisional hernias are three common types of ventral (abdominal) hernias. Various types of laparoscopic repair for ventral hernia include IPOM Plus repair, the Rives Stoppa technique and TAR procedures."
+    },
+    {
+      question:"What is mesh, and does the quality of mesh matter in hernia repair?",
+      answer:"Mesh is a non reactive, durable synthetic material used to repair hernias. You must never compromise with the quality of mesh used in hernia repair. Use of low-quality mesh can lead to rejection by the human body and may even result in recurrence of hernia.To avoid these complications, you always need todemand of your surgeon to uses high-quality mesh."
     },
   ];
 
@@ -88,12 +96,7 @@ function page() {
     },
   ];
 
-  const surgeonInfo = [{
-    title: "Best Laparoscopic Gallbladder Stone Surgeon in Delhi",
-    description: `"Dr.Kapil Agrawal is one of the renowned and best gallbladder surgeons in Delhi, India. He is recognized for his skills in executing Laparoscopic Gall Bladder Surgeries as well as Robot-Assisted Gallbladder Stone Surgeries. His vast experience of over 23 years and having performed more than 7,000 gallbladder surgeries speaks volumes about his dedication to providing the best care for his patients. Associated with top hospitals in Delhi, Dr. Kapil ensures excellent outcomes with an empathetic approach and strong commitment to patient care"`,
-  },
 
-];
 
 const cardVariants = {
   hidden: { opacity: 0, x: -50 },
@@ -256,6 +259,13 @@ const cardVariants1 = {
               <p className='pt-2'> Laparoscopic Hernia Repair involves a variety of procedures depending upon the type and size of hernia. </p>
               <p className='pt-2'> Our Team, headed by Dr Kapil Agrawal, has the experience and expertise to perform all types of laparoscopic Hernia Repair. It gives us an edge to offer tailored treatments to our patients and provide them the best surgical outcomes.</p>
 
+              <div className="relative w-full m-10">
+              <img
+              src="/appenix.png"
+              alt="Background"
+              className="rounded-lg opacity-200"/>
+              </div>
+
               <h3 className="text-2xl md:text-3xl font-semibold mb-1 mt-1 text-first">Robotic Assisted Hernia Repair</h3>
               <p className='pt-2'> Robotic Hernia Repair is one of the latest advancements in management of hernia. Robotic hernia repair is a procedure in which our team operates using robotic arms through an external console.</p>
               <p className='pt-2'>The surgeon then sits at the console, directing robotic instruments with pinpoint accuracy and using high-definition 3-D images of what he is operating on. </p>
@@ -263,68 +273,17 @@ const cardVariants1 = {
               <p className='pt-2'>Nonetheless, the incisions are similar as in laparoscopic surgeries.</p>
               <p className='pt-2'>Our team performs Robotic Hernia Repair at Indraprastha Apollo Hospital, New Delhi. We usually prefer robotic Surgery for the more complex or redo hernias. </p>
               <p className='pt-2'>Robotic surgery is a good option as well for those patients with morbid obesity.</p>
+
+              <div className="relative w-full m-10">
+              <img
+              src="/appendix1.png"
+              alt="Background"
+              className="rounded-lg h-80 opacity-200"/>
+              </div>
+
             </div>
-          </motion.div>    
-          <motion.div  initial={{ opacity: 0, x: -100 }} 
-          whileInView={{ opacity: 1, x: 0 }} 
-          viewport={{ amount: 0.1}} 
-          transition={{ duration: 0.5 }}
-          className='flex-col mb-16 '>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-2 text-first">MANAGEMENT OF APPENDICITIS</h2>
-            <div className=" mb-4 ">
-              <p className='pt-3'>The primary treatment for acute appendicitis is surgical removal of the appendix (appendectomy). The approach to management may vary based on the severity and stage of appendicitis. The treatment protocol depends upon several factors :- </p>
-              <p className='pt-2'><span className="font-medium mr-1">→ Duration of symptoms: </span>The best time to operate this condition is within three days or 72 hours after the onset of symptoms.</p>
-              <p className='pt-2'><span className="font-medium mr-1">→ Formation of appendicular lump: </span>If the patient delays the treatment and radiological investigations show the formation of an appendicular lump, it’s better to plan</p>
-              <p className='pt-2 ml-5'>conservative management, and surgery is advised after 4-6 of treatment.</p>
-              <p className='pt-2'><span className="font-medium mr-1">→ Development of complications:</span> If the patient has started developing complications like the formation of abscess or pus, high-grade fever, or rupture of the appendix, </p>
-              <p className='pt-2 ml-5'> urgent surgical intervention is required as it can be life-threatening.</p>
-              <p className='pt-2'><span className="font-medium mr-1">→ Condition of the patient:</span> if the patient delays the treatment and the symptoms settle down, it’s better to postpone the surgery for 4-6 weeks.</p>
-              <p className='pt-2 ml-4'> This is known as Interval Appendicectomy.</p>
-           </div>
-          </motion.div>    
-          <motion.div 
-          initial={{ opacity: 0, x: 100 }} 
-          whileInView={{ opacity: 1, x: 0 }} 
-          viewport={{ amount: 0.1}} 
-          transition={{ duration: 0.5 }}
-          className='flex-col mb-16 '
-          >
-            <h2 className="text-3xl md:text-4xl font-semibold mb-2 text-second text-center">BEST APPENDICITIS TREATMENT OPTIONS</h2>
-             <p className='pt-2'>Each patient's case presents unique challenges; therefore, personalized management approaches will ensure better health outcomes. </p>
-             <p className='pt-2'>The choice of treatments often depends on individual circumstances such as age, overall health, and severity of symptoms. </p>
-             <p className='pt-2'>Healthcare providers need to evaluate each case carefully before deciding on a management plan that best suits the patient’s needs.</p>
-
-            <div className=" mb-4 ">
-
-             <h3 className="text-2xl md:text-3xl font-semibold mb-1 mt-1 text-first">NON-SURGICAL OR CONSERVATIVE MANAGEMENT</h3>
-             <p className='pt-2'>Under this plan, the surgeon administers antibiotics to combat infection. Patients are closely monitored for any changes in their condition. </p>
-             <p className='pt-2'>If the symptoms improve, the surgery can be avoided for some time. However, the risk of recurrence remains higher compared to surgical management. </p>
-             <p className='pt-2'>This treatment is mainly recommended in patients having mild symptoms or an uncomplicated appendicitis.</p>
-             <p className='pt-2'>Patients having significant surgical risks in the form of medical diseases like uncontrolled diabetes, high blood pressure, or heart problems can also be advised for conservative management.</p>
-             <p className='pt-2'>Patients presenting late in the hospital after 3-4 days of onset of symptoms and had formation of appendicular lump may be advised to defer surgery for a particular period.</p>
-
-             <h3 className="text-2xl md:text-3xl font-semibold mb-1 mt-1 text-first">SURGICAL MANAGEMENT - Best Appendicitis Surgeon in Delhi</h3>
-             <p className='pt-2'>Surgical management of appendicitis typically involves the removal of the inflamed appendix, a procedure known as an appendectomy,</p>
-             <p className='pt-2'>which can be performed using either Open or Laparoscopic techniques.</p>
-             <p className='pt-2'>The decision to perform open or laparoscopic appendicectomy depends upon the experience and expertise of the surgeon as well as the condition of the patient.</p>
-             <p className='pt-2'>Patients having significant surgical risks in the form of medical diseases like uncontrolled diabetes, high blood pressure, or heart problems can also be advised for conservative management.</p>
-
-             <h4 className="text-xl md:text-2xl font-semibold mb-1 mt-1 text-first">Open Appendicectomy</h4>
-             <p className='pt-2'>The procedure requires a larger incision in the lower right abdomen. The surgery is associated with increased morbidity, </p>
-             <p className='pt-2'>delayed recovery, and increased risk of complications.</p>
-             <p className='pt-2'>The surgery is usually reserved for patients unfit for general anesthesia and patients having a severe abdominal infection or sepsis.</p>
-
-             <h4 className="text-xl md:text-2xl font-semibold mb-1 mt-1 text-first">Appendicitis Laparoscopic Surgery</h4>
-             <p className='pt-2'>Laparoscopic Appendicectomy, a minimally invasive surgical procedure for removing the appendix, has become the gold standard for the removal of the appendix.</p>
-             <p className='pt-2'>The laparoscopic surgeon can access the abdominal cavity with remarkable precision by utilizing small incisions and guided by a high-definition camera known as a laparoscope.</p>
-             <p className='pt-2'>This approach reduces postoperative pain and significantly shortens recovery times compared to traditional open surgery.</p>
-             <p className='pt-2'>An experienced and expert surgeon can easily navigate complex anatomy while minimizing tissue trauma, which contributes to lower rates of complications and faster return to normal activities for patients.</p>
-             <p className='pt-2'>T
-             The success of the surgery entirely depends upon the experience and expertise of the surgeon. </p>
-             <p className='pt-2'>T
-             A highly skilled surgeon can easily handle even complicated cases using minimally invasive techniques.</p>
-            </div>
-          </motion.div>               
+          </motion.div>   
+          
         </div>
 
         <div className='flex-col items-center justify-center mx-auto gap-20 my-8'>
@@ -336,13 +295,15 @@ const cardVariants1 = {
               whileInView="visible"
               viewport={{ amount: 0.2,once:true }}
               className="text-3xl md:text-4xl font-semibold text-center text-first my-4">
-               ADVANTAGES OF <br/> SINGLE PORT LAPAROSCOPIC SURGERY
+               ADVANTAGES OF <br/>LAPAROSCOPIC AND ROBOTIC SURGERY FOR HERNIA REPAIR
               </motion.h1>
               <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: "80%", duration: 2000 }}
               className="mx-auto border-first border-b-2 mt-4"
               >
+               <p className='pt-4 text-center'>Maximizing comfort, Accelerating recovery, Minimizing complications</p>
+               <p className='pt-4 text-center'>Our team offers complete range of laparoscopic procedures for management of different types of hernia. The main advantages of preforming laparoscopic hernia repair are:</p>
               </motion.div>
             </div>
 
@@ -385,26 +346,64 @@ const cardVariants1 = {
         className="flex flex-col mx-auto px-2 sm:px-8 md:px-16 lg:px-24 mt-16 gap-6"
         >
           <div className='flex-col mb-16'>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-2 text-first">Best Laparoscopic Surgeon for Appendicitis : Dr. Kapil Agrawal</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-2 text-first">MANAGEMENT OF THE LARGE AND COMPLEX HERNIA</h2>
             <div className="mb-4 ">
-              <p className='pt-2'><span className="font-medium mr-1">→ Highly experienced team: </span>Your surgical team, led by Dr. Kapil Agrawal, comprises highly experienced and skilled professionals </p>
-              <p className='pt-2 ml-5'>who specialize in laparoscopic procedures, including appendicectomies.</p>
-              <p className='pt-2'><span className="font-medium mr-1">→ Single port laparoscopic Appendicectomy: </span>We offer single port laparoscopic appendicectomy, a minimally invasive surgical technique that uses only </p>
-              <p className='pt-2 ml-5'>one small incision. This advanced procedure results in less postoperative pain,</p>
-              <p className='pt-2 ml-5'> minimal scarring, and a faster recovery time compared to traditional multi-port laparoscopy.</p>
-              <p className='pt-2'><span className="font-medium mr-1">→ Empanelled with state-of-the-art hospitals: </span>Our services are provided in state-of-the-art hospitals equipped with the latest medical technology and facilities. </p>
-              <p className='pt-2 ml-5'>The hospitals are equipped with modern operating theatres, advanced diagnostic tools, and comprehensive care units,</p>
-              <p className='pt-2 ml-5'> ensuring that patients receive the highest standard of medical treatment.</p>
-              <p className='pt-2'><span className="font-medium mr-1">→ Complete cashless insurance facilities available:</span>Our hospitals are empanelled with a wide range of insurance providers, allowing patients </p>
-              <p className='pt-2 ml-5'>to avail themselves of treatments without upfront payments. Our dedicated insurance coordination team assists with all </p>
-              <p className='pt-2 ml-5'>necessary paperwork and approvals, ensuring a seamless and stress-free experience for patients and their families.</p>
-              <p className='pt-2'><span className="font-medium mr-1">→ Zero percent EMI options:</span>We provide zero percent EMI options for our patients. This flexible payment plan allows patients to pay for their treatments  </p>
-              <p className='pt-2 ml-5'>in manageable monthly installments without zero percent interest.</p>
-              <h2  className="text-3xl md:text-4xl mb-2 mt-2 text-black">Book an Appointment Now: </h2>
-              <p className='pt-1  text-3xl md:text-4xl text-first'>+(91) 9999456455, +(91) 9910024564</p>
+              <p className='pt-3'>The size, location, and associated potential complications can add to the complexity of hernia and its management. These hernias need complex surgical techniques, a great extent of experience and expertise to make the successful hernia repair.</p>
+              <p className='pt-2'>Complex hernias are defined as :-</p>
+              <p className='pt-2'><span className="font-medium mr-1">→ </span> Hernia more than 10 cm in size</p>
+              <p className='pt-2'><span className="font-medium mr-1">→ </span>More than 20% loss of domain</p>
+              <p className='pt-2'><span className="font-medium mr-1">→ </span>Recurrent hernia</p>
+              <p className='pt-2'><span className="font-medium mr-1">→ </span>Co-morbidities that impair wound healing include obesity, diabetes, smoking, and poor nutritional status.</p>
+              <p className='pt-2'>Complex hernia needs an abdominal wall reconstruction which is a very disciplined surgery having advanced surgical techniques like Anterior Component Separation and Posterior Component Separation.</p>
+              <p className='pt-2'>Anterior component separation is done to enter into the abdominal cavity by meticulously dissecting and advancing external oblique muscle aponeurosis, so that more rectus abdominis muscles can be reapproximated and help in getting midline closure.</p>
+              <p className='pt-2'>Posterior component separation targets the deeper layers of the abdominal wall musculature and consists in separating or mobilizing structures such as lumbar fascia and transverse abdominis muscle to release tissue planes allowing for reconstruction without sacrificing vascular supply.</p>
+              <p className='pt-2'>Dr Kapil Agrawal, one of the best hernia surgeon in Delhi has mastered the techniques of abdominal wall reconstruction. He has performed abdominal wall reconstruction through laparoscopic, robotic and open techniques with excellent outcomes.</p>
             </div>
           </div>  
         </motion.div>
+
+       <motion.div
+        initial={{ opacity: 0, x: 100 }} 
+        whileInView={{ opacity: 1, x: 0 }} 
+        viewport={{ amount: 0.1,once:true }} 
+        transition={{ duration: 0.4 }}
+        className="flex flex-col mx-auto px-2 sm:px-8 md:px-16 lg:px-24 mt-16 gap-6"
+        >
+          <div className='flex-col mb-16'>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-2 text-first">Why Choose Us - Dr Kapil Agrawal: Best Hernia Surgeon in Delhi</h2>
+            <div className="mb-4 ">
+              <p className='pt-2'><span className="font-medium mr-1">→ Expertise and Experience: </span>Dr Kapil Agrawal is a trusted name and one of the best hernia surgeon in Delhi with a relevant experience exceeding over two decades.</p>
+              <p className='pt-2 ml-5'>He has undertaken over 5,000 complex laparoscopic and robotic procedures for various types of hernia.</p>
+              <p className='pt-2'><span className="font-medium mr-1">→ Affiliation with Best Hospitals for Hernia Surgery: </span>We are associated with best and premium hospitals in New Delhi for hernia surgery,</p>
+              <p className='pt-2 ml-5'> having state of the art infrastructure. These facilities are designed to maximize the comfort of patients as well as provide optimal surgical results. </p>
+              <p className='pt-2 ml-5'> Apart from performing a surgery, we are committed to deliver the best of post operative care.</p>
+              <p className='pt-2'><span className="font-medium mr-1">→ Complete range of procedures: </span>O
+              Dr. Kapil Agrawal, a well-known and top hernia specialist in Delhi, offers an array of latest and advanced hernia surgeries to  </p>
+              <p className='pt-2 ml-5'>cater needs as per the patient. He thoughtfully reviews all cases to suggest the best strategy, taking into account hernia size, location and patient preference.</p>
+              <p className='pt-2'><span className="font-medium mr-1">→ A Dedicated Team of Nutritionists and Endocrinologists:</span>
+              We have a team of dieticians and endocrinologists who specialise in providing customized diets. </p>
+              <p className='pt-2 ml-5'>Within our advanced hernia program, we have nutrition specialists and endocrinologists as well as physicians who all work together to help get you back your health. </p>
+              <p className='pt-2 ml-5'>Our dieticians and nutritionist design custom diets which help in quicker recovery after operations with minimised nutritional losses.</p>
+
+            </div>
+          </div>  
+        </motion.div>     
+
+         <motion.div>
+          <div>
+           <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-first text-center">PATIENT VIDEO TESTIMONIALS</h2>
+            <div className="relative mx-auto pb-[52.24%]">
+            <iframe 
+             className="absolute top-0 left-0 w-full h-full"
+             src={ " https://www.youtube.com/embed/LTGyPysXqH4?si=s85SQ3h7b2qfp8dl " }
+             title="YouTube video player" 
+             frameborder="0" 
+             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+             allowfullscreen>  
+            </iframe>
+            </div>
+          </div>
+         </motion.div>   
 
         <div className="flex flex-col mx-auto px-2 sm:px-6 md:px-12 lg:px-24 gap-6">
           <motion.div initial={{ opacity: -2 }} 
