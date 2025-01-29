@@ -157,7 +157,7 @@ const cardVariants1 = {
             variants={boxVariants}
             transition={{  duration: 1 }}
             whileInView="visible"
-            viewport={{ amount: 0.2,once: true }}
+            viewport={{ amount: 0.2}}
             className="sm:w-2/3 w-full mx-auto relative sm:-mt-12 lg:-mt-24 md:px-6 py-4 bg-white sm:shadow-md items-center md:rounded-lg"
           >
             <FeatureList features={features} />
@@ -165,11 +165,11 @@ const cardVariants1 = {
         </div>
 
         <div className="flex flex-col mx-auto px-2 sm:px-8 md:px-16 lg:px-24 gap-10">
-          <div className='flex-col mb-8 '>
+          <div className='flex-col mb-8 mt-16'>
             <motion.div
             initial={{ opacity: 0, x: 100 }} 
             whileInView={{ opacity: 1, x: 0 }} 
-            viewport={{ amount: 0.2,once: true }} 
+            viewport={{ amount: 0.2}} 
             transition={{ duration: 0.5 }}>
               <h2 className="text-3xl font-semibold mb-2 text-first">BEST APPENDICTICS TREATMENT IN DELHI</h2>
                <div className=" mb-4">
