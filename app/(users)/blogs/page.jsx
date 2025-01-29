@@ -50,7 +50,7 @@ function Blog() {
   return (
     <>
       <section className="title mt-24 flex flex-col">
-        <p className="mx-auto font-medium text-lg">The Blogs</p>
+        <p className="mx-auto text-lg">The Blogs</p>
         <p className="md:text-7xl text-6xl mx-auto mt-2 font-bold">Trusted Medical Insights</p>
         <p className="text-first md:text-2xl text-lg mx-auto mt-4 font-semibold">Everything you need to know about health, all in one place.</p>
       </section>
