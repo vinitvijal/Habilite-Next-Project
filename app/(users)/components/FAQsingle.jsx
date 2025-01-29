@@ -17,6 +17,7 @@ function FAQsingle({question,answer}) {
           <p className="text-sm text-left">{answer}</p>
         </div>
       </div>
+      
     </div>
   )
 }
