@@ -100,7 +100,15 @@ function DrKapilAbout() {
 
 
 
-      {/* Question and Answer Section */}
+      <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1.1, ease: "easeOut" }}
+        >
+          <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+            FAQs
+          </h3>
+        </motion.div>
       <div className={`${isOpen ? 'bg-first' : 'bg-white'} border border-third transition-all duration-300 ease-in-out rounded-md overflow-hidden mb-4`}>
         <button
           onClick={() => setIsOpen(!isOpen)}
