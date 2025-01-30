@@ -29,10 +29,10 @@ function Header() {
           <DialogPortal>
             <DialogOverlay className='fixed inset-0 bg-black/50 z-50' />
 
-            <DialogContent className=' pb-20 overflow-scroll h-screen' asChild>
+            <DialogContent className='DialogContent overflow-x-clip pb-20 overflow-scroll h-screen' asChild>
               <div className='fixed top-0 left-0 w-72 h-screen z-50 bg-white shadow-2xl'>
                 <DialogTitle asChild>
-                  <div className='w-full top-0 h-24 select-none px-4 flex items-center justify-between text-2xl font-bold text-first hover:cursor-pointer md:text-lg lg:text-2xl'>
+                  <div className='w-full whitespace-nowrap top-0 h-24 select-none px-4 flex items-center justify-between text-2xl font-bold text-first hover:cursor-pointer md:text-lg lg:text-2xl'>
                     Habilite Clinic.
                     <DialogClose asChild>
                       <X className='text-black h-6' />
@@ -45,7 +45,7 @@ function Header() {
                     <div className="buttons flex flex-col py-6 text-2xl gap-1">
 
                       <Link href="/">
-                        <p className={cn('py-3 px-5 rounded-full', pathname == "/" && selectedAcc)}>Home</p>
+                        <p className={cn('py-3 px-5 mb-1 rounded-full', pathname == "/" && selectedAcc)}>Home</p>
                       </Link>
 
 
@@ -54,12 +54,12 @@ function Header() {
 
                           <AccordionHeader>
                             <AccordionTrigger className={cn(pathname.startsWith("/about") && selectedAcc, 'data-open:bg-blue-300 group duration-200')} asChild>
-                              <div className={cn('py-3 px-5 rounded-full flex justify-between items-center', pathname.startsWith("/about") && selectedAcc)}>About <ChevronDown className='group-data-[state=open]:rotate-180 transition-transform duration-500' /></div>
+                              <div className={cn('py-3 px-5 mb-1 rounded-full flex justify-between items-center', pathname.startsWith("/about") && selectedAcc)}>About <ChevronDown className='group-data-[state=open]:rotate-180 transition-transform duration-500' /></div>
                             </AccordionTrigger>
                           </AccordionHeader>
 
-                          <AccordionContent className='animation' asChild>
-                            <div className='text-xl pl-4 flex flex-col py-2 gap-1'>
+                          <AccordionContent className='AccordionContent overflow-clip' asChild>
+                            <div className='text-xl pl-4 flex flex-col gap-1'>
                               <Link href="/about/about-habilite-clinic">
                               <p className={cn('rounded-full pl-4 py-2', pathname == "/about/about-habilite-clinic" && selectedAcc)}>About Habilite Clinic</p>
                               </Link>
@@ -75,23 +75,23 @@ function Header() {
 
                           <AccordionHeader>
                             <AccordionTrigger className={cn('data-open:bg-blue-300 group duration-200', pathname.startsWith("/surgery") && selectedAcc)} asChild>
-                              <div className={cn('py-3 px-5 rounded-full flex justify-between items-center', pathname.startsWith("/surgery") && selectedAcc)}>Surgery <ChevronDown className='group-data-[state=open]:rotate-180 transition-transform duration-500' /></div>
+                              <div className={cn('py-3 px-5 mb-1 rounded-full flex justify-between items-center', pathname.startsWith("/surgery") && selectedAcc)}>Surgery <ChevronDown className='group-data-[state=open]:rotate-180 transition-transform duration-500' /></div>
                             </AccordionTrigger>
                           </AccordionHeader>
-
-                          <AccordionContent className='animation' asChild>
+ 
+                          <AccordionContent className='AccordionContent overflow-clip' asChild>
                             <Accordion type='single' collapsible>
                               <div className='text-xl pl-4 flex flex-col py-2 gap-1'>
                                 <AccordionItem value="subitem1">
 
                                   <AccordionHeader>
                                     <AccordionTrigger className='data-open:bg-blue-300 group duration-200' asChild>
-                                      <div className='rounded-full pl-4 py-2 flex items-center justify-between pr-3'>Laparoscopic <ChevronDown className='group-data-[state=open]:rotate-180 transition-transform duration-500' /></div>
+                                      <div className='rounded-full pl-4 mb-2 py-2 flex items-center justify-between pr-3'>Laparoscopic <ChevronDown className='group-data-[state=open]:rotate-180 transition-transform duration-500' /></div>
                                     </AccordionTrigger>
                                   </AccordionHeader>
 
-                                  <AccordionContent className='animation' asChild>
-                                    <div className='text-xl pl-4 flex flex-col py-3 gap-1'>
+                                  <AccordionContent className='AccordionContent overflow-clip' asChild>
+                                    <div className='text-xl pl-4 flex flex-col gap-1'>
                                       <Link href="/surgery/gall-stone">
                                         <p className={cn('rounded-full pl-4 py-2', pathname == "/surgery/gall-stone" && selectedAcc)}>Gall Stones</p>
                                       </Link>
@@ -116,12 +116,12 @@ function Header() {
 
                                   <AccordionHeader>
                                     <AccordionTrigger className='data-open:bg-blue-300 group duration-200' asChild>
-                                      <div className='rounded-full pl-4 py-2 flex items-center justify-between pr-3'>Laser Surgery <ChevronDown className='group-data-[state=open]:rotate-180 transition-transform duration-500' /></div>
+                                      <div className='rounded-full mb-2 pl-4 py-2 flex items-center justify-between pr-3'>Laser Surgery <ChevronDown className='group-data-[state=open]:rotate-180 transition-transform duration-500' /></div>
                                     </AccordionTrigger>
                                   </AccordionHeader>
 
-                                  <AccordionContent className='animation' asChild>
-                                    <div className='text-xl pl-4 flex flex-col py-3 gap-1'>
+                                  <AccordionContent className='AccordionContent overflow-clip' asChild>
+                                    <div className='text-xl pl-4 flex flex-col gap-1'>
                                       <Link href="/surgery/piles">
                                         <p className={cn('rounded-full pl-4 py-2', pathname == "/surgery/piles" && selectedAcc)}>Hemorrhoids/Piles</p>
                                       </Link>
@@ -149,12 +149,12 @@ function Header() {
 
                                   <AccordionHeader>
                                     <AccordionTrigger className='data-open:bg-blue-300 group duration-200' asChild>
-                                      <div className='rounded-full pl-4 py-2 flex items-center justify-between pr-3'>Bariatrics <ChevronDown className='group-data-[state=open]:rotate-180 transition-transform duration-500' /></div>
+                                      <div className='rounded-full pl-4 py-2 mb-2 flex items-center justify-between pr-3'>Bariatrics <ChevronDown className='group-data-[state=open]:rotate-180 transition-transform duration-500' /></div>
                                     </AccordionTrigger>
                                   </AccordionHeader>
 
-                                  <AccordionContent className='animation' asChild>
-                                    <div className='text-xl pl-4 flex flex-col py-3 gap-1'>
+                                  <AccordionContent className='AccordionContent overflow-clip' asChild>
+                                    <div className='text-xl pl-4 flex flex-col gap-1'>
                                       <Link href="/surgery/bariatric-surgery">
                                         <p className={cn('rounded-full pl-4 py-2', pathname == "/surgery/bariatric-surgery" && selectedAcc)}>Bariatric Surgery</p>
                                       </Link>
@@ -179,23 +179,23 @@ function Header() {
                         </AccordionItem>
 
                         <Link href="/blogs">
-                          <p className={cn('py-3 px-5 rounded-full', pathname.startsWith("/blogs") && selectedAcc)}>Blogs</p>
+                          <p className={cn('py-3 px-5 mb-1 rounded-full', pathname.startsWith("/blogs") && selectedAcc)}>Blogs</p>
                         </Link>
 
                         <Link href="/contact-us">
-                          <p className={cn('py-3 px-5 rounded-full', pathname.startsWith("/contact-us") && selectedAcc)}>Contact Us</p>
+                          <p className={cn('py-3 px-5 mb-1 rounded-full whitespace-nowrap', pathname.startsWith("/contact-us") && selectedAcc)}>Contact Us</p>
                         </Link>
 
                         <AccordionItem value="item3">
 
                           <AccordionHeader>
                             <AccordionTrigger className='data-open:bg-blue-300 group duration-200' asChild>
-                              <div className='py-3 px-5 rounded-full flex justify-between items-center'>More <ChevronDown className='group-data-[state=open]:rotate-180 transition-transform duration-500' /></div>
+                              <div className='py-3 mb-2 px-5 rounded-full flex justify-between items-center'>More <ChevronDown className='group-data-[state=open]:rotate-180 transition-transform duration-500' /></div>
                             </AccordionTrigger>
                           </AccordionHeader>
 
-                          <AccordionContent className='animation' asChild>
-                            <div className='text-xl pl-4 flex flex-col py-2 gap-1'>
+                          <AccordionContent className='AccordionContent overflow-hidden' asChild>
+                            <div className='text-xl pl-4 flex flex-col gap-1'>
                               <Link href="/more/international-patient">
                                 <p className={cn('rounded-full pl-4 py-2', pathname == "/more/international-patient" && selectedAcc)}>International Patient</p>
                               </Link>
@@ -205,7 +205,7 @@ function Header() {
                         </AccordionItem>
                       </Accordion>
                     </div>
-                    <button className=' px-3 py-2 w-full flex justify-center select-none rounded-md border-[0.5px] border-first border-solid bg-transparent text-first text-md duration-200 text-lg active:scale-95 shadow-md active:shadow-none'>Book Appointment</button>
+                    <button className='whitespace-nowrap overflow-hidden px-3 py-2 w-full flex justify-center select-none rounded-md border-[0.5px] border-first border-solid bg-transparent text-first text-md duration-200 text-lg active:scale-95 shadow-md active:shadow-none'>Book Appointment</button>
 
                   </div>
 
