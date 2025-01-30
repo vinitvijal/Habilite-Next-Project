@@ -46,7 +46,7 @@ export default function About() {
               <div className='text-sm text-first font-semibold'>Senior Consultant, Laparoscopic & Laser Surgeon</div>
             </div>
             <div><div className="flex justify-center">
-        <a href="" class=" text-first border border-first py-2 px-6 gap-2 rounded inline-flex items-center hover:bg-first hover:text-white duration-300">
+        <a href="" className=" text-first border border-first py-2 px-6 gap-2 rounded inline-flex items-center hover:bg-first hover:text-white duration-300">
           <span>
               Know more
           </span>
