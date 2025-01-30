@@ -20,6 +20,12 @@ function truncateText(text, wordLimit) {
 }
 export { truncateText };
 
+
+
+ 
+
+
+
 const dirContent = fs.readdirSync("public/blogpage-content", "utf-8")
 const blogs = dirContent.map(file => {
   const fileContent = fs.readFileSync(`public/blogpage-content/${file}`, "utf-8")

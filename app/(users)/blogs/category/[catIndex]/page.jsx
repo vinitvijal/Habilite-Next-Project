@@ -3,7 +3,7 @@ import Link from "next/link";
 import fs from "fs";
 import Image from 'next/image';
 import calendar from "@/public/calendar.svg";
-import { categories } from '@/app/(users)/blogs/page'
+import { categories } from '@/app/(users)/blogs/page_txt'
 import { notFound } from 'next/navigation';
 import React from 'react';
 
@@ -20,6 +20,9 @@ export default async function Page({ params }) {
     const { data } = matter(fileContent)
     return data
   })
+
+
+
 
   if (!(index in categories)) { notFound() }
 
