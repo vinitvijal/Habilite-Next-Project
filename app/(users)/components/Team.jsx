@@ -1,9 +1,10 @@
 'use client'
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import TextAnimate from "@/components/ui/anim-text";
 
 function Team() {
+  const [hasAnimated, setHasAnimated] = useState(false);
   const teamMembers = [
     {
       name: "Monika Desai",
@@ -63,9 +64,29 @@ function Team() {
     },
   };
 
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const teamSection = document.getElementById("team-section");
+      const rect = teamSection.getBoundingClientRect();
+
+      if (rect.top < window.innerHeight && rect.bottom >= 0 && !hasAnimated) {
+        setHasAnimated(true); // Set animated state to true
+        window.removeEventListener("scroll", handleScroll); // Remove event listener after triggering
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [hasAnimated]);
+
+
   return (
     <div className="w-screen px-4 sm:px-8 lg:px-16 md:pb-10">
-      <div className="relative pt-4">
+     <div id="team-section" className="relative md:pt-4 pt-16">
         {/* <div className="text-center mb-10">
           <motion.h1 
           variants={imageVariants}
@@ -91,7 +112,7 @@ function Team() {
           <TextAnimate text="MEET THE TEAM" type="calmInUp" className="text-2xl md:text-4xl text-center font-bold whitespace-normal w-xl" />
           <motion.h1
         initial={{ y: 20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
+        animate={hasAnimated ? { y: 0, opacity: 1 } : {}}
         transition={{ ease: "easeInOut", duration: 0.5 }}
         className="mb-6 md:text-lg text-normal text-first text-wrap md:px-[20vw] px-6 text-center font-medium"
       >
@@ -108,8 +129,7 @@ function Team() {
               custom={index}
               variants={cardVariants}
               initial="hidden"
-              whileInView="visible"
-              viewport={{ amount: 0.2 }}
+              animate={hasAnimated ? 'visible' : 'hidden'}
             >
               <motion.img
                 src={member.img}
@@ -118,8 +138,7 @@ function Team() {
                 alt={member.name}
                 variants={imageVariants}
                 initial="hidden"
-                whileInView="visible"
-                viewport={{ amount: 0.2 }}
+                animate={hasAnimated ? 'visible' : 'hidden'}
               />
               <div>
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-1">
