@@ -92,50 +92,17 @@ function Services() {
   }, [titleControls, subtitleControls]);
 
   return (
-    <section className="md:pb-[112vh] pb-[230vh] h-screen w-full bg-white py-10 flex flex-col items-center">
-      {/* <motion.div
-        ref={titleRef}
-        initial="hidden"
-        animate={titleControls}
-        variants={{
-          hidden: { opacity: 0, scale: 0.6 }, // Zoom out heading animation
-          visible: { opacity: 1, scale: 1, transition: { duration: 0.2 } } // Zoom in with duration
-        }}
-        className="container mx-auto px-6"
-      >
-        <motion.div className="relative flex items-center justify-center mb-4">
-          <div className="hidden sm:block flex-grow border-t-2 border-third lg:mx-6 md:mx-4"></div>
-          <motion.h1 className="text-4xl lg:text-4xl font-bold text-second text-center">
-            SERVICES & SPECIALIZATION
-          </motion.h1>
-          <div className="hidden sm:block flex-grow border-t-2 border-third lg:mx-6 md:mx-4"></div>
-        </motion.div>
-      </motion.div>
-
-      <motion.div
-        ref={subtitleRef}
-        initial="hidden"
-        animate={subtitleControls}
-        variants={{
-          hidden: { opacity: 0, scale: 0.5 }, // Zoom out
-          visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } } // Zoom in with duration
-        }}
-        className="container mx-auto px-6"
-      >
-        <motion.h2 className="text-lg sm:text-xl lg:text-2xl text-center mb-8 text-first ">
-          Rapid Recovery Realized.
-        </motion.h2>
-      </motion.div> */}
+    <section className=" min-h-screen w-full bg-white py-10 flex flex-col items-center">
 
 
-      <motion.div className='flex flex-col gap-2 items-center pt-20 pb-14'>
+      <motion.div className='flex flex-col gap-2 items-center pt-10 pb-14'>
         <TextAnimate text="SERVICES & SPECIALIZATION" type="calmInUp" className="text-2xl md:text-4xl text-center font-bold whitespace-normal" />
         <TextAnimate text="Rapid Recovery Realized." type="calmInUp" className='md:text-2xl text-lg font-medium text-first' />
       </motion.div>
 
 
-      <div className='flex flex-wrap justify-center'>
-        <div className='max-w-5/6 h-[40vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-baseline mt-4 gap-8'>
+      <div className='flex justify-center'>
+        <div className='max-w-5/6  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-baseline mt-4 gap-8'>
           {[
             { title: "Bariatrics / Weight loss", imageSrc: "/weightloss.jpg", links: [
               { href: "#", text: "Bariatric surgery" },

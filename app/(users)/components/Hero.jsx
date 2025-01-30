@@ -35,7 +35,7 @@ const Hero = () => {
         >
         {fadeImages.map((fadeImage, index) => (
           <div key={index}>
-            <img src={fadeImage.url} className='md:h-full h-[40vh] md:w-full w-[160vw]' />
+            <img src={fadeImage.url} className='md:h-full h-[40vh] object-cover md:w-full w-[160vw]' />
           </div>
         ))}
       </Fade>

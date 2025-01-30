@@ -50,7 +50,7 @@ function Hospitals() {
       >
       <div className="flex flex-col items-center justify-center md:pb-12">
         {/* <HosHeading/> */}
-        <motion.div className='flex flex-col gap-2 items-center pt-20 pb-14'>
+        <motion.div className='flex flex-col gap-2 items-center md:pt-20 md:pb-14 pt-4 pb-6'>
         <TextAnimate text="HOSPITAL AFFILIATIONS" type="calmInUp" className="text-2xl md:text-4xl text-center font-bold whitespace-normal" />
       </motion.div>
         <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-right w-full">
