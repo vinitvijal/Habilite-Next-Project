@@ -39,6 +39,10 @@ function Modal({isVisible, onClose}) {
       setIsSuccess(false)
     } finally {
       setLoading(false);
+      setName('');
+      setEmail('');
+      setPhone('');
+      setQuery('');
     }
   }
 
