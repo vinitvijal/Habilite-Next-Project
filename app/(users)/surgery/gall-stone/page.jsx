@@ -200,7 +200,7 @@ const cardVariants1 = {
               </div>
             ))}
           </div>
-          <div className='flex-col mb-8 '>
+          <div className='flex-col mb-8'>
             <motion.div
             initial={{ opacity: 0, x: 100 }} 
             whileInView={{ opacity: 1, x: 0 }} 
