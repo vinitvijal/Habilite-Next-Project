@@ -1,25 +1,14 @@
-import matter from 'gray-matter'
 import Link from "next/link";
-import fs from "fs";
 import Image from 'next/image';
 import calendar from "@/public/calendar.svg";
-import { categories } from '@/app/(users)/blogs/page'
+import { categories, filepaths, blogs } from '@/app/(users)/blogs/index';
 import { notFound } from 'next/navigation';
 import React from 'react';
-
 
 export default async function Page({ params }) {
   const index = (await params).catIndex
 
   const category = categories[index]
-
-  const dirContent = fs.readdirSync("public/blogpage-content", "utf-8")
-
-  const blogs = dirContent.map(file => {
-    const fileContent = fs.readFileSync(`public/blogpage-content/${file}`, "utf-8")
-    const { data } = matter(fileContent)
-    return data
-  })
 
   if (!(index in categories)) { notFound() }
 

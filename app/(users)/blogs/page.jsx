@@ -7,39 +7,13 @@ import fs from "fs";
 import matter from "gray-matter";
 import * as Separator from "@radix-ui/react-separator";
 import Header from "../components/Header";
-
-const categories = ["Bariatric Surgery", "Gall Bladder Stone", "Hernia", "Laparoscopic Surgery", "Lipoma", "Non-Surgical Weight Loss", "Piles"]
-export { categories }
-
-function truncateText(text, wordLimit) {
-  const words = text.split(' ');
-  if (words.length > wordLimit) {
-    return words.slice(0, wordLimit).join(' ') + '...';
-  }
-  return text;
-}
-export { truncateText };
-
-const dirContent = fs.readdirSync("public/blogpage-content", "utf-8")
-const blogs = dirContent.map(file => {
-  const fileContent = fs.readFileSync(`public/blogpage-content/${file}`, "utf-8")
-  const { data } = matter(fileContent)
-  return data
-})
-export { blogs }
+import { categories, truncateText, blogs, featured } from "./index";
 
 
-const featured = blogs.filter(blog => {
-  return blog.featured
-})
 const featured1 = featured[0]
-export {featured}
 
 function Blog() {
   
-
-
-
   const trending = blogs.filter(blog => {
     return blog.trending
   })

@@ -3,9 +3,9 @@ import React from 'react';
 import Image from 'next/image';
 import matter from 'gray-matter';
 import { notFound } from 'next/navigation';
-import { categories } from '../page';
+import { categories } from '../index';
 import Link from 'next/link';
-import { featured } from '../page';
+import { featured } from '../index';
 
 import rehypeDocument from 'rehype-document'
 import rehypeFormat from 'rehype-format'
