@@ -23,6 +23,9 @@ function Modal({isVisible, onClose}) {
 
 
   async function handleSubmit(){
+    if(!name || !email || !phone || !query) return alert('Please fill all the fields')
+
+    
     // let response = await createAppointment(name, email, phone, query)
     // console.log(response)
     setLoading(true);  
@@ -36,6 +39,10 @@ function Modal({isVisible, onClose}) {
       setIsSuccess(false)
     } finally {
       setLoading(false);
+      setName('');
+      setEmail('');
+      setPhone('');
+      setQuery('');
     }
   }
 
@@ -67,13 +74,13 @@ function Modal({isVisible, onClose}) {
           <div className="flex justify-center items-center flex-1 py-16 w-full h-full "><AiOutlineLoading3Quarters className=' text-first size-12 animate-spin' /></div>
         ) : submissionMessage ? (
           <div className="flex mx-auto flex-col justify-center space-y-6 items-center text-center pt-10 pb-4">
-            <div className="flex items-center gap-x-4">
+            <div className="flex flex-col items-center gap-x-4">
               {isSuccess ? (
                 <FaRegCheckCircle className='text-green-600 text-4xl ' />
               ) : (
                 <RxCrossCircled className='text-red-600 text-4xl ' />
               )}
-              <p className={`text-lg text-medium ${isSuccess ? 'text-green-700' : 'text-red-700'}`}>{submissionMessage}</p>
+              <p className={`text-lg text-wrap text-medium ${isSuccess ? 'text-green-700' : 'text-red-700'}`}>{submissionMessage}</p>
             </div>
             <button type="button" className='mx-auto w-1/2 py-1  focus:scale-90 border-third border-2 box-border font-semibold  rounded-md hover:bg-third'onClick={handleClose} >Close</button>
           </div>
