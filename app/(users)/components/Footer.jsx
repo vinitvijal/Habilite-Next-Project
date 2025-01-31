@@ -79,7 +79,7 @@ function Footer() {
         </div>
         <div className='flex-col items-center text-left hidden lg:block'>
         <h1 className='text-xl text-white/90 text-semibold pb-8'>Calculate</h1>
-        <a><p className='text-md text-white/70 text-light py-2 hover:text-white'>BMI Calculator</p></a>
+        <Link href="/calculators/bmi"><p className='text-md text-white/70 text-light py-2 hover:text-white'>BMI Calculator</p></Link>
           <a><p className='text-md text-white/70 text-light py-2 cursor-pointer hover:text-white'>Calorie Calculator</p></a>
           <a><p className='text-md text-white/70 text-light py-2 cursor-pointer hover:text-white'>Exercise Calculator</p></a>
         </div>
