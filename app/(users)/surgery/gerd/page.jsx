@@ -24,14 +24,14 @@ const boxVariants = {
 
 
 const FeatureList = ({ features }) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 text-first md:text-lg text-left mx-auto">
+  <div className="grid grid-cols-1 md:grid-cols-2 text-first text-left mx-auto">
     {features.map((feature, index) => (
       <div
         key={index}
-        className={`flex items-start spaxe-x-2 py-3 rounded-lg  max-md:text-base border-third border-t ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"} ${index===0?'border-none':''} ${index===1?'md:border-none':''}
+        className={`flex items-start space-x-2 py-2  max-md:text-base border-third border-t ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"} ${index===0?'border-none':''} ${index===1?'md:border-none':''}
         }`} >
         <span> ➔ </span>
-        <p>{feature}</p>
+        <p className='max-sm:text-sm' >{feature}</p>
       </div>
     ))}
   </div>
@@ -95,6 +95,25 @@ function page() {
     },
   ];
 
+  const benefits = [
+    {
+      title: "Focus on Quality",
+      description: `"Quality is our first concern when it comes to your health and wellness."`,
+    },
+    {
+      title: "Approachable Staff",
+      description: `"Our friendly staff is here to answer any questions you may have."`,
+    },
+    {
+      title: "Experience Comfort",
+      description: `"Comfort is key to making sure you are happy with the process and outcome."`,
+    },
+    {
+      title: "Health Benefits",
+      description: `"We offer classes to help you maintain a healthy lifestyle after surgery."`,
+    },
+  ];
+
 
 const cardVariants = {
   hidden: { opacity: 0, x: -50 },
@@ -146,7 +165,7 @@ const cardVariants1 = {
         
             <div className="absolute inset-0 flex items-center justify-center">
               <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white px-4 py-2 rounded-md flex-col items-center justify-center text-center bg-transparent hover:bg-black hover:bg-opacity-20">
-                Best Surgeon for <br /> Rectal Prolapse
+                Gastroesophageal reflux <br /> disease
               </h1>
             </div>
           </div>
@@ -156,10 +175,10 @@ const cardVariants1 = {
             initial={{opacity: 0, scale: 0.12 }}
             animate={{ opacity: 1, scale: 1 }}
             variants={boxVariants}
-            transition={{  duration: 1 }}
+            transition={{  duration: 0.6 }}
             whileInView="visible"
-            viewport={{ amount: 0.2 }}
-            className="w-3/5 mx-auto relative sm:-mt-20 lg:-mt-40 px-8 py-10 bg-white shadow-sm shadow-black items-center rounded-lg"
+            viewport={{ amount: 0.2,once:true }}
+            className="sm:w-2/3 w-full mx-auto relative sm:-mt-12 lg:-mt-24 md:px-6 py-4 bg-white sm:shadow-md items-center md:rounded-lg"
           >
             <FeatureList features={features} />
           </motion.div>
@@ -171,8 +190,8 @@ const cardVariants1 = {
             <motion.div
             initial={{ opacity: 0, x: 100 }} 
             whileInView={{ opacity: 1, x: 0 }} 
-            viewport={{ amount: 0.3 }} 
-            transition={{ duration: 0.8 }}>
+            viewport={{ amount: 0.1,once:true }} 
+            transition={{ duration: 0.6 }}>
               <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">What is GERD</h2>
               <div className=" mb-4">
                 <p className='pt-2'> Gerd is a condition that happens when the acid present in the stomach back flows into the food pipe connecting the mouth to stomach. It usually happens when the valve present at the junction of food pipe and stomach becomes faulty due to various conditions. </p>
@@ -215,7 +234,7 @@ const cardVariants1 = {
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ amount: 0.2 }}
+              viewport={{ amount: 0.2,once:true }}
               className="text-3xl md:text-4xl font-semibold text-first m-4">
                 COMPLICATIONS THAT CAN ARISE DUE TO UNTREATED GERD
               </motion.h1>
@@ -230,7 +249,7 @@ const cardVariants1 = {
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ amount: 0.2 }}
+            viewport={{ amount: 0.2,once:true }}
             className="flex items-center justify-center  max-w-6xl mx-auto">
               <div className="p-12 border-third border-2 text-lg rounded-lg shadow-md">
                 <div className="mb-4 ">
@@ -245,8 +264,8 @@ const cardVariants1 = {
           <motion.div 
           initial={{ opacity: 0, x: -100 }} 
           whileInView={{ opacity: 1, x: 0 }} 
-          viewport={{ amount: 0.3 }} 
-          transition={{ duration: 0.8 }}
+          viewport={{ amount: 0.1,once:true }} 
+          transition={{ duration: 0.6 }}
           className='flex-col mb-16 '
           >
             <h1 className="text-3xl md:text-4xl font-semibold mb-2 text-second text-center">Hiatus Hernia</h1>
@@ -303,7 +322,7 @@ const cardVariants1 = {
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ amount: 0.2 }}
+              viewport={{ amount: 0.2,once:true }}
               className="text-3xl md:text-4xl font-semibold text-first m-4">
                 ADVANTAGES OF LAPAROSCOIC SURGERY
               </motion.h1>
@@ -323,7 +342,7 @@ const cardVariants1 = {
                   variants={cardVariants1}
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ amount: 0.2 }}
+                  viewport={{ amount: 0.2,once:true }}
                 >
                   <div className="mx-auto flex items-center justify-center h-24 w-24 -translate-y-16 transform rounded-full shadow-lg bg-first mb-0">
                   <svg viewBox="0 0 55 44" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-white mb-0">
@@ -347,44 +366,72 @@ const cardVariants1 = {
         </div>
 
         <div className='flex flex-col mx-auto px-8 md:px-16 lg:px-24 gap-10 mb-16'>
-          <motion.div 
-          initial={{ opacity: 0, x: 100 }} 
-          whileInView={{ opacity: 1, x: 0 }} 
-          viewport={{ amount: 0.3 }} 
-          transition={{ duration: 0.8 }}>
-            <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">
-              Why Choose Us
-            </h2>
-            <div className="mb-4 text-lg">
-              <p className='pt-2'><span className="font-medium mr-1">→ Focus on Quality : </span> Quality is our first concern when it comes to your health and wellness </p>
-              <p className='pt-2'><span className="font-medium mr-1">→ Approachable Staff : </span> Our friendly staff is here to answer any questions you may have </p>
-              <p className='pt-2'><span className="font-medium mr-1">→ Experience Comfort : </span> Comfort is key to making sure you are happy with the process and outcome </p>
-              <p className='pt-2'><span className="font-medium mr-1">→ Health Benefits : </span> We offer classes to help you maintain a healthy lifestyle after surgery </p>
+          <div className='flex-col items-center justify-center mx-auto gap-20 my-8'>
+            <div className="text-center mb-8">
+              <motion.h1
+               variants={cardVariants}
+               initial="hidden"
+               whileInView="visible"
+               viewport={{ amount: 0.2,once:true }}
+               className="text-3xl md:text-4xl font-semibold text-first">
+                WHY CHOOSE US -
+              </motion.h1>
+              <motion.div
+               initial={{ width: 0 }}
+               whileInView={{ width: "80%", duration: 2000 }}
+               className="mx-auto border-first border-b-2 mt-4"
+              >
+              </motion.div>
             </div>
-          </motion.div>
+            <div className="py-12 ">
+              <div className="flex flex-wrap justify-center gap-6 px-6">
+                {benefits.map((info, index) => (
+                  <motion.div
+                  key={index}
+                  initial={{ opacity: -2 }} 
+                  whileInView={{ opacity: 1.5 }} 
+                  transition={{ duration: 1 }} 
+                  viewport={{ amount: 0.2,once:true }} 
+                  className="bg-white p-8 rounded-lg shadow-md border border-first w-80 text-center hover:shadow-lg transition-shadow" >
+                    <h2 className="text-xl font-semibold text-first mb-4">
+                      {info.title}
+                    </h2>
+                    <p className="text-gray-700">{info.description}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+                  
 
-          <motion.div 
-          initial={{ opacity: 0, x: 100 }} 
-          whileInView={{ opacity: 1, x: 0 }} 
-          viewport={{ amount: 0.3 }} 
-          transition={{ duration: 0.8 }}>
-            <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">
-              Worried about the pricing?
-            </h2>
-            <div className="mb-4 text-lg">
-              <p className='pt-2'><span className="font-medium mr-1">→ </span> Option for a budget friendly Hospital </p>
-              <p className='pt-2'><span className="font-medium mr-1">→ </span> EMI facility </p>
-              <p className='pt-2'><span className="font-medium mr-1">→ </span> Substantial discounts on investigations </p>
-              <p className='pt-2'><span className="font-medium mr-1">→ </span> Free post-surgical consultations </p>
+          <div className="px-2 py-8 w-full flex justify-center">
+            <div className="bg-white lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg rounded-lg overflow-hidden">
+              <div className="lg:w-1/2">
+                <div className="h-72 bg-cover lg:h-full  lg:rounded-lg">
+                  <img
+                  src="/lady.jpg"
+                  alt="Background"
+                  className="w-full object-cover opacity-200"/>
+                </div>
+              </div>
+              <div className="flex flex-col mx-auto  py-12 px-6 lg:px-12 max-w-xl lg:max-w-5xl lg:w-1/2 ">
+                <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">
+                  Worried about the pricing
+                </h2>
+                <p className="pt-2 font-semibold">⌲ Option for a budget friendly Hospital</p>
+                <p className="pt-2 font-semibold">⌲ EMI facility</p>
+                <p className="pt-2 font-semibold">⌲ Substantial discounts on investigations</p>
+                <p className="pt-2 font-semibold">⌲ Free post-surgical consultations</p>
+              </div>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         <div className="flex flex-col mx-auto px-8 md:px-16 lg:px-24 gap-6">
           <motion.div initial={{ opacity: -2 }} 
             whileInView={{ opacity: 1.5 }} 
-            transition={{ duration: 2 }} 
-            viewport={{ amount: 0.2 }} 
+            transition={{ duration: 1 }} 
+            viewport={{ amount: 0.2,once:true }} 
             className='flex-col mx-6 mb-16 pt-4 md:px-24 border-first border-t-2'
           >
             <div className="flex justify-center items-end m-4"><BsPinFill className='text-3xl md:text-4xl text-second' />

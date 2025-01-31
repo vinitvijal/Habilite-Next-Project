@@ -15,14 +15,14 @@ const features = [
 ];
 
 const FeatureList = ({ features }) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 text-first md:text-lg text-left mx-auto">
+  <div className="grid grid-cols-1 md:grid-cols-2 text-first text-left mx-auto">
     {features.map((feature, index) => (
       <div
         key={index}
-        className={`flex items-start spaxe-x-2 py-3 rounded-lg  max-md:text-base border-third border-t ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"} ${index===0?'border-none':''} ${index===1?'md:border-none':''}
+        className={`flex items-start space-x-2 py-2  max-md:text-base border-third border-t ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"} ${index===0?'border-none':''} ${index===1?'md:border-none':''}
         }`} >
         <span> ➔ </span>
-        <p>{feature}</p>
+        <p className='max-sm:text-sm' >{feature}</p>
       </div>
     ))}
   </div>
@@ -181,8 +181,8 @@ function page() {
               variants={boxVariants}
               transition={{  duration: 1 }}
               whileInView="visible"
-              viewport={{ amount: 0.2 }}
-              className="w-3/5 mx-auto relative sm:-mt-24 lg:-mt-40 px-8 py-10 bg-white shadow-sm shadow-black items-center rounded-lg">
+              viewport={{ amount: 0.2,once:true }}
+              className="sm:w-2/3 w-full mx-auto relative sm:-mt-12 lg:-mt-24 md:px-6 py-4 bg-white sm:shadow-md items-center md:rounded-lg">
               <FeatureList features={features} />
             </motion.div>
           </div>
@@ -191,8 +191,8 @@ function page() {
               <motion.div 
                 initial={{ opacity: 0, x: -100 }} 
                 whileInView={{ opacity: 1, x: 0 }} 
-                viewport={{ amount: 0.3 }} 
-                transition={{ duration: 0.8 }}
+                viewport={{ amount: 0.3,once:true }} 
+                transition={{ duration: 0.6 }}
                 className=''>
                 <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">PILONIDAL SINUS</h2>
                 <div className="mb-4">
@@ -215,8 +215,8 @@ function page() {
               <motion.div 
               initial={{ opacity: 0, x: 100 }} 
               whileInView={{ opacity: 1, x: 0 }} 
-              viewport={{ amount: 0.3 }} 
-              transition={{ duration: 0.8 }}>
+              viewport={{ amount: 0.3,once:true }} 
+              transition={{ duration: 0.6 }}>
                 <div>
                   <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">
                   Causes of Pilonidal Disease</h2>
@@ -236,8 +236,8 @@ function page() {
               <motion.div 
               initial={{ opacity: 0, x: -100 }} 
               whileInView={{ opacity: 1, x: 0 }} 
-              viewport={{ amount: 0.3 }} 
-              transition={{ duration: 0.8 }}>
+              viewport={{ amount: 0.3,once:true }} 
+              transition={{ duration: 0.6 }}>
                 <div>
                   <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">Presentation of pilonidal sinus</h2>
                   <div className="mb-4">
@@ -254,8 +254,8 @@ function page() {
               <motion.div 
              initial={{ opacity: 0, x: 100 }} 
              whileInView={{ opacity: 1, x: 0 }} 
-             viewport={{ amount: 0.3 }} 
-             transition={{ duration: 0.8 }}
+             viewport={{ amount: 0.2,once:true }} 
+             transition={{ duration: 0.6 }}
               className='py-16'>
                <h1 className="text-3xl md:text-4xl  font-semibold mb-2 text-first my-4 text-center">ACUTE STAGE</h1>
                 <div className="mb-4">
@@ -278,8 +278,8 @@ function page() {
               <motion.div 
                initial={{ opacity: 0, x: -100 }} 
                whileInView={{ opacity: 1, x: 0 }} 
-               viewport={{ amount: 0.3 }} 
-               transition={{ duration: 0.8 }}>
+               viewport={{ amount: 0.2,once:true }} 
+               transition={{ duration: 0.6 }}>
                 <div>
                   <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">Management of Pilonidal Sinus</h2>
                   <div className="mb-4">
@@ -308,7 +308,7 @@ function page() {
                 variants={cardVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ amount: 0.2 }}
+                viewport={{ amount: 0.2,once:true }}
                 className="flex items-center justify-center  max-w-6xl mx-auto">
                 <div className="p-16 border-third border-2  rounded-lg shadow-md">
                 <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first text-center">  ADVANTAGES OF LASER TREATMENT</h2>
@@ -332,7 +332,7 @@ function page() {
                   variants={cardVariants}
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ amount: 0.2 }}
+                  viewport={{ amount: 0.2,once:true }}
                   className="text-3xl md:text-4xl font-semibold text-first">
                  WHY CHOOSE US -
                   </motion.h1>
@@ -350,8 +350,8 @@ function page() {
                   key={index}
                   initial={{ opacity: -2 }} 
                   whileInView={{ opacity: 1.5 }} 
-                  transition={{ duration: 2 }} 
-                  viewport={{ amount: 0.2 }} 
+                  transition={{ duration: 1 }} 
+                  viewport={{ amount: 0.2,once:true }} 
                   className="bg-white p-8 rounded-lg shadow-md border border-first w-80 text-center hover:shadow-lg transition-shadow" >
                    <h2 className="text-xl font-semibold text-first mb-4">
                    {info.title}
@@ -362,16 +362,16 @@ function page() {
               </div>
              </div>                      
 
-          <div className="px-2 py-20 w-full flex justify-center">
-             <div className="bg-white lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg rounded-lg">
+            <div className="px-2 py-20 w-full flex justify-center">
+             <div className="bg-white lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg rounded-lg overflow-hidden">
                <div className="lg:w-1/2">
-               <div className="lg:scale-110 h-76 bg-cover lg:h-full rounded-b-none border lg:rounded-lg">
+               <div className="h-72 bg-cover lg:h-full  lg:rounded-lg">
                 <img
                 src="/lady.jpg"
                 alt="Background"
                 className="w-full object-cover opacity-200"/> </div>
                </div>
-               <div className="flex flex-col mx-auto  py-12 px-6 lg:px-12 max-w-xl lg:max-w-5xl lg:w-1/2 border lg:rounded-lg">
+               <div className="flex flex-col mx-auto  py-12 px-6 lg:px-12 max-w-xl lg:max-w-5xl lg:w-1/2 ">
                  <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first"> Worried about the pricing
                  </h2>
                  <p className="pt-2 font-semibold">⌲ Option for a budget friendly Hospital</p>
@@ -385,8 +385,8 @@ function page() {
            <motion.div 
                  initial={{ opacity: 0, x: -100 }} 
                  whileInView={{ opacity: 1, x: 0 }} 
-                 viewport={{ amount: 0.3 }} 
-                 transition={{ duration: 0.8 }}>
+                 viewport={{ amount: 0.3,once:true }} 
+                 transition={{ duration: 0.6 }}>
                 <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first text-center">DON’T BE FOOLED BY THE GIMMICK OF LASER -</h2>
                 <div className="mb-4 text-center ">
                   <p className='pt-2'>There are different procedures for the best management of fistula. Laser is one of the modalities. </p>
@@ -407,8 +407,8 @@ function page() {
          <div className="flex flex-col mx-auto px-8 md:px-16 lg:px-24 gap-6">
            <motion.div initial={{ opacity: -2 }} 
             whileInView={{ opacity: 1.5 }} 
-            transition={{ duration: 2 }} 
-            viewport={{ amount: 0.2 }} 
+            transition={{ duration: 1 }} 
+            viewport={{ amount: 0.2,once:true }} 
             className='flex-col mx-6 md:mx-12 mb-16 pt-4 md:px-24 border-first border-t-2'>
              <div className="flex justify-center items-end m-4"><BsPinFill className='text-3xl md:text-4xl text-second' />
                <h1 className='font-bold text-3xl md:text-4xl text-center border-fourth border-b-2 mt-6 text-second'>FAQ</h1>

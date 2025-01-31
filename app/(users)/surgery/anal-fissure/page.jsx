@@ -15,14 +15,14 @@ const features = [
 ];
 
 const FeatureList = ({ features }) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 text-first md:text-lg text-left mx-auto">
+  <div className="grid grid-cols-1 md:grid-cols-2 text-first text-left mx-auto">
     {features.map((feature, index) => (
       <div
         key={index}
-        className={`flex items-start spaxe-x-2 py-3 rounded-lg  max-md:text-base border-third border-t ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"} ${index===0?'border-none':''} ${index===1?'md:border-none':''}
+        className={`flex items-start space-x-2 py-2  max-md:text-base border-third border-t ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"} ${index===0?'border-none':''} ${index===1?'md:border-none':''}
         }`} >
         <span> ➔ </span>
-        <p>{feature}</p>
+        <p className='max-sm:text-sm' >{feature}</p>
       </div>
     ))}
   </div>
@@ -169,8 +169,8 @@ function page() {
               variants={boxVariants}
               transition={{  duration: 1 }}
               whileInView="visible"
-              viewport={{ amount: 0.2 }}
-              className="w-3/5 mx-auto relative sm:-mt-24 lg:-mt-40 px-8 py-10 bg-white shadow-sm shadow-black items-center rounded-lg">
+              viewport={{ amount: 0.2,once:true }}
+              className="sm:w-2/3 w-full mx-auto relative sm:-mt-12 lg:-mt-24 md:px-6 py-4 bg-white sm:shadow-md items-center md:rounded-lg">
               <FeatureList features={features} />
             </motion.div>
           </div>
@@ -179,8 +179,8 @@ function page() {
               <motion.div 
                 initial={{ opacity: 0, x: -100 }} 
                 whileInView={{ opacity: 1, x: 0 }} 
-                viewport={{ amount: 0.3 }} 
-                transition={{ duration: 0.8 }}
+                viewport={{ amount: 0.2,once:true }} 
+                transition={{ duration: 0.6 }}
                 className=''>
                 <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">Understanding Anal Fissures</h2>
                 <div className="mb-4">
@@ -205,8 +205,8 @@ function page() {
               <motion.div 
               initial={{ opacity: 0, x: 100 }} 
               whileInView={{ opacity: 1, x: 0 }} 
-              viewport={{ amount: 0.3 }} 
-              transition={{ duration: 0.8 }}>
+              viewport={{ amount: 0.2,once:true }} 
+              transition={{ duration: 0.6 }}>
                 <div>
                   <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">
                   Identifying the Common Causes of Anal Fissures</h2>
@@ -228,8 +228,8 @@ function page() {
               <motion.div 
               initial={{ opacity: 0, x: -100 }} 
               whileInView={{ opacity: 1, x: 0 }} 
-              viewport={{ amount: 0.3 }} 
-              transition={{ duration: 0.8 }}>
+              viewport={{ amount: 0.2,once:true }} 
+              transition={{ duration: 0.6 }}>
                 <div>
                   <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">Symptoms of Anal Fissure</h2>
                   <div className="mb-4">
@@ -246,8 +246,8 @@ function page() {
               <motion.div 
              initial={{ opacity: 0, x: 100 }} 
              whileInView={{ opacity: 1, x: 0 }} 
-             viewport={{ amount: 0.3 }} 
-             transition={{ duration: 0.8 }}
+             viewport={{ amount: 0.1,once:true }} 
+             transition={{ duration: 0.6 }}
               className='py-16'>
                <h1 className="text-3xl md:text-4xl  font-semibold mb-2 text-second my-4 text-center">BEST TREATMENT FOR ANAL FISSURE</h1>
                 <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first text-center">
@@ -294,7 +294,7 @@ function page() {
                 <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first text-center">
                 Surgical Interventions</h2>
                 <div className="mb-4">
-                 <p className='pt-2'><span className="font-medium font-semibold mr-1">Laser Surgery for Anal Fissures:</span> When conservative treatments and medications fail to heal the fissure, surgical options may be necessary. Surgery is typically reserved for Lateral Internal Sphincterotomy performed with the help of Laser therapy has become the best treatment for anal fissures.</p>
+                 <p className='pt-2'><span className="font-medium mr-1">Laser Surgery for Anal Fissures:</span> When conservative treatments and medications fail to heal the fissure, surgical options may be necessary. Surgery is typically reserved for Lateral Internal Sphincterotomy performed with the help of Laser therapy has become the best treatment for anal fissures.</p>
                  <p className='pt-2'> It involves making a small incision in the internal anal sphincter muscle to reduce tension and promote healing.</p>
                  <p className='pt-2'>It is usually performed as an outpatient procedure, and patients are discharged within 12 hours of surgery.</p>
                  <p className='pt-2'>  With almost 100% healing rates and zero percent recurrence, laser surgery for anal fissures is one of the most promising treatments for management of anal fissures.</p>
@@ -309,7 +309,7 @@ function page() {
                   variants={cardVariants}
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ amount: 0.2 }}
+                  viewport={{ amount: 0.2,once:true }}
                   className="text-3xl md:text-4xl font-semibold text-first">
                     BENEFITS OF <br/> LASER TREATMENT FOR ANAL FISSURE
                   </motion.h1>
@@ -324,7 +324,7 @@ function page() {
                  variants={imageVariants}
                  initial="hidden"
                  whileInView="visible"
-                 viewport={{ amount: 0.2 }}>
+                 viewport={{ amount: 0.2,once:true }}>
                  <div className='mt-4'>
                    <div className="py-16 flex flex-col items-center">
                      <div className="flex flex-wrap justify-center gap-6 px-12"> {benefits.map((benefit, index) => (
@@ -342,8 +342,8 @@ function page() {
                <motion.div 
                  initial={{ opacity: 0, x: -100 }} 
                  whileInView={{ opacity: 1, x: 0 }} 
-                 viewport={{ amount: 0.3 }} 
-                 transition={{ duration: 0.8 }}>
+                 viewport={{ amount: 0.3,once:true }} 
+                 transition={{ duration: 0.6 }}>
                 <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">Why Choose Us -</h2>
                  <h3 className="text-xl md:text-2xl font-semibold mb-2 mt-3 text-first">Best Doctor for Fissure Treatment in Delhi</h3>
                  <div className="mb-4 ">
@@ -366,8 +366,8 @@ function page() {
          <div className="flex flex-col mx-auto px-8 md:px-16 lg:px-24 gap-6">
            <motion.div initial={{ opacity: -2 }} 
             whileInView={{ opacity: 1.5 }} 
-            transition={{ duration: 2 }} 
-            viewport={{ amount: 0.2 }} 
+            transition={{ duration: 1 }} 
+            viewport={{ amount: 0.2,once:true }} 
             className='flex-col mx-6 md:mx-12 mb-16 pt-4 md:px-24 border-first border-t-2'>
              <div className="flex justify-center items-end m-4"><BsPinFill className='text-3xl md:text-4xl text-second' />
                <h1 className='font-bold text-3xl md:text-4xl text-center border-fourth border-b-2 mt-6 text-second'>FAQ</h1>

@@ -14,14 +14,14 @@ const features = [
 ];
 
 const FeatureList = ({ features }) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 text-first md:text-lg text-left mx-auto">
+  <div className="grid grid-cols-1 md:grid-cols-2 text-first text-left mx-auto">
     {features.map((feature, index) => (
       <div
         key={index}
-        className={`flex items-start spaxe-x-2 py-3 rounded-lg  max-md:text-base border-third border-t ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"} ${index===0?'border-none':''} ${index===1?'md:border-none':''}
+        className={`flex items-start space-x-2 py-2  max-md:text-base border-third border-t ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"} ${index===0?'border-none':''} ${index===1?'md:border-none':''}
         }`} >
         <span> ➔ </span>
-        <p>{feature}</p>
+        <p className='max-sm:text-sm' >{feature}</p>
       </div>
     ))}
   </div>
@@ -155,8 +155,8 @@ An anal fistula is an abnormal tunnel that forms as a result of an infected anal
               variants={boxVariants}
               transition={{  duration: 1 }}
               whileInView="visible"
-              viewport={{ amount: 0.2 }}
-              className="w-3/5 mx-auto relative sm:-mt-24 lg:-mt-40 px-8 py-10 bg-white shadow-sm shadow-black items-center rounded-lg"
+              viewport={{ amount: 0.2, once:true }}
+              className="sm:w-2/3 w-full mx-auto relative sm:-mt-12 lg:-mt-24 md:px-6 py-4 bg-white sm:shadow-md items-center md:rounded-lg"
             >
               <FeatureList features={features} />
             </motion.div>
@@ -166,8 +166,8 @@ An anal fistula is an abnormal tunnel that forms as a result of an infected anal
               <motion.div 
                 initial={{ opacity: 0, x: -100 }} 
                 whileInView={{ opacity: 1, x: 0 }} 
-                viewport={{ amount: 0.3 }} 
-                transition={{ duration: 0.8 }}
+                viewport={{ amount: 0.3, once:true }} 
+                transition={{ duration: 0.6 }}
                 className=''>
                 <h1 className="text-3xl md:text-4xl  font-bold my-6 text-second">About Dr Kapil Agrawal</h1>
                 <div className="mb-4">
@@ -187,7 +187,7 @@ An anal fistula is an abnormal tunnel that forms as a result of an infected anal
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 1 }}
-                    viewport={{ amount: 0.2 }}
+                    viewport={{ amount: 0.2, once:true }}
                     className="text-3xl md:text-4xl  font-bold my-6 text-second"
                   >
                     {info.title}
@@ -195,8 +195,8 @@ An anal fistula is an abnormal tunnel that forms as a result of an infected anal
                   <motion.p
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ duration: 2 }}
-                    viewport={{ amount: 0.2 }}
+                    transition={{ duration: 1 }}
+                    viewport={{ amount: 0.2, once:true }}
                     className="text-lg sm:text-xl md:text-2xl text-left mb-8 text-first px-4 md:px-8 lg:px-16 mx-auto text">
                     {info.description}
                   </motion.p>
@@ -208,8 +208,8 @@ An anal fistula is an abnormal tunnel that forms as a result of an infected anal
               <motion.div 
               initial={{ opacity: 0, x: -100 }} 
               whileInView={{ opacity: 1, x: 0 }} 
-              viewport={{ amount: 0.3 }} 
-              transition={{ duration: 0.8 }}>
+              viewport={{ amount: 0.2, once:true }} 
+              transition={{ duration: 0.6}}>
                 <div>
                   <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">Symptoms of Fistula in Ano</h2>
                   <div className="mb-4">
@@ -236,8 +236,8 @@ An anal fistula is an abnormal tunnel that forms as a result of an infected anal
               <motion.div 
               initial={{ opacity: 0, x: 100 }} 
               whileInView={{ opacity: 1, x: 0 }} 
-              viewport={{ amount: 0.3 }} 
-              transition={{ duration: 0.8 }}>
+              viewport={{ amount: 0.3, once:true }} 
+              transition={{ duration: 0.6 }}>
                 <div>
                   <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">Based on Complexity</h2>
                   <div className="mb-4">
@@ -261,8 +261,8 @@ An anal fistula is an abnormal tunnel that forms as a result of an infected anal
               <motion.div 
               initial={{ opacity: 0, x: -100 }} 
               whileInView={{ opacity: 1, x: 0 }} 
-              viewport={{ amount: 0.3 }} 
-              transition={{ duration: 0.8 }}
+              viewport={{ amount: 0.3, once:true }} 
+              transition={{ duration: 0.6 }}
               className='py-16'>
                 <h1 className="text-3xl md:text-4xl  font-semibold mb-2 text-second my-4">BEST TREATMENT FOR FISTULA IN ANO</h1>
                 <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">
@@ -280,7 +280,7 @@ An anal fistula is an abnormal tunnel that forms as a result of an infected anal
                   variants={cardVariants}
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ amount: 0.2 }}
+                  viewport={{ amount: 0.2,once:true }}
                   className="text-3xl md:text-4xl font-semibold text-first m-4">
                     ADVANTAGES OF <br/> LASER TREATMENT FOR FISTULA
                   </motion.h1>
@@ -295,7 +295,7 @@ An anal fistula is an abnormal tunnel that forms as a result of an infected anal
                 variants={cardVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ amount: 0.2 }}
+                viewport={{ amount: 0.2,once:true }}
                 className="flex items-center justify-center  max-w-6xl mx-auto">
                   <div className="p-12 border-third border-2  rounded-lg shadow-md">
                     <div className="mb-4 text-lg">
@@ -314,8 +314,8 @@ An anal fistula is an abnormal tunnel that forms as a result of an infected anal
               <motion.div 
               initial={{ opacity: 0, x: -100 }} 
               whileInView={{ opacity: 1, x: 0 }} 
-              viewport={{ amount: 0.3 }} 
-              transition={{ duration: 0.8 }}
+              viewport={{ amount: 0.2, once:true }} 
+              transition={{ duration: 0.6}}
               className='pb-16'>
                 <div>
                   <h2 className="text-2xl md:text-3xl font-semibold mb-2  text-first">
@@ -350,8 +350,8 @@ An anal fistula is an abnormal tunnel that forms as a result of an infected anal
               <motion.div 
               initial={{ opacity: 0, x: 100 }} 
               whileInView={{ opacity: 1, x: 0 }} 
-              viewport={{ amount: 0.3 }} 
-              transition={{ duration: 0.8 }}>
+              viewport={{ amount: 0.3, once:true }} 
+              transition={{ duration: 0.6 }}>
                 <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">
                   Why Choose Us
                 </h2>
@@ -370,8 +370,8 @@ An anal fistula is an abnormal tunnel that forms as a result of an infected anal
         <div className="flex flex-col mx-auto px-8 md:px-16 lg:px-24 gap-6">
           <motion.div initial={{ opacity: -2 }} 
           whileInView={{ opacity: 1.5 }} 
-          transition={{ duration: 2 }} 
-          viewport={{ amount: 0.2 }} 
+          transition={{ duration: 1 }} 
+          viewport={{ amount: 0.2,once:true }} 
           className='flex-col mx-6 md:mx-12 mb-16 pt-4 md:px-24 border-first border-t-2'>
             <div className="flex justify-center items-end m-4"><BsPinFill className='text-3xl md:text-4xl text-second' />
               <h1 className='font-bold text-3xl md:text-4xl text-center border-fourth border-b-2 mt-6 text-second'>FAQ</h1>
