@@ -387,7 +387,7 @@ const benefits = [
             initial={{ opacity: 0, x: -100 }} 
             whileInView={{ opacity: 1, x: 0 }} 
             viewport={{ amount: 0.3,once:true }} 
-            transition={{ duration: 0.8 }}>
+            transition={{ duration: 0.6 }}>
               <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">
                 Why Choose Us - Best Hospital for Piles Treatment in Delhi
               </h2>
