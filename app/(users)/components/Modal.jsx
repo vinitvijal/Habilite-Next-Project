@@ -20,7 +20,11 @@ function Modal({isVisible, onClose}) {
   const [submissionMessage, setSubmissionMessage] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
 
-
+  const onChangePhone=(e)=>{
+    const num=e.target.value;
+    if(/^\d*$/.test(num) && num.length <= 10)
+      setPhone(num);
+  }
 
   async function handleSubmit(){
     if(!name || !email || !phone || !query) return alert('Please fill all the fields')
@@ -94,7 +98,7 @@ function Modal({isVisible, onClose}) {
 
             <div className="">
               <label htmlFor="phoneNum" className='block font-medium mb-2'><MdCall className='text-xl  inline-block mr-2' />Phone Number</label>
-              <input type="text" value={phone} onChange={(e)=>setPhone(e.target.value)} name="phoneNum" id="phoneNum" className='rounded-md p-2 border border-third w-full placeholder:text-sm ' placeholder='Enter Your Phone Number' required />
+              <input type="tel" value={phone} onChange={onChangePhone} name="phoneNum" id="phoneNum" className='rounded-md p-2 border border-third w-full placeholder:text-sm ' placeholder='Enter Your Phone Number' required />
             </div>
             
             <div className="">
