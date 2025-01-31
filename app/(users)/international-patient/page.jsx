@@ -87,9 +87,8 @@ const Page = () => {
                     <TextAnimate text="for treatment" type="calmInUp" className="uppercase text-2xl md:text-3xl text-center font-bold whitespace-normal text-fourth" />
                 </div>
 
-                <div className="mt-20 flex gap-10 md:pr-20 md:px-0 px-10 md:mb-20">
-                <div className="hidden md:block bg-fourth h-full w-[5vw] rounded-r-lg"></div>
-                <div className="img-gallery flex flex-col gap-6 relative"> 
+                <div className="mt-20 flex gap-10 md:pr-20 md:px-0 px-10 md:mb-20 w-full">
+                <div className="img-gallery flex flex-col gap-6 relative w-full"> 
                     <motion.div
                         className="grid md:grid-cols-3 grid-cols-1 gap-8"
                         whileInView="animate"
