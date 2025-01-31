@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from 'next/image';
 import calendar from "@/public/calendar.svg";
-import { blogs } from '../page';
+import { blogs } from '../index';
 
 
 function allBlogs() {
