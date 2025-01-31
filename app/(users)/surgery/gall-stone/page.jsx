@@ -191,7 +191,7 @@ const cardVariants1 = {
                 <motion.p
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  transition={{ duration: 2 }}
+                  transition={{ duration: 1 }}
                   viewport={{ amount: 0.2,once: true }}
                   className="text-lg sm:text-xl md:text-2xl text-left mb-8 text-first px-4 md:px-8 lg:px-16 mx-auto text"
                 >
