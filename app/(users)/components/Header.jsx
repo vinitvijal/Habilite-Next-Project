@@ -29,7 +29,7 @@ function Header() {
                 </p>
 
                 <p className="DropdownMenuItem text-md h-10 flex items-center px-4 py-1 hover:text-first hover:cursor-pointer hover:translate-x-1 transition-all duration-150">
-                  <Link href="/about/dr-kapil-about">Dr. Kapil Agarwal</Link>
+                  <Link href="/dr-kapil-about">Dr. Kapil Agarwal</Link>
                 </p>
 
               </div>

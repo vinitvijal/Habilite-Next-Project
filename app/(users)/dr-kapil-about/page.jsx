@@ -1,27 +1,38 @@
 'use client';
 import React, { useState } from 'react';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
+
+const faqData = [
+  {
+    question: "What are Dr. Kapil Agrawal's areas of expertise?",
+    answer: "Dr. Kapil Agrawal specializes in advanced laparoscopic gastrointestinal surgeries and bariatric or weight-loss surgeries. He is renowned for his surgical precision and tailored treatment plans for patients."
+  },
+  {
+    question: "What are Dr. Kapil Agrawal's areas of expertise?",
+    answer: "Dr. Kapil Agrawal specializes in advanced laparoscopic gastrointestinal surgeries and bariatric or weight-loss surgeries. He is renowned for his surgical precision and tailored treatment plans for patients."
+  }
+];
 
 function DrKapilAbout() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [openIndex, setOpenIndex] = useState(null);
 
-  // Define the question and answer
-  const question = "What are Dr. Kapil Agrawal's areas of expertise?";
-  const answer = "Dr. Kapil Agrawal specializes in advanced laparoscopic gastrointestinal surgeries and bariatric or weight-loss surgeries. He is renowned for his surgical precision and tailored treatment plans for patients.";
+  const toggleFAQ = index => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
     <div className="w-4/5 mx-auto px-4 pt-2 pb-8">
       <div className="text-center mb-8">
         <div className='relative flex flex-col items-center justify-center mb-5'>
-        <motion.div
+          <motion.div
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.9, ease: "easeOut" }}
           >
-          <div className='relative mb-5'>
-            <img src="/doctor.webp" alt="" width={350} height={300}/>
-          </div>
+            <div className='relative mb-5'>
+              <img src="/doctor.webp" alt="Doctor" width={350} height={300} />
+            </div>
           </motion.div>
           <motion.div
             initial={{ x: -100, opacity: 0 }}
@@ -34,9 +45,8 @@ function DrKapilAbout() {
           </motion.div>
           <motion.div
             className="relative left-0 bottom-[-5px] h-[2px] bg-second"
-            initial={{ scaleX: 0 }}  
-            animate={{ scaleX: 1 }}  
-
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
             style={{ transformOrigin: "left", width: "80%" }}
           />
@@ -55,8 +65,6 @@ function DrKapilAbout() {
             </h3>
           </div>
         </motion.div>
-
-
       </div>
       <motion.div
         initial={{ x: -100, opacity: 0 }}
@@ -83,7 +91,7 @@ function DrKapilAbout() {
           transition={{ duration: 1.1, ease: "easeOut" }}
         >
           <h3 className="text-base md:text-lg font-semibold text-gray-800 mb-4">
-            A Brief Profile of Dr. Kapil Agarwal
+            A Brief Profile of Dr. Kapil Agrawal
           </h3>
         </motion.div>
         <motion.div
@@ -106,34 +114,57 @@ function DrKapilAbout() {
         </motion.div>
       </div>
 
-
-
       <motion.div
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1.1, ease: "easeOut" }}
-        >
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-            FAQs
-          </h3>
-        </motion.div>
-      <div className={`${isOpen ? 'bg-first' : 'bg-white'} border border-third transition-all duration-300 ease-in-out rounded-md overflow-hidden mb-4`}>
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="w-full flex justify-between items-center px-3 md:px-6 py-4 focus:outline-none"
-        >
-          <span className={`font-medium ${isOpen ? 'text-white' : 'text-first'} transition-all duration-300 ease-in-out text-left`}>
-            {question}
-          </span>
-          <span className={`ml-3 transform transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}>
-            <ChevronDownIcon className={`${isOpen ? 'text-white' : 'text-first'}`} />
-          </span>
-        </button>
-        <div className={`transition-all ${!isOpen ? 'h-0' : 'h-fit'} duration-300 ease-in-out overflow-hidden`}>
-          <div className="px-3 md:px-6 py-4 bg-gray-100">
-            <p className="text-sm text-left">{answer}</p>
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1.1, ease: "easeOut" }}
+      >
+        <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+          FAQs
+        </h3>
+      </motion.div>
+      <div>
+        {faqData.map((faq, index) => (
+          <div
+            key={index}
+            className={`${
+              openIndex === index ? 'bg-first' : 'bg-white'
+            } border border-third transition-all duration-300 ease-in-out rounded-md overflow-hidden mb-4`}
+          >
+            <button
+              onClick={() => toggleFAQ(index)}
+              className="w-full flex justify-between items-center px-3 md:px-6 py-4 focus:outline-none"
+            >
+              <span
+                className={`font-medium ${
+                  openIndex === index ? 'text-white' : 'text-first'
+                } transition-all duration-300 ease-in-out text-left`}
+              >
+                {faq.question}
+              </span>
+              <span
+                className={`ml-3 transform transition-transform duration-300 ${
+                  openIndex === index ? 'rotate-180' : 'rotate-0'
+                }`}
+              >
+                <ChevronDownIcon
+                  className={`${
+                    openIndex === index ? 'text-white' : 'text-first'
+                  }`}
+                />
+              </span>
+            </button>
+            <div
+              className={`transition-all ${
+                openIndex !== index ? 'h-0' : 'h-fit'
+              } duration-300 ease-in-out overflow-hidden`}
+            >
+              <div className="px-3 md:px-6 py-4 bg-gray-100">
+                <p className="text-sm text-left">{faq.answer}</p>
+              </div>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );
