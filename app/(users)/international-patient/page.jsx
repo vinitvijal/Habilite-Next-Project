@@ -86,6 +86,37 @@ const Page = () => {
                     <TextAnimate text="habilite clinics" type="calmInUp" className="uppercase text-2xl md:text-3xl text-center font-bold whitespace-normal text-fourth" />
                     <TextAnimate text="for treatment" type="calmInUp" className="uppercase text-2xl md:text-3xl text-center font-bold whitespace-normal text-fourth" />
                 </div>
+
+                <div className="mt-20 flex gap-10 md:pr-20 md:px-0 px-10 md:mb-20">
+                <div className="hidden md:block bg-fourth h-full w-[5vw] rounded-r-lg"></div>
+                <div className="img-gallery flex flex-col gap-6 relative"> 
+                    <motion.div
+                        className="grid md:grid-cols-3 grid-cols-1 gap-8"
+                        whileInView="animate"
+                        viewport={{ once: true }}
+                    >
+                        {images.map((image, index) => (
+                            <motion.div key={index} variants={imgVariants}
+                            initial="initial"
+                            whileInView="animate"
+                            viewport={{ once: true }}
+                            custom={index}  className="relative group">
+                                <motion.img
+                                    src={image.src}
+                                    className="-z-10 rounded-lg border-4 border-third md:w-[26vw] w-full saturate-0 group-hover:saturate-100 duration-300 transition-all"
+                                    alt={image.title}
+                                />
+                                <div className="absolute bottom-0 p-1 rounded-b-lg w-full pb-4 group-hover:bg-white/60 group-hover:text-second text-transparent transition-all duration-300">
+                                    <div className="font-bold px-4">{image.title}</div>
+                                    <div className="font-semibold text-sm px-4 whitespace-normal max-w-[60vw]">{image.subtitle}</div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                </div>
+            </div>
+
+
                 <div className="flex justify-start mt-8 flex-col gap-6">
                     {[
                         {
@@ -130,34 +161,7 @@ const Page = () => {
                     ))}
                 </div>
             </div>
-            <div className="mt-20 flex gap-10 md:pr-20 md:px-0 px-10">
-                <div className="hidden md:block bg-fourth md:h-[65vh] w-[5vw] rounded-r-lg"></div>
-                <div className="img-gallery flex flex-col gap-6 relative"> 
-                    <motion.div
-                        className="grid md:grid-cols-3 grid-cols-1 gap-8"
-                        whileInView="animate"
-                        viewport={{ once: true }}
-                    >
-                        {images.map((image, index) => (
-                            <motion.div key={index} variants={imgVariants}
-                            initial="initial"
-                            whileInView="animate"
-                            viewport={{ once: true }}
-                            custom={index}  className="relative group">
-                                <motion.img
-                                    src={image.src}
-                                    className="-z-10 rounded-lg border-4 border-third md:w-[26vw] w-full saturate-0 group-hover:saturate-100 duration-300 transition-all"
-                                    alt={image.title}
-                                />
-                                <div className="absolute bottom-0 p-1 rounded-b-lg w-full pb-4 group-hover:bg-white/60 group-hover:text-second text-transparent transition-all duration-300">
-                                    <div className="font-bold px-4">{image.title}</div>
-                                    <div className="font-semibold text-sm px-4 whitespace-normal max-w-[60vw]">{image.subtitle}</div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                </div>
-            </div>
+            
         </div>
     )
 }
