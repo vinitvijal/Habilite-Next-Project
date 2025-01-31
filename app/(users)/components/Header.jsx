@@ -9,7 +9,6 @@ import { Menu, X, ChevronDown } from 'lucide-react'
 import { Dialog, DialogTrigger, DialogContent, DialogOverlay, DialogPortal, DialogClose, DialogTitle, DialogDescription } from "@radix-ui/react-dialog";
 import { Accordion, AccordionContent, AccordionHeader, AccordionTrigger, AccordionItem } from "@radix-ui/react-accordion";
 import { Separator } from '@radix-ui/react-separator'
-import path from 'path'
 
 function Header() {
   const selected = "text-first before:w-full hover:text-first";
@@ -42,7 +41,7 @@ function Header() {
 
                 <DialogDescription asChild>
                   <div className="h-full flex flex-col gap-4 pl-2 pr-2">
-                    <div className="buttons flex flex-col py-6 text-2xl gap-1">
+                    <div className="buttons flex flex-col py-6 text-lg gap-1">
 
                       <Link href="/">
                         <p className={cn('py-3 px-5 mb-1 rounded-full', pathname == "/" && selectedAcc)}>Home</p>
@@ -59,12 +58,12 @@ function Header() {
                           </AccordionHeader>
 
                           <AccordionContent className='AccordionContent overflow-clip' asChild>
-                            <div className='text-xl pl-4 flex flex-col gap-1'>
+                            <div className='text-md pl-4 flex flex-col gap-1'>
                               <Link href="/about/about-habilite-clinic">
-                              <p className={cn('rounded-full pl-4 py-2', pathname == "/about/about-habilite-clinic" && selectedAcc)}>About Habilite Clinic</p>
+                              <p className={cn('rounded-full pl-4 py-2', pathname == "/about-habilite-clinic" && selectedAcc)}>About Habilite Clinic</p>
                               </Link>
                               <Link href="/about/dr-kapil-about">
-                                <p className={cn('rounded-full pl-4 py-2', pathname == "/about/dr-kapil-about" && selectedAcc)}>Dr. Kapil Agarwal</p>
+                                <p className={cn('rounded-full pl-4 py-2', pathname == "/dr-kapil-about" && selectedAcc)}>Dr. Kapil Agarwal</p>
                               </Link>
                             </div>
                           </AccordionContent>
@@ -81,7 +80,7 @@ function Header() {
  
                           <AccordionContent className='AccordionContent overflow-clip' asChild>
                             <Accordion type='single' collapsible>
-                              <div className='text-xl pl-4 flex flex-col py-2 gap-1'>
+                              <div className='text-md pl-4 flex flex-col py-2 gap-1'>
                                 <AccordionItem value="subitem1">
 
                                   <AccordionHeader>
@@ -91,7 +90,7 @@ function Header() {
                                   </AccordionHeader>
 
                                   <AccordionContent className='AccordionContent overflow-clip' asChild>
-                                    <div className='text-xl pl-4 flex flex-col gap-1'>
+                                    <div className='text-md pl-4 flex flex-col gap-1'>
                                       <Link href="/surgery/gall-stone">
                                         <p className={cn('rounded-full pl-4 py-2', pathname == "/surgery/gall-stone" && selectedAcc)}>Gall Stones</p>
                                       </Link>
@@ -121,7 +120,7 @@ function Header() {
                                   </AccordionHeader>
 
                                   <AccordionContent className='AccordionContent overflow-clip' asChild>
-                                    <div className='text-xl pl-4 flex flex-col gap-1'>
+                                    <div className='text-md pl-4 flex flex-col gap-1'>
                                       <Link href="/surgery/piles">
                                         <p className={cn('rounded-full pl-4 py-2', pathname == "/surgery/piles" && selectedAcc)}>Hemorrhoids/Piles</p>
                                       </Link>
@@ -154,7 +153,7 @@ function Header() {
                                   </AccordionHeader>
 
                                   <AccordionContent className='AccordionContent overflow-clip' asChild>
-                                    <div className='text-xl pl-4 flex flex-col gap-1'>
+                                    <div className='text-md pl-4 flex flex-col gap-1'>
                                       <Link href="/surgery/bariatric-surgery">
                                         <p className={cn('rounded-full pl-4 py-2', pathname == "/surgery/bariatric-surgery" && selectedAcc)}>Bariatric Surgery</p>
                                       </Link>
@@ -195,9 +194,9 @@ function Header() {
                           </AccordionHeader>
 
                           <AccordionContent className='AccordionContent overflow-hidden' asChild>
-                            <div className='text-xl pl-4 flex flex-col gap-1'>
-                              <Link href="/more/international-patient">
-                                <p className={cn('rounded-full pl-4 py-2', pathname == "/more/international-patient" && selectedAcc)}>International Patient</p>
+                            <div className='text-md pl-4 flex flex-col gap-1'>
+                              <Link href="/international-patient">
+                                <p className={cn('rounded-full pl-4 py-2', pathname == "/international-patient" && selectedAcc)}>International Patient</p>
                               </Link>
                             </div>
                           </AccordionContent>
