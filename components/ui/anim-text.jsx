@@ -46,7 +46,7 @@ const TextAnimate = ({ text, type = "calmInUp", ...props }) => {
       variants={container}
       initial="hidden"
       animate={ctrls}
-      className="text-4xl font-black text-black dark:text-neutral-100 pb-4 px-8 md:text-5xl"
+      className="font-black text-black dark:text-neutral-100"
       {...props}
     >
       {letters.map((letter, index) => (
