@@ -137,10 +137,6 @@ const cardVariants1 = {
     },
   };
 
-
-
-  
-
   return (
   <>
   <div className='overflow-x-hidden'>
@@ -206,11 +202,17 @@ const cardVariants1 = {
             whileInView={{ opacity: 1, x: 0 }} 
             viewport={{ amount: 0.2,once: true }} 
             transition={{ duration: 0.5 }}>
-              <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">What is Gallbladder ?</h2>
-              <p className=" mb-2">
+              <h2 className="text-2xl md:text-3xl font-semibold text-first">What is Gallbladder ?</h2>
+              <p className="pt-2">
                 The gallbladder is a tiny pear-shaped organ located just below the liver, situated on the right upper side of the abdomen.  <br />The liver produces a yellow-coloured fluid known as bile, which flows into the intestine to aid in digesting food, especially fatty meals.
               </p>
               <br />
+              <div className=''>
+              <img
+              src="https://today.uconn.edu/wp-content/uploads/2019/01/GettyImages-536228692_human-liver_extended.jpg"
+              alt="Background"
+              className="w-80 h-auto rounded-lg opacity-200 m-8 "/>
+              </div>
         
               <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">Function of the Gallbladder</h2>
               <div className=" mb-4 ">
@@ -360,6 +362,10 @@ const cardVariants1 = {
         transition={{ duration: 0.4 }}
         className="flex flex-col mx-auto px-2 sm:px-8 md:px-16 lg:px-24 mt-16 gap-6"
         >
+          <div className='flex flex-wrap gap-12 rounded-lg opacity-200"'>
+            <img src="https://www.dfloros.gr/wp-content/uploads/2020/06/sur.png" alt="background" className='w-80 h-auto' />
+            <img src="https://www.tandfonline.com/cms/asset/c2b77a80-0405-4d5c-b80d-34c7973f06f6/imit_a_704875_f0001_b.jpg" alt="background" className='w-80 h-auto'/>
+          </div>
           <div className='flex-col mb-16'>
             <h2 className="text-4xl font-semibold mb-1 text-first">Course of Recovery Following Gallstone Surgery</h2>
             <div className="mb-4 ">
