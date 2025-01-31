@@ -25,12 +25,12 @@ function Blog() {
     <>
       <section className="title mt-24 flex flex-col">
         <p className="mx-auto text-lg">The Blogs</p>
-        <p className="md:text-7xl text-6xl mx-auto mt-2 font-bold">Trusted Medical Insights</p>
-        <p className="text-first md:text-2xl text-lg mx-auto mt-4 font-semibold">Everything you need to know about health, all in one place.</p>
+        <p className="md:text-7xl text-5xl mx-auto mt-2 font-bold text-center">Trusted Medical Insights</p>
+        <p className="text-first md:text-2xl text-lg mx-auto mt-4 font-semibold text-center">Everything you need to know about health, all in one place.</p>
       </section>
 
-      <section className="categories md:mt-20 mt-14 text-2xl flex flex-col gap-5 items-start mx-auto">
-        <div className="pills text-sm gap-2 md:flex md:items-center grid grid-cols-1">
+      <section className="categories md:mt-20 mt-14 text-2xl flex flex-col gap-5 items-start md:mx-auto mr-auto pl-5 md:pl-0">
+        <div className="pills text-sm gap-2 md:flex md:items-center grid grid-cols-2">
           {categories.map((cat) => {
             return (
             <Link key={cat} href={`/blogs/category/${categories.indexOf(cat)}`}>

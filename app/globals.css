@@ -225,3 +225,52 @@
     overflow-y: auto;   
     white-space: nowrap;  
 }
+
+@keyframes slideDown {
+	from {
+		height: 0px;
+	}
+	to {
+		height: var(--radix-accordion-content-height);
+	}
+}
+
+@keyframes slideUp {
+	from {
+		height: var(--radix-accordion-content-height);
+	}
+	to {
+		height: 0px;
+	}
+}
+
+@keyframes slideRight {
+	from {
+		width: 0px;
+	}
+	to {
+		width: 288px;
+	}
+}
+@keyframes slideLeft {
+	from {
+		width: 288px;
+	}
+	to {
+		width: 0px;
+	}
+}
+
+.AccordionContent[data-state="open"] {
+	animation: slideDown 400ms ease-in-out;
+}
+.AccordionContent[data-state="closed"] {
+	animation: slideUp 400ms ease-in-out;
+}
+
+.DialogContent[data-state="open"]{
+  animation: slideRight 300ms ease-in-out;
+}
+.DialogContent[data-state="closed"]{
+  animation: slideLeft 300ms ease-in-out;
+}
