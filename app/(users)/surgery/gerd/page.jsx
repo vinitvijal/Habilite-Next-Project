@@ -95,6 +95,25 @@ function page() {
     },
   ];
 
+  const benefits = [
+    {
+      title: "Focus on Quality",
+      description: `"Quality is our first concern when it comes to your health and wellness."`,
+    },
+    {
+      title: "Approachable Staff",
+      description: `"Our friendly staff is here to answer any questions you may have."`,
+    },
+    {
+      title: "Experience Comfort",
+      description: `"Comfort is key to making sure you are happy with the process and outcome."`,
+    },
+    {
+      title: "Health Benefits",
+      description: `"We offer classes to help you maintain a healthy lifestyle after surgery."`,
+    },
+  ];
+
 
 const cardVariants = {
   hidden: { opacity: 0, x: -50 },
@@ -146,7 +165,7 @@ const cardVariants1 = {
         
             <div className="absolute inset-0 flex items-center justify-center">
               <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white px-4 py-2 rounded-md flex-col items-center justify-center text-center bg-transparent hover:bg-black hover:bg-opacity-20">
-                Best Surgeon for <br /> Rectal Prolapse
+                Gastroesophageal reflux <br /> disease
               </h1>
             </div>
           </div>
@@ -347,37 +366,65 @@ const cardVariants1 = {
         </div>
 
         <div className='flex flex-col mx-auto px-8 md:px-16 lg:px-24 gap-10 mb-16'>
-          <motion.div 
-          initial={{ opacity: 0, x: 100 }} 
-          whileInView={{ opacity: 1, x: 0 }} 
-          viewport={{ amount: 0.3,once:true }} 
-          transition={{ duration: 0.6 }}>
-            <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">
-              Why Choose Us
-            </h2>
-            <div className="mb-4 text-lg">
-              <p className='pt-2'><span className="font-medium mr-1">→ Focus on Quality : </span> Quality is our first concern when it comes to your health and wellness </p>
-              <p className='pt-2'><span className="font-medium mr-1">→ Approachable Staff : </span> Our friendly staff is here to answer any questions you may have </p>
-              <p className='pt-2'><span className="font-medium mr-1">→ Experience Comfort : </span> Comfort is key to making sure you are happy with the process and outcome </p>
-              <p className='pt-2'><span className="font-medium mr-1">→ Health Benefits : </span> We offer classes to help you maintain a healthy lifestyle after surgery </p>
+          <div className='flex-col items-center justify-center mx-auto gap-20 my-8'>
+            <div className="text-center mb-8">
+              <motion.h1
+               variants={cardVariants}
+               initial="hidden"
+               whileInView="visible"
+               viewport={{ amount: 0.2,once:true }}
+               className="text-3xl md:text-4xl font-semibold text-first">
+                WHY CHOOSE US -
+              </motion.h1>
+              <motion.div
+               initial={{ width: 0 }}
+               whileInView={{ width: "80%", duration: 2000 }}
+               className="mx-auto border-first border-b-2 mt-4"
+              >
+              </motion.div>
             </div>
-          </motion.div>
+            <div className="py-12 ">
+              <div className="flex flex-wrap justify-center gap-6 px-6">
+                {benefits.map((info, index) => (
+                  <motion.div
+                  key={index}
+                  initial={{ opacity: -2 }} 
+                  whileInView={{ opacity: 1.5 }} 
+                  transition={{ duration: 1 }} 
+                  viewport={{ amount: 0.2,once:true }} 
+                  className="bg-white p-8 rounded-lg shadow-md border border-first w-80 text-center hover:shadow-lg transition-shadow" >
+                    <h2 className="text-xl font-semibold text-first mb-4">
+                      {info.title}
+                    </h2>
+                    <p className="text-gray-700">{info.description}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+                  
 
-          <motion.div 
-          initial={{ opacity: 0, x: 100 }} 
-          whileInView={{ opacity: 1, x: 0 }} 
-          viewport={{ amount: 0.3,once:true }} 
-          transition={{ duration: 0.6 }}>
-            <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">
-              Worried about the pricing?
-            </h2>
-            <div className="mb-4 text-lg">
-              <p className='pt-2'><span className="font-medium mr-1">→ </span> Option for a budget friendly Hospital </p>
-              <p className='pt-2'><span className="font-medium mr-1">→ </span> EMI facility </p>
-              <p className='pt-2'><span className="font-medium mr-1">→ </span> Substantial discounts on investigations </p>
-              <p className='pt-2'><span className="font-medium mr-1">→ </span> Free post-surgical consultations </p>
+          <div className="px-2 py-8 w-full flex justify-center">
+            <div className="bg-white lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg rounded-lg overflow-hidden">
+              <div className="lg:w-1/2">
+                <div className="h-72 bg-cover lg:h-full  lg:rounded-lg">
+                  <img
+                  src="/lady.jpg"
+                  alt="Background"
+                  className="w-full object-cover opacity-200"/>
+                </div>
+              </div>
+              <div className="flex flex-col mx-auto  py-12 px-6 lg:px-12 max-w-xl lg:max-w-5xl lg:w-1/2 ">
+                <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">
+                  Worried about the pricing
+                </h2>
+                <p className="pt-2 font-semibold">⌲ Option for a budget friendly Hospital</p>
+                <p className="pt-2 font-semibold">⌲ EMI facility</p>
+                <p className="pt-2 font-semibold">⌲ Substantial discounts on investigations</p>
+                <p className="pt-2 font-semibold">⌲ Free post-surgical consultations</p>
+              </div>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         <div className="flex flex-col mx-auto px-8 md:px-16 lg:px-24 gap-6">

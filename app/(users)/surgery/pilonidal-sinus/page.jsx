@@ -362,16 +362,16 @@ function page() {
               </div>
              </div>                      
 
-          <div className="px-2 py-20 w-full flex justify-center">
-             <div className="bg-white lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg rounded-lg">
+            <div className="px-2 py-20 w-full flex justify-center">
+             <div className="bg-white lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg rounded-lg overflow-hidden">
                <div className="lg:w-1/2">
-               <div className="lg:scale-110 h-76 bg-cover lg:h-full rounded-b-none border lg:rounded-lg">
+               <div className="h-72 bg-cover lg:h-full  lg:rounded-lg">
                 <img
                 src="/lady.jpg"
                 alt="Background"
                 className="w-full object-cover opacity-200"/> </div>
                </div>
-               <div className="flex flex-col mx-auto  py-12 px-6 lg:px-12 max-w-xl lg:max-w-5xl lg:w-1/2 border lg:rounded-lg">
+               <div className="flex flex-col mx-auto  py-12 px-6 lg:px-12 max-w-xl lg:max-w-5xl lg:w-1/2 ">
                  <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first"> Worried about the pricing
                  </h2>
                  <p className="pt-2 font-semibold">⌲ Option for a budget friendly Hospital</p>
