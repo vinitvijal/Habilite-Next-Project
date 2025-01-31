@@ -59,10 +59,10 @@ function Header() {
 
                           <AccordionContent className='AccordionContent overflow-clip' asChild>
                             <div className='text-md pl-4 flex flex-col gap-1'>
-                              <Link href="/about/about-habilite-clinic">
+                              <Link href="/about-habilite-clinic">
                               <p className={cn('rounded-full pl-4 py-2', pathname == "/about-habilite-clinic" && selectedAcc)}>About Habilite Clinic</p>
                               </Link>
-                              <Link href="/about/dr-kapil-about">
+                              <Link href="/dr-kapil-about">
                                 <p className={cn('rounded-full pl-4 py-2', pathname == "/dr-kapil-about" && selectedAcc)}>Dr. Kapil Agarwal</p>
                               </Link>
                             </div>
