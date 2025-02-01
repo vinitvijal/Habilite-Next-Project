@@ -2,28 +2,23 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import about1 from "@/public/about1.jpeg"
-import { motion, useInView, useScroll } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 export default function AboutPage() {
   
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef(null);
-  useScroll({
-    target:'',
-    offset: ["0 1","1.33 1"]
-
-  }); 
-  const isInView = useInView(ref, { once: false });
+  const isInView = useInView(ref, { once: true });
 
 
   return (
     <div className="min-h-screen">
 
       {/*Hero Section */}
-      <section className="relative py-12 md:py-24 bg-blue-50 mt-10">
+      <section className="relative py-12 md:py-24 bg-blue-50 mt-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
+          <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800">
               Advanced Minimally Invasive Care at <span className="text-blue-600">Habilite Clinic</span>
             </h1>
@@ -46,11 +41,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
           <motion.div
-           ref={ref}
-           initial={{ x: -100, opacity: 0 }}
-           animate={isInView ? { x: -100, opacity: 0 }:{ x: 0, opacity: 1 }}
-           transition={{ duration: 0.5, ease: "easeOut" }}
-          >
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            >
             <h2 className="text-3xl md:text-4xl font-bold text-first mb-7">
               About Habilite Clinic
             </h2>
