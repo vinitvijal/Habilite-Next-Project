@@ -3,6 +3,10 @@ import React from 'react';
 import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import { motion } from "motion/react"
+import { useInView } from "react-intersection-observer"
+import { useEffect, useState } from "react"
+import { Activity, Users, Star } from "lucide-react"
+
 
 const fadeImages = [
   {
@@ -24,7 +28,7 @@ const fadeImages = [
 
 const Hero = () => {
   return (
-    <div className="relative md:px-0 sm:pb-0 ">
+    <div className="relative min-h-screen md:px-0 sm:pb-0 ">
       <div className="h-full">
         <Fade arrows={false}
         duration={2000}
@@ -39,41 +43,110 @@ const Hero = () => {
           </div>
         ))}
       </Fade>
-    </div>
-      <div>
-        <Calculator />
       </div>
-
+         <StatsPage />
       
     </div>
   );
 };
 
-const Calculator = () => {
+
+
+function StatsPage() {
   return (
-    <div className="flex justify-center pt-20 md:pb-32 pb-24">
-        <div className="flex md:flex-row flex-col md:gap-16 gap-10">
-          <Counter number={150} title="Patients treated" />
-          <Counter number={200} title="Surgeries done" />
-          <Counter number={160} title="Other" />
+    <div className=" bg-transparent md:-top-40 z-40 md:relative  pt-4 pb-4">
+      <div className=" mb-10 px-4 block">
+        
+
+        {/* Stats Grid */}
+        <div className="grid gap-12 md:gap-8 md:grid-cols-3 max-w-5xl mx-auto">
+          <AnimatedCounter
+            endValue={150}
+            label="Patients Treated"
+            sublabel="Successful recoveries"
+            icon={<Users className="w-6 h-6" />}
+            gradient="from-first to-first/60"
+          />
+          <AnimatedCounter
+            endValue={200}
+            label="Surgeries Done"
+            sublabel="Complex procedures"
+            icon={<Activity className="w-6 h-6" />}
+            gradient="from-second to-second/60"
+          />
+          <AnimatedCounter
+            endValue={160}
+            label="Expert Consultations"
+            sublabel="Professional guidance"
+            icon={<Star className="w-6 h-6" />}
+            gradient="from-first to-first/60"
+          />
         </div>
+      </div>
     </div>
-  );
-};
+  )
+}
 
-import CountUp from "react-countup";
+function AnimatedCounter({
+  endValue,
+  label,
+  sublabel,
+  icon,
+  gradient,
+}) {
+  const [count, setCount] = useState(0)
+  const { ref, inView } = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  })
 
-const Counter = ({ number, title }) => {
+  useEffect(() => {
+    if (inView) {
+      let start = 0
+      const duration = 2500
+      const increment = endValue / (duration / 16)
+
+      const timer = setInterval(() => {
+        start += increment
+        if (start >= endValue) {
+          setCount(endValue)
+          clearInterval(timer)
+        } else {
+          setCount(Math.floor(start))
+        }
+      }, 16)
+
+      return () => clearInterval(timer)
+    }
+  }, [inView, endValue])
+
   return (
     <motion.div
-    initial={{ scale: 1}}
-    whileHover={{ scale: 1.05 }}
-    className="number bg-third md:p-10 p-6 rounded-lg flex flex-col gap-2 items-center">
-      <span><CountUp duration={3} className="counter font-semibold md:text-6xl text-4xl text-first" end={number} /><span className='md:text-5xl text-5xl font-bold text-first'>+</span></span>
-      <span className='text-lg text-black font-semibold'>{title}</span>
+      ref={ref}
+      initial={{ scale: 0.9, opacity: 0 }}
+      animate={inView ? { scale: 1, opacity: 1 } : {}}
+      transition={{ duration: 0.7, type: "spring", bounce: 0.3 }}
+      className="relative group"
+    >
+      <div className="absolute inset-0 bg-white rounded-xl transform transition-all duration-300 group-hover:scale-[1.02] md:shadow-lg shadow-zinc-300  md:group-hover:shadow-xl" />
+      <div className="relative p-8 flex justify-center items-center flex-col bg-white rounded-xl shadow-lg">
+        <div className="flex items-center justify-center mb-4">
+          <div className={`p-3 rounded-lg bg-gradient-to-br ${gradient} text-white`}>{icon}</div>
+        </div>
+        <div
+          className={`text-5xl font-bold mb-2 bg-gradient-to-r ${gradient} bg-clip-text text-transparent tabular-nums`}
+        >
+          {count}+
+        </div>
+        <div className="text-slate-900 font-semibold text-lg mb-1">{label}</div>
+        <div className="text-slate-500 text-sm">{sublabel}</div>
+      </div>
     </motion.div>
   )
 }
+
+
+
 
 
 export default Hero;
