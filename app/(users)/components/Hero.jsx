@@ -28,7 +28,7 @@ const fadeImages = [
 
 const Hero = () => {
   return (
-    <div className="relative max-h-screen md:px-0 sm:pb-0 ">
+    <div className="relative min-h-screen md:px-0 sm:pb-0 ">
       <div className="h-full">
         <Fade arrows={false}
         duration={2000}
@@ -54,12 +54,12 @@ const Hero = () => {
 
 function StatsPage() {
   return (
-    <div className=" bg-transparent -top-40 z-40 relative">
-      <div className=" mx-auto px-4">
+    <div className=" bg-transparent md:-top-40 z-40 md:relative  pt-4 pb-4">
+      <div className=" mb-10 px-4 block">
         
 
         {/* Stats Grid */}
-        <div className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto">
+        <div className="grid gap-12 md:gap-8 md:grid-cols-3 max-w-5xl mx-auto">
           <AnimatedCounter
             endValue={150}
             label="Patients Treated"
@@ -128,7 +128,7 @@ function AnimatedCounter({
       transition={{ duration: 0.7, type: "spring", bounce: 0.3 }}
       className="relative group"
     >
-      <div className="absolute inset-0 bg-white rounded-xl transform transition-all duration-300 group-hover:scale-[1.02] shadow-lg group-hover:shadow-xl" />
+      <div className="absolute inset-0 bg-white rounded-xl transform transition-all duration-300 group-hover:scale-[1.02] md:shadow-lg shadow-zinc-300  md:group-hover:shadow-xl" />
       <div className="relative p-8 flex justify-center items-center flex-col bg-white rounded-xl shadow-lg">
         <div className="flex items-center justify-center mb-4">
           <div className={`p-3 rounded-lg bg-gradient-to-br ${gradient} text-white`}>{icon}</div>
