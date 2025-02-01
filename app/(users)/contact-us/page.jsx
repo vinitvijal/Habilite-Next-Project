@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import TextAnimate from "@/components/ui/anim-text";
 
 function Contact() {
   const data = [
@@ -60,16 +61,13 @@ function Contact() {
       <div className="w-full overflow-x-hidden">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16 p-20">
           <div className="relative w-full">
-            <img
-              src="/contact.jpg"
-              alt="Background"
-              className="w-full rounded-lg object-cover "
-            />
-            <div className="absolute inset-0 flex items-center justify-center ">
-              <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white text-center bg-transparent hover:bg-black hover:bg-opacity-30 px-8 py-4 rounded-md transition-all duration-400 ">
-                CONTACT US
-              </h1>
-            </div>
+            <motion.div className="flex flex-col gap-2 items-center md:pt-20 md:pb-14 pt-4 pb-6">
+              <TextAnimate
+                text="CONTACT US"
+                type="calmInUp"
+                className="uppercase text-first text-2xl md:text-4xl text-center font-bold whitespace-normal"
+              />
+            </motion.div>
           </div>
         </div>
       </div>
