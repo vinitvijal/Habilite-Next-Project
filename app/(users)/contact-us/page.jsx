@@ -58,19 +58,13 @@ function Contact() {
 
   return (
     <>
-      <div className="w-full overflow-x-hidden">
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-10 md:px-16 p-20">
-          <div className="relative w-full">
-            <motion.div className="flex flex-col gap-2 items-center md:pt-20 md:pb-14 pt-4 pb-6">
+      <motion.div className="flex flex-col gap-2 items-center md:pt-20 md:pb-14 pt-4 pb-6">
               <TextAnimate
                 text="CONTACT US"
                 type="calmInUp"
                 className="uppercase text-first text-2xl md:text-4xl text-center font-bold whitespace-normal"
               />
             </motion.div>
-          </div>
-        </div>
-      </div>
 
       <div className="flex flex-col items-center justify-center mx-auto gap-10 my-8 px-4 sm:px-8 md:px-16 lg:px-24">
         <motion.h1
