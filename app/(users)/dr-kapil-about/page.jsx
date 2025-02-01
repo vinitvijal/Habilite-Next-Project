@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 import { motion } from 'framer-motion';
+import CVSection from '@/components/cvpoints';
 
 const faqData = [
   {
@@ -22,7 +23,7 @@ function DrKapilAbout() {
   };
 
   return (
-    <div className="w-4/5 mx-auto px-4 pt-2 pb-8">
+    <div className=" w-4/5 md:w-3/5 mx-auto px-4 pt-2 pb-8">
       <div className="text-center mb-8">
         <div className='relative flex flex-col items-center justify-center mb-5'>
           <motion.div
@@ -90,9 +91,9 @@ function DrKapilAbout() {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1.1, ease: "easeOut" }}
         >
-          <h3 className="text-base md:text-lg font-semibold text-gray-800 mb-4">
-            A Brief Profile of Dr. Kapil Agrawal
-          </h3>
+          <h2 className=" text-base md:text-2xl font-semibold text-first mb-4">A Brief Profile of Dr. Kapil Agrawal
+          </h2>
+
         </motion.div>
         <motion.div
           initial={{ x: -100, opacity: 0 }}
@@ -114,7 +115,9 @@ function DrKapilAbout() {
         </motion.div>
       </div>
 
-      <motion.div
+      <CVSection/>
+
+      {/* <motion.div
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1.1, ease: "easeOut" }}
@@ -122,8 +125,8 @@ function DrKapilAbout() {
         <h3 className="text-2xl font-semibold text-gray-800 mb-4">
           FAQs
         </h3>
-      </motion.div>
-      <div>
+      </motion.div> */}
+      {/* <div>
         {faqData.map((faq, index) => (
           <div
             key={index}
@@ -165,7 +168,7 @@ function DrKapilAbout() {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
