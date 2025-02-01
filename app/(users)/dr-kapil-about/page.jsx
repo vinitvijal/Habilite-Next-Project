@@ -23,7 +23,8 @@ function DrKapilAbout() {
   };
 
   return (
-    <div className=" w-4/5 md:w-3/5 mx-auto px-4 pt-2 pb-8">
+    <div className="w-4/5 mx-auto px-4 py-8 w-screen">
+      {/* Header Section */}
       <div className="text-center mb-8">
         <div className='relative flex flex-col items-center justify-center mb-5'>
           <motion.div
