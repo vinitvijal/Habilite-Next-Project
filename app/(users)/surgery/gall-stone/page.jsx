@@ -363,16 +363,8 @@ const cardVariants1 = {
         className="flex flex-col mx-auto px-2 sm:px-8 md:px-16 lg:px-24 mt-16 gap-6"
         >
           <div className='flex flex-wrap gap-12 rounded-lg opacity-200"'>
-            <div className='flex-col '>
-               <img src="https://www.dfloros.gr/wp-content/uploads/2020/06/sur.png" alt="background" className='w-80 h-auto' />
-               <p className='p-3 font-semibold text-center'>Single Port Laparoscopic Surgery</p>
-            </div>
-            <div className='flex-col '> 
-              <img src="https://www.tandfonline.com/cms/asset/c2b77a80-0405-4d5c-b80d-34c7973f06f6/imit_a_704875_f0001_b.jpg" alt="background" className='w-80 h-auto'/>
-              <p className='p-2 font-semibold text-center'>Scar after Single Port Surgery</p>
-              </div>
-           
-         
+            <img src="https://www.dfloros.gr/wp-content/uploads/2020/06/sur.png" alt="background" className='w-80 h-auto' />
+            <img src="https://www.tandfonline.com/cms/asset/c2b77a80-0405-4d5c-b80d-34c7973f06f6/imit_a_704875_f0001_b.jpg" alt="background" className='w-80 h-auto'/>
           </div>
           <div className='flex-col mb-16'>
             <h2 className="text-4xl font-semibold mb-1 text-first">Course of Recovery Following Gallstone Surgery</h2>

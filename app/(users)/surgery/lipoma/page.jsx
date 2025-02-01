@@ -232,9 +232,6 @@ function page() {
                   <p className='pt-2'>They are usually painless and tend to move easily when pressed.</p>
                   <p className='pt-2'>They can form anywhere in the body but most commonly occur on the neck, shoulders, back, abdomen, arms, and thighs.</p>
                   <p className='pt-2'>They are usually harmless but can cause discomfort or pain depending on their size and location.</p>
-                  <div>
-                    <img src="https://prognohealth.com/wp-content/uploads/2024/07/lipoma-img1-2.webp" alt="background" className="w-100 object-cover opacity-200"/>
-                  </div>
                 </div>
               </div>
             </motion.div>
@@ -306,14 +303,9 @@ function page() {
                   <p className='pt-2'><span className="font-medium mr-1">→ Laser Procedure for Lipomas:</span>  Laser therapy has not gained much popularity in the treatment of lipomas. This is because of incomplete destruction of lipomas</p>
                   <p className='pt-2 '> resulting in recurrence of lipomas. Laser therapy works by delivering focused light energy that is absorbed by the fat cells within the lipoma. This absorption generates heat, which leads to thermal damage and subsequent breakdown of the fat cells. However, hard lipomas and large lipomas may not completely break down resulting in recurrences.</p>
                   <p className='pt-2 '>The effectiveness of laser therapy for lipomas can vary depending on the size, location, and characteristics of the lipoma. Small, superficial lipomas may respond well to laser treatment, whereas larger or deeper lipomas may require alternative or adjunctive treatments.</p>
-                  <div>
-                    <img src="https://www.citivascularcentre.com/uploads/601cf28f315151bc0adaca2ebc70d059.jpeg" alt="background" className="w-80 object-cover opacity-200 m-10"/>
-                  </div>
+
                   <p className='pt-2'><span className="font-medium mr-1">→ Steroid Injections into Lipomas: </span> Direct instillation of steroids into the lipomas can sometimes shrink smaller lipomas. However, this technique is less commonly used due to multiple  </p>
                   <p className='pt-2 '>sessions, incomplete removal of lipomas and higher recurrences.They are not considered a definitive cure and may need to be repeated periodically for sustained benefit.</p>
-                  <div>
-                    <img src="https://londonsono.com/wp-content/uploads/2024/01/Blog-Photos-14-1080x675-1.jpg" alt="background" className="w-80 object-cover opacity-200 m-10"/>
-                  </div>
                 </div>
               </div>
             </motion.div>
