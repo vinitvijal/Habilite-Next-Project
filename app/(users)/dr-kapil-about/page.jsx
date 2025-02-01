@@ -11,7 +11,7 @@ function DrKapilAbout() {
   const answer = "Dr. Kapil Agrawal specializes in advanced laparoscopic gastrointestinal surgeries and bariatric or weight-loss surgeries. He is renowned for his surgical precision and tailored treatment plans for patients.";
 
   return (
-    <div className="w-4/5 mx-auto px-4 py-8">
+    <div className="w-4/5 mx-auto px-4 py-8 w-screen">
       {/* Header Section */}
       <div className="text-center mb-8">
         <div className='relative flex flex-col items-center justify-center mb-5'>

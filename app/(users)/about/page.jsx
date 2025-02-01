@@ -13,10 +13,10 @@ export default function AboutPage() {
 
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen w-screen">
 
       {/*Hero Section */}
-      <section className="relative py-12 md:py-24 bg-blue-50 mt-8">
+      <section className="relative py-12 md:py-24 bg-blue-50 mt-8 w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800">
@@ -30,7 +30,7 @@ export default function AboutPage() {
             <Image
               src={about1}
               alt="Habilite Clinics Facility"
-              className="object-cover"
+              className="object-cover h-full"
             />
           </div>
         </div>
