@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import { motion } from "framer-motion";
 import TextAnimate from "@/components/ui/anim-text";
@@ -8,7 +7,7 @@ function Contact() {
   const data = [
     {
       title: "Call Us",
-      points: ["Phone: +91 9999456455 ,9910024564"],
+      points: ["Phone: +91 9999456455 , 9910024564"],
       icon: (
         <img
           width="32"
@@ -21,8 +20,8 @@ function Contact() {
     {
       title: "Address",
       points: [
-        "M-11, Lajpat Nagar road, Lajpat Nagar II, New Delhi, Delhi 110024",
-        "C-7/186, SDA, Hauz Khas, New Delhi, Delhi 110016",
+        "M-11, Lajpat Nagar road, Lajpat Nagar II, New Delhi, Delhi-110024",
+        "C-7/186, SDA, Hauz Khas, New Delhi, Delhi-110016",
       ],
       icon: (
         <img
@@ -58,42 +57,43 @@ function Contact() {
 
   return (
     <>
-      <motion.div className="flex flex-col gap-2 items-center md:pt-20 md:pb-14 pt-4 pb-6">
-              <TextAnimate
-                text="CONTACT US"
-                type="calmInUp"
-                className="uppercase text-first text-2xl md:text-4xl text-center font-bold whitespace-normal"
-              />
-            </motion.div>
-
+       <div className='w-screen'>
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-10 md:px-16 ">
       <div className="flex flex-col items-center justify-center mx-auto gap-10 my-8 px-4 sm:px-8 md:px-16 lg:px-24">
+        <div className="m-10">
         <motion.h1
           variants={card}
           initial="hidden"
           whileInView="visible"
           viewport={{ amount: 0.2, once: false }}
-          className="uppercase p-10 text-2xl md:text-4xl text-center font-bold whitespace-normal text-black border-b-4 border-blue-500 "
+          className="p-2 text-2xl md:text-4xl text-center font-semibold whitespace-normal text-first "
         >
-          Get in Touch
+          CONTACT US - Get in Touch
         </motion.h1>
+        
+        <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: "80%", duration: 2000 }}
+            className="mx-auto border-first border-b-4 mt-6"
+        ></motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-10xl mx-auto pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-10xl mx-auto py-10 ">
           {data.map((info, index) => (
             <motion.div
-              key={index}
-              className="text-center p-6 transform hover:-translate-y-10 transition-transform duration-300 bg-white shadow-md cursor-pointer rounded-xl border-3 hover:border-first  "
-              variants={card}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ amount: 0.2, once: false }}
+              className="text-center p-6 transform hover:-translate-y-10 transition-transform duration-300 bg-white shadow-md cursor-pointer rounded-xl border-3 hover:border-first "
+              initial={{ opacity: -2 }} 
+            whileInView={{ opacity: 1.5 }} 
+            transition={{ duration: 2 }} 
+            viewport={{ amount: 0.2,once:true }} 
             >
-              <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto font-bold shadow-sm bg-first">
+              <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto font-bold shadow-sm bg-first transform hover:scale-105 transition-transform duration-500">
                 {info.icon}
               </div>
-              <h2 className="uppercase text-1xl md:text-2xl text-center font-bold  text-black p-4">
+              <h2 className="text-2xl md:text-3xl text-center font-semibold text-black p-4">
                 {info.title}
               </h2>
-              <div className="mt-2 font-bold">
+              <div className="mt-2 font-semibold">
                 {info.points.map((point, i) => (
                   <p
                     key={i}
@@ -116,12 +116,12 @@ function Contact() {
       >
         <div className="flex items-center justify-center p-12">
           <div className="mx-auto w-full max-w-[550px] bg-white">
-            <h1 className="text-4xl font-bold mb-4 text-first">
+            <h1 className="flex flex-col items-center justify-center mx-auto text-4xl font-semibold mb-6 text-first">
               BOOK ONLINE APPOINTMENT
             </h1>
             <form>
               <div className="mb-5">
-                <label for="name" className="mb-3 block text-base font-medium ">
+                <label for="name" className="mb-3 block px-2 text-base font-medium ">
                   Full Name
                 </label>
                 <input
@@ -129,11 +129,11 @@ function Contact() {
                   name="name"
                   id="name"
                   placeholder="Full Name"
-                  className="w-full rounded-md border bg-white py-3 px-6 text-base font-medium  focus:shadow-md"
+                  className="w-full rounded-md border bg-white py-3 px-2 text-base font-medium focus:shadow-md"
                 />
               </div>
               <div class="mb-5">
-                <label for="phone" className="mb-3 block text-base font-medium">
+                <label for="phone" className="mb-3 px-2 block text-base font-medium">
                   Phone Number
                 </label>
                 <input
@@ -141,11 +141,11 @@ function Contact() {
                   name="phone"
                   id="phone"
                   placeholder="Enter your phone number"
-                  className="w-full rounded-md border bg-white py-3 px-6 text-base font-medium  focus:shadow-md"
+                  className="w-full rounded-md border bg-white py-3 px-2 text-base font-medium focus:shadow-md"
                 />
               </div>
               <div class="mb-5">
-                <label for="email" className="mb-3 block text-base font-medium">
+                <label for="email" className="mb-3 px-2 block text-base font-medium">
                   Email Address
                 </label>
                 <input
@@ -153,40 +153,40 @@ function Contact() {
                   name="email"
                   id="email"
                   placeholder="Enter your email"
-                  className="w-full rounded-md border bg-white py-3 px-6 text-base font-medium  focus:shadow-md"
+                  className="w-full rounded-md border bg-white py-3 px-2 text-base font-medium focus:shadow-md"
                 />
               </div>
               <div className="-mx-3 flex flex-wrap">
                 <div className="w-full px-3 sm:w-1/2">
                   <div className="mb-5">
-                    <label for="date" class="mb-3 block text-base font-medium">
+                    <label for="date" class="mb-3 px-2 block text-base font-medium">
                       Date
                     </label>
                     <input
                       type="date"
                       name="date"
                       id="date"
-                      className="w-full rounded-md border bg-white py-3 px-6 text-base font-medium  focus:shadow-md"
+                      className="w-full rounded-md border bg-white py-3 px-2 text-base font-medium focus:shadow-md"
                     />
                   </div>
                 </div>
                 <div className="w-full px-3 sm:w-1/2">
                   <div className="mb-5">
-                    <label for="time" class="mb-3 block text-base font-medium">
+                    <label for="time" class="mb-3 px-2 block text-base font-medium">
                       Time
                     </label>
                     <input
                       type="time"
                       name="time"
                       id="time"
-                      className="w-full rounded-md border bg-white py-3 px-6 text-base font-medium  focus:shadow-md"
+                      className="w-full rounded-md border bg-white py-3 px-2 text-base font-medium focus:shadow-md"
                     />
                   </div>
                 </div>
               </div>
 
               <div className="mb-5 pt-3">
-                <label className="mb-5 block text-base font-semibold sm:text-xl">
+                <label className="mb-5 px-2 block text-base font-semibold sm:text-xl">
                   Address Details
                 </label>
                 <div className="-mx-3 flex flex-wrap">
@@ -197,7 +197,7 @@ function Contact() {
                         name="area"
                         id="area"
                         placeholder="Enter area"
-                        className="w-full rounded-md border bg-white py-3 px-6 text-base font-medium  focus:shadow-md"
+                        className="w-full rounded-md border bg-white py-3 px-2 text-base font-medium focus:shadow-md"
                       />
                     </div>
                   </div>
@@ -208,7 +208,7 @@ function Contact() {
                         name="city"
                         id="city"
                         placeholder="Enter city"
-                        className="w-full rounded-md  bg-white py-3 px-6 text-base font-medium  focus:shadow-md"
+                        className="w-full rounded-md border bg-white py-3 px-2 text-base font-medium focus:shadow-md"
                       />
                     </div>
                   </div>
@@ -219,7 +219,7 @@ function Contact() {
                         name="state"
                         id="state"
                         placeholder="Enter state"
-                        className="w-full rounded-md border bg-white py-3 px-6 text-base font-medium  focus:shadow-md"
+                        className="w-full rounded-md border bg-white py-3 px-2 text-base font-medium focus:shadow-md"
                       />
                     </div>
                   </div>
@@ -230,16 +230,16 @@ function Contact() {
                         name="post-code"
                         id="post-code"
                         placeholder="Post Code"
-                        className="w-full rounded-md border-first bg-white py-3 px-6 text-base font-medium  focus:shadow-md"
+                        className="w-full rounded-md border bg-white py-3 px-2 text-base font-medium focus:shadow-md"
                       />
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div>
-                <button className="hover:shadow-form w-full rounded-md bg-first py-3 px-8 text-center text-base font-semibold text-white outline-none">
-                  Book Appointment
+              <div className="text-center">
+                <button className="hover:shadow-form w-full rounded-md bg-first py-3 px-6 text-center text-base font-semibold text-white outline-none">
+                  Submit
                 </button>
               </div>
             </form>
@@ -262,6 +262,8 @@ function Contact() {
           ></iframe>
         </div>
       </motion.div>
+      </div>
+      </div>
     </>
   );
 }
