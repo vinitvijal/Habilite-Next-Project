@@ -323,21 +323,21 @@ const benefits = [
             viewport={{ amount: 0.2,once:true }}
             className="flex items-center justify-center max-w-6xl mx-auto">
               <div className=" p-12 border border-third hover:borounded-lg shadow-md">
+                <h1 className="text-2xl md:text-3xl font-semibold text-first text-center mb-4">ADVANTAGES OF LASER PILES SURGERY</h1>
                 <div className="mb-4">
-                  <h1 className="text-2xl md:text-3xl font-semibold text-first text-center mb-4">ADVANTAGES OF LASER PILES SURGERY</h1>
                   <p className='pt-2'>→ Laser surgery for piles involves less tissue damage due to its high precision, promoting faster healing.</p>
                   <p className='pt-2'>→ Laser surgery causes minimal discomfort post-surgery as there are no stitches or dressings involved.</p>
                   <p className='pt-2'>→ Laser surgery is almost bloodless as it seals the bleeding vessels efficiently.</p>
                   <p className='pt-2'>→ Recovery time is significantly shorter; patients can return to work within three to four days. The chances of infection are almost zero due to its minimally invasive nature.</p>
                   <p className='pt-2'>→ Laser surgery for piles is often performed on an outpatient basis, meaning patients can go home the same day.</p>
                 </div> 
-                <div className='mt-4'>
-                  <div className="p-10 flex flex-col items-center">
-                    <div className="flex flex-wrap justify-center gap-6 px-12">
+                <div className='mt-12'>
+                  <div className=" flex flex-col items-center">
+                    <div className="flex flex-wrap justify-center gap-6">
                       {benefits.map((benefit, index) => (
                         <div
                           key={index}
-                          className="bg-white p-12 border border-third hover:border-first text-center font-semibold py-3 px-5 rounded w-80 shadow-md" >
+                          className="bg-white p-4 border border-third hover:border-first text-center font-semibold py-3 rounded w-72 sm:w-80 shadow-md" >
                           {benefit}
                         </div>
                       ))}
@@ -401,22 +401,24 @@ const benefits = [
             </motion.div>
           </div>
 
-          <div className="flex flex-col mx-auto pt-16 px-10 md:px-16 lg:px-24 gap-6">
-            <motion.div initial={{ opacity: -2 }} 
+          <div className="flex flex-col mx-auto px-2 sm:px-6 md:px-12 lg:px-24 gap-6">
+          <motion.div initial={{ opacity: -2 }} 
             whileInView={{ opacity: 1.5 }} 
             transition={{ duration: 1 }} 
             viewport={{ amount: 0.2,once:true }} 
-            className='flex-col mx-6 mb-16 pt-4 md:px-24 border-first border-t-2'>
-              <div className="flex justify-center items-end m-4"><BsPinFill className='text-3xl md:text-4xl text-second' />
-                <h1 className='font-bold text-3xl md:text-4xl text-center border-fourth border-b-2 mt-6 text-second'>FAQ</h1>
-              </div>
-              <div className="mb-4">
-                {faqList.map((faq, index) => (
-                  <FAQsingle key={index} question={faq.question} answer={faq.answer} />
-                ))}
-              </div>
-            </motion.div>  
-          </div>
+            className='flex-col mx-3 mb-16 pt-4 md:px-24 border-first border-t-2'
+          >
+            <div className="flex justify-center items-end my-4">
+              <BsPinFill className='text-3xl md:text-4xl text-second' />
+              <h1 className='font-bold text-3xl md:text-4xl text-center border-fourth border-b-2 mt-6  text-second'>FAQ</h1>
+            </div>
+            <div className="mb-4 ">
+              {faqList.map((faq, index) => (
+                <FAQsingle key={index} question={faq.question} answer={faq.answer} />
+              ))}
+            </div>
+          </motion.div>  
+        </div>
         </div>
       </div>
     </div>

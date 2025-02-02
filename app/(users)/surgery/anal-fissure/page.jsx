@@ -363,22 +363,24 @@ function page() {
       </div>
 
 
-         <div className="flex flex-col mx-auto px-8 md:px-16 lg:px-24 gap-6">
-           <motion.div initial={{ opacity: -2 }} 
+      <div className="flex flex-col mx-auto px-2 sm:px-6 md:px-12 lg:px-24 gap-6">
+          <motion.div initial={{ opacity: -2 }} 
             whileInView={{ opacity: 1.5 }} 
             transition={{ duration: 1 }} 
             viewport={{ amount: 0.2,once:true }} 
-            className='flex-col mx-6 md:mx-12 mb-16 pt-4 md:px-24 border-first border-t-2'>
-             <div className="flex justify-center items-end m-4"><BsPinFill className='text-3xl md:text-4xl text-second' />
-               <h1 className='font-bold text-3xl md:text-4xl text-center border-fourth border-b-2 mt-6 text-second'>FAQ</h1>
-             </div>
-             <div className="mb-4 w-full ">
-               {faqList.map((faq, index) => (
-                 <FAQsingle key={index} question={faq.question} answer={faq.answer} />
-               ))}
-             </div>
-           </motion.div>  
-         </div>  
+            className='flex-col mx-3 mb-16 pt-4 md:px-24 border-first border-t-2'
+          >
+            <div className="flex justify-center items-end my-4">
+              <BsPinFill className='text-3xl md:text-4xl text-second' />
+              <h1 className='font-bold text-3xl md:text-4xl text-center border-fourth border-b-2 mt-6  text-second'>FAQ</h1>
+            </div>
+            <div className="mb-4 ">
+              {faqList.map((faq, index) => (
+                <FAQsingle key={index} question={faq.question} answer={faq.answer} />
+              ))}
+            </div>
+          </motion.div>  
+        </div>  
       </div>
     </div>
     </>
