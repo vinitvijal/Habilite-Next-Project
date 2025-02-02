@@ -138,7 +138,7 @@ const cardVariants1 = {
         
             <div className="absolute inset-0 flex items-center justify-center">
               <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white px-4 py-2 rounded-md flex-col items-center justify-center text-center bg-transparent hover:bg-black hover:bg-opacity-20 transition-all duration-400">
-              Best Hernia Surgeon<br /> in Delhi
+                Medical Weight Loss<br /> Program
               </h1>
             </div>
           </div>

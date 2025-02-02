@@ -211,7 +211,7 @@ const cardVariants1 = {
               <img
               src="https://today.uconn.edu/wp-content/uploads/2019/01/GettyImages-536228692_human-liver_extended.jpg"
               alt="Background"
-              className="w-80 h-auto rounded-lg opacity-200 m-8 "/>
+              className="w-72 md:w-80 h-auto rounded-lg opacity-200 m-8 mx-auto "/>
               </div>
         
               <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">Function of the Gallbladder</h2>

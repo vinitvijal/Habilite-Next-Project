@@ -351,11 +351,11 @@ const cardVariants1 = {
               </motion.div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto p-6 pt-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl max-sm:w-full sm:mx-auto sm:px-6  py-6  pt-0">
               {featureData.map((feature, index) => (
                 <motion.div
                   key={index}
-                  className="rounded-xl bg-white p-8 shadow-md border-third border-2"
+                  className="rounded-xl bg-white py-6 px-3 sm:px-6 shadow-md border-third border-2"
                   variants={cardVariants1}
                   initial="hidden"
                   whileInView="visible"
@@ -370,9 +370,9 @@ const cardVariants1 = {
                   </svg>
                   </div>
                   <div className='text-center'>
-                    <div className="text-lg mx-8">
+                    <div className="md:text-lg mx-2 md:mx-8">
                       {feature.points.map((point, index) => (
-                        <p key={index} className={`py-3 border-t border-third ${index===0?'border-none':''} `}>{point}</p>
+                        <p key={index} className={`py-2 border-t border-third ${index===0?'border-none':''} `}>{point}</p>
                       ))}
                     </div>
                   </div>
