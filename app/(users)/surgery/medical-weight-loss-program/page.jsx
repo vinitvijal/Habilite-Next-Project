@@ -150,7 +150,7 @@ const cardVariants1 = {
             variants={boxVariants}
             transition={{  duration: 1 }}
             whileInView="visible"
-            viewport={{ amount: 0.2 }}
+            viewport={{ amount: 0.2,once:true }}
             className="sm:w-2/3 w-full mx-auto relative sm:-mt-12 lg:-mt-24 md:px-6 py-4 bg-white sm:shadow-md items-center md:rounded-lg"
           >
             <FeatureList features={features} />
@@ -178,7 +178,7 @@ const cardVariants1 = {
             <motion.div 
               initial={{ opacity: 0, x: -100 }} 
               whileInView={{ opacity: 1, x: 0 }} 
-              viewport={{ amount: 0.2}} 
+              viewport={{ amount: 0.2,once:true}} 
               transition={{ duration: 0.5 }}
             >
               <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">Available Services</h2>
@@ -204,7 +204,7 @@ const cardVariants1 = {
           <motion.div 
           initial={{ opacity: 0, x: 100 }} 
           whileInView={{ opacity: 1, x: 0 }} 
-          viewport={{ amount: 0.1}} 
+          viewport={{ amount: 0.1,once:true}} 
           transition={{ duration: 0.5 }}
           className='flex-col mb-16 '
           >
@@ -230,7 +230,7 @@ const cardVariants1 = {
         <div className="flex flex-col mx-auto px-2 sm:px-6 md:px-12 lg:px-24 gap-6">
           <motion.div initial={{ opacity: -2 }} 
             whileInView={{ opacity: 1.5 }} 
-            transition={{ duration: 2 }} 
+            transition={{ duration: 1 }} 
             viewport={{ amount: 0.2,once:true }} 
             className='flex-col mx-3 mb-16 pt-4 md:px-24 border-first border-t-2'
           >

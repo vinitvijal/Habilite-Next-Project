@@ -135,7 +135,7 @@ const cardVariants1 = {
             <motion.div 
               initial={{ opacity: 0, x: -100 }} 
               whileInView={{ opacity: 1, x: 0 }} 
-              viewport={{ amount: 0.2}} 
+              viewport={{ amount: 0.2,once:true}} 
               transition={{ duration: 0.5 }}
             >
               <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">Benefits of an Intra Gastric Balloon</h2>
@@ -156,7 +156,7 @@ const cardVariants1 = {
           <motion.div 
           initial={{ opacity: 0, x: 100 }} 
           whileInView={{ opacity: 1, x: 0 }} 
-          viewport={{ amount: 0.1}} 
+          viewport={{ amount: 0.1,once:true}} 
           transition={{ duration: 0.5 }}
           className='flex-col mb-16 '
           >
@@ -189,7 +189,7 @@ const cardVariants1 = {
           <motion.div 
           initial={{ opacity: 0, x: -100 }} 
           whileInView={{ opacity: 1, x: 0 }} 
-          viewport={{ amount: 0.1}} 
+          viewport={{ amount: 0.1,once:true}} 
           transition={{ duration: 0.5 }}
           className='flex-col mb-16 '
           >
@@ -203,7 +203,7 @@ const cardVariants1 = {
              <p className='pt-2 ml-5'>This helps them maintain weight loss for an extended period, even after the balloon is removed.</p>
              <p className='pt-2 font-semibold'>To Know about Balloon Therapy for weight Loss, listen to our Podcast: <a href=" https://podcasters.spotify.com/pod/show/habilite-clinics"><u> https://podcasters.spotify.com/pod/show/habilite-clinics</u></a></p>
 
-             <h2 className="text-3xl md:text-4xl font-semibold mb-1 mt-1 text-first mt-8">How the balloon is placed?</h2>
+             <h2 className="text-3xl md:text-4xl font-semibold mb-1 text-first mt-8">How the balloon is placed?</h2>
               <p className='pt-2'><span className="font-medium mr-1">→  Through evaluation:</span> A thorough patient evaluation is done to assess its suitability.</p>
               <p className='pt-2'><span className="font-medium mr-1">→  Anesthesia:</span> The patient might require a bit of sedation depending on the type of balloon.</p>
               <p className='pt-2'><span className="font-medium mr-1">→ Insertion of the balloon:</span> The balloon is inserted endoscopically through the mouth, or the balloon has to be swallowed depending upon the type of balloon.</p>
@@ -253,7 +253,7 @@ const cardVariants1 = {
         <div className="flex flex-col mx-auto px-2 sm:px-6 md:px-12 lg:px-24 gap-6">
           <motion.div initial={{ opacity: -2 }} 
             whileInView={{ opacity: 1.5 }} 
-            transition={{ duration: 2 }} 
+            transition={{ duration: 1 }} 
             viewport={{ amount: 0.2,once:true }} 
             className='flex-col mx-3 mb-16 pt-4 md:px-24 border-first border-t-2'
           >
