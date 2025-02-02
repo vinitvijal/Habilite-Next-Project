@@ -5,7 +5,7 @@ import BmiCalculator from '../../components/bmi';
 
 function BmiPage() {
   return (
-    <div className="min-h-screen mt-12 items-center justify-center ">
+    <div className="min-h-screen items-center justify-center ">
       <Head>
         <title>BMI Calculator</title>
       </Head>

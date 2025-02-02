@@ -39,7 +39,7 @@ const BmiCalculator = () => {
 
     return (
         <div className="flex flex-col lg:flex-row justify-center items-center lg:gap-20 gap-10">
-            <div className="w-full max-w-lg p-8 bg-gradient-to-r from-second/80 to-fourth rounded-lg shadow-lg border-2 border-white bg-opacity-50">
+            <div className="w-full max-w-lg p-8 bg-gradient-to-r from-second/90 to-first/90 rounded-lg shadow-lg border-2 border-white bg-opacity-50">
                 <form onSubmit={handleSubmit} className="flex flex-col space-y-5">
                     <div className="justify-center items-center min-w-fit">
                         <label className="block text-lg font-semibold text-white">Select your gender:</label>
@@ -100,7 +100,7 @@ const BmiCalculator = () => {
             </div>
             <div className="w-full max-w-lg bg-white rounded-lg shadow-lg border-2 flex justify-center items-center">
                 <table className="w-full text-left">
-                    <thead className="bg-gradient-to-r from-second/80 to-fourth text-white">
+                    <thead className="bg-gradient-to-r from-second/90 to-first text-white">
                         <tr>
                             <th className="border-b-2 border-gray-300 px-4 py-2 text-white text-lg" style={{ width: '50%' }}>BMI Range</th>
                             <th className="border-b-2 border-gray-300 px-4 py-2 text-white text-lg" style={{ width: '50%' }}>Category</th>
