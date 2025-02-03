@@ -4,6 +4,7 @@ import FAQsingle from '@/app/(users)/components/FAQsingle';
 import { BsPinFill } from "react-icons/bs";
 import { motion, useInView } from "framer-motion";
 import TextAnimate from "@/components/ui/anim-text";
+import Link from 'next/link';
 
 
 const features = [
@@ -87,61 +88,62 @@ function page() {
     },
   ];
 
+
   const surgery = [
     {
       id: 1,
       title: "Sleeve Gastrectomy",
       excerpt: "Sleeve gastrectomy is relatively a new technique with satisfying restriction and appetite suppression.",
-      button: <button>Read More</button>,
+      button:  <Link href='/surgery/bariatric-surgery/sleeve-gastrectomy' ><button>Read More</button></Link>,
       imageUrl: "https://www.gastroenterologyadvisor.com/wp-content/uploads/sites/23/2020/09/sleeve-gastrectomy_G_667599651_2000x1300-1-544x306.jpg",
     },
     {
       id: 2,
       title: "Gastric Bypass",
       excerpt: "One of the most successful and still considered as the gold standard for bariatric or weight loss surgery.",
-      button: <button>Read More</button>,
+      button: <Link href='/surgery/bariatric-surgery/gastric-bypass' ><button>Read More</button></Link>,
       imageUrl: "https://silverlinehospital.in/storage/treatment-details/gastric-bypass-surgery.webp",
     },
     {
       id: 3,
       title: "Mini Gastric Bypass",
       excerpt: "It is a similar type of surgery as gastric bypass having both restrictive and malabsorptive component.",
-      button: <button>Read More</button>,
+      button: <Link href='/surgery/bariatric-surgery/mini-gastric-bypass' ><button>Read More</button></Link>,
       imageUrl: "https://chaitanyastemcell.com/wp-content/uploads/2023/08/mgb-1.png",
     },
     {
       id: 4,
       title: "Duodenal Jejunal Bypass",
       excerpt: "Laparoscopic duodenal jejunal bypass or single anastomosis gastric bypass is an upcoming bariatric.",
-      button: <button>Read More</button>,
+      button: <Link href='/surgery/bariatric-surgery/duodenal-jejunal-bypass' ><button>Read More</button></Link>,
       imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH_qR3yAhoaVJGVumyHbfYYclLc9JD9AvgrbsnnS6lp7uxMI7VXXwlyTztxiPizSPLlKk&usqp=CAU",
     },
     {
       id: 5,
       title: "Banded Bariatric Surgery",
       excerpt: "The Gabp ring device is an annular restrictive ring placed around the newly surgically created.",
-      button: <button>Read More</button>,
+      button: <Link href='/surgery/bariatric-surgery/banded-bariatric-surgery' ><button>Read More</button></Link>,
       imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5sh26TnI-5VDHf2xbcddf5DD_WKqSncwdQYjzEzkckoYCSTfxrNOt5IjidPUp4iywm_k&usqp=CAU",
     },
     {
       id: 6,
       title: "Single Port Bariatric Surgery",
       excerpt: "Single incision surgery” or “single site surgery” or “single port surgery” is a very exciting new modality.",
-      button: <button>Read More</button>,
+      button: <Link href='/surgery/bariatric-surgery/single-port-bariatric-surgery' ><button>Read More</button></Link>,
       imageUrl: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSpOLMZ3-s7FRDf1lFGmCZIs19CHGVnohVe1KaXOHTKUUJGyDzQ",
     },
     {
       id: 7,
       title: "Endoscopic Intra Gastric Balloon",
       excerpt: "A non-surgical procedure which helps achieve better portion control by making you feel full after eating less food.",
-      button: <button>Read More</button>,
+      button: <Link href='/surgery/bariatric-surgery/endoscopic-intra-gastric-balloon' ><button>Read More</button></Link>,
       imageUrl: "https://www.obesitytreatments.co.uk/endoscopic-obesity-treatment/_jcr_content/root/container/container/container_copy/image.coreimg.png/1724839753362/intragastric-balloons-procedure-image-700x394px.png",
     },
     {
       id: 8,
       title: "Gastric Plication Surgery",
       excerpt: "Gastric Sleeve Plication surgery is a relatively new procedure performed by limited number of bariatric surgeons.",
-      button: <button>Read More</button>,
+      button: <Link href='/surgery/bariatric-surgery/gastric-plication-surgery' ><button>Read More</button></Link>,
       imageUrl: "https://indorelaparoscopycenter.com/wp-content/uploads/2022/08/Gastric_Plication_Surgery.jpg",
     },
 
@@ -149,7 +151,7 @@ function page() {
       id: 9,
       title: "Revision Bariatric Surgery",
       excerpt: "Revision bariatric surgery refers to weight loss surgery that is done when patients do not obtain outstanding.",
-      button: <button>Read More</button>,
+      button: <Link href='/surgery/bariatric-surgery/revision-bariatric-surgery' ><button>Read More</button></Link>,
       imageUrl: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSO7vdoRn7CFMQY7HvmPuXADWg9l7yn5jXbfFchW8L7eYHZAYDg",
     },
   ];
