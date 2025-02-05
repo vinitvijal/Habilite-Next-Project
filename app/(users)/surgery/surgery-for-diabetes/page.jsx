@@ -15,14 +15,14 @@ const features = [
 ];
 
 const FeatureList = ({ features }) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 text-first md:text-lg text-left mx-auto">
+  <div className="grid grid-cols-1 md:grid-cols-2 text-first text-left mx-auto">
     {features.map((feature, index) => (
       <div
         key={index}
-        className={`flex items-start spaxe-x-2 py-3 rounded-lg  max-md:text-base border-third border-t ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"} ${index===0?'border-none':''} ${index===1?'md:border-none':''}
+        className={`flex items-start space-x-2 py-2  max-md:text-base border-third border-t ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"} ${index===0?'border-none':''} ${index===1?'md:border-none':''}
         }`} >
         <span> ➔ </span>
-        <p>{feature}</p>
+        <p className='max-sm:text-sm' >{feature}</p>
       </div>
     ))}
   </div>
@@ -141,12 +141,12 @@ const benefits = [
           <div>
             <div className="relative w-full">
               <img
-              src="/lipoma.jpg"
+              src="/bariatric.jpg"
               alt="Background"
               className="w-full object-cover opacity-200"
               />
               <div className="absolute inset-0 flex items-center justify-center">
-                <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white px-4 py-2 rounded-md flex-col items-center justify-center text-center bg-transparent hover:bg-black hover:bg-opacity-20">
+                <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white px-4 py-2 rounded-md flex-col items-center justify-center text-center bg-black bg-opacity-25">
                 Surgery for Diabetes
                 </h1>
               </div>
@@ -159,8 +159,8 @@ const benefits = [
             variants={boxVariants}
             transition={{  duration: 1 }}
             whileInView="visible"
-            viewport={{ amount: 0.2 }}
-            className="w-3/5 m-4 mx-auto relative sm:-mt-24 lg:-mt-40 px-8 py-10 bg-white shadow-sm shadow-black items-center rounded-lg">
+            viewport={{ amount: 0.2,once:true }}
+            className="sm:w-2/3 w-full mx-auto relative sm:-mt-12 lg:-mt-24 md:px-6 py-4 bg-white sm:shadow-md items-center md:rounded-lg">
               <FeatureList features={features} />
             </motion.div>
           </div>
@@ -170,8 +170,8 @@ const benefits = [
             <motion.div 
             initial={{ opacity: 0, x: 100 }} 
             whileInView={{ opacity: 1, x: 0 }} 
-            viewport={{ amount: 0.3 }} 
-            transition={{ duration: 0.8 }}
+            viewport={{ amount: 0.3,once:true }} 
+            transition={{ duration: 0.6 }}
             className='mt-16'>
               <div>
                 <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">METABOLIC SURGERY FOR DIABETES</h2>
@@ -192,8 +192,8 @@ const benefits = [
             <motion.div 
             initial={{ opacity: 0, x: -100 }} 
             whileInView={{ opacity: 1, x: 0 }} 
-            viewport={{ amount: 0.3 }} 
-            transition={{ duration: 0.8 }}
+            viewport={{ amount: 0.3,once:true }} 
+            transition={{ duration: 0.6 }}
             className='mb-8'>
               <div>
                 <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first"> Link Between Weight and Diabetes</h2>
@@ -261,7 +261,7 @@ const benefits = [
                   variants={cardVariants}
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ amount: 0.2 }}
+                  viewport={{ amount: 0.2,once:true }}
                   className="text-3xl md:text-4xl font-semibold text-first m-4">
                   TYPES OF SURGERIES OFFERED<br/>BY OUR TEAM
                   </motion.h1>
@@ -276,7 +276,7 @@ const benefits = [
                 variants={cardVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ amount: 0.2 }}
+                viewport={{ amount: 0.2,once:true }}
                 className="flex items-center justify-center  max-w-6xl mx-auto">
                  <div className="p-12 border-third border-2  rounded-lg shadow-md">
                    <div className="mb-4 text-lg">
@@ -299,8 +299,8 @@ const benefits = [
             <motion.div 
              initial={{ opacity: 0, x: 100 }} 
              whileInView={{ opacity: 1, x: 0 }} 
-             viewport={{ amount: 0.3 }} 
-             transition={{ duration: 0.8 }}>
+             viewport={{ amount: 0.3,once:true }} 
+             transition={{ duration: 0.6 }}>
               <div>
                 <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first text-center">Results following Metabolic Surgery for Diabetes</h2>
                 <div className="mb-4 text-center">
@@ -319,7 +319,7 @@ const benefits = [
                 variants={cardVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ amount: 0.2 }}
+                viewport={{ amount: 0.2,once:true }}
                 className="text-3xl md:text-4xl font-semibold text-first"> WHY CHOOSE US -
                </motion.h1>
                 <motion.div
@@ -337,7 +337,7 @@ const benefits = [
                  initial={{ opacity: -2 }} 
                  whileInView={{ opacity: 1.5 }} 
                  transition={{ duration: 2 }} 
-                 viewport={{ amount: 0.2 }} 
+                 viewport={{ amount: 0.2,once:true }} 
                  className="bg-white p-8 rounded-lg shadow-md border border-first w-80 text-center hover:shadow-lg transition-shadow" >
                  <h2 className="text-xl font-semibold text-first mb-4">
                    {info.title}
@@ -349,31 +349,33 @@ const benefits = [
              </div> 
           </div>    
 
-           <div className="px-2  w-full flex justify-center gap-20 my-8">
-             <div className="bg-white lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg rounded-lg">
-               <div className="lg:w-1/2">
-               <div className="lg:scale-110 h-76 bg-cover lg:h-full rounded-b-none border lg:rounded-lg">
-                <img
-                src="/lady.jpg"
-                alt="Background"
-                className="w-full object-cover opacity-200"/> </div>
-               </div>
-               <div className="flex flex-col mx-auto  py-12 px-6 lg:px-12 max-w-xl lg:max-w-5xl lg:w-1/2 border lg:rounded-lg">
-                 <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first"> Worried about the pricing
-                 </h2>
-                 <p className="pt-2 font-semibold">⌲ Option for a budget friendly Hospital</p>
-                 <p className="pt-2 font-semibold">⌲ EMI facility</p>
-                 <p className="pt-2 font-semibold">⌲ Substantial discounts on investigations</p>
-                 <p className="pt-2 font-semibold">⌲ Free post-surgical consultations</p>
+          <div className="px-2 py-8 w-full flex justify-center">
+            <div className="bg-white lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg rounded-lg overflow-hidden">
+              <div className="lg:w-1/2">
+                <div className="h-72 bg-cover lg:h-full  lg:rounded-lg">
+                  <img
+                  src="/lady.jpg"
+                  alt="Background"
+                  className="w-full object-cover opacity-200"/>
+                </div>
               </div>
-             </div>
-           </div>                                  
+              <div className="flex flex-col mx-auto  py-12 px-6 lg:px-12 max-w-xl lg:max-w-5xl lg:w-1/2 ">
+                <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">
+                  Worried about the pricing
+                </h2>
+                <p className="pt-2 font-semibold">⌲ Option for a budget friendly Hospital</p>
+                <p className="pt-2 font-semibold">⌲ EMI facility</p>
+                <p className="pt-2 font-semibold">⌲ Substantial discounts on investigations</p>
+                <p className="pt-2 font-semibold">⌲ Free post-surgical consultations</p>
+              </div>
+            </div>
+          </div>                            
 
             <motion.div 
             initial={{ opacity: 0, x: 100 }} 
             whileInView={{ opacity: 1, x: 0 }} 
-            viewport={{ amount: 0.3 }} 
-            transition={{ duration: 0.8 }}>
+            viewport={{ amount: 0.3,once:true }} 
+            transition={{ duration: 0.6 }}>
               <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">
               ABOUT DR. KAPIL AGRAWAL AND HIS TEAM
               </h2>
@@ -389,22 +391,24 @@ const benefits = [
             </motion.div>
           </div>
 
-          <div className="flex flex-col mx-auto pt-16 px-10 md:px-16 lg:px-24 gap-6">
-            <motion.div initial={{ opacity: -2 }} 
+          <div className="flex flex-col mx-auto px-2 sm:px-6 md:px-12 lg:px-24 gap-6">
+          <motion.div initial={{ opacity: -2 }} 
             whileInView={{ opacity: 1.5 }} 
-            transition={{ duration: 2 }} 
-            viewport={{ amount: 0.2 }} 
-            className='flex-col mx-6 mb-16 pt-4 md:px-24 border-first border-t-2'>
-              <div className="flex justify-center items-end m-4"><BsPinFill className='text-3xl md:text-4xl text-second' />
-                <h1 className='font-bold text-3xl md:text-4xl text-center border-fourth border-b-2 mt-6 text-second'>FAQ</h1>
-              </div>
-              <div className="mb-4">
-                {faqList.map((faq, index) => (
-                  <FAQsingle key={index} question={faq.question} answer={faq.answer} />
-                ))}
-              </div>
-            </motion.div>  
-          </div>
+            transition={{ duration: 1 }} 
+            viewport={{ amount: 0.2,once:true }} 
+            className='flex-col mx-3 mb-16 pt-4 md:px-24 border-first border-t-2'
+          >
+            <div className="flex justify-center items-end my-4">
+              <BsPinFill className='text-3xl md:text-4xl text-second' />
+              <h1 className='font-bold text-3xl md:text-4xl text-center border-fourth border-b-2 mt-6  text-second'>FAQ</h1>
+            </div>
+            <div className="mb-4 ">
+              {faqList.map((faq, index) => (
+                <FAQsingle key={index} question={faq.question} answer={faq.answer} />
+              ))}
+            </div>
+          </motion.div>  
+        </div>
         </div>
       </div>
     </div>

@@ -15,14 +15,14 @@ const features = [
 ];
 
 const FeatureList = ({ features }) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 text-first md:text-lg text-left mx-auto">
+  <div className="grid grid-cols-1 md:grid-cols-2 text-first text-left mx-auto">
     {features.map((feature, index) => (
       <div
         key={index}
-        className={`flex items-start spaxe-x-2 py-3 rounded-lg  max-md:text-base border-third border-t ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"} ${index===0?'border-none':''} ${index===1?'md:border-none':''}
+        className={`flex items-start space-x-2 py-2  max-md:text-base border-third border-t ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"} ${index===0?'border-none':''} ${index===1?'md:border-none':''}
         }`} >
         <span> ➔ </span>
-        <p>{feature}</p>
+        <p className='max-sm:text-sm' >{feature}</p>
       </div>
     ))}
   </div>
@@ -156,12 +156,12 @@ const benefits = [
           <div>
             <div className="relative w-full">
               <img
-               src="/lipoma.jpg"
+               src="/fistula.jpg"
                alt="Background"
                className="w-full object-cover opacity-200"
               />
               <div className="absolute inset-0 flex items-center justify-center">
-                <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white px-4 py-2 rounded-md flex-col items-center justify-center text-center bg-transparent hover:bg-black hover:bg-opacity-20">
+                <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white px-4 py-2 rounded-md flex-col items-center justify-center text-center bg-black bg-opacity-25">
                   Best Laser Piles Surgeon<br /> in Delhi
                 </h1>
               </div>
@@ -174,8 +174,8 @@ const benefits = [
             variants={boxVariants}
             transition={{  duration: 1 }}
             whileInView="visible"
-            viewport={{ amount: 0.2 }}
-            className="w-3/5 m-4 mx-auto relative sm:-mt-24 lg:-mt-40 px-8 py-10 bg-white shadow-sm shadow-black items-center rounded-lg">
+            viewport={{ amount: 0.2,once:true }}
+            className="sm:w-2/3 w-full mx-auto relative sm:-mt-12 lg:-mt-24 md:px-6 py-4 bg-white sm:shadow-md items-center md:rounded-lg">
               <FeatureList features={features} />
             </motion.div>
           </div>
@@ -184,8 +184,8 @@ const benefits = [
             <motion.div 
             initial={{ opacity: 0, x: -100 }} 
             whileInView={{ opacity: 1, x: 0 }} 
-            viewport={{ amount: 0.3 }} 
-            transition={{ duration: 0.8 }}
+            viewport={{ amount: 0.3,once:true }} 
+            transition={{ duration: 0.6 }}
             className='pt-8'>
               <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first"> Best Piles Treatment in Delhi</h2>
               <div className="mb-4">
@@ -203,7 +203,7 @@ const benefits = [
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 1 }}
-                    viewport={{ amount: 0.2 }}
+                    viewport={{ amount: 0.2,once:true }}
                     className="text-3xl md:text-4xl  font-bold my-6 text-second"
                   >
                     {info.title}
@@ -211,8 +211,8 @@ const benefits = [
                   <motion.p
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ duration: 2 }}
-                    viewport={{ amount: 0.2 }}
+                    transition={{ duration: 1 }}
+                    viewport={{ amount: 0.2,once:true }}
                     className="text-lg sm:text-xl md:text-2xl text-left mb-8 text-first px-4 md:px-8 lg:px-16 mx-auto text">
                     {info.description}
                     <br/>
@@ -224,8 +224,8 @@ const benefits = [
             <motion.div 
             initial={{ opacity: 0, x: 100 }} 
             whileInView={{ opacity: 1, x: 0 }} 
-            viewport={{ amount: 0.3 }} 
-            transition={{ duration: 0.8 }}
+            viewport={{ amount: 0.1,once:true }} 
+            transition={{ duration: 0.6 }}
             className='mb-8'>           
               <div>
                 <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first"> What is Piles ?</h2>
@@ -267,8 +267,8 @@ const benefits = [
             <motion.div 
             initial={{ opacity: 0, x: 100 }} 
             whileInView={{ opacity: 1, x: 0 }} 
-            viewport={{ amount: 0.3 }} 
-            transition={{ duration: 0.8 }}>
+            viewport={{ amount: 0.3,once:true }} 
+            transition={{ duration: 0.6 }}>
               <div>
                 <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">Symptoms of Piles</h2>
                 <div className="mb-4">
@@ -290,7 +290,7 @@ const benefits = [
             variants={imageVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ amount: 0.2 }}>
+            viewport={{ amount: 0.2,once:true }}>
               <div className='mt-4 mb-8'>
                 <h2 className="text-2xl md:text-3xl font-semibold text-second text-left mb-4">BEST LASER PILES SURGERY IN DELHI</h2>
                 <div className="mb-4">        
@@ -320,24 +320,24 @@ const benefits = [
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ amount: 0.2 }}
+            viewport={{ amount: 0.2,once:true }}
             className="flex items-center justify-center max-w-6xl mx-auto">
               <div className=" p-12 border border-third hover:borounded-lg shadow-md">
+                <h1 className="text-2xl md:text-3xl font-semibold text-first text-center mb-4">ADVANTAGES OF LASER PILES SURGERY</h1>
                 <div className="mb-4">
-                  <h1 className="text-2xl md:text-3xl font-semibold text-first text-center mb-4">ADVANTAGES OF LASER PILES SURGERY</h1>
                   <p className='pt-2'>→ Laser surgery for piles involves less tissue damage due to its high precision, promoting faster healing.</p>
                   <p className='pt-2'>→ Laser surgery causes minimal discomfort post-surgery as there are no stitches or dressings involved.</p>
                   <p className='pt-2'>→ Laser surgery is almost bloodless as it seals the bleeding vessels efficiently.</p>
                   <p className='pt-2'>→ Recovery time is significantly shorter; patients can return to work within three to four days. The chances of infection are almost zero due to its minimally invasive nature.</p>
                   <p className='pt-2'>→ Laser surgery for piles is often performed on an outpatient basis, meaning patients can go home the same day.</p>
                 </div> 
-                <div className='mt-4'>
-                  <div className="p-10 flex flex-col items-center">
-                    <div className="flex flex-wrap justify-center gap-6 px-12">
+                <div className='mt-12'>
+                  <div className=" flex flex-col items-center">
+                    <div className="flex flex-wrap justify-center gap-6">
                       {benefits.map((benefit, index) => (
                         <div
                           key={index}
-                          className="bg-white p-12 border border-third hover:border-first text-center font-semibold py-3 px-5 rounded w-80 shadow-md" >
+                          className="bg-white p-4 border border-third hover:border-first text-center font-semibold py-3 rounded w-72 sm:w-80 shadow-md" >
                           {benefit}
                         </div>
                       ))}
@@ -350,8 +350,8 @@ const benefits = [
             <motion.div 
             initial={{ opacity: 0, x: 100 }} 
             whileInView={{ opacity: 1, x: 0 }} 
-            viewport={{ amount: 0.3 }} 
-            transition={{ duration: 0.8 }}>
+            viewport={{ amount: 0.2,once:true }} 
+            transition={{ duration: 0.6 }}>
               <div>
                 <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">Stapler Surgery for Piles</h2>
                 <div className="mb-4">
@@ -386,8 +386,8 @@ const benefits = [
             <motion.div 
             initial={{ opacity: 0, x: -100 }} 
             whileInView={{ opacity: 1, x: 0 }} 
-            viewport={{ amount: 0.3 }} 
-            transition={{ duration: 0.8 }}>
+            viewport={{ amount: 0.3,once:true }} 
+            transition={{ duration: 0.6 }}>
               <h2 className="text-2xl md:text-3xl font-semibold mb-2 mt-3 text-first">
                 Why Choose Us - Best Hospital for Piles Treatment in Delhi
               </h2>
@@ -401,22 +401,24 @@ const benefits = [
             </motion.div>
           </div>
 
-          <div className="flex flex-col mx-auto pt-16 px-10 md:px-16 lg:px-24 gap-6">
-            <motion.div initial={{ opacity: -2 }} 
+          <div className="flex flex-col mx-auto px-2 sm:px-6 md:px-12 lg:px-24 gap-6">
+          <motion.div initial={{ opacity: -2 }} 
             whileInView={{ opacity: 1.5 }} 
-            transition={{ duration: 2 }} 
-            viewport={{ amount: 0.2 }} 
-            className='flex-col mx-6 mb-16 pt-4 md:px-24 border-first border-t-2'>
-              <div className="flex justify-center items-end m-4"><BsPinFill className='text-3xl md:text-4xl text-second' />
-                <h1 className='font-bold text-3xl md:text-4xl text-center border-fourth border-b-2 mt-6 text-second'>FAQ</h1>
-              </div>
-              <div className="mb-4">
-                {faqList.map((faq, index) => (
-                  <FAQsingle key={index} question={faq.question} answer={faq.answer} />
-                ))}
-              </div>
-            </motion.div>  
-          </div>
+            transition={{ duration: 1 }} 
+            viewport={{ amount: 0.2,once:true }} 
+            className='flex-col mx-3 mb-16 pt-4 md:px-24 border-first border-t-2'
+          >
+            <div className="flex justify-center items-end my-4">
+              <BsPinFill className='text-3xl md:text-4xl text-second' />
+              <h1 className='font-bold text-3xl md:text-4xl text-center border-fourth border-b-2 mt-6  text-second'>FAQ</h1>
+            </div>
+            <div className="mb-4 ">
+              {faqList.map((faq, index) => (
+                <FAQsingle key={index} question={faq.question} answer={faq.answer} />
+              ))}
+            </div>
+          </motion.div>  
+        </div>
         </div>
       </div>
     </div>

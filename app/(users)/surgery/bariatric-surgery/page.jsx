@@ -4,6 +4,7 @@ import FAQsingle from '@/app/(users)/components/FAQsingle';
 import { BsPinFill } from "react-icons/bs";
 import { motion, useInView } from "framer-motion";
 import TextAnimate from "@/components/ui/anim-text";
+import Link from 'next/link';
 
 
 const features = [
@@ -26,14 +27,14 @@ const boxVariants = {
 
 
 const FeatureList = ({ features }) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 text-first md:text-lg text-left mx-auto">
+  <div className="grid grid-cols-1 md:grid-cols-2 text-first text-left mx-auto">
     {features.map((feature, index) => (
       <div
         key={index}
-        className={`flex items-start spaxe-x-2 py-3 rounded-lg  max-md:text-base border-third border-t ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"} ${index===0?'border-none':''} ${index===1?'md:border-none':''}
+        className={`flex items-start space-x-2 py-2  max-md:text-base border-third border-t ${index % 2 === 0 ? "md:mr-4" : "md:ml-4"} ${index===0?'border-none':''} ${index===1?'md:border-none':''}
         }`} >
         <span> ➔ </span>
-        <p>{feature}</p>
+        <p className='max-sm:text-sm' >{feature}</p>
       </div>
     ))}
   </div>
@@ -87,61 +88,62 @@ function page() {
     },
   ];
 
+
   const surgery = [
     {
       id: 1,
       title: "Sleeve Gastrectomy",
       excerpt: "Sleeve gastrectomy is relatively a new technique with satisfying restriction and appetite suppression.",
-      button: <button>Read More</button>,
+      button:  <Link href='/surgery/bariatric-surgery/sleeve-gastrectomy' ><button>Read More</button></Link>,
       imageUrl: "https://www.gastroenterologyadvisor.com/wp-content/uploads/sites/23/2020/09/sleeve-gastrectomy_G_667599651_2000x1300-1-544x306.jpg",
     },
     {
       id: 2,
       title: "Gastric Bypass",
       excerpt: "One of the most successful and still considered as the gold standard for bariatric or weight loss surgery.",
-      button: <button>Read More</button>,
+      button: <Link href='/surgery/bariatric-surgery/gastric-bypass' ><button>Read More</button></Link>,
       imageUrl: "https://silverlinehospital.in/storage/treatment-details/gastric-bypass-surgery.webp",
     },
     {
       id: 3,
       title: "Mini Gastric Bypass",
       excerpt: "It is a similar type of surgery as gastric bypass having both restrictive and malabsorptive component.",
-      button: <button>Read More</button>,
+      button: <Link href='/surgery/bariatric-surgery/mini-gastric-bypass' ><button>Read More</button></Link>,
       imageUrl: "https://chaitanyastemcell.com/wp-content/uploads/2023/08/mgb-1.png",
     },
     {
       id: 4,
       title: "Duodenal Jejunal Bypass",
       excerpt: "Laparoscopic duodenal jejunal bypass or single anastomosis gastric bypass is an upcoming bariatric.",
-      button: <button>Read More</button>,
+      button: <Link href='/surgery/bariatric-surgery/duodenal-jejunal-bypass' ><button>Read More</button></Link>,
       imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH_qR3yAhoaVJGVumyHbfYYclLc9JD9AvgrbsnnS6lp7uxMI7VXXwlyTztxiPizSPLlKk&usqp=CAU",
     },
     {
       id: 5,
       title: "Banded Bariatric Surgery",
       excerpt: "The Gabp ring device is an annular restrictive ring placed around the newly surgically created.",
-      button: <button>Read More</button>,
+      button: <Link href='/surgery/bariatric-surgery/banded-bariatric-surgery' ><button>Read More</button></Link>,
       imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5sh26TnI-5VDHf2xbcddf5DD_WKqSncwdQYjzEzkckoYCSTfxrNOt5IjidPUp4iywm_k&usqp=CAU",
     },
     {
       id: 6,
       title: "Single Port Bariatric Surgery",
       excerpt: "Single incision surgery” or “single site surgery” or “single port surgery” is a very exciting new modality.",
-      button: <button>Read More</button>,
+      button: <Link href='/surgery/bariatric-surgery/single-port-bariatric-surgery' ><button>Read More</button></Link>,
       imageUrl: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSpOLMZ3-s7FRDf1lFGmCZIs19CHGVnohVe1KaXOHTKUUJGyDzQ",
     },
     {
       id: 7,
       title: "Endoscopic Intra Gastric Balloon",
       excerpt: "A non-surgical procedure which helps achieve better portion control by making you feel full after eating less food.",
-      button: <button>Read More</button>,
+      button: <Link href='/surgery/bariatric-surgery/endoscopic-intra-gastric-balloon' ><button>Read More</button></Link>,
       imageUrl: "https://www.obesitytreatments.co.uk/endoscopic-obesity-treatment/_jcr_content/root/container/container/container_copy/image.coreimg.png/1724839753362/intragastric-balloons-procedure-image-700x394px.png",
     },
     {
       id: 8,
       title: "Gastric Plication Surgery",
       excerpt: "Gastric Sleeve Plication surgery is a relatively new procedure performed by limited number of bariatric surgeons.",
-      button: <button>Read More</button>,
+      button: <Link href='/surgery/bariatric-surgery/gastric-plication-surgery' ><button>Read More</button></Link>,
       imageUrl: "https://indorelaparoscopycenter.com/wp-content/uploads/2022/08/Gastric_Plication_Surgery.jpg",
     },
 
@@ -149,7 +151,7 @@ function page() {
       id: 9,
       title: "Revision Bariatric Surgery",
       excerpt: "Revision bariatric surgery refers to weight loss surgery that is done when patients do not obtain outstanding.",
-      button: <button>Read More</button>,
+      button: <Link href='/surgery/bariatric-surgery/revision-bariatric-surgery' ><button>Read More</button></Link>,
       imageUrl: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSO7vdoRn7CFMQY7HvmPuXADWg9l7yn5jXbfFchW8L7eYHZAYDg",
     },
   ];
@@ -230,12 +232,12 @@ const cardVariants1 = {
         <div>
           <div className="relative w-full">
             <img
-              src="/main.jpg"
+              src="/bariatric.jpg"
               alt="Background"
               className="w-full object-cover opacity-200"/>
         
             <div className="absolute inset-0 flex items-center justify-center">
-              <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white px-4 py-2 rounded-md flex-col items-center justify-center text-center bg-transparent hover:bg-black hover:bg-opacity-20">
+              <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white px-4 py-2 rounded-md flex-col items-center justify-center text-center bg-black bg-opacity-25">
               Best Bariatric Surgeon <br />  in Delhi, India
               </h1>
             </div>
@@ -248,9 +250,8 @@ const cardVariants1 = {
             variants={boxVariants}
             transition={{  duration: 1 }}
             whileInView="visible"
-            viewport={{ amount: 0.2 }}
-            className="w-3/5 mx-auto relative sm:-mt-20 lg:-mt-40 px-8 py-10 bg-white shadow-sm shadow-black items-center rounded-lg"
-          >
+            viewport={{ amount: 0.2,once:true }}
+            className="sm:w-2/3 w-full mx-auto relative sm:-mt-12 lg:-mt-24 md:px-6 py-4 bg-white sm:shadow-md items-center md:rounded-lg">
             <FeatureList features={features} />
           </motion.div>
         </div>
@@ -261,8 +262,8 @@ const cardVariants1 = {
             <motion.div
             initial={{ opacity: 0, x: 100 }} 
             whileInView={{ opacity: 1, x: 0 }} 
-            viewport={{ amount: 0.3 }} 
-            transition={{ duration: 0.8 }}>
+            viewport={{ amount: 0.1,once:true }} 
+            transition={{ duration: 0.6 }}>
               <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">BEST LAPAROSCOPIC BARIATRIC SURGEON IN DELHI, INDIA</h2>
               <div className=" mb-4">
                 <p className='pt-2'> Dr. Kapil Agarwal is an internationally recognized, one of the experienced and best bariatric surgeon in Delhi India. He is well known experience of 20+ years and has done more than 7000 successful advanced Bariatric surgeries. </p>
@@ -302,8 +303,8 @@ const cardVariants1 = {
           <motion.div 
           initial={{ opacity: 0, x: -100 }} 
           whileInView={{ opacity: 1, x: 0 }} 
-          viewport={{ amount: 0.3 }} 
-          transition={{ duration: 0.8 }}
+          viewport={{ amount: 0.1,once:true }} 
+          transition={{ duration: 0.6 }}
           className='flex-col mb-8 '
           >
             <h2 className="text-3xl md:text-4xl font-semibold mb-2 text-first">Health Benefits of Bariatric Surgery</h2>
@@ -327,8 +328,8 @@ const cardVariants1 = {
             </motion.div>
             <motion.div  initial={{ opacity: 0, x: 100 }} 
            whileInView={{ opacity: 1, x: 0 }} 
-           viewport={{ amount: 0.3 }} 
-           transition={{ duration: 0.8 }}
+           viewport={{ amount: 0.1,once:true }} 
+           transition={{ duration: 0.6 }}
            className='flex-col mb-16 '>
             <h2 className="text-3xl md:text-4xl font-semibold mb-2 text-first">How We Perform Bariatric Surgeries?</h2>
             <div className=" mb-4 ">
@@ -362,7 +363,7 @@ const cardVariants1 = {
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ amount: 0.2 }}
+              viewport={{ amount: 0.2,once:true }}
               className="text-3xl md:text-4xl font-semibold text-first m-4">
                THE MAIN ADVANTAGES OF LAPAROSCOPIC SURGERY
               </motion.h1>
@@ -374,15 +375,16 @@ const cardVariants1 = {
               </motion.div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto p-6 pt-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl max-sm:w-full sm:mx-auto sm:px-6  py-6  pt-0">
               {featureData.map((feature, index) => (
                 <motion.div
                   key={index}
-                  className="rounded-xl bg-white p-8 shadow-md border-third border-2"
+                  className="rounded-xl bg-white py-6 px-3 sm:px-6 shadow-md border-third border-2"
                   variants={cardVariants1}
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ amount: 0.2 }}>
+                  viewport={{ amount: 0.2,once:true }}
+                >
                   <div className="mx-auto flex items-center justify-center h-24 w-24 -translate-y-16 transform rounded-full shadow-lg bg-first mb-0">
                   <svg viewBox="0 0 55 44" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-white mb-0">
                     <path
@@ -392,9 +394,9 @@ const cardVariants1 = {
                   </svg>
                   </div>
                   <div className='text-center'>
-                    <div className="text-lg mx-8">
+                    <div className="md:text-lg mx-2 md:mx-8">
                       {feature.points.map((point, index) => (
-                        <p key={index} className={`py-3 border-t border-third ${index===0?'border-none':''} `}>{point}</p>
+                        <p key={index} className={`py-2 border-t border-third ${index===0?'border-none':''} `}>{point}</p>
                       ))}
                     </div>
                   </div>
@@ -409,7 +411,7 @@ const cardVariants1 = {
          initial={{ opacity: -2 }} 
          whileInView={{ opacity: 1.5 }} 
          transition={{ duration: 2 }} 
-         viewport={{ amount: 0.2 }} >
+         viewport={{ amount: 0.05,once:true }} >
             <h2 className="text-3xl md:text-4xl font-semibold mb-2 mt-3 text-first">
             Common Bariatric Surgeries Done by Our Team
             </h2>
@@ -468,8 +470,8 @@ const cardVariants1 = {
             variants={imageVariants}
             initial={{ opacity: 0, x: -100 }} 
             whileInView={{ opacity: 1, x: 0 }} 
-            viewport={{ amount: 0.3 }} 
-            transition={{ duration: 0.8 }}
+            viewport={{ amount: 0.3,once:true }} 
+            transition={{ duration: 0.6 }}
             className="flex flex-col mx-auto px-8 md:px-16 lg:px-24 gap-10 mb-16">
             <div className='mt-4'>
              <h2 className="text-3xl md:text-4xl font-semibold mb-2 text-first text-left">
@@ -488,14 +490,15 @@ const cardVariants1 = {
 
 
 
-        <div className="flex flex-col mx-auto px-8 md:px-16 lg:px-24 gap-6">
+        <div className="flex flex-col mx-auto px-2 sm:px-6 md:px-12 lg:px-24 gap-6">
           <motion.div initial={{ opacity: -2 }} 
             whileInView={{ opacity: 1.5 }} 
-            transition={{ duration: 2 }} 
-            viewport={{ amount: 0.2 }} 
-            className='flex-col mx-6 mb-16 pt-4 md:px-24 border-first border-t-2'
+            transition={{ duration: 1 }} 
+            viewport={{ amount: 0.2,once:true }} 
+            className='flex-col mx-3 mb-16 pt-4 md:px-24 border-first border-t-2'
           >
-            <div className="flex justify-center items-end m-4"><BsPinFill className='text-3xl md:text-4xl text-second' />
+            <div className="flex justify-center items-end my-4">
+              <BsPinFill className='text-3xl md:text-4xl text-second' />
               <h1 className='font-bold text-3xl md:text-4xl text-center border-fourth border-b-2 mt-6  text-second'>FAQ</h1>
             </div>
             <div className="mb-4 ">

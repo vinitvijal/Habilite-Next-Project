@@ -145,12 +145,12 @@ const cardVariants1 = {
         <div>
           <div className="relative w-full">
             <img
-              src="/main.jpg"
+              src="/gallStone.jpg"
               alt="Background"
               className="w-full rounded-lg object-cover opacity-200"/>
         
             <div className="absolute inset-0 flex items-center justify-center">
-              <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white px-4 py-2 rounded-md flex-col items-center justify-center text-center bg-transparent hover:bg-black hover:bg-opacity-20 transition-all duration-400">
+              <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white px-4 py-2 rounded-md flex-col items-center justify-center text-center bg-black bg-opacity-25">
                 Best Gallbladder Surgeon <br /> in Delhi
               </h1>
             </div>
@@ -187,7 +187,7 @@ const cardVariants1 = {
                 <motion.p
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  transition={{ duration: 2 }}
+                  transition={{ duration: 1 }}
                   viewport={{ amount: 0.2,once: true }}
                   className="text-lg sm:text-xl md:text-2xl text-left mb-8 text-first px-4 md:px-8 lg:px-16 mx-auto text"
                 >
@@ -211,7 +211,7 @@ const cardVariants1 = {
               <img
               src="https://today.uconn.edu/wp-content/uploads/2019/01/GettyImages-536228692_human-liver_extended.jpg"
               alt="Background"
-              className="w-80 h-auto rounded-lg opacity-200 m-8 "/>
+              className="w-72 md:w-80 h-auto rounded-lg opacity-200 m-8 mx-auto "/>
               </div>
         
               <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-first">Function of the Gallbladder</h2>
@@ -387,7 +387,7 @@ const cardVariants1 = {
         <div className="flex flex-col mx-auto px-2 sm:px-6 md:px-12 lg:px-24 gap-6">
           <motion.div initial={{ opacity: -2 }} 
             whileInView={{ opacity: 1.5 }} 
-            transition={{ duration: 2 }} 
+            transition={{ duration: 1 }} 
             viewport={{ amount: 0.2,once:true }} 
             className='flex-col mx-3 mb-16 pt-4 md:px-24 border-first border-t-2'
           >

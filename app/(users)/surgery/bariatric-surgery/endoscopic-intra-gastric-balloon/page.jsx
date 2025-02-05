@@ -40,28 +40,6 @@ function page() {
   ];
 
 
-  const featureData = [
-    {
-      points: [
-        "Speedy Recovery",
-        "Early and Easy Mobility",
-        "Discharge within 24 hours",
-        "Virtually Scarless Surgery",
-      ],
-    },
- 
-    {
-      points: [
-        "Minor tissue trauma and less post-operative pain",
-        "Low risk of infection",
-        "Less Dependence on pain relievers",
-        "Almost no chance of hernia",
-      ],
-   
-    },
-  ];
-
-
 
 const cardVariants = {
   hidden: { opacity: 0, x: -50 },
@@ -104,12 +82,12 @@ const cardVariants1 = {
         <div>
           <div className="relative w-full">
             <img
-              src="/gastric.jpg"
+              src="/MAIN.jpg"
               alt="Background"
               className="w-full rounded-lg object-cover opacity-200"/>
         
             <div className="absolute inset-0 flex items-center justify-center">
-              <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white px-4 py-2 rounded-md flex-col items-center justify-center text-center bg-black bg-opacity-25 ">
+              <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white px-4 py-2 rounded-md flex-col items-center justify-center text-center bg-black bg-opacity-30 ">
               IntraGastric Balloon Surgery <br /> in Delhi
               </h1>
             </div>
@@ -123,8 +101,8 @@ const cardVariants1 = {
             whileInView={{ opacity: 1, x: 0 }} 
             viewport={{ amount: 0.2,once: true }} 
             transition={{ duration: 0.5 }}>
-              <h2 className="text-3xl font-semibold mb-2 text-first">INTRAGASTRIC BALLOON</h2>
-               <div className=" mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold mb-2 mt-3 text-second">Intragastric Balloon -</h2>
+               <div className=" mb-4 text-lg">
                  <p className='pt-3 font-semibold'>
                  A non-surgical procedure which helps achieve better portion control by making you feel full after eating less food.</p>
                  <p className='pt-2'>The intragastric balloon has emerged as one of the most promising and efficient solutions for weight loss in the past few years.</p>
@@ -163,12 +141,12 @@ const cardVariants1 = {
             <h2 className="text-3xl md:text-4xl font-semibold mb-2 text-first">
             Ideal Candidate for Intra-gastric Balloon</h2>
             <div className=" mb-4 ">
-              <p className='pt-2'><span className="font-medium mr-1">→ BMI requirement:</span>An ideal candidate should have a BMI ranging between 30 and 40. However, as mentioned earlier, </p>
+              <p className='pt-2'><span className="font-medium mr-1">BMI requirement:</span>An ideal candidate should have a BMI ranging between 30 and 40. However, as mentioned earlier, </p>
               <p className='pt-2 ml-5'>it can be placed in super-obese patients who are unfit for surgery or as an adjunct to bariatric surgery.</p>
-              <p className='pt-2'><span className="font-medium mr-1">→  Unsuccessful weight loss attempts:</span>Candidates have tried various weight-loss options or medical weight-loss programs but have yet to achieve the desired results.</p>
-              <p className='pt-2'><span className="font-medium mr-1">→ Willingness to commit to lifestyle changes:</span>Individual commitments to adopt and maintain healthy eating and lifestyle habits form the core of a </p>
+              <p className='pt-2'><span className="font-medium mr-1">Unsuccessful weight loss attempts:</span>Candidates have tried various weight-loss options or medical weight-loss programs but have yet to achieve the desired results.</p>
+              <p className='pt-2'><span className="font-medium mr-1">Willingness to commit to lifestyle changes:</span>Individual commitments to adopt and maintain healthy eating and lifestyle habits form the core of a </p>
               <p className='pt-2 ml-5'>successful weight loss program following balloon therapy. Candidates should be motivated and prepared to make these long-term adjustments.</p>
-              <p className='pt-2'><span className="font-medium mr-1">→ Absence of gastrointestinal disorders:</span>Candidates should be free from active gastrointestinal disorders, such as ulcers, strictures, or bleeding disorders.</p>
+              <p className='pt-2'><span className="font-medium mr-1">Absence of gastrointestinal disorders:</span>Candidates should be free from active gastrointestinal disorders, such as ulcers, strictures, or bleeding disorders.</p>
             </div>
             <br />
         
