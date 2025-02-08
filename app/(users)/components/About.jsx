@@ -1,63 +1,52 @@
 'use client'
 
 import React from 'react'
-import * as Separator from "@radix-ui/react-separator";
 import { motion } from "motion/react";
-import TextAnimate from '@/components/ui/anim-text';
+import Image from 'next/image';
+import { ChevronRight } from 'lucide-react';
+import Link from 'next/link';
 
 export default function About() {
   return (
-    <section className='h-full  py-5 w-full'>
-      <motion.div className='flex flex-col gap-2 items-center'>
-        <TextAnimate text="ABOUT US" type="calmInUp" className="text-2xl md:text-4xl text-center font-bold whitespace-normal" />
-      </motion.div>
-      <motion.div initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
+    <section className='rounded-3xl h-fit w-screen md:px-28 px-5 mb-16'>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8 }}>
-      {/* <p className='text-first text-3xl lg:text-5xl mb-4 text-left'>About Us</p>
-      <Separator.Root orientation="horizontal" className="mx-0 w-1/4 lg:w-1/12 h-[1px] bg-third" /> */}
-
-      {/* <div className="upper-content flex flex-col lg:flex-row mt-8 lg:mt-3">
-        <div className="content mt-8 lg:mr-5">
-
-          	<p className='text-xl lg:text-3xl text-second'>Best Laparoscopic, Laser and Weight Loss Surgery in Delhi</p>
-	@@ -32,7 +36,37 @@ function About() {
-
-      <div className="flex justify-center lg:justify-start">
-        <button className='mt-8 w-28 p-[6px] duration-300 border-first border-[1px] rounded-md hover:bg-first hover:text-white text-first'>Know More</button>
-      </div> */}
-
-        <div className='flex justify-center md:pb-8 pb-4'>
-        <div className='grid md:grid-cols-2 grid-cols-1 md:mt-14 mt-10 items-center gap-20 md:px-0 px-10'>
-          <div className='flex flex-col items-start gap-6'>
-            <div className='text-4xl text-first font-semibold whitespace-normal max-w-lg'>Best Laparoscopic, Laser and Weight Loss Surgery in Delhi</div>
-            <div className='flex flex-col gap-2'>
-              <div className='max-w-xl whitespace-normal text-sm'>Dr Kapil Agrawal is a senior & experienced surgeon having more than 20 yrs of dedicated service in the field of surgery, especially Advanced Laparoscopic Surgery / Bariatric and Laser Surgery. Throughout his career, he has distinguished himself through innovative practice methods, groundbreaking research and an unwavering pledge to patient welfare.
-              </div>
-              <div className='max-w-lg whitespace-normal text-sm'>Dr. Kapil Agrawal's expertise spans a wide spectrum of surgical procedures, from intricate and advanced laser surgeries for piles and fistula to transformative Bariatric or weight loss surgeries. ...
-              </div>
-              {/* <div className='max-w-lg whitespace-normal text-sm'>Dr. Kapil Agrawal's expertise spans a wide spectrum of surgical procedures, from intricate and advanced laser surgeries for piles and fistula to transformative Bariatric or weight loss surgeries. As a pioneer in the field of obesity management, he always advocates for holistic approaches, emphasizing the pivotal role of dietary changes and medical interventions in combating this global health epidemic. Having performed more than 7000+ advanced laparoscopic and bariatric surgeries, he is well known for his unparalleled expertise and compassionate patient care. He is fully committed to surgical excellence and patient well-being.
-              </div> */}
-            </div>
-            <div className='max-w-lg whitespace-normal text-normal'>
-              <div className='text-first font-semibold'>Dr. KAPIL AGRAWAL</div>
-              <div>MBBS, MS (SURGERY), MRCS (LONDON, U.K), MMED (SINGAPORE), FMAS</div>
-              <div className='text-sm text-first font-semibold'>Senior Consultant, Laparoscopic & Laser Surgeon</div>
-            </div>
-            <div><div className="flex justify-center">
-        <a href="" className=" text-first border border-first py-2 px-6 gap-2 rounded inline-flex items-center hover:bg-first hover:text-white duration-300">
-          <span>
-              Know more
-          </span>
-        </a>
-      </div></div>
-          </div>
-          <div className="docimg">
-            <img src="/doctor.webp" className='md:w-[34vw] md:ml-10' alt='' />
-          </div>
-        </div></div>
+        transition={{ duration: 0.8 }}
+      >
+        <p className='md:text-4xl text-3xl whitespace-normal font-semibold'>Best <span className='text-first'>Laparoscopic, Laser and Weight Loss Surgery</span> in Delhi.</p>
+        <p className='text-gray-500/80 md:text-xl text-lg mt-2 whitespace-normal'>Advanced surgical solutions tailored for your well-being.</p>
       </motion.div>
+
+      <div className="content mt-12 md:flex gap-6 justify-between">
+
+        <motion.div initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1}} className="text md:w-9/12 mt-3 text-lg">
+          <p className='whitespace-normal'>Dr Kapil Agrawal is a senior & experienced surgeon having more than 20 yrs of dedicated service in the field of surgery, especially Advanced Laparoscopic Surgery / Bariatric and Laser Surgery. Throughout his career, he has distinguished himself through innovative practice methods, groundbreaking research and an unwavering pledge to patient welfare.</p>
+          <p className='whitespace-normal mt-7'>Dr. Kapil Agrawal's expertise spans a wide spectrum of surgical procedures, from intricate and advanced laser surgeries for piles and fistula to transformative Bariatric or weight loss surgeries. As a pioneer in the field of obesity management, he always advocates for holistic approaches, emphasizing the pivotal role of dietary changes and medical interventions in combating this global health epidemic. Having performed more than 7000+ advanced laparoscopic and bariatric surgeries, he is well known for his unparalleled expertise and compassionate patient care. He is fully committed to surgical excellence and patient well-being.</p>
+          <div className="img-txt mt-16 text-md">
+            <p className='text-first font-semibold text-xl'>Dr. KAPIL AGRAWAL</p>
+            <p className='whitespace-normal text-md'>MBBS, MS (SURGERY), MRCS (LONDON, U.K), MMED (SINGAPORE), FMAS</p>
+            <p className='whitespace-normal text-md text-first font-semibold'>Senior Consultant, Laparoscopic & Laser Surgeon</p>
+          </div>
+        </motion.div>
+
+        <motion.div  initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }} className="image md:w-3/12 w-10/12 flex flex-col md:mt-0 mt-5 md:mx-0 mx-auto">
+          <Image
+            src="/doctor.webp"
+            width={350}
+            height={350}
+            alt="Dr.Kapil Agarwal" />
+
+          <Link href="/dr-kapil-about" className='self-end md:mr-12 mx-auto md:mt-auto mt-10 px-3 py-2 text-first border border-1 border-gray-300 rounded-md flex gap-1 items-center justify-center md:hover:text-white md:hover:bg-first select-none duration-150 cursor-pointer'>Read More <ChevronRight className='w-3 h-4' /></Link>
+        </motion.div>
+      </div>
     </section>
   )
 }
