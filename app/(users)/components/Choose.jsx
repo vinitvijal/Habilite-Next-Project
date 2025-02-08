@@ -71,14 +71,14 @@ const MotionCard = ({ title, description, icon, transitionDuration, className })
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: transitionDuration * 0.2 }}
         className={cn(
-          "group relative overflow-hidden rounded-2xl bg-[#CCD0D8]/10 backdrop-blur-sm p-8",
+          "group relative overflow-hidden rounded-lg bg-[#CCD0D8]/10 backdrop-blur-sm p-8",
           "border border-[#CCD0D8]/20 shadow-sm transition-all duration-300",
-          "hover:shadow-lg hover:border-[#84A4FC]/30",
+          "hover:shadow hover:border-[#84A4FC]/30",
           "dark:bg-[#1D2A73]/10 dark:border-[#1D2A73]/20 dark:hover:border-[#84A4FC]/20",
           className
         )}
       >
-        <div className="relative z-10 flex flex-col items-start gap-4">
+        <div className="relative z-10 flex flex-col items-center gap-4">
           <motion.div
             initial={{ scale: 0.8 }}
             whileInView={{ scale: 1 }}
@@ -97,7 +97,7 @@ const MotionCard = ({ title, description, icon, transitionDuration, className })
             </div>
           </motion.div>
   
-          <div className="space-y-2">
+          <div className="space-y-2 text-center">
             <motion.h3
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
