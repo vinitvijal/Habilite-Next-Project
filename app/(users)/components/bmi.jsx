@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Modal from './BmiModal';
 
 const BmiCalculator = () => {
     const [gender, setGender] = useState('');
@@ -8,6 +9,7 @@ const BmiCalculator = () => {
     const [weight, setWeight] = useState('');
     const [bmi, setBmi] = useState(null);
     const [message, setMessage] = useState('Enter your basic information to start calculating.');
+    const [isModalOpen, setModalOpen] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -35,6 +37,7 @@ const BmiCalculator = () => {
             bmiMessage += 'You are morbidly obese.';
         }
         setMessage(bmiMessage);
+        setModalOpen(true);
     };
 
     return (
@@ -98,6 +101,10 @@ const BmiCalculator = () => {
                     </div>
                 </form>
             </div>
+            <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
+                <h2 className="text-lg font-bold">BMI Calculation Result</h2>
+                {bmi && <p className="mt-4 text-md text-black">{message}</p>}
+            </Modal>
             <div className="w-full max-w-lg bg-white rounded-lg shadow-lg border-2 flex justify-center items-center">
                 <table className="w-full text-left">
                     <thead className="bg-gradient-to-r from-second/90 to-first text-white">
