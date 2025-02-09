@@ -39,7 +39,7 @@ const BmiCalculator = () => {
 
     return (
         <div className="flex flex-col lg:flex-row justify-center items-center lg:gap-20 gap-12 m-10 lg:m-0 mt-4 p-2">
-            <div className="max-w-lg p-8 bg-white rounded-lg shadow-lg border-2 border-third/35 bg-opacity-50">
+            <div className="w-full max-w-lg p-8 bg-white rounded-lg shadow-lg border-2 border-third/35 bg-opacity-50">
                 <form onSubmit={handleSubmit} className="flex flex-col space-y-5">
                     <div className="justify-center items-center min-w-fit">
                         <label className="block text-lg text-black">Select your gender:</label>
@@ -66,7 +66,7 @@ const BmiCalculator = () => {
                             type="number"
                             value={age}
                             onChange={(e) => setAge(e.target.value)}
-                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-black/50 sm:text-lg bg-white text-black"
+                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-black/40 sm:text-lg bg-white text-black"
                         />
                     </div>
                     <div>
@@ -75,7 +75,7 @@ const BmiCalculator = () => {
                             type="number"
                             value={height}
                             onChange={(e) => setHeight(e.target.value)}
-                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:outline-none focus:border-black/50  sm:text-lg bg-white text-black"
+                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-black/40 sm:text-lg bg-white text-black"
                         />
                     </div>
                     <div>
@@ -84,7 +84,7 @@ const BmiCalculator = () => {
                             type="number"
                             value={weight}
                             onChange={(e) => setWeight(e.target.value)}
-                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:outline-none focus:border-black/50  sm:text-lg bg-white text-black"
+                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-black/40 sm:text-lg bg-white text-black"
                         />
                     </div>
                     <div className="flex flex-col justify-center items-center">
