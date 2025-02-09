@@ -35,7 +35,7 @@ function ServiceBox({ title, imageSrc, links, index }) {
         hidden: { opacity: 0, x: 100 }, // Slide in from right
         visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: index * 0.2 } }  // Duration and delay for the animation
       }}
-      className='w-4/5 lg:w-full md:w-full xl:w-full 2xl:w-full  min-h-[560px] bg-white shadow-md flex-col justify-center items-center rounded-lg border-1 m-auto'
+      className='w-4/5 lg:w-full md:w-full xl:w-full 2xl:w-full h-[560px] bg-white shadow-md flex-col justify-center items-center rounded-lg border-1 m-auto overflow-hidden'
     >
       <div className='w-full h-16 px-4 bg-second rounded-t-lg font-semibold flex justify-center items-center text-xl sm:text-lg'>
         <div className="text-white">
@@ -49,7 +49,7 @@ function ServiceBox({ title, imageSrc, links, index }) {
         {links.map((link, linkIndex) => (
           <React.Fragment key={linkIndex}>
             <div className="flex justify-center w-full">
-              <Link className='text-lg sm:text-md font-medium text-second/70 hover:text-second hover:scale-105 duration-300 text-center' href={link.href}>
+              <Link className='text-md sm:text-md font-medium text-second/70 hover:text-second hover:scale-105 duration-300 text-center' href={link.href}>
                 {link.text}
               </Link>
             </div>
