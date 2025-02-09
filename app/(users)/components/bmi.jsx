@@ -38,63 +38,63 @@ const BmiCalculator = () => {
     };
 
     return (
-        <div className="flex flex-col lg:flex-row justify-center items-center lg:gap-20 gap-10">
-            <div className="w-full max-w-lg p-8 bg-gradient-to-r from-second/90 to-first/90 rounded-lg shadow-lg border-2 border-white bg-opacity-50">
+        <div className="flex flex-col lg:flex-row justify-center items-center lg:gap-20 gap-12 m-10 lg:m-0 mt-4 p-2">
+            <div className="max-w-lg p-8 bg-white rounded-lg shadow-lg border-2 border-third/35 bg-opacity-50">
                 <form onSubmit={handleSubmit} className="flex flex-col space-y-5">
                     <div className="justify-center items-center min-w-fit">
-                        <label className="block text-lg font-semibold text-white">Select your gender:</label>
+                        <label className="block text-lg text-black">Select your gender:</label>
                         <div className="flex">
                             <button
                                 type="button"
                                 onClick={() => setGender('male')}
-                                className={`py-2 px-4 w-full border-2 border-black/10 border-r-0 rounded-l-lg transition-colors duration-300 ${gender === 'male' ? 'bg-first text-white' : 'bg-white text-black hover:bg-gray-200'}`}
+                                className={`py-2 px-4 w-full border-2 border-white/20 border-r-0 rounded-l-lg transition-colors duration-300 ${gender === 'male' ? 'bg-gradient-to-r from-second/90 to-first text-white' : 'bg-third/90 text-black hover:bg-gray-200'}`}
                             >
                                 Male
                             </button>
                             <button
                                 type="button"
                                 onClick={() => setGender('female')}
-                                className={`py-2 px-4 w-full border-2 border-black/10 rounded-r-lg transition-colors duration-300 ${gender === 'female' ? 'bg-first text-white' : 'bg-white text-black hover:bg-gray-200'}`}
+                                className={`py-2 px-4 w-full border-2 border-white/20 rounded-r-lg transition-colors duration-300 ${gender === 'female' ? 'bg-gradient-to-r from-second/90 to-first text-white' : 'bg-third/90 text-black hover:bg-gray-200'}`}
                             >
                                 Female
                             </button>
                         </div>
                     </div>
                     <div>
-                        <label className="block text-lg font-semibold text-white">How old are you?</label>
+                        <label className="block text-lg  text-black">How old are you?</label>
                         <input
                             type="number"
                             value={age}
                             onChange={(e) => setAge(e.target.value)}
-                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-lg bg-white text-black"
+                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-black/50 sm:text-lg bg-white text-black"
                         />
                     </div>
                     <div>
-                        <label className="block text-lg font-semibold text-white">How tall are you? (cm)</label>
+                        <label className="block text-lg  text-black">How tall are you? (cm)</label>
                         <input
                             type="number"
                             value={height}
                             onChange={(e) => setHeight(e.target.value)}
-                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-lg bg-white text-black"
+                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:outline-none focus:border-black/50  sm:text-lg bg-white text-black"
                         />
                     </div>
                     <div>
-                        <label className="block text-lg font-semibold text-white">How much do you weigh? (kg)</label>
+                        <label className="block text-lg  text-black">How much do you weigh? (kg)</label>
                         <input
                             type="number"
                             value={weight}
                             onChange={(e) => setWeight(e.target.value)}
-                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-lg bg-white text-black"
+                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:outline-none focus:border-black/50  sm:text-lg bg-white text-black"
                         />
                     </div>
                     <div className="flex flex-col justify-center items-center">
                         <button
                             type="submit"
-                            className="mt-4 inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-lg font-medium rounded-md text-black bg-white hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform transform hover:scale-101"
+                            className="mt-4 inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-gradient-to-r from-second/90 to-first hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform transform hover:scale-101"
                         >
                             Calculate your BMI
                         </button>
-                        {message && <p className="mt-4 text-white text-md text-center">{message}</p>}
+                        {message && <p className="mt-4 text-black text-md text-center">{message}</p>}
                     </div>
                 </form>
             </div>
