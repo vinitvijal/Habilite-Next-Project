@@ -321,8 +321,8 @@ const benefits = [
             initial="hidden"
             whileInView="visible"
             viewport={{ amount: 0.2,once:true }}
-            className="flex items-center justify-center max-w-6xl mx-auto">
-              <div className=" p-12 border border-third hover:borounded-lg shadow-md">
+            className="flex items-center justify-center w-10/11 md:max-w-6xl mx-auto">
+              <div className="flex flex-col item-center justify-center p-10 sm:p-12 border border-third hover:borounded-lg shadow-md">
                 <h1 className="text-2xl md:text-3xl font-semibold text-first text-center mb-4">ADVANTAGES OF LASER PILES SURGERY</h1>
                 <div className="mb-4">
                   <p className='pt-2'>→ Laser surgery for piles involves less tissue damage due to its high precision, promoting faster healing.</p>
@@ -337,7 +337,7 @@ const benefits = [
                       {benefits.map((benefit, index) => (
                         <div
                           key={index}
-                          className="bg-white p-4 border border-third hover:border-first text-center font-semibold py-3 rounded w-72 sm:w-80 shadow-md" >
+                          className="bg-white p-4 border border-third hover:border-first text-center font-semibold py-3 rounded w-7/8 sm:w-80 shadow-md" >
                           {benefit}
                         </div>
                       ))}

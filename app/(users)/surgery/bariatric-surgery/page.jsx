@@ -406,7 +406,7 @@ const cardVariants1 = {
           </div>
         </div>
 
-        <div className='flex flex-col mx-auto px-8 md:px-16 lg:px-24 gap-10 mb-16'>
+        <div className='flex flex-col mx-auto px-2 md:px-16 lg:px-24 gap-10 mb-16'>
           <motion.div 
          initial={{ opacity: -2 }} 
          whileInView={{ opacity: 1.5 }} 
@@ -420,7 +420,7 @@ const cardVariants1 = {
               <p className='pt-2'>Each surgery has got its indication, benefits, advantages, and some disadvantages. Our detailed and thorough evaluation selects the best bariatric procedure based on dietary habits, lifestyle, associated medical illness, and your weight loss goals.</p>
               <p className='pt-2'>The procedures offered by our team include :-</p>
  
-           <div className="relative px-10 pt-6 pb-12 lg:px-8">
+           <div className="relative px-5 md:px-10 pt-6 pb-12 lg:px-8">
             <div className="absolute inset-0">
              <div className="h-1/3 bg-white sm:h-2/3"></div>
            </div>
@@ -436,7 +436,7 @@ const cardVariants1 = {
               variants={cardVariants}
               className="flex flex-col overflow-hidden rounded-lg shadow-lg" >
              <div className="flex-shrink-0">
-               <img className="h-48 w-full" 
+               <img className="h-48 w-4/5" 
                src={page.imageUrl}  />
              </div>
              <div className="flex flex-1 flex-col justify-between bg-white p-6">
