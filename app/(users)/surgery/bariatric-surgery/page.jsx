@@ -436,7 +436,7 @@ const cardVariants1 = {
               variants={cardVariants}
               className="flex flex-col overflow-hidden rounded-lg shadow-lg" >
              <div className="flex-shrink-0">
-               <img className="h-48 w-4/5" 
+               <img className="h-48 w-full" 
                src={page.imageUrl}  />
              </div>
              <div className="flex flex-1 flex-col justify-between bg-white p-6">
