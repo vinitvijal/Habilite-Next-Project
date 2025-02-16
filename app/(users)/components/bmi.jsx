@@ -50,14 +50,14 @@ const BmiCalculator = () => {
                             <button
                                 type="button"
                                 onClick={() => setGender('male')}
-                                className={`py-2 px-4 w-full border-2 border-white/20 border-r-0 rounded-l-lg transition-colors duration-300 ${gender === 'male' ? 'bg-gradient-to-r from-second/90 to-first text-white' : 'bg-third/90 text-black hover:bg-gray-200'}`}
+                                className={`py-2 px-4 w-full border-2 border-white/20 border-r-0 rounded-l-lg transition-colors duration-300 ${gender === 'male' ? 'bg-first text-white' : 'bg-third/90 text-black hover:bg-gray-200'}`}
                             >
                                 Male
                             </button>
                             <button
                                 type="button"
                                 onClick={() => setGender('female')}
-                                className={`py-2 px-4 w-full border-2 border-white/20 rounded-r-lg transition-colors duration-300 ${gender === 'female' ? 'bg-gradient-to-r from-second/90 to-first text-white' : 'bg-third/90 text-black hover:bg-gray-200'}`}
+                                className={`py-2 px-4 w-full border-2 border-white/20 rounded-r-lg transition-colors duration-300 ${gender === 'female' ? 'bg-first text-white' : 'bg-third/90 text-black hover:bg-gray-200'}`}
                             >
                                 Female
                             </button>
@@ -93,7 +93,7 @@ const BmiCalculator = () => {
                     <div className="flex flex-col justify-center items-center">
                         <button
                             type="submit"
-                            className="mt-4 inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-gradient-to-r from-second/90 to-first hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform transform hover:scale-101"
+                            className="mt-4 inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-first hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform transform hover:scale-101"
                         >
                             Calculate your BMI
                         </button>
@@ -107,7 +107,7 @@ const BmiCalculator = () => {
             </Modal>
             <div className="w-full max-w-lg bg-white rounded-lg shadow-lg border-2 flex justify-center items-center">
                 <table className="w-full text-left">
-                    <thead className="bg-gradient-to-r from-second/90 to-first text-white">
+                    <thead className="bg-first text-white">
                         <tr>
                             <th className="border-b-2 border-gray-300 px-4 py-2 text-white text-lg" style={{ width: '50%' }}>BMI Range</th>
                             <th className="border-b-2 border-gray-300 px-4 py-2 text-white text-lg" style={{ width: '50%' }}>Category</th>
