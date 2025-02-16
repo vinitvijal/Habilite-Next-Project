@@ -10,12 +10,12 @@ import {
 } from "@/components/ui/card";
 import { Plus } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { NewTestimonialDialog } from "./testimonial-modal";
 import {
   createTestimonial,
   deleteAdminTest,
   getAdminTest,
 } from "@/actions/testimonial";
+import { getBlogs } from "@/actions/blogs";
 
 function Page() {
   const [isNewTestimonialOpen, setIsNewTestiomonialOpen] = useState(false);
@@ -23,10 +23,11 @@ function Page() {
 
   async function getData() {
     const token = localStorage.getItem("token");
-    const data = await getAdminTest(token);
+    const data = await getBlogs(token);
     if (!data) {
       alert("Error in Validation");
     }
+    console.log(data[2].blogContent)
     setTests(data);
   }
 
@@ -45,7 +46,7 @@ function Page() {
         </Button>
       </div>
       <div className=" grid grid-cols-2 gap-4">
-        
+        {/* {tests && tests.map(test)} */}
       </div>
     </div>
   );
