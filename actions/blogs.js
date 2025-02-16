@@ -15,17 +15,27 @@ export async function getBlogs(token){
 }
 
 export async function createBlog( content){
-    console.log(content)
-    await prisma.blogs.update({
-        where: {
-            blogID: 'cm77grl3w0000ujzkeq5lgo9h'
-        },
+    const parseData = (str) => {
+        const obj = {};
+        str.trim().split("\n").forEach(line => {
+            const [key, ...value] = line.split(": ");
+            obj[key.trim()] = value.join(": ").trim(); // Handle multi-word values
+        });
+        return obj;
+    };
+    const parsedData = parseData(content)
+
+
+    return await prisma.blogs.create({
         data: {
-            blogContent: content
+            blogAuthor: parsedData.author,
+            blogTitle: parsedData.title,
+            blogSlug: parsedData.slug,
+            blogDescription: parsedData.description,
+            blogContent: content,
         }
     })
-
-    console.log('done')
+    
 }
 
 export async function getBlogBySlug(slug){

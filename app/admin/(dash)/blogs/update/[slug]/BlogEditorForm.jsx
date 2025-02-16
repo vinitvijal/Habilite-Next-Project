@@ -8,13 +8,13 @@ import { useRouter } from "next/navigation"
 
 const MDEditor = dynamic(() => import("@uiw/react-md-editor").then((mod) => mod.default), { ssr: false })
 
-export default function BlogWriterForm() {
+export default function BlogWriterForm(slug) {
 const [markdown, setMarkdown] = useState('')
 const [blogId, setBlogId] = useState('')
 const router = useRouter()
 
 async function getData(){
-    const blog = await getBlogBySlug('test3')
+    const blog = await getBlogBySlug(slug)
     console.log(blog)
     if(!blog){
         router.back()

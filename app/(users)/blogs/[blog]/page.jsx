@@ -13,24 +13,37 @@ import rehypeStringify from 'rehype-stringify'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import { unified } from 'unified'
+import { getBlogBySlug } from '@/actions/blogs';
 
 export const dynamic = 'force-static'
 
 export default async function Page({ params }) {
 
-  const filepath = `https://habilite.s3.ap-south-1.amazonaws.com/blogpage-content/${(await params).blog}.md`
+  // const filepath = `https://habilite.s3.ap-south-1.amazonaws.com/blogpage-content/${(await params).blog}.md`
+
+
+  const blogData = await getBlogBySlug((await params).blog)
+  const fileContent = blogData.blogContent
+
+
 
   // if (!fs.existsSync(filepath)) {
   //   notFound()
   //   return
   // }
 
-  const response = await fetch(filepath, { cache: 'force-cache', next: { revalidate: 86400 }});
-  if (!response.ok) {
-    notFound();
-    return;
-  }
-  const fileContent = await response.text();
+  // const response = await fetch(filepath, 
+  //   // { cache: 'force-cache', next: { revalidate: 86400 }}
+  // );
+  // if (!response.ok) {
+  //   notFound();
+  //   return;
+  // }
+  // const fileContent = await response.text();
+
+
+
+
   const { content, data } = matter(fileContent)
 
   const processor = await unified()
