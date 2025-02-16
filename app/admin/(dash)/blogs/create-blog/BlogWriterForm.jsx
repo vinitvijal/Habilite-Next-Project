@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Switch } from "@/components/ui/switch"
+import { createBlog } from "@/actions/blogs"
 
 const MDEditor = dynamic(() => import("@uiw/react-md-editor").then((mod) => mod.default), { ssr: false })
 
@@ -36,10 +36,11 @@ const [markdown, setMarkdown] = useState(`
     ---
 `)
 
-const handleSubmit = (e) => {
+const handleSubmit = async (e) => {
     e.preventDefault()
     // Handle form submission here
-    console.log({ title, description, slug, excerpt, date, blogImage, tag, featured, trending, markdown })
+    createBlog(markdown)
+    // console.log({ title, description, slug, excerpt, date, blogImage, tag, featured, trending, markdown })
   }
 
   return (
