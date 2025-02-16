@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Plus } from "lucide-react";
+import { Delete, Edit, Plus } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import {
   createTestimonial,
@@ -16,6 +16,8 @@ import {
   getAdminTest,
 } from "@/actions/testimonial";
 import { getBlogs } from "@/actions/blogs";
+import { ArrowTopRightIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
 
 function Page() {
   const [isNewTestimonialOpen, setIsNewTestiomonialOpen] = useState(false);
@@ -44,9 +46,41 @@ function Page() {
           <Plus className="mr-2 h-4 w-4" />
           New Blog
         </Button>
+        {/* type Blogs = {
+    blogID: string;
+    blogTitle: string;
+    blogDescription: string;
+    blogDate: Date | null;
+    blogAuthor: string;
+    blogContent: string;
+    blogTags: string[];
+} */}
       </div>
-      <div className=" grid grid-cols-2 gap-4">
-        {/* {tests && tests.map(test)} */}
+      <div className=" grid grid-cols-3 gap-4">
+        {tests && tests.map((test) => (
+          <Card key={test.blogID}>
+            <CardHeader>
+              <CardTitle>
+                {test.blogTitle}
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              {test.blogDescription}
+            </CardContent>
+            <CardFooter className='flex gap-4'>
+              <Button variant='destructive'>
+                Delete <Delete />
+              </Button>
+              <Button >
+                Edit <Edit/>
+              </Button>
+              <Link href={`/blogs/${test.blogID}`}>
+                Visit <ArrowTopRightIcon />
+              </Link>
+              
+            </CardFooter>
+          </Card>
+        ))}
       </div>
     </div>
   );
