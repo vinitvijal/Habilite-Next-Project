@@ -64,20 +64,19 @@ function Page() {
                 {test.blogTitle}
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className='h-20'>
               {test.blogDescription}
             </CardContent>
             <CardFooter className='flex gap-4'>
               <Button variant='destructive'>
                 Delete <Delete />
               </Button>
-              <Button >
-                Edit <Edit/>
-              </Button>
-              <Link href={`/blogs/${test.blogID}`}>
-                Visit <ArrowTopRightIcon />
+              <Link href={`/admin/blogs/update/${test.blogSlug}`} className=" flex gap-2 items-center float-right bg-zinc-800 px-4 py-2 text-zinc-100 text-sm rounded-md">
+                Edit <Edit size='20'/>
               </Link>
-              
+              <Link href={`/blogs/${test.blogSlug}`} className=" flex gap-2 items-center float-right bg-zinc-800 px-4 py-2 text-zinc-100 text-sm rounded-md">
+                Visit <ArrowTopRightIcon size='20'/>
+              </Link>
             </CardFooter>
           </Card>
         ))}

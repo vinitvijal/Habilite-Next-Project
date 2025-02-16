@@ -25,10 +25,12 @@ model Blogs{
   blogID String @id @default(cuid())
   blogTitle String 
   blogDescription String
+  blogSlug String?
   blogDate DateTime? @default(now())
   blogAuthor String
   blogContent String
   blogTags String[]
+  blogActive Boolean @default(true)
 }
 
 model Testimonials{

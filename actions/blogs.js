@@ -26,3 +26,14 @@ export async function createBlog( content){
 
     console.log('done')
 }
+
+export async function getBlogBySlug(slug){
+    return await prisma.blogs.findFirst({
+        where: {
+            blogSlug: slug
+        },
+        select:{
+            blogContent: true
+        }
+    })
+}
