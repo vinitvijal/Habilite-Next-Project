@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import CalorieModal from './CalorieModal';
 
 const CalorieCalculator = () => {
   const [gender, setGender] = useState('');
@@ -8,7 +9,8 @@ const CalorieCalculator = () => {
   const [inches, setInches] = useState('');
   const [weight, setWeight] = useState('');
   const [activityLevel, setActivityLevel] = useState('');
-  const [calories, setCalories] = useState(null);
+  const [calories, setCalories] = useState('')
+  const [isModalOpen, setModalOpen] = useState(false);
   const [message, setMessage] = useState('Enter your basic information to start calculating.');
 
   const calculateCalories = (e) => {
@@ -71,12 +73,14 @@ const CalorieCalculator = () => {
     });
 
     setMessage(`Your Daily Calories\n${totalCalories}\nYou need ${totalCalories} Calories/day to maintain your weight.\n\nYou need ${calorieLoss05} calories/day to lose 0.5 kg per week.\n\nYou need ${calorieLoss1} calories/day to lose 1 kg per week.\n\nYou need ${calorieGain05} calories/day to gain 0.5 kg per week.\n\nYou need ${calorieGain1} Calories/day to gain 1 kg per week.`);
+    setModalOpen(true);
   };
+  
 
   return (
     <div className="flex flex-col lg:flex-row justify-center items-center lg:gap-20 gap-10">
       <div className="w-full max-w-lg p-8 bg-white rounded-lg shadow-lg border-2">
-        <form onSubmit={calculateCalories} className="flex flex-col space-y-5">
+        <form  className="flex flex-col space-y-5">
           <div>
             <label className="block text-md font-medium text-black">Gender:</label>
             <div className="flex shadow-sm justify-center items-center min-w-fit">
@@ -95,13 +99,14 @@ const CalorieCalculator = () => {
             <input type="number" value={age} onChange={(e) => setAge(e.target.value)} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md" />
           </div>
           <div>
-            <label className="block text-md font-medium text-black">Height:</label>
+            <label className="block text-md font-medium text-black">Height(Feet):</label>
             <div className='flex shadow-sm justify-center items-center min-w-fit gap-2 py-2'>
               {[1,2,3,4,5,6,7].map(ft => (
-                <button key={ft} onClick={() => setFeet(ft)} className={`bg-third py-1 px-1 w-full border-2 border-white/45 rounded-full ${feet == ft ? 'bg-first' : ''}`}>{ft}</button>
+                <button key={ft} type="button" onClick={() => setFeet(ft)} className={`bg-third py-1 px-2 border-2 border-white/45 rounded-full ${feet == ft ? 'bg-first text-white' : ''}`}>{ft}</button>
               ))}
             </div>
-            <select onChange={(e) => setInches(e.target.value)} className='mt-1 block w-full py-2 px-2 bg-white rounded-md'>
+            <label className=" mt-4 block text-md font-medium text-black">Height(Inches):</label>
+            <select onChange={(e) => setInches(e.target.value)} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md">
               {[...Array(12).keys()].map(inch => (
                 <option key={inch} value={inch}>{inch}</option>
               ))}
@@ -122,12 +127,12 @@ const CalorieCalculator = () => {
               <option value="very active">Very active (very hard exercise & physical job)</option>
             </select>
           </div>
-          <button type="submit" className="mt-4 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-md font-medium rounded-md text-white bg-first hover:bg-fourth">Calculate Calories</button>
+          <button type="submit" onClick={calculateCalories} className="mt-4 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-md font-medium rounded-md text-white bg-first hover:bg-fourth">Calculate Calories</button>
         </form>
       </div>
-      <div className=' justify-center items-center flex'>
-        {message && <pre className="mt-4 text-first text-sm whitespace-pre-wrap">{message}</pre>}
-      </div>
+      <CalorieModal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
+      <p>{message}</p>
+      </CalorieModal>
     </div>
   );
 };
