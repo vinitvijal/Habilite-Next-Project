@@ -2,25 +2,15 @@
 import { useState } from "react"
 import dynamic from "next/dynamic"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
 import { createBlog } from "@/actions/blogs"
+import { useRouter } from "next/navigation"
 
 const MDEditor = dynamic(() => import("@uiw/react-md-editor").then((mod) => mod.default), { ssr: false })
 
 export default function BlogWriterForm() {
-  const [title, setTitle] = useState("")
-  const [description, setDescription] = useState("")
-  const [slug, setSlug] = useState("")
-  const [excerpt, setExcerpt] = useState("")
-  const [date, setDate] = useState("")
-  const [blogImage, setBlogImage] = useState("")
-  const [tag, setTag] = useState("")
-  const [featured, setFeatured] = useState(false)
-const [trending, setTrending] = useState(false)
-const [markdown, setMarkdown] = useState(`
-    ---
+    const router = useRouter()
+const [markdown, setMarkdown] = useState(`---
     id: 1
     title: Which is the Best Bariatric Surgery
     description: Bariatric surgery is a transformative and life altering procedure meant for people suffering from obesity and obesity related health problems. However, one of the critical considerations for anyone is the high cost of bariatric surgery. Cost of weight loss surgery is one of the key factors for majority of the patients undergoing bariatric surgery. In this article, Dr. Kapil Agrawal, one of the best bariatric surgeon in Delhi describes about various factors influencing the bariatric surgery cost in Delhi, India.
@@ -33,14 +23,18 @@ const [markdown, setMarkdown] = useState(`
     tag: Bariatric Surgery
     featured: True
     trending: True
-    ---
+---
 `)
 
 const handleSubmit = async (e) => {
     e.preventDefault()
-    // Handle form submission here
-    createBlog(markdown)
-    // console.log({ title, description, slug, excerpt, date, blogImage, tag, featured, trending, markdown })
+    const res = await  createBlog(markdown)
+    if(!res){
+        alert("Blog Creation is Failed, Please Save Your Data, Refresh the Page and Try Again")
+        return
+    }
+    alert("Your Blog is Created")
+    router.replace('/admin/blogs')
   }
 
   return (

@@ -8,7 +8,8 @@ import { useRouter } from "next/navigation"
 
 const MDEditor = dynamic(() => import("@uiw/react-md-editor").then((mod) => mod.default), { ssr: false })
 
-export default function BlogWriterForm(slug) {
+export default function BlogWriterForm(params) {
+    const slug = params.slug
 const [markdown, setMarkdown] = useState('')
 const [blogId, setBlogId] = useState('')
 const router = useRouter()
