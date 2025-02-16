@@ -41,10 +41,10 @@ function Page() {
     <div className="container mx-auto py-10 overflow-y-auto h-screen">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold">Blogs</h1>
-        <Button onClick={() => setIsNewTestiomonialOpen(true)}>
+        <Link href={'/admin/blogs/create-blog'} className=" flex items-center px-3 py-2 rounded-md text-zinc-100 bg-zinc-800">
           <Plus className="mr-2 h-4 w-4" />
           New Blog
-        </Button>
+        </Link>
         {/* type Blogs = {
     blogID: string;
     blogTitle: string;
