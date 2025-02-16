@@ -3,24 +3,17 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { Delete, Edit, Plus } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import {
-  createTestimonial,
-  deleteAdminTest,
-  getAdminTest,
-} from "@/actions/testimonial";
 import { getBlogs } from "@/actions/blogs";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 
 function Page() {
-  const [isNewTestimonialOpen, setIsNewTestiomonialOpen] = useState(false);
   const [tests, setTests] = useState([]);
 
   async function getData() {
@@ -45,15 +38,6 @@ function Page() {
           <Plus className="mr-2 h-4 w-4" />
           New Blog
         </Link>
-        {/* type Blogs = {
-    blogID: string;
-    blogTitle: string;
-    blogDescription: string;
-    blogDate: Date | null;
-    blogAuthor: string;
-    blogContent: string;
-    blogTags: string[];
-} */}
       </div>
       <div className=" grid grid-cols-3 gap-4">
         {tests && tests.map((test) => (
