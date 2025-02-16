@@ -41,13 +41,14 @@ export default function About() {
           <motion.div  initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }} className="image md:w-3/12 w-10/12 flex flex-col md:mt-0 mt-5 md:mx-0 mx-auto">
+            transition={{ duration: 0.7 }} 
+            className="image md:w-3/12 w-10/12 flex items-center gap-4 justify-center flex-col  md:mt-0 mt-5 md:mx-0 mx-auto">
             <Image
               src="/doctor.webp"
               width={350}
               height={350}
-              alt="Dr.Kapil Agarwal" className='md:border hidden md:block md:border-1 md:border-gray-500/20 rounded-xl md:shadow-md duration-300'/>
-            <Link href="/about/dr-kapil-about" className='self-end md:mr-12 mx-auto md:mt-auto mt-10 px-3 py-2 text-first border border-1 border-gray-300 rounded-md flex gap-1 items-center justify-center md:hover:text-white md:hover:bg-first select-none duration-150 cursor-pointer'>Read More <ChevronRight className='w-3 h-4' /></Link>
+              alt="Dr.Kapil Agarwal" className='hidden md:block w-full  md:border-1 md:border-gray-500/20 rounded-xl md: duration-300'/>
+            <Link href="/about/dr-kapil-about" className=' w-max px-3 py-2 text-first border border-1 border-gray-300 rounded-md flex gap-1 items-center justify-center md:hover:text-white md:hover:bg-first select-none duration-150 cursor-pointer'>Read More <ChevronRight className='w-3 h-4' /></Link>
           </motion.div>
         </div>
       </div>

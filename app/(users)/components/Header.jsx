@@ -9,6 +9,7 @@ import { Menu, X, ChevronDown } from 'lucide-react'
 import { Dialog, DialogTrigger, DialogContent, DialogOverlay, DialogPortal, DialogClose, DialogTitle, DialogDescription } from "@radix-ui/react-dialog";
 import { Accordion, AccordionContent, AccordionHeader, AccordionTrigger, AccordionItem } from "@radix-ui/react-accordion";
 import { Separator } from '@radix-ui/react-separator'
+import AppointmentButton from './HeadBook'
 
 function Header() {
   const selected = "text-first before:w-full hover:text-first";
@@ -207,8 +208,8 @@ function Header() {
                         </AccordionItem>
                       </Accordion>
                     </div>
-                    <button className='whitespace-nowrap overflow-hidden px-3 py-2 w-full flex justify-center select-none rounded-md border-[0.5px] border-first border-solid bg-transparent text-first text-md duration-200 text-lg active:scale-95 shadow-md active:shadow-none'>Book Appointment</button>
-
+                    {/* <button className='whitespace-nowrap overflow-hidden px-3 py-2 w-full flex justify-center select-none rounded-md border-[0.5px] border-first border-solid bg-transparent text-first text-md duration-200 text-lg active:scale-95 shadow-md active:shadow-none'>Book Appointment</button> */}
+                      <AppointmentButton/>
                   </div>
 
                 </DialogDescription>
@@ -374,7 +375,8 @@ function Header() {
       </div>
 
       <div>
-        <button className=' px-3 py-2 hidden md:flex select-none rounded-md border-[0.5px] border-first border-solid bg-transparent text-first hover:text-white hover:bg-first text-md duration-200 md:text-sm lg:text-base'>Book Appointment</button>
+        {/* <button className=' px-3 py-2 hidden md:flex select-none rounded-md border-[0.5px] border-first border-solid bg-transparent text-first hover:text-white hover:bg-first text-md duration-200 md:text-sm lg:text-base'>Book Appointment</button> */}
+        <AppointmentButton className='hidden md:block'/>
       </div>
     </header>
   )

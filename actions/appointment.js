@@ -95,6 +95,9 @@ export async function getAppointments(token, page = 0) {
   const response = await prisma.bookAppointment.findMany({
     take: 10,
     skip: page * 10,
+    orderBy: {
+      appointDate: 'desc'
+    }
   });
   return response;
 }
