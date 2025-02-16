@@ -337,7 +337,7 @@ const benefits = [
                       {benefits.map((benefit, index) => (
                         <div
                           key={index}
-                          className="bg-white p-4 border border-third hover:border-first text-center font-semibold py-3 rounded w-7/8 sm:w-80 shadow-md" >
+                          className="w-full bg-white p-4 border border-third hover:border-first text-center font-semibold py-3 rounded w-7/8 sm:w-80 shadow-md" >
                           {benefit}
                         </div>
                       ))}
