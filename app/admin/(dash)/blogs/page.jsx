@@ -29,7 +29,6 @@ function Page() {
     if (!data) {
       alert("Error in Validation");
     }
-    console.log(data[2].blogContent)
     setTests(data);
   }
 
@@ -64,7 +63,7 @@ function Page() {
                 {test.blogTitle}
               </CardTitle>
             </CardHeader>
-            <CardContent className='h-20'>
+            <CardContent className='h-20 overflow-y-auto mb-4'>
               {test.blogDescription}
             </CardContent>
             <CardFooter className='flex gap-4'>

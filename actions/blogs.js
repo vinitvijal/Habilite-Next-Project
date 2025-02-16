@@ -1,6 +1,7 @@
 'use server'
 import { PrismaClient } from "@prisma/client"
 import { Validate } from "./auth"
+const yaml = require('js-yaml');
 
 const prisma = new PrismaClient()
 
@@ -33,7 +34,32 @@ export async function getBlogBySlug(slug){
             blogSlug: slug
         },
         select:{
-            blogContent: true
+            blogContent: true,
+            blogID: true
+        }
+    })
+}
+
+export async function updateBlog(content, blogId){
+    const parseData = (str) => {
+        const obj = {};
+        str.trim().split("\n").forEach(line => {
+            const [key, ...value] = line.split(": ");
+            obj[key.trim()] = value.join(": ").trim(); // Handle multi-word values
+        });
+        return obj;
+    };
+    const parsedData = parseData(content)
+    return await prisma.blogs.update({
+        where: {
+            blogID: blogId
+        },
+        data: {
+            blogAuthor: parsedData.author,
+            blogTitle: parsedData.title,
+            blogSlug: parsedData.slug,
+            blogDescription: parsedData.description,
+            blogContent: content
         }
     })
 }

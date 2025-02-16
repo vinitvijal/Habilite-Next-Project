@@ -3,13 +3,14 @@ import { useEffect, useState } from "react"
 import dynamic from "next/dynamic"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
-import { getBlogBySlug } from "@/actions/blogs"
+import { getBlogBySlug, updateBlog } from "@/actions/blogs"
 import { useRouter } from "next/navigation"
 
 const MDEditor = dynamic(() => import("@uiw/react-md-editor").then((mod) => mod.default), { ssr: false })
 
 export default function BlogWriterForm() {
 const [markdown, setMarkdown] = useState('')
+const [blogId, setBlogId] = useState('')
 const router = useRouter()
 
 async function getData(){
@@ -19,6 +20,7 @@ async function getData(){
         router.back()
     }
     setMarkdown(blog.blogContent)
+    setBlogId(blog.blogID)
 }
 
 
@@ -29,7 +31,13 @@ useEffect(()=>{
 const handleSubmit = async (e) => {
     e.preventDefault()
     // Handle form submission here
-    updateBlog(token, markdown, slug)
+    const res = await updateBlog(markdown, blogId)
+    console.log(res)
+    if(!res){
+        alert("Update Failed")
+        return
+    }
+    alert("Updated!")
     // console.log({ title, description, slug, excerpt, date, blogImage, tag, featured, trending, markdown })
   }
 
