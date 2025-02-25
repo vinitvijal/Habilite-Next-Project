@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import TextAnimate from "@/components/ui/anim-text";
+import BgImage from '@/public/images/BgImage.png';
 
 function Blog() {
   const blogs = [
@@ -46,15 +47,19 @@ function Blog() {
   };
 
   return (
-    <div className="pb-20">
-       <motion.div className='flex flex-col gap-2 items-center pt-20'>
-        <TextAnimate text="RECENT BLOGS" type="calmInUp" className="text-2xl md:text-4xl text-center font-bold whitespace-normal" />
-        <TextAnimate text="Insights From Our Medical Experts" type="calmInUp" className='md:text-xl text-lg font-medium text-first' />
-      </motion.div>
+    <div className="relative min-h-screen bg-cover bg-center bg-no-repeat" 
+    style={{ backgroundImage: "url('/images/BgImage.png')" }}>
+      <motion.div className="flex flex-col gap-2 items-center pt-20">
+  <div className="bg-transparent px-6 py-2 text-center h-24 w-auto">
+    <TextAnimate text="RECENT BLOGS" type="calmInUp" className="text-2xl md:text-4xl text-center font-bold whitespace-normal ml-6" />
+    <TextAnimate text="Insights From Our Medical Experts" type="calmInUp" className="md:text-xl text-lg font-medium text-first text-center pt-3" />
+  </div>
+</motion.div>
+
 
       <div className="relative px-10 pt-6 pb-12 lg:px-8">
         <div className="absolute inset-0">
-          <div className="h-1/3 bg-white sm:h-2/3"></div>
+          <div className="h-1/3 bg-transparent sm:h-2/3"></div>
         </div>
         <div className="relative mx-auto max-w-6xl">
           <motion.div
@@ -104,16 +109,19 @@ function Blog() {
         </div>
       </div>
 
-      <div className="flex justify-center pt-10">
-        <a href="" className=" text-first border border-first py-2 px-6 gap-2 rounded inline-flex items-center">
+      <div className="flex justify-center pt-5">
+        <div className="bg-transparent p-1 w-auto mb-6">
+        <a href="" className=" bg-white text-first border border-first/20 py-2 px-6 gap-2 rounded inline-flex items-center">
           <span>
               More Blogs
           </span>
+        
           <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
               viewBox="0 0 24 24" className="w-6 h-6 text-first">
               <path d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
         </a>
+        </div>
       </div>
     </div>
   );
