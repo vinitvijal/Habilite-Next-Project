@@ -85,7 +85,7 @@ function Team() {
 
 
   return (
-    <div className="w-screen px-4 sm:px-8 lg:px-16 md:pb-10">
+    <div className="w-screen md:pb-10">
      <div id="team-section" className="relative md:pt-4 pt-16">
         {/* <div className="text-center mb-10">
           <motion.h1 
@@ -108,18 +108,20 @@ function Team() {
             className="mx-auto border-blue-200 border-b-4 mt-6"
           ></motion.div>
         </div> */}
+        <div className="bg-gray-200">
         <motion.div className='flex flex-col gap-2 items-center justify-center pt-20 pb-14'>
           <TextAnimate text="MEET THE TEAM" type="calmInUp" className="text-2xl md:text-4xl text-center font-bold whitespace-normal w-xl" />
           <motion.h1
         initial={{ y: 20, opacity: 0 }}
         animate={hasAnimated ? { y: 0, opacity: 1 } : {}}
         transition={{ ease: "easeInOut", duration: 0.5 }}
-        className="mb-6 md:text-lg text-normal text-first text-wrap md:px-[20vw] px-6 text-center font-medium"
+        className="mb-6 md:text-lg text-normal text-gray-800 text-wrap md:px-[20vw] px-6 text-center font-medium"
       >
         We are a team of qualified psychiatrists and psychologists from premier institutions of the country.
         We are highly motivated to provide cutting-edge evidence-based management for mental health issues tailored to individual needs.
       </motion.h1>
         </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 md:gap-16 gap-6 max-w-7xl mx-auto md:px-10 px-2 mb-8">
           {teamMembers.map((member, index) => (
