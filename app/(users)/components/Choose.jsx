@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import TextAnimate from "@/components/ui/anim-text";
 import { cn } from "@/lib/utils";
 
-const reasons = [
+const firstReasons = [
     {
         title: "Your health is our priority",
         description: "Our clinic is home to a team of highly qualified doctors, specialists, and healthcare staff with decades of combined experience. We ensure every patient receives expert guidance and treatment tailored to their unique needs.",
@@ -24,35 +24,50 @@ const reasons = [
         icon: "https://img.icons8.com/?size=100&id=H0fT5t4BS8rR&format=png&color=000000",
         transitionDuration: 1.5,
     },
-    {
-        title: "Patient-Centered Approach",
-        description: "We pride ourselves on utilizing state-of-the-art medical equipment and modern facilities to provide accurate diagnoses and effective treatments. From routine checkups to specialized procedures, we deliver top-notch care.",
-        icon: "https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/66/external-Doctor-And-Patient-medical-concepts-smashingstocks-flat-smashing-stocks-4.png",
-        transitionDuration: 1.75,
-    },
-    {
-        title: "Advanced Facilities & Technology",
-        description: "We pride ourselves on utilizing state-of-the-art medical equipment and modern facilities to provide accurate diagnoses and effective treatments. From routine checkups to specialized procedures, we deliver top-notch care.",
-        icon: "https://img.icons8.com/?size=100&id=H0fT5t4BS8rR&format=png&color=000000",
-        transitionDuration: 1.5,
-    },
-    {
-        title: "Patient-Centered Approach",
-        description: "We pride ourselves on utilizing state-of-the-art medical equipment and modern facilities to provide accurate diagnoses and effective treatments. From routine checkups to specialized procedures, we deliver top-notch care.",
-        icon: "https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/66/external-Doctor-And-Patient-medical-concepts-smashingstocks-flat-smashing-stocks-4.png",
-        transitionDuration: 1.75,
-    },
+];
+
+const reasons = [
+
+  {
+    title: "Patient-Centered Approach",
+    description: "We pride ourselves on utilizing state-of-the-art medical equipment and modern facilities to provide accurate diagnoses and effective treatments. From routine checkups to specialized procedures, we deliver top-notch care.",
+    icon: "https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/66/external-Doctor-And-Patient-medical-concepts-smashingstocks-flat-smashing-stocks-4.png",
+    transitionDuration: 1.75,
+},
+{
+    title: "Advanced Facilities & Technology",
+    description: "We pride ourselves on utilizing state-of-the-art medical equipment and modern facilities to provide accurate diagnoses and effective treatments. From routine checkups to specialized procedures, we deliver top-notch care.",
+    icon: "https://img.icons8.com/?size=100&id=H0fT5t4BS8rR&format=png&color=000000",
+    transitionDuration: 1.5,
+},
+{
+    title: "Patient-Centered Approach",
+    description: "We pride ourselves on utilizing state-of-the-art medical equipment and modern facilities to provide accurate diagnoses and effective treatments. From routine checkups to specialized procedures, we deliver top-notch care.",
+    icon: "https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/66/external-Doctor-And-Patient-medical-concepts-smashingstocks-flat-smashing-stocks-4.png",
+    transitionDuration: 1.75,
+},
+
 ];
 
 function Choose() {
     return (
         <section id="Choose" className="py-20 w-full">
+          <div className="bg-[#2C62A2] opacity-100">
             <motion.div className='flex flex-col gap-2 items-center pt-20 pb-14'>
-                <TextAnimate text="Why Choose Us?" type="calmInUp" className="uppercase text-2xl md:text-4xl text-center font-bold whitespace-normal" />
+                <TextAnimate text="Why Choose Us?" type="calmInUp" className="uppercase text-2xl md:text-4xl text-center text-white font-bold whitespace-normal" />
             </motion.div>
 
             <div>
-                <div className="md:px-36 px-10 relative md:flex-row flex-col min-h-[60vh] gap-8 grid md:grid-cols-3 grid-cols-1 justify-center overflow-hidden md:py-6">
+                <div className="md:px-36 px-10 relative md:flex-row flex-col min-h-[40vh] gap-8 grid md:grid-cols-3 grid-cols-1 justify-center overflow-hidden md:py-6">
+                    {firstReasons.map((reason, index) => (
+                        <MotionCard key={index} {...reason} />
+                    ))}
+                </div>
+            </div>
+            </div>
+
+            <div>
+                <div className="md:px-36 px-10 relative md:flex-row flex-col min-h-[40vh] gap-8 grid md:grid-cols-3 grid-cols-1 justify-center overflow-hidden md:py-6">
                     {reasons.map((reason, index) => (
                         <MotionCard key={index} {...reason} />
                     ))}
@@ -60,6 +75,10 @@ function Choose() {
             </div>
 
         </section>
+          
+
+        
+        
     );
 }
 
@@ -71,7 +90,7 @@ const MotionCard = ({ title, description, icon, transitionDuration, className })
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: transitionDuration * 0.2 }}
         className={cn(
-          "group relative overflow-hidden rounded-lg bg-[#CCD0D8]/10 backdrop-blur-sm p-8",
+          "group relative overflow-hidden rounded-lg bg-white backdrop-blur-sm p-8",
           "border border-[#CCD0D8]/20 shadow-sm transition-all duration-300",
           "hover:shadow hover:border-[#84A4FC]/30",
           "dark:bg-[#1D2A73]/10 dark:border-[#1D2A73]/20 dark:hover:border-[#84A4FC]/20",
@@ -128,4 +147,3 @@ const MotionCard = ({ title, description, icon, transitionDuration, className })
 };
 
 export default Choose;
-
