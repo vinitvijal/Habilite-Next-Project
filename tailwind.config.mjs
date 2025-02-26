@@ -21,10 +21,11 @@ const config = {
 			},
 		  }),
   		colors: {
-  			first: '#1463F3',
-  			second: '#1D2A73',
-  			third: '#CCD0D8',
-  			fourth: '#84A4FC',
+  			first: '#3D52A0',
+  			second: '#7091E6',
+  			third: '#8697C4',
+  			fourth: '#ADBBDA',
+			fifth: '#EDE8F5',
   			background: 'var(--background)',
   			foreground: 'var(--foreground)',
   			card: {
