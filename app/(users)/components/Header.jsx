@@ -20,7 +20,7 @@ function Header() {
   const pathname = usePathname();
   return (
     <>
-      <div className="hidden blue h-24 bg-first text-white z-10 w-full md:flex justify-between px-16 items-center">
+      <div className="hidden blue h-24 bg-first text-white z-10 w-full md:flex justify-between px-24 items-center">
         <div className="icons flex gap-3">
           <Link href={'https://www.facebook.com/habilite/'}><Facebook className='w-5' /></Link>
           <Link href={'mailto:contact@habiliteclinics.com'}>
