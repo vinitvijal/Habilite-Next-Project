@@ -20,26 +20,33 @@ function Header() {
   const pathname = usePathname();
   return (
     <>
-      <div className="hidden blue h-24 bg-first text-white z-10 w-full md:flex justify-between px-24 items-center">
-        <div className="icons flex gap-3">
-          <Link href={'https://www.facebook.com/habilite/'}><Facebook className='w-5' /></Link>
-          <Link href={'mailto:contact@habiliteclinics.com'}>
-            <Mail className='w-5' />
-          </Link>
-          <Link href={'https://twitter.com/habilitecare'}>
-            <Twitter className='w-5' />
-          </Link>
-          <Link href={'https://www.linkedin.com/company/habilite-bariatrics'}>
-            <Linkedin className='w-5' />
-          </Link>
+      <div className="hidden blue h-16 bg-first text-white w-full md:flex justify-between px-24 items-center">
+
+      <div className="text text-2xl font-bold flex text-">
+          Habilite Clinic.
         </div>
 
-        <div className="text text-3xl font-bold flex text-">
+
+        <div className='flex gap-6 items-center'>
+      <div className="text text-md font-semibold flex mr-1">
           Dr. Kapil Agarwal
         </div>
-
-        <div className="book-button flex">
-          <button className='bg-yellow-400 px-3 py-2 flex font-semibold rounded-xl gap-2 text-lg items-center'>Book Now <StepForward className='bg-white p-[3px] font-bold w-7 h-7 text-yellow-400 rounded-full' /></button>
+          <div className="icons flex gap-3">
+            <Link href={'https://www.facebook.com/habilite/'}><Facebook className='w-4' /></Link>
+            <Link href={'mailto:contact@habiliteclinics.com'}>
+              <Mail className='w-4' />
+            </Link>
+            <Link href={'https://twitter.com/habilitecare'}>
+              <Twitter className='w-4' />
+            </Link>
+            <Link href={'https://www.linkedin.com/company/habilite-bariatrics'}>
+              <Linkedin className='w-4' />
+            </Link>
+          </div>
+          
+          <div className="book-button flex">
+            <button className='bg-yellow-400 px-2 rounded-sm py-2 flex font-semibold gap-2 text-md items-center'>Book Now <StepForward className='bg-white p-[3px] font-bold w-5 h-5 text-yellow-400 rounded-full' /></button>
+          </div>
         </div>
       </div>
       <header className='shadow-md flex justify-between px-4 gap-3 items-center w-full h-20 border-b-[0.5px] border-b-gray-300 md:gap-0 md:h-16 md:px-10 md:border-none lg:px-20'>
