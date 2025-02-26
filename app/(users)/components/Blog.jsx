@@ -1,8 +1,10 @@
 'use client';
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import TextAnimate from "@/components/ui/anim-text";
-import BgImage from '@/public/images/BgImage.png';
+import doctor from "@/public/doctor.webp"
+
 
 function Blog() {
   const blogs = [
@@ -50,7 +52,7 @@ function Blog() {
     <div className="relative min-h-screen bg-cover bg-center bg-no-repeat" 
     style={{ backgroundImage: "url('/images/BgImage.png')" }}>
       <motion.div className="flex flex-col gap-2 items-center pt-20">
-  <div className="bg-transparent px-6 py-2 text-center h-24 w-auto">
+  <div className="bg-white px-6 py-2 text-center h-24 w-auto">
     <TextAnimate text="RECENT BLOGS" type="calmInUp" className="text-2xl md:text-4xl text-center font-bold whitespace-normal ml-6" />
     <TextAnimate text="Insights From Our Medical Experts" type="calmInUp" className="md:text-xl text-lg font-medium text-first text-center pt-3" />
   </div>
@@ -87,7 +89,7 @@ function Blog() {
                   <div className="mt-6 flex items-center">
                     <div className="flex-shrink-0">
                       <a href="#">
-                        <img className="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt={blog.author} />
+                        <Image className="h-10 w-10 rounded-full" src={doctor} alt={blog.author} />
                       </a>
                     </div>
                     <div className="w-full flex justify-between items-center">
@@ -110,8 +112,8 @@ function Blog() {
       </div>
 
       <div className="flex justify-center pt-5">
-        <div className="bg-transparent p-1 w-auto mb-6">
-        <a href="" className=" bg-white text-first border border-first/20 py-2 px-6 gap-2 rounded inline-flex items-center">
+        <div className="bg-white p-1 w-auto mb-6">
+        <a href="" className=" text-first border border-first py-2 px-6 gap-2 rounded inline-flex items-center">
           <span>
               More Blogs
           </span>
