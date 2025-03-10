@@ -30,7 +30,6 @@ const router = useRouter()
 
 async function getData(){
     const blog = await getBlogBySlug(slug)
-    console.log(blog)
     if(!blog){
         router.back()
     }

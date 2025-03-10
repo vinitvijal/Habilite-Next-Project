@@ -25,7 +25,6 @@ export default async function Page({ params }) {
   const blogData = await getBlogBySlug((await params).blog)
   const fileContent = blogData.blogContent
 
-  console.log(fileContent)
 
   // if (!fs.existsSync(filepath)) {
   //   notFound()
