@@ -25,7 +25,6 @@ export default async function Page({ params }) {
   const blogData = await getBlogBySlug((await params).blog)
   const fileContent = blogData.blogContent
 
-  console.log(fileContent)
 
   // if (!fs.existsSync(filepath)) {
   //   notFound()
@@ -79,7 +78,7 @@ export default async function Page({ params }) {
 
                   <div className="name-date text-sm">
                     <p className=''>{data.author}</p>
-                    <p className='text-[#869AB8]'>Published on {data.date}</p>
+                    <p className='text-[#869AB8]'>Published on {new Date(data.date).toDateString()}</p>
                   </div>
                 </div>
 

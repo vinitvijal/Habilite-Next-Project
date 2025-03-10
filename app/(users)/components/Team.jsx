@@ -85,7 +85,7 @@ function Team() {
 
 
   return (
-    <div className="w-screen px-4 sm:px-8 lg:px-16 md:pb-10">
+    <div className="w-screen md:pb-10">
      <div id="team-section" className="relative md:pt-4 pt-16">
         {/* <div className="text-center mb-10">
           <motion.h1 
@@ -108,8 +108,8 @@ function Team() {
             className="mx-auto border-blue-200 border-b-4 mt-6"
           ></motion.div>
         </div> */}
-        <div className="bg-gray-300">
-        <motion.div className='flex flex-col gap-2 items-center justify-center pt-16 pb-12'>
+        <div className="bg-gray-200">
+        <motion.div className='flex flex-col gap-2 items-center justify-center pt-20 pb-14'>
           <TextAnimate text="MEET THE TEAM" type="calmInUp" className="text-2xl md:text-4xl text-center font-bold whitespace-normal w-xl" />
           <motion.h1
         initial={{ y: 20, opacity: 0 }}

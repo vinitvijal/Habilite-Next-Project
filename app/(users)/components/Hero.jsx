@@ -28,8 +28,8 @@ const fadeImages = [
 
 const Hero = () => {
   return (
-    <div className="relative min-h-screen md:px-0 sm:pb-0 ">
-      <div className="h-full">
+    <div className="relative min-h-screen w-screen py-12 sm:pb-0 ">
+      <div className="h-full md:px-20 px-4">
         <Fade arrows={false}
         duration={2000}
         transitionDuration={1000}
@@ -39,13 +39,13 @@ const Hero = () => {
         >
         {fadeImages.map((fadeImage, index) => (
           <div key={index}>
-            <img src={fadeImage.url} className='md:h-full h-[40vh] object-cover md:w-full w-[160vw]' />
+            <img src={fadeImage.url} className='md:h-full h-[40vh] rounded-xl md:object-cover object-fill md:w-full w-[160vw]' />
           </div>
         ))}
       </Fade>
       </div>
          <StatsPage />
-      
+      <img src='/images/hpattern.svg' className='absolute w-screen md:bottom-0 bottom-[0vh] -z-10 opacity-60' />
     </div>
   );
 };
