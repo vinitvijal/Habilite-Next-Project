@@ -25,6 +25,7 @@ export async function createBlog( content){
     };
     const parsedData = parseData(content)
 
+    console.log(parsedData)
 
     return await prisma.blogs.create({
         data: {
