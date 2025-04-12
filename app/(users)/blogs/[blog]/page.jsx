@@ -2,7 +2,6 @@ import * as Separator from '@radix-ui/react-separator';
 import React from 'react';
 import Image from 'next/image';
 import matter from 'gray-matter';
-import { notFound } from 'next/navigation';
 import { categories } from '../index';
 import Link from 'next/link';
 import { featured } from '../index';
@@ -16,6 +15,40 @@ import { unified } from 'unified'
 import { getBlogBySlug } from '@/actions/blogs';
 
 export const dynamic = 'force-static'
+
+
+export async function generateMetadata({ params } ){
+  const blogData = await getBlogBySlug((await params).blog)
+  const fileContent = blogData.blogContent
+  const { content, data } = matter(fileContent)
+
+
+  return {
+    title: data.title,
+    description: data.description,
+    author: [{ name: data.author }],
+    keywords: data.tag,
+    twitter: {
+      card: 'summary_large_image',
+      title: data.title,
+      description: data.description,
+      creator: data.author,
+      images: [data.blogImage],
+    },
+    openGraph: {
+      images: data.blogImage,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: [
+        {
+          url: data.blogImage,
+          alt: data.title,
+        },
+      ],
+    },
+  }
+}
 
 export default async function Page({ params }) {
 
@@ -54,7 +87,7 @@ export default async function Page({ params }) {
 
   const htmlcontent = (await processor.process(content)).toString()
 
-
+  console.log(data)
   return (
     <>
       <section className='flex md:pl-28 gap-5'>
