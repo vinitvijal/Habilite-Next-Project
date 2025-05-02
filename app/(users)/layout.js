@@ -1,6 +1,7 @@
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import BookAppointment from "./components/BookAppointment";
 
 
 
@@ -14,6 +15,8 @@ export default function RootLayout({ children }) {
     <main className=" w-screen min-h-screen flex flex-col items-center justify-between">
         <Header />
         {children}
+
+          <BookAppointment/>
         <Footer />
     </main>
   );
