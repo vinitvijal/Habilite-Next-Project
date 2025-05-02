@@ -7,7 +7,7 @@ import Hospitals from "./components/Hospitals";
 import Services from "./components/Services";
 import Team from "./components/Team";
 import Testimonials from "./components/Testimonials";
-
+import FAQs from "./components/FAQs";
 
 
 export default function Home() {
@@ -21,6 +21,7 @@ export default function Home() {
       <Team/>
       <Testimonials />
       <Choose/>
+      <FAQs/>
       <Blog/>
     </div>
   );
