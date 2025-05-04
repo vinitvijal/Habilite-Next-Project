@@ -70,9 +70,9 @@ function Modal({isVisible, onClose}) {
   if (!isVisible ) return null;
 
   return (
-    <div id='appointment' className='fixed z-50 inset-0 bg-opacity-40 bg-black backdrop-blur-md  w-full flex items-center justify-center ' >
+    <div id='appointment' className='light fixed z-50 inset-0 bg-opacity-40 text-zinc-800 bg-black backdrop-blur-md  w-full flex items-center justify-center ' >
       <div className={`mx-12 px-6 pt-5 max-sm:min-w-[60vw] w-full max-w-md bg-white shadow-black shadow-sm  rounded-md ${isVisible ? 'animate-fadein' : ''} ${!showAnimation?'animate-fadeout':''} `}>
-        <h1 className=" mb-4 font-semibold text-xl sm:text-2xl text-center">Book An Appointment</h1>
+        <h1 className=" mb-4 font-semibold text-xl sm:text-2xl text-center ">Book An Appointment</h1>
         
         {loading ? (
           <div className="flex justify-center items-center flex-1 py-16 w-full h-full "><AiOutlineLoading3Quarters className=' text-first size-12 animate-spin' /></div>

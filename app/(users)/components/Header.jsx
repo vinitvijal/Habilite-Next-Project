@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { ChevronRight, Facebook, Instagram, Linkedin, Mail, StepForward, Twitter } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -11,8 +11,10 @@ import { Accordion, AccordionContent, AccordionHeader, AccordionTrigger, Accordi
 import { Separator } from '@radix-ui/react-separator'
 import AppointmentButton from './HeadBook'
 import { LinkedInLogoIcon } from '@radix-ui/react-icons'
+import Modal from './Modal'
 
 function Header() {
+  const [showModal,setShowModal]=useState(false)
   const selected = "text-first before:w-full hover:text-first";
   const selectedDropdown = "text-first before:w-11/12 hover:text-first before:bg-center";
   const dash = "";
@@ -45,8 +47,9 @@ function Header() {
           </div>
           
           <div className="book-button flex">
-            <button className='bg-yellow-400 px-2 rounded-sm py-2 flex font-semibold gap-2 text-md items-center'>Book Now <StepForward className='bg-white p-[3px] font-bold w-5 h-5 text-yellow-400 rounded-full' /></button>
+            <button onClick={()=>{setShowModal(true)}} className='bg-yellow-400 px-2 rounded-sm py-2 flex font-semibold gap-2 text-md items-center'>Book Now <StepForward className='bg-white p-[3px] font-bold w-5 h-5 text-yellow-400 rounded-full' /></button>
           </div>
+          <Modal isVisible={showModal} onClose={()=>{setShowModal(false)}}/>
         </div>
       </div>
       <header className='shadow-md flex justify-between px-4 gap-3 items-center w-full h-20 border-b-[0.5px] border-b-gray-300 md:gap-0 md:h-16 md:px-10 md:border-none lg:px-20'>
