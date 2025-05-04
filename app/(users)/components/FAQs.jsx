@@ -114,7 +114,7 @@ function FAQ() {
             >
               <span
                 className={`text-sm md:text-base font-medium ${openIndex === index ? 'text-white' : 'text-first'
-                  } transition-all duration-300 ease-in-out text-left`}
+                  } transition-all duration-300 ease-in-out text-wrap text-left`}
               >
                 {faq.question}
               </span>
@@ -133,7 +133,7 @@ function FAQ() {
                 } duration-300 ease-in-out overflow-hidden`}
             >
               <div className="px-3 md:px-6 py-4 bg-gray-100">
-                <p className="text-xs md:text-sm text-left" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                <p className="text-xs md:text-sm text-left text-wrap" dangerouslySetInnerHTML={{ __html: faq.answer }} />
               </div>
             </div>
           </div>
