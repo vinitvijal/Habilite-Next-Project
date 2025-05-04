@@ -40,3 +40,7 @@ export async function deleteAdminTest(token, id){
         }
     })
 }
+
+export async function getTestimonials(){
+    return await prisma.testimonials.findMany();
+}
