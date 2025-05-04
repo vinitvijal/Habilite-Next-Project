@@ -74,9 +74,11 @@ function Header() {
                   <DialogDescription asChild>
                     <div className="h-full flex flex-col gap-4 pl-2 pr-2">
                       <div className="buttons flex flex-col py-6 text-lg gap-1">
+                      <DialogClose asChild>
                         <Link href="/">
                           <p className={cn('py-3 px-5 mb-1 rounded-full', pathname == "/" && selectedAcc)}>Home</p>
                         </Link>
+                      </DialogClose>
                         <Accordion type='single' collapsible>
                           <AccordionItem value="item1">
                             <AccordionHeader>
@@ -86,12 +88,17 @@ function Header() {
                             </AccordionHeader>
                             <AccordionContent className='AccordionContent overflow-clip' asChild>
                               <div className='text-md pl-4 flex flex-col gap-1'>
+                              <DialogClose asChild>
                                 <Link href="/about">
                                   <p className={cn('rounded-full pl-4 py-2', pathname == "/about" && selectedAcc)}>About Habilite Clinic</p>
                                 </Link>
+                              </DialogClose>
+                              <DialogClose asChild>
+
                                 <Link href="/about/dr-kapil-about">
                                   <p className={cn('rounded-full pl-4 py-2', pathname == "/about/dr-kapil-about" && selectedAcc)}>Dr. Kapil Agarwal</p>
                                 </Link>
+                              </DialogClose>
                               </div>
                             </AccordionContent>
                           </AccordionItem>
@@ -112,21 +119,31 @@ function Header() {
                                     </AccordionHeader>
                                     <AccordionContent className='AccordionContent overflow-clip' asChild>
                                       <div className='text-md pl-4 flex flex-col gap-1'>
+                                      <DialogClose asChild>
                                         <Link href="/surgery/laparoscopic/gall-stone">
                                           <p className={cn('rounded-full pl-4 py-2', pathname == "/surgery/laparoscopic/gall-stone" && selectedAcc)}>Gall Stones</p>
                                         </Link>
+                                      </DialogClose>
+                                      <DialogClose asChild>
                                         <Link href="/surgery/laparoscopic/hernia">
                                           <p className={cn('rounded-full pl-4 py-2', pathname == "/surgery/laparoscopic/hernia" && selectedAcc)}>Hernia</p>
                                         </Link>
+                                        </DialogClose>
+                                      <DialogClose asChild>
                                         <Link href="/surgery/laparoscopic/rectal-prolapse">
                                           <p className={cn('rounded-full pl-4 py-2', pathname == "/surgery/laparoscopic/rectal-prolapse" && selectedAcc)}>Rectal Prolapse</p>
                                         </Link>
+                                        </DialogClose>
+                                      <DialogClose asChild>
                                         <Link href="/surgery/laparoscopic/appendix">
                                           <p className={cn('rounded-full pl-4 py-2', pathname == "/surgery/laparoscopic/appendix" && selectedAcc)}>Appendix</p>
                                         </Link>
+                                        </DialogClose>
+                                      <DialogClose asChild>
                                         <Link href="/surgery/laparoscopic/gerd">
                                           <p className={cn('rounded-full pl-4 py-2', pathname == "/surgery/laparoscopic/gerd" && selectedAcc)}>Gerd</p>
                                         </Link>
+                                        </DialogClose>
                                         <Separator className='bg-gray-300 h-[1.5px] w-11/12' orientation='horizontal' />
                                       </div>
                                     </AccordionContent>
@@ -139,24 +156,37 @@ function Header() {
                                     </AccordionHeader>
                                     <AccordionContent className='AccordionContent overflow-clip' asChild>
                                       <div className='text-md pl-4 flex flex-col gap-1'>
+                                        <DialogClose asChild>
                                         <Link href="/surgery/laser/piles">
                                           <p className={cn('rounded-full pl-4 py-2', pathname == "/surgery/piles" && selectedAcc)}>Hemorrhoids/Piles</p>
                                         </Link>
+                                        </DialogClose>
+                                        <DialogClose asChild>
                                         <Link href="/surgery/laser/anal-fissure">
                                           <p className={cn('rounded-full pl-4 py-2', pathname == "/surgery/anal-fissure" && selectedAcc)}>Anal Fissure</p>
                                         </Link>
+                                        </DialogClose>
+                                        <DialogClose asChild>
                                         <Link href="/surgery/laser/pilonidal-sinus">
                                           <p className={cn('rounded-full pl-4 py-2', pathname == "/surgery/pilonidal-sinus" && selectedAcc)}>Pilonidal Sinus</p>
                                         </Link>
+                                        </DialogClose>
+                                        <DialogClose asChild>
                                         <Link href="/surgery/laser/anal-fistula">
                                           <p className={cn('rounded-full pl-4 py-2', pathname == "/surgery/anal-fistula" && selectedAcc)}>Anal Fistula</p>
                                         </Link>
+                                        </DialogClose>
+                                        <DialogClose asChild>
                                         <Link href="/surgery/laser/lipoma">
                                           <p className={cn('rounded-full pl-4 py-2', pathname == "/surgery/lipoma" && selectedAcc)}>Lipoma</p>
                                         </Link>
+                                        </DialogClose>
+                                        <DialogClose asChild>
                                         <Link href="/surgery/laser/circumcision">
                                           <p className={cn('rounded-full pl-4 py-2', pathname == "/surgery/circumcision" && selectedAcc)}>Circumcision</p>
                                         </Link>
+                                        </DialogClose>
+
                                         <Separator className='bg-gray-300 h-[1.5px] w-11/12' orientation='horizontal' />
                                       </div>
                                     </AccordionContent>
@@ -169,18 +199,26 @@ function Header() {
                                     </AccordionHeader>
                                     <AccordionContent className='AccordionContent overflow-clip' asChild>
                                       <div className='text-md pl-4 flex flex-col gap-1'>
+                                        <DialogClose asChild>
                                         <Link href="/surgery/bariatrics/bariatric-surgery">
                                           <p className={cn('rounded-full pl-4 py-2', pathname == "/surgery/bariatric-surgery" && selectedAcc)}>Bariatric Surgery</p>
                                         </Link>
+                                        </DialogClose>
+                                        <DialogClose asChild>
                                         <Link href="/surgery/bariatrics/medical-weight-loss-program">
                                           <p className={cn('rounded-full pl-4 py-2', pathname == "/surgery/medical-weight-loss-program" && selectedAcc)}>Non-Surgical Weight Loss Program</p>
                                         </Link>
+                                        </DialogClose>
+                                        <DialogClose asChild>
                                         <Link href="/surgery/bariatrics/surgery-for-diabetes">
                                           <p className={cn('rounded-full pl-4 py-2', pathname == "/surgery/surgery-for-diabetes" && selectedAcc)}>Surgery for Diabetes</p>
                                         </Link>
+                                        </DialogClose>
+                                        <DialogClose asChild>
                                         <Link href="/surgery/bariatrics/intraGastric-balloon">
                                           <p className={cn('rounded-full pl-4 py-2', pathname == "/surgery/intraGastric-balloon" && selectedAcc)}>Intragastric Balloon</p>
                                         </Link>
+                                        </DialogClose>
                                         <Separator className='bg-gray-300 h-[1.5px] w-11/12' orientation='horizontal' />
                                       </div>
                                     </AccordionContent>
@@ -189,12 +227,16 @@ function Header() {
                               </Accordion>
                             </AccordionContent>
                           </AccordionItem>
+                          <DialogClose asChild>
                           <Link href="/blogs">
                             <p className={cn('py-3 px-5 mb-1 rounded-full', pathname.startsWith("/blogs") && selectedAcc)}>Blogs</p>
                           </Link>
+                          </DialogClose>
+                          <DialogClose asChild>
                           <Link href="/more/contact-us">
                             <p className={cn('py-3 px-5 mb-1 rounded-full whitespace-nowrap', pathname.startsWith("/more/contact-us") && selectedAcc)}>Contact Us</p>
                           </Link>
+                          </DialogClose>
                           <AccordionItem value="item3">
                             <AccordionHeader>
                               <AccordionTrigger className='data-open:bg-blue-300 group duration-200' asChild>
@@ -203,12 +245,16 @@ function Header() {
                             </AccordionHeader>
                             <AccordionContent className='AccordionContent overflow-hidden' asChild>
                               <div className='text-md pl-4 flex flex-col gap-1'>
+                                <DialogClose asChild>
                                 <Link href="/international-patient">
                                   <p className={cn('rounded-full pl-4 py-2', pathname == "/international-patient" && selectedAcc)}>International Patient</p>
                                 </Link>
+                                </DialogClose>
+                                <DialogClose asChild>
                                 <Link href="/more/faqs">
                                   <p className={cn('rounded-full pl-4 py-2', pathname == "/more/faqs" && selectedAcc)}>FAQs</p>
                                 </Link>
+                                </DialogClose>
                               </div>
                             </AccordionContent>
                           </AccordionItem>
