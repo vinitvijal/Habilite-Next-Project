@@ -8,6 +8,7 @@ import Services from "./components/Services";
 import Team from "./components/Team";
 import Testimonials from "./components/Testimonials";
 import FAQs from "./components/FAQs";
+import TestimonialCarouselEnhanced from "./components/TestEnhanced";
 
 export const metadata = {
   title: "Habilite Clinic",
@@ -23,7 +24,8 @@ export default function Home() {
       <Services/>
       <Hospitals/>
       <Team/>
-      <Testimonials />
+      {/* <Testimonials /> */}
+      <TestimonialCarouselEnhanced />
       <Choose/>
       <FAQs/>
       <Blog/>
