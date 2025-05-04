@@ -5,42 +5,14 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { getTestimonials } from "@/actions/testimonial"
+
+export const revalidate = 86400
 
 
 
 export default function TestimonialCarouselEnhanced() {
-  const testimonials = [
-    {
-      message:
-        "The care I received at this clinic was exceptional. The doctors took the time to listen to my concerns and provided personalized treatment that really worked for me.",
-      name: "Sarah Johnson",
-      position: "Patient",
-    },
-    {
-      message:
-        "As someone who's always been anxious about medical appointments, I can't express how comfortable the staff made me feel. The clinic is modern, clean, and the entire experience was seamless.",
-      name: "Michael Rodriguez",
-      position: "Healthcare Professional",
-    },
-    {
-      message:
-        "The clinic's innovative approach to treatment helped me recover much faster than expected. The follow-up care was also outstanding.",
-      name: "Emily Chen",
-      position: "Patient",
-    },
-    {
-      message:
-        "I've been to many clinics over the years, but this one stands out for its combination of cutting-edge technology and genuine compassion from every staff member.",
-      name: "David Thompson",
-      position: "Patient",
-    },
-    {
-      message:
-        "The doctors here are not only highly skilled but also take the time to explain everything clearly. I never felt rushed during my appointments.",
-      name: "Lisa Patel",
-      position: "Pharmacist",
-    },
-  ]
+    const [testimonials, setTestimonials] = useState([])
 
   const [activeIndex, setActiveIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
@@ -59,6 +31,17 @@ export default function TestimonialCarouselEnhanced() {
   const goToTestimonial = (index) => {
     setActiveIndex(index)
   }
+
+
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      const res = await getTestimonials()
+      console.log(res)
+      setTestimonials(res)
+    }
+
+    fetchTestimonials()
+  }, [])
 
   useEffect(() => {
     if (!isPaused) {
@@ -112,7 +95,7 @@ export default function TestimonialCarouselEnhanced() {
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${activeIndex * 100}%)` }}
             >
-              {testimonials.map((testimonial, index) => (
+              {testimonials && testimonials.map((testimonial, index) => (
                 <div key={index} className="w-full flex-shrink-0  px-4 md:px-12">
                   <Card className="h-full">
                     <CardContent className="p-6 flex flex-col justify-between h-full">
@@ -134,11 +117,11 @@ export default function TestimonialCarouselEnhanced() {
                             <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" />
                           </svg>
                         </div>
-                        <p className="text-slate-700 mb-4 text-wrap">{testimonial.message}</p>
+                        <p className="text-slate-700 mb-4 text-wrap">{testimonial.TesContent}</p>
                       </div>
                       <div className="mt-auto">
-                        <p className="font-semibold text-slate-900 text-wrap">{testimonial.name}</p>
-                        <p className="text-sm text-muted-foreground">{testimonial.position}</p>
+                        <p className="font-semibold text-slate-900 text-wrap">{testimonial.TesAuthor}</p>
+                        <p className="text-sm text-muted-foreground">{testimonial.TesOccupation}</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -168,7 +151,7 @@ export default function TestimonialCarouselEnhanced() {
           </Button>
 
           <div className="flex justify-center mt-8 gap-2">
-            {testimonials.map((_, index) => (
+            {testimonials && testimonials.map((_, index) => (
               <Button
                 key={index}
                 variant="outline"
