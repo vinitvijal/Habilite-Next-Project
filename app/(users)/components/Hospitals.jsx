@@ -29,18 +29,6 @@ function Hospitals() {
       name: "Hospital 1",
       image: "/arogya.webp",
       description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique natus expedita fugiat qui autem consequatur consequuntur aspernatur ipsam animi eaque."
-    },
-    {
-      id: 5,
-      name: "Hospital 1",
-      image:"/image5.png",
-      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique natus expedita fugiat qui autem consequatur consequuntur aspernatur ipsam animi eaque."
-    },
-    {
-      id: 6,
-      name: "Hospital 1",
-      image: "/image6.png",
-      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique natus expedita fugiat qui autem consequatur consequuntur aspernatur ipsam animi eaque."
     }
   ]
   return (
