@@ -22,6 +22,8 @@ export const metadata = {
     app_id: "https://www.facebook.com/habilite/"
   }
 };
+
+
 export default function RootLayout({ children }) {
   return (
     <main className=" w-screen min-h-screen flex flex-col items-center justify-between">

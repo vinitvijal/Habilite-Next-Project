@@ -1,7 +1,6 @@
 'use client'
 import React, { useState } from 'react'
 import Modal from './Modal'
-import { FaBook } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa"; 
 import { GrSchedules } from "react-icons/gr";

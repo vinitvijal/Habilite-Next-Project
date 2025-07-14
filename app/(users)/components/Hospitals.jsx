@@ -9,37 +9,25 @@ function Hospitals() {
     {
       id: 1,
       name: "Hospital 1",
-      image:"/image1.png",
+      image:"/apolloindraprastha.webp",
       description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique natus expedita fugiat qui autem consequatur consequuntur aspernatur ipsam animi eaque."
     },
     {
       id: 2,
       name: "Hospital 1",
-      image: "/image2.png",
+      image: "/apollo-noida.webp",
       description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique natus expedita fugiat qui autem consequatur consequuntur aspernatur ipsam animi eaque."
     },
     {
       id: 3,
       name: "Hospital 1",
-      image: "/image3.png",
+      image: "/apollo-spectra.webp",
       description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique natus expedita fugiat qui autem consequatur consequuntur aspernatur ipsam animi eaque."
     },
     {
       id: 4,
       name: "Hospital 1",
-      image: "/image4.png",
-      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique natus expedita fugiat qui autem consequatur consequuntur aspernatur ipsam animi eaque."
-    },
-    {
-      id: 5,
-      name: "Hospital 1",
-      image:"/image5.png",
-      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique natus expedita fugiat qui autem consequatur consequuntur aspernatur ipsam animi eaque."
-    },
-    {
-      id: 6,
-      name: "Hospital 1",
-      image: "/image6.png",
+      image: "/arogya.webp",
       description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique natus expedita fugiat qui autem consequatur consequuntur aspernatur ipsam animi eaque."
     }
   ]
